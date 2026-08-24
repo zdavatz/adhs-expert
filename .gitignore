@@ -1,0 +1,17 @@
+# Zugangsdaten — niemals committen (dieses Repo ist öffentlich)
+credentials
+token*.json
+client_secret_*.json
+*.env
+
+# Versandskript: enthält die Mailadressen der Familie im Klartext.
+# Gleiche Regel wie in fundaziun-davaz — das Werkzeug bleibt lokal, nicht
+# weil der Code geheim wäre, sondern weil die eingebetteten Daten es sind.
+send_uebersicht.py
+
+# Generiertes Übersichts-PDF — aus src/uebersicht.rs jederzeit reproduzierbar
+adhs_expert_beitraege_mit_volltext.pdf
+
+target/
+__pycache__/
+.venv/

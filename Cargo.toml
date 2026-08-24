@@ -1,0 +1,13 @@
+[package]
+name = "adhs-expert"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "uebersicht"
+path = "src/uebersicht.rs"
+
+[dependencies]
+anyhow = "1"
+genpdf = "0.2"
+lopdf = "0.34"
