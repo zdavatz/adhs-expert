@@ -19,13 +19,18 @@ cargo run --release --bin uebersicht -- --out /pfad/zum.pdf
 ```
 
 Das Schriftverzeichnis ist über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
+`MASS_DEBUG=1` gibt die gemessenen Zeilenhöhen aus.
+
+Die Liste ist nach Aufrufen sortiert, meistgelesene zuerst. Grundlage sind die
+Zahlen von Jetpack Stats über den gesamten erfassten Zeitraum seit 2010 —
+Google Analytics ist auf adhs.expert nicht eingebunden.
 
 ## Aufbau
 
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
-| `src/eintraege.rs` | generierte Daten: 160 Beiträge, Feld `ocr` markiert die OCR-Fälle |
+| `src/eintraege.rs` | generierte Daten: 159 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
 | `fonts/` | DejaVu Sans, wird ins PDF eingebettet |
 
 ## Hyperlinks

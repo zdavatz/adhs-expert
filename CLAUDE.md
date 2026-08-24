@@ -54,16 +54,34 @@ DejaVu-Sans-Familie wird eingebettet. Dieselbe Pipeline wie in
   `MAX_LINK_CHARS = 88` garantiert, dass eine URL nie umbricht – ein Umbruch
   ergäbe zwei 8-pt-Zeilen und damit wieder eine Verschiebung.
 
+**Seitenumbruch ist der zweite heikle Teil.** `genpdf` 0.2 kennt kein
+"keep together": ein Eintrag, der nicht mehr auf die Seite passt, wird
+umbrochen - die Kopfzeile steht dann mitten im Titel. `messen()` bestimmt
+deshalb die Hoehe jedes Eintrags vorab, `push_liste()` setzt den Umbruch
+selbst. Zwei Fallstricke, die dabei Zeit gekostet haben:
+
+- Die Messstile muessen denselben `line_spacing` tragen wie das Dokument
+  (`ZEILENABSTAND`). Sonst weicht die Schaetzung um Faktor 1.35 ab.
+- `PageBreak` bricht **bedingungslos** um. Faellt unser Umbruch mit dem von
+  genpdf zusammen, brechen beide hintereinander und es entsteht eine leere
+  Seite. Die geschaetzte Kapazitaet haelt deshalb die Hoehe des groessten
+  Eintrags frei, damit wir zuverlaessig *vorher* umbrechen.
+- Nach dem letzten Eintrag darf kein `Break` mehr kommen - er erzwingt sonst
+  eine leere Schlussseite.
+
+`MASS_DEBUG=1` gibt die gemessenen Hoehen auf stderr aus.
+
 ### Daten (`src/eintraege.rs`)
 
 Generiert, nicht von Hand gepflegt. Ein Eintrag je Beitrag mit `datum`,
-`titel`, `url`, `woerter` und `ocr`. Das Feld `ocr` markiert die Fälle, deren
+`titel`, `url`, `woerter`, `aufrufe` und `ocr`. Sortiert nach `aufrufe`,
+meistgelesene zuerst. Das Feld `ocr` markiert die Fälle, deren
 Quelle ein Scan ohne Textebene war; sie erscheinen im PDF an drei Stellen:
 in den Kennzahlen der Titelseite, in einem eigenen Abschnitt und als Marke
 in der Metazeile des Listeneintrags.
 
-Beim Neuerzeugen der Datei die Reihenfolge beibehalten (neueste zuerst) und
-`ocr` korrekt setzen – sonst stimmt die Zählung auf der Titelseite nicht.
+Beim Neuerzeugen der Datei die Reihenfolge beibehalten (nach `aufrufe`
+absteigend) und `ocr` korrekt setzen – sonst stimmt die Zählung auf der Titelseite nicht.
 
 ## Fachliches, das im Code nicht steht
 
@@ -79,6 +97,17 @@ Die Website läuft auf **WordPress.com Atomic** mit Jetpack. Wer die Beiträge
   haben (Yoast etwa), gehen nur über die Oberfläche.
 - WordPress' `wptexturize()` macht beim Ausliefern aus ` - ` ein ` – `. Der
   gespeicherte Inhalt bleibt unverändert, nur die Anzeige weicht ab.
+
+**Messdaten:** Auf adhs.expert ist **kein Google Analytics** eingebunden -
+kein `gtag`, kein Tag Manager, keine Mess-ID im Quelltext. Wer nach
+Reichweite sortieren will, nimmt **Jetpack Stats**, erreichbar mit demselben
+Anwendungspasswort:
+
+- `/wp-json/jetpack/v4/stats-app/sites/<id>/stats/top-posts?period=year&num=20`
+  liefert Jahresranglisten, ist aber bei 500 Zeilen je Jahr gekappt.
+- `/wp-json/jetpack/v4/stats-app/sites/<id>/stats/post/<post-id>` liefert im
+  Feld `views` den exakten Gesamtwert seit Beginn - fuer eine feste Menge von
+  Beitraegen die verlaessliche Quelle.
 
 Zur Textgewinnung aus den PDFs:
 

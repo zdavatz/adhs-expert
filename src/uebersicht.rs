@@ -49,6 +49,14 @@ const MARGIN_PT: f64 = 22.0 * 72.0 / 25.4;
 const AVG_ADVANCE_EM: f64 = 0.55;
 const MAX_LINK_CHARS: usize = 88;
 
+// Seitengeometrie in Millimetern, fuer den selbstgebauten Seitenumbruch.
+const A4_HOEHE_MM: f64 = 297.0;
+const A4_BREITE_MM: f64 = 210.0;
+const RAND_MM: f64 = 22.0;
+// Muss mit `doc.set_line_spacing()` in `render()` uebereinstimmen - sonst
+// weicht die gemessene Hoehe vom Satz ab und die Umbrueche laufen aus dem Takt.
+const ZEILENABSTAND: f64 = 1.35;
+
 // ---------------------------------------------------------------------------
 // Kennzahlen
 // ---------------------------------------------------------------------------
@@ -61,6 +69,10 @@ fn woerter_gesamt() -> u64 {
     EINTRAEGE.iter().map(|e| e.woerter as u64).sum()
 }
 
+fn aufrufe_gesamt() -> u64 {
+    EINTRAEGE.iter().map(|e| e.aufrufe as u64).sum()
+}
+
 fn tausender(n: u64) -> String {
     let s = n.to_string();
     let mut out = String::new();
@@ -71,6 +83,119 @@ fn tausender(n: u64) -> String {
         out.push(c);
     }
     out
+}
+
+const OCR_INTRO: &[&str] = &[
+    "Bei diesen Beiträgen war das verlinkte PDF ein Scan ohne Textebene - \
+     eingescannte Flyer, Zeitungsausschnitte, Interviews. pdftotext fand dort \
+     nichts. Der Text wurde deshalb mit Tesseract 4 (Sprache Deutsch) aus dem \
+     Bild vorgelesen und anschliessend gegen die gerenderten Scans von Hand \
+     geprüft und berichtigt. Diese Beiträge tragen im Beitrag die Überschrift \
+     \u{201E}Transkript (OCR)\u{201C}.",
+    "Die rohe Texterkennung war dafür zu unzuverlässig: sie verlas Adressen, \
+     nahm handschriftliche Anstreichungen als Zeichen und lieferte bei \
+     grafisch gesetzten Plakaten kaum Brauchbares. Was hier steht, ist \
+     deshalb am Bild überprüft.",
+];
+
+// ---------------------------------------------------------------------------
+// Seitenumbruch von Hand
+// ---------------------------------------------------------------------------
+
+// genpdf 0.2 kennt kein "keep together": ein Element, das nicht mehr auf die
+// Seite passt, wird umbrochen - und zwar mitten im Titel, sodass die Kopfzeile
+// zwischen zwei Zeilen desselben Titels steht. Deshalb messen wir die Hoehe
+// jedes Eintrags vorab und setzen den Umbruch selbst, bevor er zerrissen wird.
+
+struct Mass {
+    /// Hoehe je Eintrag in mm, Index wie in `EINTRAEGE`.
+    eintrag: Vec<f64>,
+    /// Nutzbare Hoehe einer Folgeseite in mm (Kopfzeile bereits abgezogen).
+    nutzbar: f64,
+    /// Hoehe eines Abschnittskopfs samt Abstaenden in mm.
+    kopf: f64,
+    /// Hoehe des Erklaertextes im OCR-Abschnitt in mm.
+    ocr_intro: f64,
+}
+
+/// Zahl der Zeilen, die `text` im gegebenen Stil auf `breite` mm belegt.
+/// Bildet die gierige Wortumbruch-Logik von `Paragraph` nach.
+fn zeilenzahl(fc: &genpdf::fonts::FontCache, style: Style, text: &str, breite: f64) -> usize {
+    let leer = f64::from(style.str_width(fc, " "));
+    let mut zeilen = 1usize;
+    let mut belegt = 0.0f64;
+    for wort in text.split_whitespace() {
+        let w = f64::from(style.str_width(fc, wort));
+        if belegt > 0.0 && belegt + leer + w > breite {
+            zeilen += 1;
+            belegt = w;
+        } else {
+            belegt += if belegt > 0.0 { leer + w } else { w };
+        }
+    }
+    zeilen
+}
+
+fn messen(doc: &genpdf::Document) -> Mass {
+    let fc = doc.font_cache();
+    // Alle Messstile tragen denselben Zeilenabstand wie das Dokument.
+    let st = |groesse: u8| Style::new().with_font_size(groesse).with_line_spacing(ZEILENABSTAND);
+    let titel_st = st(10).bold();
+    let meta_st = st(9);
+    let link_st = st(LINK_FONT_SIZE);
+    let grund_st = st(10);
+    let h3_st = st(13).bold();
+
+    let breite = A4_BREITE_MM - 2.0 * RAND_MM;
+    // Kopfzeile: 7-pt-Zeile plus 6 mm Abstand darunter (siehe Seitendekorator).
+    let kopfzeile = f64::from(st(7).line_height(fc)) + 6.0;
+    let grund_h = f64::from(grund_st.line_height(fc));
+
+    let h_titel = f64::from(titel_st.line_height(fc));
+    let h_meta = f64::from(meta_st.line_height(fc));
+    let h_link = f64::from(link_st.line_height(fc));
+    let h_abstand = grund_h * 0.55;
+
+    let eintrag: Vec<f64> = EINTRAEGE
+        .iter()
+        .enumerate()
+        .map(|(i, e)| {
+            let titel = format!("{}.  {}", i + 1, e.titel);
+            let z = zeilenzahl(fc, titel_st, &titel, breite);
+            z as f64 * h_titel + h_meta + h_link + h_abstand
+        })
+        .collect();
+
+    // `PageBreak` bricht bedingungslos um: faellt unser Umbruch mit dem von
+    // genpdf zusammen, entsteht eine leere Seite. Unsere Kapazitaet muss also
+    // echt kleiner sein als die tatsaechliche. Wir halten die Hoehe des
+    // groessten Eintrags frei - dann ist beim Weiterschreiben immer Platz.
+    let groesster = eintrag.iter().cloned().fold(0.0f64, f64::max);
+    let nutzbar = A4_HOEHE_MM - 2.0 * RAND_MM - kopfzeile - groesster;
+
+    // Abschnittskopf: Ueberschrift + Break(0.4) + Zeile 9 pt + Break(0.8)
+    let kopf = f64::from(h3_st.line_height(fc))
+        + grund_h * 0.4
+        + h_meta
+        + grund_h * 0.8;
+
+    let ocr_intro = OCR_INTRO
+        .iter()
+        .map(|t| zeilenzahl(fc, grund_st, t, breite) as f64 * grund_h + grund_h * 0.5)
+        .sum::<f64>()
+        + grund_h * 0.3;
+
+    if std::env::var("MASS_DEBUG").is_ok() {
+        eprintln!("nutzbar={nutzbar:.1}mm kopfzeile={kopfzeile:.1} grund_h={grund_h:.2} \
+h_titel={h_titel:.2} h_meta={h_meta:.2} h_link={h_link:.2} h_abstand={h_abstand:.2}");
+        let e: &Vec<f64> = &eintrag;
+        eprintln!("Eintrag-Hoehen: min={:.2} max={:.2} mittel={:.2}",
+            e.iter().cloned().fold(f64::MAX, f64::min),
+            e.iter().cloned().fold(0.0, f64::max),
+            e.iter().sum::<f64>() / e.len() as f64);
+        eprintln!("passt pro Seite (Mittel): {:.1}", nutzbar / (e.iter().sum::<f64>() / e.len() as f64));
+    }
+    Mass { eintrag, nutzbar, kopf, ocr_intro }
 }
 
 /// Anzeigeform einer URL: Schema und `www.` weg, danach bei Bedarf in der
@@ -140,9 +265,10 @@ fn push_cover(doc: &mut genpdf::Document) {
     doc.push(
         zeile(
             format!(
-                "{} Beiträge   ·   {} Wörter   ·   davon {} per OCR",
+                "{} Beiträge   ·   {} Wörter   ·   {} Aufrufe   ·   davon {} per OCR",
                 EINTRAEGE.len(),
                 tausender(woerter_gesamt()),
+                tausender(aufrufe_gesamt()),
                 anzahl_ocr()
             ),
             Style::new().with_color(INK).with_font_size(11).bold(),
@@ -174,6 +300,10 @@ fn push_methode(doc: &mut genpdf::Document) {
         "Lange Adressen brechen im PDF-Satz mitten in der URL um. Diese Umbrüche \
          sind Layout und nicht Text: sie wurden wieder zusammengefügt, danach sind \
          die Adressen im Beitrag als Links anklickbar.",
+        "Die Liste ist nach Aufrufen sortiert, meistgelesene zuerst. Grundlage sind \
+         die Zahlen von Jetpack Stats über den gesamten erfassten Zeitraum seit \
+         2010. Google Analytics ist auf adhs.expert nicht eingebunden und liefert \
+         für diese Seiten deshalb keine Daten.",
     ] {
         doc.push(zeile(
             absatz,
@@ -183,42 +313,45 @@ fn push_methode(doc: &mut genpdf::Document) {
     }
 }
 
-fn push_ocr_abschnitt(doc: &mut genpdf::Document) {
-    let ocr: Vec<&Eintrag> = EINTRAEGE.iter().filter(|e| e.ocr).collect();
+fn push_ocr_abschnitt(doc: &mut genpdf::Document, mass: &Mass) {
+    let ocr: Vec<(usize, &Eintrag)> = EINTRAEGE
+        .iter()
+        .enumerate()
+        .filter(|(_, e)| e.ocr)
+        .collect();
     if ocr.is_empty() {
         return;
     }
-    doc.push(Break::new(1.2));
+    doc.push(PageBreak::new());
     doc.push(zeile(
         format!("Mit OCR erkannt ({})", ocr.len()),
         Style::new().with_color(ACCENT).with_font_size(13).bold(),
     ));
     doc.push(Break::new(0.6));
-    doc.push(zeile(
-        "Bei diesen Beiträgen war das verlinkte PDF ein Scan ohne Textebene - \
-         eingescannte Flyer, Zeitungsausschnitte, Interviews. pdftotext fand dort \
-         nichts. Der Text wurde deshalb mit Tesseract 4 (Sprache Deutsch) aus dem \
-         Bild erkannt und dann eingesetzt. Diese Beiträge tragen im Beitrag die \
-         Überschrift \u{201E}Transkript (OCR)\u{201C}.",
-        Style::new().with_color(INK).with_font_size(10),
-    ));
-    doc.push(Break::new(0.5));
-    doc.push(zeile(
-        "OCR liest nicht fehlerfrei. Bei grafisch gesetzten Vorlagen - besonders \
-         bei Plakaten mit Schmuckschrift - stehen im erkannten Text Verlesungen. \
-         Der Fliesstext ist durchweg brauchbar, die Kopfgrafiken sind es nicht \
-         immer. In der Liste unten sind diese Beiträge mit OCR gekennzeichnet.",
-        Style::new().with_color(SLATE).with_font_size(10),
-    ));
-    doc.push(Break::new(0.8));
-    for e in &ocr {
-        push_eintrag(doc, e, None);
+    for absatz in OCR_INTRO {
+        doc.push(zeile(
+            *absatz,
+            Style::new().with_color(INK).with_font_size(10),
+        ));
+        doc.push(Break::new(0.5));
+    }
+    doc.push(Break::new(0.3));
+
+    let mut rest = mass.nutzbar - mass.kopf - mass.ocr_intro;
+    for (i, e) in ocr {
+        let h = mass.eintrag[i];
+        if h > rest {
+            doc.push(PageBreak::new());
+            rest = mass.nutzbar;
+        }
+        push_eintrag(doc, e, None, false);
+        rest -= h;
     }
 }
 
 /// Ein Listeneintrag. Die URL steht als einzige Zeile in LINK_FONT_SIZE -
 /// daran hängt die Link-Annotation.
-fn push_eintrag(doc: &mut genpdf::Document, e: &Eintrag, nr: Option<usize>) {
+fn push_eintrag(doc: &mut genpdf::Document, e: &Eintrag, nr: Option<usize>, letzter: bool) {
     let titel = match nr {
         Some(n) => format!("{n}.  {}", e.titel),
         None => e.titel.to_string(),
@@ -230,7 +363,12 @@ fn push_eintrag(doc: &mut genpdf::Document, e: &Eintrag, nr: Option<usize>) {
 
     let mut meta = Paragraph::default();
     meta.push_styled(
-        format!("{}   ·   {} Wörter", e.datum, tausender(e.woerter as u64)),
+        format!(
+            "{}   ·   {} Aufrufe   ·   {} Wörter",
+            e.datum,
+            tausender(e.aufrufe as u64),
+            tausender(e.woerter as u64)
+        ),
         Style::new().with_color(MUTED).with_font_size(9),
     );
     if e.ocr {
@@ -247,10 +385,14 @@ fn push_eintrag(doc: &mut genpdf::Document, e: &Eintrag, nr: Option<usize>) {
             .with_color(LINK)
             .with_font_size(LINK_FONT_SIZE),
     ));
-    doc.push(Break::new(0.55));
+    // Nach dem letzten Eintrag keinen Abstand - er wuerde eine leere
+    // Schlussseite erzwingen.
+    if !letzter {
+        doc.push(Break::new(0.55));
+    }
 }
 
-fn push_liste(doc: &mut genpdf::Document) {
+fn push_liste(doc: &mut genpdf::Document, mass: &Mass) {
     doc.push(PageBreak::new());
     doc.push(zeile(
         format!("Alle Beiträge ({})", EINTRAEGE.len()),
@@ -258,12 +400,21 @@ fn push_liste(doc: &mut genpdf::Document) {
     ));
     doc.push(Break::new(0.4));
     doc.push(zeile(
-        "Neueste zuerst. Jede Adresse ist anklickbar.",
+        "Meistgelesene zuerst. Jede Adresse ist anklickbar.",
         Style::new().with_color(MUTED).with_font_size(9),
     ));
     doc.push(Break::new(0.8));
+
+    let mut rest = mass.nutzbar - mass.kopf;
     for (i, e) in EINTRAEGE.iter().enumerate() {
-        push_eintrag(doc, e, Some(i + 1));
+        let h = mass.eintrag[i];
+        // Umbrechen, bevor genpdf den Eintrag mitten im Titel zerreisst.
+        if h > rest {
+            doc.push(PageBreak::new());
+            rest = mass.nutzbar;
+        }
+        push_eintrag(doc, e, Some(i + 1), i + 1 == EINTRAEGE.len());
+        rest -= h;
     }
 }
 
@@ -395,7 +546,7 @@ fn render(out: &Path, font_dir: &str) -> Result<()> {
     doc.set_title("adhs.expert - Beiträge mit vollständigem Text");
     doc.set_minimal_conformance();
     doc.set_font_size(10);
-    doc.set_line_spacing(1.35);
+    doc.set_line_spacing(ZEILENABSTAND);
 
     let mut deco = genpdf::SimplePageDecorator::new();
     deco.set_margins(22);
@@ -412,10 +563,13 @@ fn render(out: &Path, font_dir: &str) -> Result<()> {
     });
     doc.set_page_decorator(deco);
 
+    // Messphase: exakte Hoehen, solange `doc` nur unveraenderlich geliehen ist.
+    let mass = messen(&doc);
+
     push_cover(&mut doc);
     push_methode(&mut doc);
-    push_ocr_abschnitt(&mut doc);
-    push_liste(&mut doc);
+    push_ocr_abschnitt(&mut doc, &mass);
+    push_liste(&mut doc, &mass);
 
     doc.render_to_file(out)
         .map_err(|e| anyhow!("PDF schreiben {}: {}", out.display(), e))?;
