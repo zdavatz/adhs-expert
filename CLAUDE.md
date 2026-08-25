@@ -10,7 +10,8 @@ auflistet, deren Text jetzt vollständig im Beitrag selbst steht.
 Der Anlass: viele Beiträge bestanden nur aus einem Audio-Player und einem
 nackten Link auf ein PDF – für Suchmaschinen praktisch leere Seiten. Der
 gesamte Inhalt lag im PDF, nicht im Beitrag. Der Text wurde 1:1 aus den PDFs
-in die Beiträge übernommen; fünf Quellen waren Scans ohne Textebene.
+in die Beiträge übernommen; vier Quellen waren Scans ohne Textebene, eine
+weitere ein PDF ohne verwertbare Textebene (siehe unten).
 
 Kommentare, Dokumententexte und Commit-Messages sind auf Deutsch
 (Schweizer Rechtschreibung: **ss statt ß**).
@@ -116,6 +117,18 @@ Zur Textgewinnung aus den PDFs:
   Spaltensatz mit und erzeugt unlesbare Umbrüche mitten im Satz.
 - PDFs brechen lange URLs am Bindestrich um. Diese Umbrüche sind Layout,
   nicht Text – ohne Zusammenfügen entstehen zerrissene, tote Links.
+- **Eine Textebene heisst nicht, dass Text herauskommt.** Das PDF des
+  Zeitungsartikels *Sie hat im Aargau Spuren hinterlassen* trug eine, aber
+  alle Schriften waren subgesetzte CID-Fonts mit Identity-H-Kodierung **ohne
+  ToUnicode-Tabelle**. `pdftotext` gibt dann Glyph-Nummern als Zeichen aus:
+  `3! L%P!3D!8 P3!` statt Wörtern. Genau das stand jahrelang im Beitrag.
+  `pdffonts <datei>` zeigt es sofort – Spalte `uni` auf `no`. Vor jeder
+  Übernahme prüfen, sonst wandert Zeichensalat ungebremst in den Beitrag:
+  Anteil der Wörter aus `[A-Za-zÄÖÜäöüß0-9…]` messen, sauber ist ~100 %.
+  Der Ausweg ist derselbe wie beim Scan: `pdftoppm -png -r 400` mit
+  `-x -y -W -H` spaltenweise ausschneiden und die Bilder selbst lesen. Beim
+  Zusammenfügen der Silbentrennung echte Bindestriche stehen lassen
+  (`Psychiatrie-Studium`, `80er-Jahren`).
 - **OCR-Ausgabe nie ungeprüft übernehmen.** Tesseract verlas unter anderem
   `http://schizo.li` zu `httpz//schizo.lij` und `ganglion.ch` zu
   `qanqlion.ch`, erkannte handschriftliche Stiftmarkierungen als Zeichen und

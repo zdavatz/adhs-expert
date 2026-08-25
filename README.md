@@ -8,8 +8,10 @@ deren Text jetzt vollständig im Beitrag selbst steht.
 Viele Beiträge bestanden nur aus einem Audio-Player und einem nackten Link auf
 ein PDF. Für Suchmaschinen waren das praktisch leere Seiten — der gesamte
 Inhalt lag im PDF, nicht im Beitrag. Der Text wurde 1:1 aus den PDFs in die
-Beiträge übernommen; fünf PDFs waren Scans ohne Textebene und mussten zuerst
+Beiträge übernommen; vier PDFs waren Scans ohne Textebene und mussten zuerst
 per OCR gelesen werden. Diese Fälle sind im erzeugten PDF eigens ausgewiesen.
+Ein fünfter Scan wurde ebenfalls erkannt, sein Beitrag liegt inzwischen aber im
+Papierkorb und zählt darum nicht mehr mit.
 
 ## Bauen und Ausführen
 

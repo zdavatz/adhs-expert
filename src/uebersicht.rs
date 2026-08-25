@@ -3,9 +3,11 @@
 //
 // Bis August 2026 bestanden viele Beiträge nur aus einem Audio-Player und
 // einem nackten Link auf ein PDF - für Google praktisch leere Seiten. Der
-// Text der PDFs wurde 1:1 in die Beiträge übernommen. Fünf PDFs waren
+// Text der PDFs wurde 1:1 in die Beiträge übernommen. Vier PDFs waren
 // Scans ohne Textebene und mussten zuerst per OCR erkannt werden; diese
-// Fälle sind hier eigens ausgewiesen.
+// Fälle sind hier eigens ausgewiesen. Die Zahl kommt aus `anzahl_ocr()`,
+// steht also nicht fest: ein fünfter OCR-Fall liegt im Papierkorb und ist
+// darum nicht mehr in `EINTRAEGE`.
 //
 // Pure Rust, kein Chrome: das PDF entsteht mit `genpdf` (das über printpdf
 // schreibt) und bettet die DejaVu-Sans-Familie ein - dieselbe Pipeline wie
@@ -30,7 +32,7 @@ use eintraege::{Eintrag, EINTRAEGE};
 
 const DEFAULT_FONT_DIR: &str = "fonts";
 const DEFAULT_OUT: &str = "adhs_expert_beitraege_mit_volltext.pdf";
-const STAND: &str = "Stand: 24. August 2026";
+const STAND: &str = "Stand: 25. August 2026";
 
 const INK: Color = Color::Rgb(0x1b, 0x1b, 0x1d);
 const ACCENT: Color = Color::Rgb(0x8a, 0x2f, 0x4f);
