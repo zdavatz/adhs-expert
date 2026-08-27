@@ -15,3 +15,7 @@ adhs_expert_beitraege_mit_volltext.pdf
 target/
 __pycache__/
 .venv/
+
+# enthält eine fremde Mailadresse - bleibt lokal
+entwurf_curtins.py
+token_compose.json
