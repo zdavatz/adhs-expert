@@ -13,6 +13,12 @@ per OCR gelesen werden. Diese Fälle sind im erzeugten PDF eigens ausgewiesen.
 Ein fünfter Scan wurde ebenfalls erkannt, sein Beitrag liegt inzwischen aber im
 Papierkorb und zählt darum nicht mehr mit.
 
+Dasselbe gilt für gelöschte Beiträge allgemein: was auf adhs.expert im
+Papierkorb liegt, gehört aus `src/eintraege.rs` heraus, sonst zeigt das PDF auf
+eine 404-Seite. Zuletzt betraf das im September 2026 «Perfektionismus und
+Prokrastination» — kein Vortrag, sondern ein Teilnehmeraufruf von 2015 für eine
+Studie der Universität Würzburg.
+
 ## Bauen und Ausführen
 
 ```bash
@@ -32,7 +38,7 @@ Google Analytics ist auf adhs.expert nicht eingebunden.
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
-| `src/eintraege.rs` | generierte Daten: 159 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
+| `src/eintraege.rs` | generierte Daten: 158 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
 | `fonts/` | DejaVu Sans, wird ins PDF eingebettet |
 
 ## Hyperlinks

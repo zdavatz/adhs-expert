@@ -1,7 +1,14 @@
-// Erzeugt aus den Beitraegen von adhs.expert, Stand 24. August 2026.
-// Sortiert nach Aufrufen (Jetpack Stats, Gesamtwert seit 2010), meistgelesene
-// zuerst. Das Feld `ocr` markiert die Faelle, deren PDF ein Scan ohne
-// Textebene war; deren Text wurde gegen die gerenderten Scans handgeprueft.
+// Erzeugt aus den Beitraegen von adhs.expert, Aufrufzahlen Stand
+// 24. August 2026. Sortiert nach Aufrufen (Jetpack Stats, Gesamtwert seit
+// 2010), meistgelesene zuerst. Das Feld `ocr` markiert die Faelle, deren PDF
+// ein Scan ohne Textebene war; deren Text wurde gegen die gerenderten Scans
+// handgeprueft.
+//
+// Beitraege, die auf adhs.expert in den Papierkorb wandern, gehoeren hier
+// heraus - sonst steht im PDF ein toter Link. Am 7. September 2026 traf das
+// "Perfektionismus und Prokrastination" (2.12.2015, 92 Aufrufe): kein Vortrag,
+// sondern ein Teilnehmeraufruf fuer eine Studie der Universitaet Wuerzburg,
+// dazu ein zerfallenes Transkript aus einem mehrspaltigen Aushang-PDF.
 
 pub struct Eintrag {
     pub datum: &'static str,
@@ -99,14 +106,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         url: "https://adhs.expert/2024/10/05/umgang-mit-adhs-ads-im-erwachsenenalter/",
         woerter: 11425,
         aufrufe: 94,
-        ocr: false,
-    },
-    Eintrag {
-        datum: "02.12.2015",
-        titel: "Perfektionismus und Prokrastination",
-        url: "https://adhs.expert/2015/12/02/perfektionismus-und-prokrastination/",
-        woerter: 131,
-        aufrufe: 92,
         ocr: false,
     },
     Eintrag {

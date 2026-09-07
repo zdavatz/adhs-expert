@@ -84,6 +84,20 @@ in der Metazeile des Listeneintrags.
 Beim Neuerzeugen der Datei die Reihenfolge beibehalten (nach `aufrufe`
 absteigend) und `ocr` korrekt setzen – sonst stimmt die Zählung auf der Titelseite nicht.
 
+**Wird ein Beitrag auf adhs.expert gelöscht, muss sein Eintrag hier heraus.**
+Sonst führt das PDF einen Link auf eine 404-Seite. Alle Kennzahlen der
+Titelseite – Zahl der Beiträge, Wörter, Aufrufe, OCR-Fälle – werden aus
+`EINTRAEGE` berechnet und stimmen nach dem Neubau von selbst; nichts davon steht
+fest verdrahtet. Danach `cargo run --release --bin uebersicht` laufen lassen und
+prüfen, dass die Link-Assertion durchgeht. Bereits so entfernt: ein fünfter
+OCR-Fall und, im September 2026, «Perfektionismus und Prokrastination».
+
+Gelöscht wird über die REST-API mit dem Anwendungspasswort aus
+`~/.config/adhs-expert/credentials` (Muster in `tools/apply_one.py`). Ein
+`DELETE /wp-json/wp/v2/posts/<id>` legt den Beitrag in den Papierkorb und ist
+umkehrbar; erst `?force=true` löscht endgültig. Vorher den Beitrag als JSON
+sichern – der Papierkorb wird nach 30 Tagen von WordPress selber geleert.
+
 ## Fachliches, das im Code nicht steht
 
 Die Website läuft auf **WordPress.com Atomic** mit Jetpack. Wer die Beiträge
