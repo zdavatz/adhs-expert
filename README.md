@@ -19,6 +19,12 @@ eine 404-Seite. Zuletzt betraf das im September 2026 «Perfektionismus und
 Prokrastination» — kein Vortrag, sondern ein Teilnehmeraufruf von 2015 für eine
 Studie der Universität Würzburg.
 
+Ebenfalls entfernt wurden im September 2026 «Jeder Hundertste erkrankt an
+Schizophrenie» — dasselbe Interview auf derselben Zeitungsseite wie «Emotionale
+Monsterwelle», das dafür aufs richtige Datum korrigiert wurde — und
+«Psychotherapie und Coaching», die Arbeitsbeschreibung einer Kollegin samt
+Kontaktdaten.
+
 Zwölf weitere Beiträge trugen den Spaltensatz einer Zeitungs- oder
 Zeitschriftenseite: `pdftotext -layout` hatte die Nachbarspalten mitgezogen, in
 fünf Fällen samt fremder Artikel und Inserate. Sie wurden im September 2026
@@ -44,7 +50,7 @@ Google Analytics ist auf adhs.expert nicht eingebunden.
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
-| `src/eintraege.rs` | generierte Daten: 158 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
+| `src/eintraege.rs` | generierte Daten: 156 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
 | `fonts/` | DejaVu Sans, wird ins PDF eingebettet |
 
 ## Hyperlinks

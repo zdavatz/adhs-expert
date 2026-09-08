@@ -9,6 +9,12 @@
 // "Perfektionismus und Prokrastination" (2.12.2015, 92 Aufrufe): kein Vortrag,
 // sondern ein Teilnehmeraufruf fuer eine Studie der Universitaet Wuerzburg,
 // dazu ein zerfallenes Transkript aus einem mehrspaltigen Aushang-PDF.
+// Am 8. September 2026 kamen zwei dazu: "Jeder Hundertste erkrankt an
+// Schizophrenie" (46 Aufrufe) gab dasselbe Interview wieder wie "Emotionale
+// Monsterwelle" - es war dieselbe Zeitungsseite; der behaltene Beitrag trug
+// das falsche Datum und heisst darum jetzt 29.03.2015 statt 16.10.2018.
+// "Psychotherapie und Coaching" (74 Aufrufe) war nicht ihr Text, sondern die
+// Arbeitsbeschreibung einer Kollegin samt Kontaktdaten.
 
 pub struct Eintrag {
     pub datum: &'static str,
@@ -213,14 +219,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         ocr: false,
     },
     Eintrag {
-        datum: "21.04.2016",
-        titel: "Psychotherapie und Coaching",
-        url: "https://adhs.expert/2016/04/21/psychotherapie-und-coaching/",
-        woerter: 276,
-        aufrufe: 74,
-        ocr: false,
-    },
-    Eintrag {
         datum: "22.09.2024",
         titel: "Wie geht man als ErzieherIn mit ADHS und ADS Kindern um?",
         url: "https://adhs.expert/2024/09/22/wie-geht-man-als-erzieherin-mit-adhs-und-ads-kindern-um/",
@@ -301,9 +299,9 @@ pub const EINTRAEGE: &[Eintrag] = &[
         ocr: false,
     },
     Eintrag {
-        datum: "16.10.2018",
+        datum: "29.03.2015",
         titel: "Emotionale Monsterwelle",
-        url: "https://adhs.expert/2018/10/16/emotionale-monsterwelle/",
+        url: "https://adhs.expert/2015/03/29/emotionale-monsterwelle/",
         woerter: 872,
         aufrufe: 52,
         ocr: false,
@@ -362,14 +360,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         url: "https://adhs.expert/2017/07/05/bindung-was-die-welt-zusammenhaelt/",
         woerter: 144,
         aufrufe: 49,
-        ocr: false,
-    },
-    Eintrag {
-        datum: "29.03.2015",
-        titel: "Jeder Hundertste erkrankt an Schizophrenie",
-        url: "https://adhs.expert/2015/03/29/jeder-hundertste-erkrankt-an-schizophrenie/",
-        woerter: 872,
-        aufrufe: 46,
         ocr: false,
     },
     Eintrag {
