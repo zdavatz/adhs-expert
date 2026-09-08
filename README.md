@@ -15,15 +15,16 @@ Papierkorb und zählt darum nicht mehr mit.
 
 Dasselbe gilt für gelöschte Beiträge allgemein: was auf adhs.expert im
 Papierkorb liegt, gehört aus `src/eintraege.rs` heraus, sonst zeigt das PDF auf
-eine 404-Seite. Zuletzt betraf das im September 2026 «Perfektionismus und
-Prokrastination» — kein Vortrag, sondern ein Teilnehmeraufruf von 2015 für eine
-Studie der Universität Würzburg.
+eine 404-Seite. Im September 2026 traf das drei Beiträge:
 
-Ebenfalls entfernt wurden im September 2026 «Jeder Hundertste erkrankt an
-Schizophrenie» — dasselbe Interview auf derselben Zeitungsseite wie «Emotionale
-Monsterwelle», das dafür aufs richtige Datum korrigiert wurde — und
-«Psychotherapie und Coaching», die Arbeitsbeschreibung einer Kollegin samt
-Kontaktdaten.
+- «Perfektionismus und Prokrastination» — kein Vortrag, sondern ein
+  Teilnehmeraufruf von 2015 für eine Studie der Universität Würzburg.
+- «Jeder Hundertste erkrankt an Schizophrenie» — dasselbe Interview auf
+  derselben Zeitungsseite wie «Emotionale Monsterwelle». Der behaltene Beitrag
+  trug das falsche Datum und liegt jetzt auf dem 29. März 2015; weil die
+  Permalinks datumsbasiert sind, hat er dadurch eine neue Adresse.
+- «Psychotherapie und Coaching» — nicht ihr Text, sondern die
+  Arbeitsbeschreibung einer Kollegin samt Kontaktdaten.
 
 Zwölf weitere Beiträge trugen den Spaltensatz einer Zeitungs- oder
 Zeitschriftenseite: `pdftotext -layout` hatte die Nachbarspalten mitgezogen, in

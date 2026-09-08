@@ -90,7 +90,11 @@ Titelseite – Zahl der Beiträge, Wörter, Aufrufe, OCR-Fälle – werden aus
 `EINTRAEGE` berechnet und stimmen nach dem Neubau von selbst; nichts davon steht
 fest verdrahtet. Danach `cargo run --release --bin uebersicht` laufen lassen und
 prüfen, dass die Link-Assertion durchgeht. Bereits so entfernt: ein fünfter
-OCR-Fall und, im September 2026, «Perfektionismus und Prokrastination».
+OCR-Fall und, im September 2026, «Perfektionismus und Prokrastination»
+(Teilnehmeraufruf statt Vortrag), «Jeder Hundertste erkrankt an Schizophrenie»
+(dasselbe Interview wie «Emotionale Monsterwelle», dieselbe Zeitungsseite) und
+«Psychotherapie und Coaching» (nicht ihr Text, sondern die Arbeitsbeschreibung
+einer Kollegin samt Kontaktdaten).
 
 Gelöscht wird über die REST-API mit dem Anwendungspasswort aus
 `~/.config/adhs-expert/credentials` (Muster in `tools/apply_one.py`). Ein
@@ -112,6 +116,11 @@ Die Website läuft auf **WordPress.com Atomic** mit Jetpack. Wer die Beiträge
   haben (Yoast etwa), gehen nur über die Oberfläche.
 - WordPress' `wptexturize()` macht beim Ausliefern aus ` - ` ein ` – `. Der
   gespeicherte Inhalt bleibt unverändert, nur die Anzeige weicht ab.
+- **Die Permalinks sind datumsbasiert** (`/JJJJ/MM/TT/slug/`). Wer über die
+  REST-API das Feld `date` korrigiert, ändert damit die Adresse des Beitrags.
+  WordPress leitet die alte mit 301 auf die neue um, solange der Slug eindeutig
+  bleibt; der Eintrag in `src/eintraege.rs` muss aber von Hand nachgezogen
+  werden. Die Jetpack-Zahlen hängen an der Post-ID und bleiben unberührt.
 
 **Messdaten:** Auf adhs.expert ist **kein Google Analytics** eingebunden -
 kein `gtag`, kein Tag Manager, keine Mess-ID im Quelltext. Wer nach
