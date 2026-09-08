@@ -19,6 +19,12 @@ eine 404-Seite. Zuletzt betraf das im September 2026 «Perfektionismus und
 Prokrastination» — kein Vortrag, sondern ein Teilnehmeraufruf von 2015 für eine
 Studie der Universität Würzburg.
 
+Zwölf weitere Beiträge trugen den Spaltensatz einer Zeitungs- oder
+Zeitschriftenseite: `pdftotext -layout` hatte die Nachbarspalten mitgezogen, in
+fünf Fällen samt fremder Artikel und Inserate. Sie wurden im September 2026
+spaltenweise neu aufgebaut; die Wortzahlen in `src/eintraege.rs` sind
+entsprechend kleiner geworden.
+
 ## Bauen und Ausführen
 
 ```bash

@@ -128,7 +128,29 @@ Zur Textgewinnung aus den PDFs:
 
 - **`pdftotext -layout` mit `<br />` je Zeile taugt nur für Transkripte mit
   Zeitmarken.** Bei mehrspaltig gesetzten Dokumenten schleppt es den
-  Spaltensatz mit und erzeugt unlesbare Umbrüche mitten im Satz.
+  Spaltensatz mit und erzeugt unlesbare Umbrüche mitten im Satz. Schlimmer:
+  **es zieht die Nachbarspalten mit hinein.** Zwölf Beiträge trugen deshalb
+  bis September 2026 fremde Inhalte — die Kolumne einer anderen Autorin mit
+  sehr persönlichen Angaben, ein Polizeibericht über einen Raubüberfall, eine
+  Medizinkolumne, Restaurant- und Wahlinserate mit Telefonnummern, ein
+  Migros-Inserat. Wer solche Seiten übernimmt, muss die Spalten trennen:
+  Wortkoordinaten aus `pdftotext -bbox`, Spalten über die senkrechten
+  Leerstreifen, Absätze im Blocksatz über die kurze Schlusszeile und im
+  Flattersatz über den Zeilenabstand. `tools/spalten.py` macht das, die
+  Zuschnitte je Beitrag liegen in `tools/spaltensatz/`.
+- **Welche Spalte zum Artikel gehört, sieht man nur im Bild.** Vor jedem
+  Zuschnitt die Seite mit `pdftoppm -png -r 110` rendern und selber ansehen.
+  Kein Textmerkmal unterscheidet zuverlässig zwischen dem eigenen Artikel und
+  dem Nachbarartikel auf derselben Seite.
+- **Das weiche Trennzeichen (U+00AD) hat zwei Bedeutungen.** Am Zeilenende
+  trennt es ein Wort und muss beim Zusammenfügen verschwinden, mitten in der
+  Zeile ist es der sichtbare Bindestrich und muss bleiben. Wer es pauschal
+  entfernt, macht aus «Therapie-Familien» ein «TherapieFamilien».
+- **Bei eng ausgetriebenem Blocksatz verschluckt `pdftotext` Wortabstände**
+  und liefert `BaselMedizin,interessiertesich` als ein Token. Die Leerstellen
+  fehlen im PDF selbst, `pdftohtml -xml` hilft also nicht. An Satzzeichen und
+  klein-gross-Übergängen lässt sich das automatisch trennen, der Rest bleibt
+  Handarbeit.
 - PDFs brechen lange URLs am Bindestrich um. Diese Umbrüche sind Layout,
   nicht Text – ohne Zusammenfügen entstehen zerrissene, tote Links.
 - **Eine Textebene heisst nicht, dass Text herauskommt.** Das PDF des
