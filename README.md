@@ -32,6 +32,12 @@ fünf Fällen samt fremder Artikel und Inserate. Sie wurden im September 2026
 spaltenweise neu aufgebaut; die Wortzahlen in `src/eintraege.rs` sind
 entsprechend kleiner geworden.
 
+Zwei Beiträge trugen einen anderen Schaden: Ihre Quell-PDFs stammen von macOS
+Quartz, dessen Ligaturglyphen (ff, fi, fl, ffi, ffl) keine brauchbare Zuordnung
+tragen. Beim Auslesen war an ihrer Stelle ein Leerzeichen geblieben — «Begri »
+statt «Begriff», «häu g» statt «häufig» —, und die Glyphen selbst standen als
+verwaiste Zeilen im Text. Auch das ist im September 2026 behoben worden.
+
 ## Bauen und Ausführen
 
 ```bash
