@@ -4,6 +4,10 @@
 // ein Scan ohne Textebene war; deren Text wurde gegen die gerenderten Scans
 // handgeprueft.
 //
+// Zwei Beitraege trugen fehlende Ligaturen im Volltext ("Begri" statt
+// "Begriff"); sie sind am 24. September 2026 repariert worden, die Wortzahlen
+// sind entsprechend groesser geworden.
+//
 // Beitraege, die auf adhs.expert in den Papierkorb wandern, gehoeren hier
 // heraus - sonst steht im PDF ein toter Link. Am 7. September 2026 traf das
 // "Perfektionismus und Prokrastination" (2.12.2015, 92 Aufrufe): kein Vortrag,
@@ -214,7 +218,7 @@ pub const EINTRAEGE: &[Eintrag] = &[
         datum: "15.06.2022",
         titel: "Borderline Persönlichkeitsstörung",
         url: "https://adhs.expert/2022/06/15/borderline-persoenlichkeitsstoerung/",
-        woerter: 6561,
+        woerter: 6508,
         aufrufe: 78,
         ocr: false,
     },
@@ -910,7 +914,7 @@ pub const EINTRAEGE: &[Eintrag] = &[
         datum: "15.06.2022",
         titel: "Geschichte der Sozialpsychiatrie bezogen auf die aufsuchende Familienarbeit",
         url: "https://adhs.expert/2022/06/15/geschichte-der-sozialpsychiatrie-bezogen-auf-die-aufsuchende-familienarbeit/",
-        woerter: 2993,
+        woerter: 2966,
         aufrufe: 16,
         ocr: false,
     },

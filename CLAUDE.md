@@ -155,6 +155,16 @@ Zur Textgewinnung aus den PDFs:
   trennt es ein Wort und muss beim Zusammenfügen verschwinden, mitten in der
   Zeile ist es der sichtbare Bindestrich und muss bleiben. Wer es pauschal
   entfernt, macht aus «Therapie-Familien» ein «TherapieFamilien».
+- **Ligaturen können ganz aus dem Wort fallen.** Bei PDFs, die macOS Quartz
+  erzeugt hat, tragen die Glyphen ff, fi, fl, ffi und ffl keine brauchbare
+  Zuordnung; beim Auslesen bleibt an ihrer Stelle ein **Leerzeichen**
+  («Begri » statt «Begriff», «häu g» statt «häufig», «Back sch» statt
+  «Backfisch»), und die Glyphen selbst landen als verwaiste Zeilen am
+  Seitenende. `pdffonts` zeigt davon nichts, der übrige Text ist sauber.
+  `tools/ligatur.py` setzt sie wieder ein – gegen ein Wörterbuch aus allen
+  anderen Beiträgen, in denen dieselben Wörter korrekt stehen. Erst die
+  verwaisten Glyphen entfernen, dann die Lücken füllen. Betroffen waren im
+  September 2026 zwei Beiträge; alle 1174 wurden geprüft.
 - **Bei eng ausgetriebenem Blocksatz verschluckt `pdftotext` Wortabstände**
   und liefert `BaselMedizin,interessiertesich` als ein Token. Die Leerstellen
   fehlen im PDF selbst, `pdftohtml -xml` hilft also nicht. An Satzzeichen und
