@@ -258,7 +258,7 @@ pub const EINTRAEGE: &[Eintrag] = &[
         datum: "04.12.2023",
         titel: "ADHS, ADS, Hypersensibilität und Autismus",
         url: "https://adhs.expert/2023/12/04/adhs-ads-hypersensibilitaet-und-autismus/",
-        woerter: 5396,
+        woerter: 5395,
         aufrufe: 62,
         ocr: false,
     },
