@@ -24,6 +24,11 @@
 // Zeitplan, Namensetiketten, Spesen - mit drei fremden Mailadressen im
 // Klartext. Der zweite (12 Aufrufe) war wie "Psychotherapie und Coaching" das
 // Praxisprofil einer Kollegin, mit Praxisadresse, Mailadresse und Handynummer.
+// Am 23. Oktober 2026 kamen vier Dubletten dazu: 2021 war eine Reihe im Oktober
+// ein zweites Mal als "Podcast:" veroeffentlicht worden, und eine Weiterbildung
+// lag dreifach vor. Zwei Eintraege mit demselben Transkript sind absichtlich
+// geblieben - "Praevention durch richtig Handeln" vom 15.03.2021 traegt die
+// unbearbeitete Aufnahme, der vom 10.05.2021 die bearbeitete.
 
 pub struct Eintrag {
     pub datum: &'static str,
@@ -367,7 +372,7 @@ pub const EINTRAEGE: &[Eintrag] = &[
         datum: "05.07.2017",
         titel: "“Bindung – was die Welt zusammenhält“",
         url: "https://adhs.expert/2017/07/05/bindung-was-die-welt-zusammenhaelt/",
-        woerter: 144,
+        woerter: 4547,
         aufrufe: 49,
         ocr: false,
     },
@@ -631,7 +636,7 @@ pub const EINTRAEGE: &[Eintrag] = &[
         datum: "12.11.2018",
         titel: "Rolle der Frau in der heutigen Gesellschaft",
         url: "https://adhs.expert/2018/11/12/rolle-der-frau-in-der-heutigen-gesellschaft/",
-        woerter: 102,
+        woerter: 8982,
         aufrufe: 26,
         ocr: false,
     },
@@ -688,14 +693,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         titel: "Muttersprache, Vatersprache",
         url: "https://adhs.expert/2017/04/17/muttersprache_vatersprache/",
         woerter: 6899,
-        aufrufe: 23,
-        ocr: false,
-    },
-    Eintrag {
-        datum: "05.10.2021",
-        titel: "Podcast: Woher kommt die Schizophrenie?",
-        url: "https://adhs.expert/2021/10/05/podcast-woher-kommt-die-schizophrenie/",
-        woerter: 7916,
         aufrufe: 23,
         ocr: false,
     },
@@ -903,7 +900,7 @@ pub const EINTRAEGE: &[Eintrag] = &[
         datum: "08.02.2017",
         titel: "Spannungsfeld zwischen Psychologie, Religion und sozialer Verantwortung",
         url: "https://adhs.expert/2017/02/08/spannungsfeld-zwischen-psychologie-religion-und-sozialer-verantwortung/",
-        woerter: 209,
+        woerter: 9541,
         aufrufe: 16,
         ocr: false,
     },
@@ -1020,14 +1017,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         ocr: false,
     },
     Eintrag {
-        datum: "14.09.2021",
-        titel: "Prävention durch richtig Handeln im kritischen Augenblick",
-        url: "https://adhs.expert/2021/09/14/praevention-durch-richtig-handeln-im-kritischen-augenblick-2/",
-        woerter: 30275,
-        aufrufe: 13,
-        ocr: false,
-    },
-    Eintrag {
         datum: "19.09.2022",
         titel: "Herkunftssystem von Pflegekindern, Genderthematik",
         url: "https://adhs.expert/2022/09/19/herkunftssystem-von-pflegekindern-genderthematik/",
@@ -1140,14 +1129,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         ocr: false,
     },
     Eintrag {
-        datum: "05.10.2021",
-        titel: "Podcast: Welche Schulen brauchen die Kinder von heute?",
-        url: "https://adhs.expert/2021/10/05/podcast-welche-schulen-brauchen-die-kinder-von-heute/",
-        woerter: 7496,
-        aufrufe: 10,
-        ocr: false,
-    },
-    Eintrag {
         datum: "21.11.2022",
         titel: "HotA als Erziehungsmediation zwischen Kind, Eltern und Schule",
         url: "https://adhs.expert/2022/11/21/hota-als-erziehungsmediation-zwischen-kind-eltern-und-schule/",
@@ -1192,14 +1173,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         titel: "Versteckte Kosten",
         url: "https://adhs.expert/2020/04/17/versteckte-kosten/",
         woerter: 281,
-        aufrufe: 7,
-        ocr: false,
-    },
-    Eintrag {
-        datum: "05.10.2021",
-        titel: "Was braucht es für die Ausbildung unserer nächsten Generation?",
-        url: "https://adhs.expert/2021/10/05/was-braucht-es-fuer-die-ausbildung-unserer-naechsten-generation-2/",
-        woerter: 7979,
         aufrufe: 7,
         ocr: false,
     },

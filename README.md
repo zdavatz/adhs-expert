@@ -37,6 +37,20 @@ Kontaktdaten in einem Text, der nicht von ihr stammt:
   «Psychotherapie und Coaching» nicht ihr Text, sondern eine fremde
   Arbeitsbeschreibung mit Praxisadresse, Mailadresse und Handynummer.
 
+Vier weitere sind am 23. Oktober 2026 als Dubletten in den Papierkorb gewandert.
+Ein Vergleich der Transkripte aller 1170 Beiträge über ihre Prüfsumme ergab vier
+Gruppen mit zeichengleichem Text, alle aus dem Jahr 2021, als eine Reihe im
+Oktober ein zweites Mal als «Podcast:» veröffentlicht wurde. Behalten wurde
+jeweils der Beitrag mit dem besseren Titel und Lead:
+
+- «Prävention durch richtig Handeln im kritischen Augenblick» vom 14.9.2021 —
+  dieselbe Weiterbildung lag dreifach vor. Der Beitrag vom 15.3.2021 ist
+  geblieben, obwohl auch sein Text doppelt ist: Er trägt die unbearbeitete
+  Aufnahme, der behaltene vom 10.5.2021 die von Shelter Schweiz bearbeitete.
+- «Was braucht es für die Ausbildung unserer nächsten Generation» vom 5.10.2021
+- «Podcast: Welche Schulen brauchen die Kinder von heute?»
+- «Podcast: Woher kommt die Schizophrenie?»
+
 Beim Durchgehen aller Einträge unter 1200 Wörtern im Oktober 2026 zeigte sich
 umgekehrt, dass eine kleine Wortzahl meist nicht Leere bedeutet, sondern einen
 Beitrag, dessen Volltext nie übernommen wurde: Im Beitrag steht nur die
@@ -45,10 +59,18 @@ oder als Transkript-PDF daneben liegt. Bei «Jugendliche zwischen Stuhl und Bank
 beim Berufseinstieg» ist das am 23. Oktober 2026 nachgeholt worden — aus 275
 wurden 8220 Wörter. Dort stand unter der Überschrift «Transkript» bis dahin das
 Workshop-Handout statt des Transkripts; es heisst jetzt «Unterlagen zum
-Workshop». Offen sind «Bindung – was die Welt zusammenhält», «Rolle der Frau in
-der heutigen Gesellschaft», «Spannungsfeld zwischen Psychologie, Religion und
-sozialer Verantwortung», «Einladung zum Jubiläumsanlass 20 Jahre VASK Schweiz»
-und «Diplom- und Abschlussfeier Mütterberaterinnen».
+Workshop». Am selben Tag sind drei weitere nachgetragen worden: «Spannungsfeld
+zwischen Psychologie, Religion und sozialer Verantwortung» (209 → 9541 Wörter),
+«Rolle der Frau in der heutigen Gesellschaft» (102 → 8982) und «Bindung – was
+die Welt zusammenhält» (144 → 4547). Die Transkripte lagen in allen Fällen
+bereits als PDF im Beitrag verlinkt oder auf ganglion.ch bereit; dort führt
+`https://ganglion.ch/pdf/<name>.pdf` direkt auf die Datei.
+
+Bei drei Beiträgen ist nichts zu holen: Das PDF zum Jubiläumsanlass von VASK
+Schweiz ist ein Bildscan ohne Textebene, zur Diplomfeier der Mütterberaterinnen
+gibt es nur das Handout, das schon im Beitrag steht, und «Gewalt in Familie und
+Beziehungen» ist eine Kursausschreibung ohne Vortragsaufnahme — kurz, aber
+vollständig.
 
 Zwölf weitere Beiträge trugen den Spaltensatz einer Zeitungs- oder
 Zeitschriftenseite: `pdftotext -layout` hatte die Nachbarspalten mitgezogen, in
@@ -81,7 +103,7 @@ Google Analytics ist auf adhs.expert nicht eingebunden.
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
-| `src/eintraege.rs` | generierte Daten: 154 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
+| `src/eintraege.rs` | generierte Daten: 150 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
 | `fonts/` | DejaVu Sans, wird ins PDF eingebettet |
 
 ## Hyperlinks

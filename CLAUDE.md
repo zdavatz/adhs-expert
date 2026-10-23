@@ -97,13 +97,38 @@ OCR-Fall und, im September 2026, «Perfektionismus und Prokrastination»
 einer Kollegin samt Kontaktdaten). Im Oktober 2026 kamen «Ronni Rocket»
 (Organisationsblatt einer Matinée – Zeitplan, Namensetiketten, Spesen – mit drei
 fremden Mailadressen) und ein zweites Praxisprofil einer Kollegin (wieder
-nicht ihr Text, mit Praxisadresse, Mailadresse und Handynummer) dazu.
+nicht ihr Text, mit Praxisadresse, Mailadresse und Handynummer) dazu, und am
+23. Oktober vier Dubletten (siehe unten).
 
 Gelöscht wird über die REST-API mit dem Anwendungspasswort aus
 `~/.config/adhs-expert/credentials` (Muster in `tools/apply_one.py`). Ein
 `DELETE /wp-json/wp/v2/posts/<id>` legt den Beitrag in den Papierkorb und ist
 umkehrbar; erst `?force=true` löscht endgültig. Vorher den Beitrag als JSON
 sichern – der Papierkorb wird nach 30 Tagen von WordPress selber geleert.
+
+**Dubletten findet man über die Prüfsumme des Transkripts.** Im Oktober 2021
+wurde eine Reihe ein zweites Mal als «Podcast:» veröffentlicht; ausserdem lag
+eine Weiterbildung dreifach vor. Ein Durchgang über alle 1170 Beiträge – Text
+nach `<h2>Transkript</h2>` normalisieren, SHA bilden, gruppieren – ergab vier
+Gruppen mit zeichengleichem Text. Dabei zweierlei beachten: erstens, welcher
+Beitrag von einem LinkedIn-Post verlinkt ist (der muss bleiben, sonst bricht der
+Link), zweitens, ob die Beiträge dieselbe Audiodatei tragen. Bei «Prävention
+durch richtig Handeln» war das nicht so – der Beitrag vom 15.3.2021 trägt die
+unbearbeitete Aufnahme (441 MB), der vom 10.5.2021 die von Shelter Schweiz
+bearbeitete (228 MB). Darum stehen dort bewusst zwei Einträge mit demselben
+Text in `EINTRAEGE`.
+
+**Die Vortragsliste auf ganglion.ch ist die Gegenprobe.**
+`https://ganglion.ch/html/vortraege.php` führt über 450 Vorträge mit
+Vortragsdatum und PDF; die Datei hängt an
+`/html/php/download_vortrag.php?id=<id>&download=pdf` oder direkt unter
+`https://ganglion.ch/pdf/<name>.pdf` (der Name folgt keinem Muster, ein
+Verzeichnislisting gibt der Server nicht her). Die Titel weichen ab, darum über
+`difflib` auf normalisierten Titeln abgleichen. **Das Datum dort ist das
+Vortrags-, das auf WordPress das Publikationsdatum** – sie weichen bei neun von
+zehn Beiträgen ab, meist um Tage. Gross und darum erklärungsbedürftig sind
+«Cannabis und Schizophrenie» (Beitrag 2017, Vortrag 2003) und «Umgang mit der
+Gefühlswelt in der Pubertät» Teil 1 und 2 (Beitrag 2021, Vortrag 2014).
 
 **Eine kleine `woerter`-Zahl heisst nicht, dass der Beitrag nichts hergibt.**
 Mehrere Einträge mit dreistelliger Wortzahl sind Vorträge, deren Volltext nie in
@@ -124,9 +149,16 @@ falsche PDF angehängt worden. Der Beitrag sah damit aus, als sei er erledigt,
 und `tools/wp.py woerter()` zählte das Handout. Vor dem Nachtragen also
 anschauen, was unter der Überschrift wirklich steht; das Handout bekommt eine
 eigene Überschrift (dort «Unterlagen zum Workshop»), damit je Beitrag genau ein
-`<h2>Transkript</h2>` bleibt. Das Nachtragen selbst macht
+`<h2>Transkript</h2>` bleibt. Bei «Rolle der Frau» und «Bindung» hat der
+Benutzer die andere Variante gewählt: Einladung beziehungsweise Kurztext bleiben
+zuvorderst **innerhalb** des Transkriptabschnitts, der Vortrag folgt darunter –
+dann zählt `woerter()` beides. Das Nachtragen selbst macht
 `tools/verbatim.py build(alt_html, pdf, heading="Transkript")`; die Assertion,
 die den zurückverwandelten HTML-Text mit `pdftotext` vergleicht, muss durchgehen.
+
+Nicht automatisch löschen, was dünn aussieht: `tools/wp.py woerter()` splittet
+nur auf `<h2>Transkript</h2>` und zählt bei den vier Beiträgen mit der
+Überschrift «Transkript (OCR)» den ganzen Beitrag mit.
 
 ## Fachliches, das im Code nicht steht
 
