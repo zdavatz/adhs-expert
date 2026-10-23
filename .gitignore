@@ -19,3 +19,6 @@ __pycache__/
 # enthält eine fremde Mailadresse - bleibt lokal
 entwurf_curtins.py
 token_compose.json
+
+# LinkedIn-Auswertung ihres Kontos - gehoert nicht ins oeffentliche Repo
+AggregateAnalytics*.xlsx

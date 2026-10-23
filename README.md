@@ -26,6 +26,30 @@ eine 404-Seite. Im September 2026 traf das drei Beiträge:
 - «Psychotherapie und Coaching» — nicht ihr Text, sondern die
   Arbeitsbeschreibung einer Kollegin samt Kontaktdaten.
 
+Im Oktober 2026 kamen zwei weitere dazu, beide aus demselben Grund — fremde
+Kontaktdaten in einem Text, der nicht von ihr stammt:
+
+- «Ronni Rocket – Wie das ADHS siegt und wie es scheitert» — kein Vortrag,
+  sondern das Organisationsblatt einer Matinée im Kino Odeon Brugg: Zeitplan,
+  Namensetiketten, Spesenrückerstattung, mögliche Podiumsfragen, dazu drei
+  Mailadressen dritter Personen im Klartext.
+- Ein zweiter Beitrag mit dem Praxisprofil einer Kollegin — wie
+  «Psychotherapie und Coaching» nicht ihr Text, sondern eine fremde
+  Arbeitsbeschreibung mit Praxisadresse, Mailadresse und Handynummer.
+
+Beim Durchgehen aller Einträge unter 1200 Wörtern im Oktober 2026 zeigte sich
+umgekehrt, dass eine kleine Wortzahl meist nicht Leere bedeutet, sondern einen
+Beitrag, dessen Volltext nie übernommen wurde: Im Beitrag steht nur die
+Einladung, das Abstract oder das Tagungsprogramm, während der Vortrag als Audio
+oder als Transkript-PDF daneben liegt. Bei «Jugendliche zwischen Stuhl und Bank
+beim Berufseinstieg» ist das am 23. Oktober 2026 nachgeholt worden — aus 275
+wurden 8220 Wörter. Dort stand unter der Überschrift «Transkript» bis dahin das
+Workshop-Handout statt des Transkripts; es heisst jetzt «Unterlagen zum
+Workshop». Offen sind «Bindung – was die Welt zusammenhält», «Rolle der Frau in
+der heutigen Gesellschaft», «Spannungsfeld zwischen Psychologie, Religion und
+sozialer Verantwortung», «Einladung zum Jubiläumsanlass 20 Jahre VASK Schweiz»
+und «Diplom- und Abschlussfeier Mütterberaterinnen».
+
 Zwölf weitere Beiträge trugen den Spaltensatz einer Zeitungs- oder
 Zeitschriftenseite: `pdftotext -layout` hatte die Nachbarspalten mitgezogen, in
 fünf Fällen samt fremder Artikel und Inserate. Sie wurden im September 2026
@@ -57,7 +81,7 @@ Google Analytics ist auf adhs.expert nicht eingebunden.
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
-| `src/eintraege.rs` | generierte Daten: 156 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
+| `src/eintraege.rs` | generierte Daten: 154 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
 | `fonts/` | DejaVu Sans, wird ins PDF eingebettet |
 
 ## Hyperlinks

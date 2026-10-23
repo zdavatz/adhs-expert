@@ -19,6 +19,11 @@
 // das falsche Datum und heisst darum jetzt 29.03.2015 statt 16.10.2018.
 // "Psychotherapie und Coaching" (74 Aufrufe) war nicht ihr Text, sondern die
 // Arbeitsbeschreibung einer Kollegin samt Kontaktdaten.
+// Am 23. Oktober 2026 zwei weitere: "Ronni Rocket" (40 Aufrufe) war kein
+// Vortrag, sondern das Organisationsblatt einer Matinee im Kino Odeon Brugg -
+// Zeitplan, Namensetiketten, Spesen - mit drei fremden Mailadressen im
+// Klartext. Der zweite (12 Aufrufe) war wie "Psychotherapie und Coaching" das
+// Praxisprofil einer Kollegin, mit Praxisadresse, Mailadresse und Handynummer.
 
 pub struct Eintrag {
     pub datum: &'static str,
@@ -407,14 +412,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         ocr: false,
     },
     Eintrag {
-        datum: "10.10.2019",
-        titel: "Ronni Rocket – Wie das ADHS siegt und wie es scheitert",
-        url: "https://adhs.expert/2019/10/10/ronni-rocket-wie-das-adhs-siegt-und-wie-es-scheitert/",
-        woerter: 297,
-        aufrufe: 40,
-        ocr: false,
-    },
-    Eintrag {
         datum: "08.12.2020",
         titel: "Warum fallen Menschen mit ADHS häufiger in eine Depression und wie kommen sie wieder raus?",
         url: "https://adhs.expert/2020/12/08/warum-fallen-menschen-mit-adhs-haeufiger-in-eine-depression-und-wie-kommen-sie-wieder-raus/",
@@ -522,7 +519,7 @@ pub const EINTRAEGE: &[Eintrag] = &[
         datum: "13.06.2016",
         titel: "Jugendliche zwischen Stuhl und Bank beim Berufseinstieg",
         url: "https://adhs.expert/2016/06/13/jugendliche-zwischen-stuhl-und-bank-beim-berufseinstieg/",
-        woerter: 275,
+        woerter: 8220,
         aufrufe: 32,
         ocr: false,
     },
@@ -1059,14 +1056,6 @@ pub const EINTRAEGE: &[Eintrag] = &[
         titel: "Gesellschaft unter Hochdruck – was macht dies mit unserer Gesundheit",
         url: "https://adhs.expert/2014/06/15/gesellschaft-unter-hochdruck-was-macht-dies-mit-unserer-gesundheit/",
         woerter: 28576,
-        aufrufe: 12,
-        ocr: false,
-    },
-    Eintrag {
-        datum: "04.05.2016",
-        titel: "PSYCHOTHERAPIE UND BERATUNG  Franziska Knapp",
-        url: "https://adhs.expert/2016/05/04/psychotherapie-und-beratung-franziska-knapp/",
-        woerter: 127,
         aufrufe: 12,
         ocr: false,
     },

@@ -94,13 +94,39 @@ OCR-Fall und, im September 2026, «Perfektionismus und Prokrastination»
 (Teilnehmeraufruf statt Vortrag), «Jeder Hundertste erkrankt an Schizophrenie»
 (dasselbe Interview wie «Emotionale Monsterwelle», dieselbe Zeitungsseite) und
 «Psychotherapie und Coaching» (nicht ihr Text, sondern die Arbeitsbeschreibung
-einer Kollegin samt Kontaktdaten).
+einer Kollegin samt Kontaktdaten). Im Oktober 2026 kamen «Ronni Rocket»
+(Organisationsblatt einer Matinée – Zeitplan, Namensetiketten, Spesen – mit drei
+fremden Mailadressen) und ein zweites Praxisprofil einer Kollegin (wieder
+nicht ihr Text, mit Praxisadresse, Mailadresse und Handynummer) dazu.
 
 Gelöscht wird über die REST-API mit dem Anwendungspasswort aus
 `~/.config/adhs-expert/credentials` (Muster in `tools/apply_one.py`). Ein
 `DELETE /wp-json/wp/v2/posts/<id>` legt den Beitrag in den Papierkorb und ist
 umkehrbar; erst `?force=true` löscht endgültig. Vorher den Beitrag als JSON
 sichern – der Papierkorb wird nach 30 Tagen von WordPress selber geleert.
+
+**Eine kleine `woerter`-Zahl heisst nicht, dass der Beitrag nichts hergibt.**
+Mehrere Einträge mit dreistelliger Wortzahl sind Vorträge, deren Volltext nie in
+den Beitrag kam: Im Beitrag steht nur die Einladung, das Abstract oder das
+Tagungsprogramm, während der Vortrag als Audio oder als Transkript-PDF daneben
+liegt – zum Teil im Beitrag selbst verlinkt. Beim Durchgehen aller Einträge
+unter 1200 Wörtern (Oktober 2026) traf das auf «Bindung – was die Welt
+zusammenhält», «Rolle der Frau in der heutigen Gesellschaft», «Spannungsfeld
+zwischen Psychologie, Religion und sozialer Verantwortung», «Jugendliche
+zwischen Stuhl und Bank beim Berufseinstieg», «Einladung zum Jubiläumsanlass
+20 Jahre VASK Schweiz» und «Diplom- und Abschlussfeier Mütterberaterinnen» zu.
+Bevor so ein Beitrag gelöscht wird, prüfen, ob der Vortrag noch irgendwo liegt.
+
+**Und: die Überschrift `<h2>Transkript</h2>` trägt nicht überall das
+Transkript.** Bei «Jugendliche zwischen Stuhl und Bank» stand darunter das
+Workshop-Handout aus dem Abstract-PDF – beim ursprünglichen Durchlauf war das
+falsche PDF angehängt worden. Der Beitrag sah damit aus, als sei er erledigt,
+und `tools/wp.py woerter()` zählte das Handout. Vor dem Nachtragen also
+anschauen, was unter der Überschrift wirklich steht; das Handout bekommt eine
+eigene Überschrift (dort «Unterlagen zum Workshop»), damit je Beitrag genau ein
+`<h2>Transkript</h2>` bleibt. Das Nachtragen selbst macht
+`tools/verbatim.py build(alt_html, pdf, heading="Transkript")`; die Assertion,
+die den zurückverwandelten HTML-Text mit `pdftotext` vergleicht, muss durchgehen.
 
 ## Fachliches, das im Code nicht steht
 
