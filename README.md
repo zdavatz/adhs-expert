@@ -102,12 +102,14 @@ Google Analytics ist auf adhs.expert nicht eingebunden.
 
 `scannen` holt Papiervorlagen über den automatischen Einzug des Epson GT-2500
 und legt ein PDF an, das Datum und Titel des Vortrags trägt — im Dateinamen
-(`2014-03-05 Titel.pdf`) und in den Dokumenteigenschaften.
+(`2014-03-05 Titel.pdf`, nur der erste Titelblock, höchstens 60 Zeichen) und
+in den Dokumenteigenschaften (voller Titel). Die PDFs liegen in `scan/` und
+werden mit dem Repo committet; `--ordner` legt sie anderswo ab.
 
 ```bash
 brew install sane-backends
-cargo run --release --bin scannen -- --ordner ~/Documents
-cargo run --release --bin scannen -- --datum 5.3.2014 --titel "Titel" --ordner ~/Documents
+cargo run --release --bin scannen
+cargo run --release --bin scannen -- --datum 5.3.2014 --titel "Titel"
 ```
 
 Gescannt wird einseitig, A4, 300 dpi in Graustufen (`--farbe` für Farbe,
@@ -134,6 +136,7 @@ Einzelscan lässt den Einzug das nächste Blatt vorladen und ungescannt auswerfe
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
 | `src/scannen.rs` | Vorträge über den Einzug des GT-2500 scannen, Datum und Titel erkennen |
+| `scan/` | gescannte Vorträge als durchsuchbare PDFs |
 | `src/eintraege.rs` | generierte Daten: 150 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
 | `fonts/` | DejaVu Sans, wird ins PDF eingebettet |
 

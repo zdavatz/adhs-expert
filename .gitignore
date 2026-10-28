@@ -23,6 +23,7 @@ token_compose.json
 # LinkedIn-Auswertung ihres Kontos - gehoert nicht ins oeffentliche Repo
 AggregateAnalytics*.xlsx
 
-# Gescannte Vorträge aus src/scannen.rs - gehören nicht ins öffentliche Repo
-[12][0-9][0-9][0-9]-*.pdf
-ohne Datum *.pdf
+# Gescannte Vorträge gehören nach scan/ und werden dort committet. Was
+# versehentlich im Hauptverzeichnis landet, bleibt draussen.
+/[12][0-9][0-9][0-9]-*.pdf
+/ohne Datum *.pdf

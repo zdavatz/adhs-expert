@@ -19,7 +19,7 @@
 // Silicon ohne Rosetta nicht.
 //
 //   brew install sane-backends
-//   cargo run --release --bin scannen -- --ordner ~/Documents
+//   cargo run --release --bin scannen
 //
 // Immer `--batch` scannen: ein Einzelscan (`scanimage -o`) lässt den Einzug
 // das nächste Blatt vorladen und ungescannt auswerfen.
@@ -28,7 +28,7 @@
 // gestellt, eine Seite je Bild, Seitengrösse aus Pixelzahl und Auflösung.
 //
 // Weitere Schalter: --dpi 300, --farbe (Vorgabe Graustufen),
-// --ordner DIR (Vorgabe: aktuelles Verzeichnis), --geraet <SANE-Gerät>
+// --ordner DIR (Vorgabe: scan/, wird angelegt), --geraet <SANE-Gerät>
 // (Vorgabe: das erste epson2-Gerät aus `scanimage -L`),
 // --lesen BILD… (nur Erkennung zeigen, nichts scannen),
 // --aus BILD… (PDF aus schon gescannten JPEGs, nichts scannen).
@@ -62,7 +62,7 @@ fn optionen() -> anyhow::Result<Optionen> {
         titel: None,
         dpi: 300,
         farbe: false,
-        ordner: PathBuf::from("."),
+        ordner: PathBuf::from("scan"),
         geraet: None,
         lesen: Vec::new(),
         aus: Vec::new(),
@@ -194,6 +194,7 @@ fn lauf() -> anyhow::Result<()> {
     });
     eprintln!("Datum: {datum}\nTitel: {titel}");
 
+    std::fs::create_dir_all(&opt.ordner).with_context(|| format!("{}", opt.ordner.display()))?;
     // Nie überschreiben: bei gleichem Namen eine Nummer anhängen.
     let mut ziel = opt.ordner.join(dateiname(&datum, &titel, 1));
     let mut n = 2;
