@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-121 PDFs, 512 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+122 PDFs, 519 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -186,6 +186,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Aussterbende_Familien_Welches_therapeutische_Vorgehen_wäre_03.10.1988.pdf` | 1 (Kurs II in Familientheorie, Schreibmaschine; «… um Familien vor dem Aussterben zu bewahren») |
 | `Familientherapeutische_Interventionen_in_der_22.11.1988.pdf` | 4 (Kurs in Familientheorie II, Schreibmaschine; Datum vom Schluss des Skripts) |
 | `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989.pdf` | 8 (Kursarbeit von G. Petrazzo, Familientherapie Kurs II; mit Beiblatt zu den Redeverboten des Bundesrats; Seite 6 lag doppelt) |
+| `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989_2.pdf` | 7 (überarbeitete Fassung, dichter gesetzt; Seite 7 Literaturliste im Querformat) |
 | `Emanzipation_eines_Partners_und_die_Folgen_auf_die_18.04.1989.pdf` | 2 (Referat von F. Haller, Kurs II Familientherapie; vier anonyme Paarfälle; Adresse entfernt) |
 | `Prävention_sinnvoller_Ansatz_bei_gefährdeten_Familien_mit_03.07.1989.pdf` | 3 (Kursarbeit von E. Maarse Bäbler, Familientheoriekurs II; ein Blatt beidseitig) |
 | `Führungsposition_im_Zusammenhang_mit_Geschwisterposition_05.11.1989.pdf` | 3 (Familienberatung Kurs II; Arbeit der Kursteilnehmerin Heidi Deplazes-Kunz nach Walter Toman, Schreibmaschine) |
