@@ -138,6 +138,20 @@ Was dabei Zeit gekostet hat:
   `tesseract <bild> - -l deu` mit `pdftotext` der fertigen Seite vergleicht.
   Tesseract-Eigenheiten: «www,» statt «www.» (wird beim Verlinken
   korrigiert), «l» statt «I», Logos als Buchstabensalat («Ga ngl ION»).
+- **Tesseract liest das doppelt vergrösserte Bild.** Bei 150 dpi übersah es
+  unterstrichenen Text samt der Zeile («www.ganglion.ch» unter der
+  Autorenzeile, darum kein Link) und fast alle kleinen Seitenzahlen. Die
+  Fusszeile (unterstes Achtel) wird zusätzlich für sich gelesen, einmal
+  normal, einmal nur mit Ziffern und Strichen (`--psm 11`, Whitelist).
+- **Fusszeilen-Zahlen nur als Hinweis.** Der Ziffern-Durchgang liest auf
+  alten Seiten Flecken als «5» oder «0», und «- 5 -» wurde auch schon «9».
+  Als er mitentscheiden durfte, verschmolz er zwei Vorträge. Getrennt wird
+  darum nur nach der Seitenzahl im Seitentext (`seitenzahl`) und dem Kopf;
+  die Fusszeilen-Zahlen lösen nur «fehlt eine Seite?» aus. Vom
+  Ziffern-Durchgang zählt nur eine eingefasste Zahl («-5-»).
+- **Der Benutzer nennt die Seitenzahl des Stapels** («5 Seiten»). Mit der
+  Zahl der eingezogenen Blätter vergleichen – zweimal fehlte ein Blatt, ohne
+  dass eine Lücke gemeldet wurde.
 - **Kontaktdaten:** `heikle_stellen()` findet Mail-, Strassen- und
   Telefonangaben in der Zeile; die betroffenen Wörter fallen aus dem Text,
   ihre Tesseract-Wortkästen werden übermalt. Übermalt wird im JPEG

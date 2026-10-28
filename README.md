@@ -127,7 +127,13 @@ Dokumenteigenschaften heisst es dann «gescannt am» statt «Vortrag vom».
 Seitenbildern, jedes an seiner Stelle; das PDF lässt sich vollständig
 markieren und durchsuchen. Erkannte Webadressen sind anklickbar. Die
 Erkennung kann sich verlesen («www,ganglion.ch», «l Einleitung»), lässt aber
-keine Zeile aus.
+keine Zeile aus. Gelesen wird das doppelt vergrösserte Bild; erst so erfasst
+Tesseract auch unterstrichenen Text und die kleinen Seitenzahlen.
+
+**Fehlende Seiten:** Die Seitenzahl in der Fusszeile wird eigens vergrössert
+gelesen. Springt sie («-3-», dann «-5-»), meldet das Programm «fehlt eine
+Seite?». Weil auch diese Lesung irren kann, entscheidet sie nie über die
+Trennung der Vorträge.
 
 Bis Oktober 2026 lief hier Apples Vision. Aus dem Rust-Programm heraus liess
 es auf vielen Seiten ganze Zeilen aus – beim «Trotzenden Kind» fehlte rund ein

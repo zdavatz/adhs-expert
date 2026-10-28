@@ -164,7 +164,7 @@ fn scannen(opt: &Optionen, tmp: &Path) -> anyhow::Result<Vec<PathBuf>> {
 fn lauf() -> anyhow::Result<()> {
     let opt = optionen()?;
     if !opt.lesen.is_empty() {
-        let texte = erkennen(&opt.lesen, opt.dpi)?;
+        let (texte, nummern) = erkennen(&opt.lesen, opt.dpi)?;
         // SCAN_ZEILEN=1 zeigt jede erkannte Zeile mit ihrem Kasten
         if std::env::var_os("SCAN_ZEILEN").is_some() {
             for (n, zeilen) in texte.iter().enumerate() {
@@ -176,9 +176,13 @@ fn lauf() -> anyhow::Result<()> {
                 }
             }
         }
-        for teil in vortraege_trennen(&texte) {
+        for teil in vortraege_trennen(&texte, &nummern) {
             let texte = &texte[teil.clone()];
-            println!("Seiten {}-{}", teil.start + 1, teil.end);
+            let zahlen: Vec<String> = nummern[teil.clone()]
+                .iter()
+                .map(|n| n.map_or("?".into(), |n| n.to_string()))
+                .collect();
+            println!("Seiten {}-{} (Seitenzahlen {})", teil.start + 1, teil.end, zahlen.join(" "));
             println!("  Datum: {}", datum_finden(texte).as_deref().unwrap_or("(keines gefunden)"));
             let titel = texte.first().and_then(|z| titel_finden(z));
             println!("  Titel: {}", titel.as_deref().unwrap_or("(keiner gefunden)"));
@@ -199,11 +203,11 @@ fn lauf() -> anyhow::Result<()> {
     // Die Texterkennung läuft immer: sie liefert nicht nur Datum und Titel,
     // sondern auch die unsichtbare Textebene und die Links im PDF.
     eprintln!("Texterkennung über {} Seiten …", seiten.len());
-    let texte = match erkennen(&seiten, opt.dpi) {
+    let (texte, nummern) = match erkennen(&seiten, opt.dpi) {
         Ok(t) => t,
         Err(e) => {
             eprintln!("Hinweis: Texterkennung fehlgeschlagen, PDF ohne Textebene: {e:#}");
-            vec![Vec::new(); seiten.len()]
+            (vec![Vec::new(); seiten.len()], vec![None; seiten.len()])
         }
     };
     // Eine Seite ohne jeden Text ist fast immer eine Rückseite: das Blatt lag
@@ -231,7 +235,7 @@ fn lauf() -> anyhow::Result<()> {
     }
 
     // Mehrere Vorträge in einem Stapel: je Vortrag ein PDF.
-    let teile = vortraege_trennen(&texte);
+    let teile = vortraege_trennen(&texte, &nummern);
     if teile.len() > 1 {
         eprintln!("{} Vorträge im Stapel erkannt.", teile.len());
     }
@@ -358,11 +362,17 @@ fn beginnt_vortrag(zeilen: &[Zeile], vorher: &[Zeile]) -> bool {
 /// beginnt einen Vortrag, jede andere setzt ihn fort. Ohne Seitenzahl gilt
 /// der Kopf (`beginnt_vortrag`). Lücken in der Zählung werden gemeldet - nach
 /// einem Papierstau fehlt sonst still eine Seite.
-fn vortraege_trennen(texte: &[Vec<Zeile>]) -> Vec<std::ops::Range<usize>> {
-    let nummern: Vec<Option<u32>> = texte.iter().map(|z| seitenzahl(z)).collect();
+///
+/// `nummern` sind die Seitenzahlen samt denen aus der vergrössert gelesenen
+/// Fusszeile. Sie dienen nur dem Lückenhinweis: getrennt wird allein nach
+/// dem, was im Seitentext steht (`seitenzahl`), denn ein Lesefehler in der
+/// Fusszeile («5» als «9», Flecken als «1») darf nie einen Vortrag
+/// zerschneiden oder zwei verschmelzen.
+fn vortraege_trennen(texte: &[Vec<Zeile>], nummern: &[Option<u32>]) -> Vec<std::ops::Range<usize>> {
+    let im_text: Vec<Option<u32>> = texte.iter().map(|z| seitenzahl(z)).collect();
     let mut starts = vec![0];
     for i in 1..texte.len() {
-        let neu = match nummern[i] {
+        let neu = match im_text[i] {
             Some(1) => true,
             Some(_) => false,
             None => beginnt_vortrag(&texte[i], &texte[i - 1]),
@@ -371,7 +381,11 @@ fn vortraege_trennen(texte: &[Vec<Zeile>]) -> Vec<std::ops::Range<usize>> {
             starts.push(i);
         } else if let (Some(a), Some(b)) = (nummern[i - 1], nummern[i]) {
             if b != a + 1 {
-                eprintln!("Hinweis: Scan-Seite {} trägt Seitenzahl {b}, die davor {a} - fehlt eine Seite?", i + 1);
+                eprintln!(
+                    "Hinweis: Scan-Seite {} trägt Seitenzahl {b}, die davor {a} - fehlt eine Seite? \
+                     (oder falsch gelesen; Fusszeile im Bild prüfen)",
+                    i + 1
+                );
             }
         }
     }
@@ -459,8 +473,43 @@ fn bild_schwaerzen(quelle: &Path, kaesten: &[[f64; 4]], ziel: &Path) -> anyhow::
 
 /// Datum und Titel aus den Seitenbildern.
 /// Die erkannten Zeilen jeder Seite.
-fn erkennen(seiten: &[PathBuf], dpi: u32) -> anyhow::Result<Vec<Vec<Zeile>>> {
-    seiten.iter().map(|s| ocr::zeilen(s, dpi)).collect()
+/// Die erkannten Zeilen jeder Seite und ihre Seitenzahl. Die Seitenzahl
+/// kommt aus dem Text der Seite oder, wo Tesseract sie dort übersieht, aus
+/// der vergrössert gelesenen Fusszeile.
+fn erkennen(seiten: &[PathBuf], dpi: u32) -> anyhow::Result<(Vec<Vec<Zeile>>, Vec<Option<u32>>)> {
+    let mut texte = Vec::new();
+    let mut nummern = Vec::new();
+    for s in seiten {
+        let (zeilen, fuss) = ocr::seite(s, dpi)?;
+        nummern.push(seitenzahl(&zeilen).or(fuss));
+        texte.push(zeilen);
+    }
+    Ok((texte, nummern))
+}
+
+/// Seitenzahl aus dem Ziffern-Durchgang: nur eine Zahl, die von Strichen
+/// eingefasst ist («-5-», «- 5 -»).
+fn ziffernzahl(text: &str) -> Option<u32> {
+    use std::sync::LazyLock;
+    static GEFASST: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"-+\s*(\d{1,3})\s*-+").unwrap());
+    // Eine einzelne Zahl ohne Striche nicht: auf alten Seiten liest dieser
+    // Durchgang aus Flecken und Buchstaben «5» oder «0».
+    GEFASST.captures(text)?[1].parse().ok()
+}
+
+/// Seitenzahl aus dem Text einer Fusszeile: die letzte Zeile, die mit einer
+/// Zahl endet («- 3 -», «Seite 3 von 7», «Knotenpunkt … -3-», «3»).
+fn fusszahl(text: &str) -> Option<u32> {
+    use std::sync::LazyLock;
+    static ENDE: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(r"(?i)(?:^|\s|[-–])(\d{1,3})(?:\s*(?:/|von)\s*\d{1,3})?\s*[-–]?\s*$").unwrap()
+    });
+    text.lines()
+        .map(str::trim)
+        .filter(|z| !z.is_empty())
+        .last()
+        .and_then(|z| ENDE.captures(z)?[1].parse().ok())
 }
 
 /// Texterkennung mit Tesseract (`brew install tesseract tesseract-lang`).
@@ -474,21 +523,67 @@ fn erkennen(seiten: &[PathBuf], dpi: u32) -> anyhow::Result<Vec<Vec<Zeile>>> {
 mod ocr {
     use anyhow::Context;
 
-    /// Zeilen einer Seite aus der TSV-Ausgabe von Tesseract.
-    pub fn zeilen(bild: &std::path::Path, dpi: u32) -> anyhow::Result<Vec<super::Zeile>> {
+    use std::sync::atomic::{AtomicUsize, Ordering};
+
+    /// Zeilen einer Seite und die Seitenzahl aus der Fusszeile.
+    ///
+    /// Gelesen wird das auf das Doppelte vergrösserte Bild: bei 150 dpi
+    /// übersah Tesseract unterstrichenen Text («www.ganglion.ch» unter der
+    /// Autorenzeile) samt der ganzen Zeile, und die kleinen Seitenzahlen
+    /// unten las es meist gar nicht. Die Fusszeile (unterstes Achtel) wird
+    /// zusätzlich für sich allein gelesen - so findet es die Seitenzahl auch
+    /// dort, wo es sie auf der ganzen Seite übergeht.
+    pub fn seite(bild: &std::path::Path, dpi: u32) -> anyhow::Result<(Vec<super::Zeile>, Option<u32>)> {
+        static ZAEHLER: AtomicUsize = AtomicUsize::new(0);
+        let n = ZAEHLER.fetch_add(1, Ordering::Relaxed);
+        let tmp = std::env::temp_dir();
+        let gross_pfad = tmp.join(format!("adhs-ocr-{}-{n}.png", std::process::id()));
+        let fuss_pfad = tmp.join(format!("adhs-ocr-{}-{n}-fuss.png", std::process::id()));
+
+        let bild_daten = image::open(bild).with_context(|| format!("{}", bild.display()))?.to_luma8();
+        let gross = image::imageops::resize(
+            &bild_daten,
+            bild_daten.width() * 2,
+            bild_daten.height() * 2,
+            image::imageops::FilterType::CatmullRom,
+        );
+        gross.save(&gross_pfad).with_context(|| format!("{}", gross_pfad.display()))?;
+        let fuss_hoehe = gross.height() / 8;
+        let fuss = image::imageops::crop_imm(&gross, 0, gross.height() - fuss_hoehe, gross.width(), fuss_hoehe)
+            .to_image();
+        fuss.save(&fuss_pfad).with_context(|| format!("{}", fuss_pfad.display()))?;
+
+        let dpi2 = (dpi * 2).to_string();
+        let ergebnis = tesseract(&gross_pfad, &["--dpi", &dpi2, "--psm", "3", "tsv"]).map(|t| tsv_lesen(&t));
+        let fusstext = tesseract(&fuss_pfad, &["--dpi", &dpi2, "--psm", "6"]).unwrap_or_default();
+        // Zweiter Durchgang nur mit Ziffern und Strichen, als verstreuter
+        // Text: die kleine «- 5 -» rechts liest der erste oft als «Bu» oder «I».
+        let ziffern = tesseract(
+            &fuss_pfad,
+            &["--dpi", &dpi2, "--psm", "11", "-c", "tessedit_char_whitelist=0123456789-"],
+        )
+        .unwrap_or_default();
+        // SCAN_FUSS=1 zeigt, was in der Fusszeile gelesen wurde
+        if std::env::var_os("SCAN_FUSS").is_some() {
+            eprintln!("Fuss {}: {:?} / Ziffern {:?}", bild.display(), fusstext, ziffern);
+        }
+        std::fs::remove_file(&gross_pfad).ok();
+        std::fs::remove_file(&fuss_pfad).ok();
+        let zahl = super::fusszahl(&fusstext).or_else(|| super::ziffernzahl(&ziffern));
+        Ok((ergebnis?, zahl))
+    }
+
+    fn tesseract(bild: &std::path::Path, args: &[&str]) -> anyhow::Result<String> {
         let aus = std::process::Command::new("tesseract")
             .arg(bild)
-            .args(["stdout", "-l", "deu", "--dpi", &dpi.to_string(), "--psm", "3", "tsv"])
+            .args(["stdout", "-l", "deu"])
+            .args(args)
             .output()
             .context("tesseract nicht gefunden - brew install tesseract tesseract-lang")?;
         if !aus.status.success() {
-            anyhow::bail!(
-                "tesseract {}: {}",
-                bild.display(),
-                String::from_utf8_lossy(&aus.stderr).trim()
-            );
+            anyhow::bail!("tesseract {}: {}", bild.display(), String::from_utf8_lossy(&aus.stderr).trim());
         }
-        Ok(tsv_lesen(&String::from_utf8_lossy(&aus.stdout)))
+        Ok(String::from_utf8_lossy(&aus.stdout).into_owned())
     }
 
     /// TSV-Spalten: level page block par line word left top width height conf text.
@@ -1115,7 +1210,7 @@ mod tests {
             vec![z("Votrag vom 20.11.2003", 0.05), z("Alkohol und Familie", 0.1)],
             vec![z("Fliesstext", 0.1)],
         ];
-        assert_eq!(vortraege_trennen(&texte), vec![0..2, 2..4]);
+        assert_eq!(vortraege_trennen(&texte, &nummern_aus(&texte)), vec![0..2, 2..4]);
     }
 
     #[test]
@@ -1129,7 +1224,7 @@ mod tests {
             vec![z("Familiendynamik", 0.05), z("Dr. med. U. Davatz", 0.1), z("www.ganglion.ch", 0.12)],
             vec![z("Fliesstext", 0.1), z("- 2 -", 0.95)],
         ];
-        assert_eq!(vortraege_trennen(&texte), vec![0..3, 3..5]);
+        assert_eq!(vortraege_trennen(&texte, &nummern_aus(&texte)), vec![0..3, 3..5]);
         assert_eq!(seitenzahl(&[z("Seite 3 von 7", 0.96)]), Some(3));
         assert_eq!(seitenzahl(&[z("2003", 0.5)]), None);
     }
@@ -1187,9 +1282,26 @@ mod tests {
             vec![z("Ga ngl 1ON Frau Dr. med. Ursula Davatz - www.ganglion.ch -", 0.04), z("In solchen", 0.08), z("Knotenpunkt menschlicher Beziehungen -3-", 0.935)],
             vec![z("Ga nglion Frau Dr, med. Ursula Davatz - www.gänglion.ch -", 0.04), z("- Gelingt es", 0.08), z("Knotenpunkt menschlicher Beziehungen -A-", 0.935)],
         ];
-        assert_eq!(vortraege_trennen(&texte), vec![0..4]);
+        assert_eq!(vortraege_trennen(&texte, &nummern_aus(&texte)), vec![0..4]);
         assert_eq!(seitenzahl(&texte[2]), Some(3));
         assert_eq!(seitenzahl(&texte[3]), None);
+    }
+
+    fn nummern_aus(texte: &[Vec<Zeile>]) -> Vec<Option<u32>> {
+        texte.iter().map(|z| seitenzahl(z)).collect()
+    }
+
+    #[test]
+    fn seitenzahl_aus_fusszeile() {
+        assert_eq!(fusszahl("Planung - Ursinn des sokratischen Lernens.\n1\n"), Some(1));
+        assert_eq!(fusszahl("Knotenpunkt menschlicher Beziehungen -5-"), Some(5));
+        assert_eq!(fusszahl("- 8 -"), Some(8));
+        assert_eq!(fusszahl("Seite 3 von 7"), Some(3));
+        assert_eq!(fusszahl("Vortrag vom 13.10.2003"), None);
+        assert_eq!(fusszahl(""), None);
+        assert_eq!(ziffernzahl("- 5 -\n"), Some(5));
+        assert_eq!(ziffernzahl("-- 2 -\n"), Some(2));
+        assert_eq!(ziffernzahl("5"), None);
     }
 
     #[test]
