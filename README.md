@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-123 PDFs, 525 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+126 PDFs, 529 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -182,9 +182,12 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Das_Tellereisen_06.06.1988.pdf` | 2 (Kursarbeit von K. Bachmann, Kurs in Familientheorie, zu Walther Kauers Roman «Tellereisen») |
 | `Das_Fehlen_eines_aktiven_Erziehungspartners_19.07.1988.pdf` | 1 (Kurs in Familientheorie, Schreibmaschine) |
 | `Gedanken_zum_Thema_Ablösung_von_Alleinerziehern_15.08.1988.pdf` | 1 (Kurstext von L. Müller, Kurs in Familientherapie) |
+| `Psychosomatische_Erkrankungen_am_Beispiel_von_15.08.1988.pdf` | 1 (Kurstext von M. Schlaepfer: «… Herz-Kreislauferkrankungen, Störungen des Verdauungsapparates, funktionelle Störungen des Bewegungsapparates») |
 | `Asthma_in_der_Familie_Welches_therapeutische_Vorgehen_03.10.1988.pdf` | 2 (Kurs II in Familientheorie, Schreibmaschine; «… schlagen wir vor?») |
 | `Aussterbende_Familien_Welches_therapeutische_Vorgehen_wäre_03.10.1988.pdf` | 1 (Kurs II in Familientheorie, Schreibmaschine; «… um Familien vor dem Aussterben zu bewahren») |
+| `Aussterbende_Familien_03.10.1988.pdf` | 1 (Kurstext von Lotti Höner zum gleichen Kursthema, Kurs in Familientheorie 3.10.1988) |
 | `Familientherapeutische_Interventionen_in_der_22.11.1988.pdf` | 4 (Kurs in Familientheorie II, Schreibmaschine; Datum vom Schluss des Skripts) |
+| `Der_Ablösungs-_und_Trennungsprozess_bei_Affenkindern_05.12.1988.pdf` | 2 (Kurstext von D. Faust) |
 | `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989.pdf` | 8 (Kursarbeit von G. Petrazzo, Familientherapie Kurs II; mit Beiblatt zu den Redeverboten des Bundesrats; Seite 6 lag doppelt) |
 | `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989_2.pdf` | 7 (überarbeitete Fassung, dichter gesetzt; Seite 7 Literaturliste im Querformat) |
 | `Emanzipation_eines_Partners_und_die_Folgen_auf_die_18.04.1989.pdf` | 2 (Referat von F. Haller, Kurs II Familientherapie; vier anonyme Paarfälle; Adresse entfernt) |
