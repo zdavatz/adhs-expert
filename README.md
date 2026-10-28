@@ -98,11 +98,38 @@ Die Liste ist nach Aufrufen sortiert, meistgelesene zuerst. Grundlage sind die
 Zahlen von Jetpack Stats über den gesamten erfassten Zeitraum seit 2010 —
 Google Analytics ist auf adhs.expert nicht eingebunden.
 
+## Vorträge scannen
+
+`scannen` holt Papiervorlagen über den automatischen Einzug des Epson GT-2500
+und legt ein PDF an, das Datum und Titel des Vortrags trägt — im Dateinamen
+(`2014-03-05 Titel.pdf`) und in den Dokumenteigenschaften.
+
+```bash
+brew install sane-backends
+cargo run --release --bin scannen -- --ordner ~/Documents
+cargo run --release --bin scannen -- --datum 5.3.2014 --titel "Titel" --ordner ~/Documents
+```
+
+Gescannt wird einseitig, A4, 300 dpi in Graustufen (`--farbe` für Farbe,
+`--dpi` für eine andere Auflösung). Datum und Titel liest die Texterkennung von
+macOS (Vision) aus den Seiten: der Titel ist der Kopf der ersten Seite bis zur
+Autorenzeile, das Datum das erste im Kopf der ersten Seite, sonst das letzte im
+Dokument. `--datum` und `--titel` überschreiben die Erkennung; fehlt ein Datum,
+heisst die Datei «ohne Datum …». `--lesen BILD…` zeigt nur, was erkannt wird,
+`--aus BILD…` baut das PDF aus schon gescannten JPEGs.
+
+Der Scanner läuft über SANE (Backend `epson2`, dort als ES-H300 geführt), nicht
+über Epson Scan 2: Dessen Argument `-SCAN` ist nicht dokumentiert, und der
+Image-Capture-Treiber «EPSON Scanner.app» ist nur für Intel gebaut und startet
+auf Apple Silicon ohne Rosetta nicht. Immer im Batch-Modus scannen — ein
+Einzelscan lässt den Einzug das nächste Blatt vorladen und ungescannt auswerfen.
+
 ## Aufbau
 
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
+| `src/scannen.rs` | Vorträge über den Einzug des GT-2500 scannen, Datum und Titel erkennen |
 | `src/eintraege.rs` | generierte Daten: 150 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
 | `fonts/` | DejaVu Sans, wird ins PDF eingebettet |
 
