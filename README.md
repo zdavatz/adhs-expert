@@ -167,7 +167,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-65 PDFs, 260 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+66 PDFs, 263 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -223,6 +223,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Alkohol_und_Familie_20.11.2003.pdf` | 6 |
 | `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
 | `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
+| `Gedanken_im_Anschluss_an_die_Tagung_Therapeutische_23.03.2006.pdf` | 3 (zur Tagung Therapeutische Jurisprudenz «Homo invalidus – oder der wertlose Mensch») |
 | `Familientherapie_nach_Bowen_mit_einer_Person_im_02.03.2007.pdf` | 2 (Weiterbildung; «… im sozial-psychiatrischen Setting») |
 | `Das_volle_Nest_das_leere_Nest_Was_ist_schlimmer_Was_ist_15.03.2007.pdf` | 3 (Frauengemeinschaft Gebenstorf; «… Was ist schöner?») |
 | `Schizophrenie_Autoaggression_und_Autismus_27.04.2007.pdf` | 2 (Vortrag AWZ) |
