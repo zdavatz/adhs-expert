@@ -167,10 +167,11 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-29 PDFs, 133 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+30 PDFs, 137 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
+| `Hilfe,_mein_Kind_wird_gemobbt_07.11.2002.pdf` | 4 (Elternzirkel Reinach) |
 | `Pflegende_Angehörige_Dureschnufe_dank_Spitex_09.11.2002.pdf` | 3 (St. Galler Gesundheitstag) |
 | `Psychisch_Kranke_in_der_Spitex_13.11.2002.pdf` | 3 (Spitex St. Gallen) |
 | `Psychisch_Kranke_in_der_Spitex_13.11.2002_2.pdf` | 3 (zweites Exemplar, Seite 3 mit Handnotiz «Kontrolle, Medi-abgabe …») |
