@@ -154,9 +154,14 @@ fn scannen(opt: &Optionen, tmp: &Path) -> anyhow::Result<Vec<PathBuf>> {
 fn lauf() -> anyhow::Result<()> {
     let opt = optionen()?;
     if !opt.lesen.is_empty() {
-        let (datum, titel, _) = erkennen(&opt.lesen)?;
-        println!("Datum: {}", datum.as_deref().unwrap_or("(keines gefunden)"));
-        println!("Titel: {}", titel.as_deref().unwrap_or("(keiner gefunden)"));
+        let texte = erkennen(&opt.lesen)?;
+        for teil in vortraege_trennen(&texte) {
+            let texte = &texte[teil.clone()];
+            println!("Seiten {}-{}", teil.start + 1, teil.end);
+            println!("  Datum: {}", datum_finden(texte).as_deref().unwrap_or("(keines gefunden)"));
+            let titel = texte.first().and_then(|z| titel_finden(z));
+            println!("  Titel: {}", titel.as_deref().unwrap_or("(keiner gefunden)"));
+        }
         return Ok(());
     }
 
@@ -172,19 +177,39 @@ fn lauf() -> anyhow::Result<()> {
 
     // Die Texterkennung läuft immer: sie liefert nicht nur Datum und Titel,
     // sondern auch die unsichtbare Textebene und die Links im PDF.
-    let (mut datum, mut titel) = (opt.datum.clone(), opt.titel.clone());
     eprintln!("Texterkennung über {} Seiten …", seiten.len());
     let texte = match erkennen(&seiten) {
-        Ok((d, t, texte)) => {
-            datum = datum.or(d);
-            titel = titel.or(t);
-            texte
-        }
+        Ok(t) => t,
         Err(e) => {
             eprintln!("Hinweis: Texterkennung fehlgeschlagen, PDF ohne Textebene: {e:#}");
             vec![Vec::new(); seiten.len()]
         }
     };
+    std::fs::create_dir_all(&opt.ordner).with_context(|| format!("{}", opt.ordner.display()))?;
+
+    // Mehrere Vorträge in einem Stapel: je Vortrag ein PDF.
+    let teile = vortraege_trennen(&texte);
+    if teile.len() > 1 {
+        eprintln!("{} Vorträge im Stapel erkannt.", teile.len());
+    }
+    for teil in teile {
+        let ziel = vortrag_ablegen(&opt, &seiten[teil.clone()], &texte[teil.clone()]);
+        match ziel {
+            Ok(ziel) => println!("{} ({} Seiten)", ziel.display(), teil.len()),
+            Err(e) => {
+                eprintln!("Die gescannten Seiten liegen in {}", tmp.display());
+                return Err(e);
+            }
+        }
+    }
+    std::fs::remove_dir_all(&tmp).ok();
+    Ok(())
+}
+
+/// Ein Vortrag: Datum und Titel bestimmen, PDF schreiben, Pfad zurück.
+fn vortrag_ablegen(opt: &Optionen, seiten: &[PathBuf], texte: &[Vec<Zeile>]) -> anyhow::Result<PathBuf> {
+    let datum = opt.datum.clone().or_else(|| datum_finden(texte));
+    let titel = opt.titel.clone().or_else(|| texte.first().and_then(|z| titel_finden(z)));
     // Ohne Datum im Text gilt der Scantag; im PDF heisst es dann «gescannt
     // am», damit niemand ihn für das Vortragsdatum hält.
     let scandatum = datum.is_none();
@@ -199,8 +224,6 @@ fn lauf() -> anyhow::Result<()> {
     });
     eprintln!("Datum: {datum}\nTitel: {titel}");
 
-    std::fs::create_dir_all(&opt.ordner).with_context(|| format!("{}", opt.ordner.display()))?;
-    // Nie überschreiben: bei gleichem Namen eine Nummer anhängen.
     // Erkannte Titel bestehen aus mehreren Blöcken: Datum, Veranstalter oder
     // Anlass zuoberst, der eigentliche Titel direkt über der Autorenzeile.
     // In den Namen kommt nur dieser letzte Block, ins PDF der ganze Kopf.
@@ -208,19 +231,85 @@ fn lauf() -> anyhow::Result<()> {
         Some(t) => t.as_str(),
         None => titel.rsplit(" – ").next().unwrap_or(&titel),
     };
+    // Nie überschreiben: bei gleichem Namen eine Nummer anhängen.
     let mut ziel = opt.ordner.join(dateiname(&datum, name_titel, 1));
     let mut n = 2;
     while ziel.exists() {
         ziel = opt.ordner.join(dateiname(&datum, name_titel, n));
         n += 1;
     }
-    if let Err(e) = pdf_bauen(&seiten, &texte, opt.dpi, &datum, scandatum, &titel, &ziel) {
-        eprintln!("Die gescannten Seiten liegen in {}", tmp.display());
-        return Err(e);
+    pdf_bauen(seiten, texte, opt.dpi, &datum, scandatum, &titel, &ziel)?;
+    Ok(ziel)
+}
+
+/// Die Seitenzahl unten auf der Seite («3», «- 3 -», «Seite 3», «3/7»).
+fn seitenzahl(zeilen: &[Zeile]) -> Option<u32> {
+    use std::sync::LazyLock;
+    static NR: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(r"(?i)^[-–\s]*(?:seite\s*)?(\d{1,3})(?:\s*(?:/|von)\s*\d{1,3})?[-–\s]*$").unwrap()
+    });
+    zeilen
+        .iter()
+        .rev()
+        .filter(|z| z.oben > 0.85)
+        .find_map(|z| NR.captures(z.text.trim())?[1].parse().ok())
+}
+
+/// Zeile ohne alles ausser Buchstaben, zum Vergleich von Kopfzeilen über
+/// Lesefehler bei Satzzeichen und Leerstellen hinweg.
+fn buchstaben(text: &str) -> String {
+    text.chars().filter(|c| c.is_alphabetic()).flat_map(char::to_lowercase).collect()
+}
+
+/// Ob eine Seite einen Vortrag beginnt, nach dem Kopf: oben steht «Vortrag
+/// vom …» oder die Autorenzeile mit Adresse («U. Davatz, www.ganglion.ch»,
+/// auch auf zwei Zeilen). Die Unterschrift am Textende («Dr. med. U.
+/// Davatz») trägt keine Adresse und zählt nicht. Eine Kopfzeile, die schon
+/// auf der Seite davor stand, ist ein laufender Kopf und zählt ebenfalls
+/// nicht - taucht dagegen ein neuer laufender Kopf auf, beginnt etwas Neues.
+fn beginnt_vortrag(zeilen: &[Zeile], vorher: &[Zeile]) -> bool {
+    let kopf_vorher: Vec<String> =
+        vorher.iter().filter(|z| z.oben < 0.12).map(|z| buchstaben(&z.text)).collect();
+    let oben: Vec<&Zeile> = zeilen.iter().filter(|z| z.oben < 0.35).collect();
+    let laufend = |z: &Zeile| z.oben < 0.12 && kopf_vorher.contains(&buchstaben(&z.text));
+    let eigen: Vec<String> = oben.iter().filter(|z| !laufend(z)).map(|z| z.text.to_lowercase()).collect();
+
+    let vortrag = oben.iter().any(|z| {
+        let t = z.text.to_lowercase();
+        (t.starts_with("vortrag") || t.starts_with("votrag")) && !daten_in(&z.text).is_empty()
+    });
+    let autor = eigen.iter().any(|t| t.contains("davatz"))
+        && eigen.iter().any(|t| t.contains("ganglion") || t.contains("www."));
+    // Neuer laufender Kopf: oben eine Zeile mit Adresse, die vorher fehlte,
+    // obwohl die Seite davor einen Kopf hatte oder keinen.
+    let neuer_kopf = oben.iter().any(|z| z.oben < 0.12 && !laufend(z) && ist_autorenzeile(&z.text))
+        && !kopf_vorher.is_empty();
+    vortrag || autor || neuer_kopf
+}
+
+/// Teilt einen Stapel in Vorträge. Die Seitenzahl unten entscheidet: 1
+/// beginnt einen Vortrag, jede andere setzt ihn fort. Ohne Seitenzahl gilt
+/// der Kopf (`beginnt_vortrag`). Lücken in der Zählung werden gemeldet - nach
+/// einem Papierstau fehlt sonst still eine Seite.
+fn vortraege_trennen(texte: &[Vec<Zeile>]) -> Vec<std::ops::Range<usize>> {
+    let nummern: Vec<Option<u32>> = texte.iter().map(|z| seitenzahl(z)).collect();
+    let mut starts = vec![0];
+    for i in 1..texte.len() {
+        let neu = match nummern[i] {
+            Some(1) => true,
+            Some(_) => false,
+            None => beginnt_vortrag(&texte[i], &texte[i - 1]),
+        };
+        if neu {
+            starts.push(i);
+        } else if let (Some(a), Some(b)) = (nummern[i - 1], nummern[i]) {
+            if b != a + 1 {
+                eprintln!("Hinweis: Scan-Seite {} trägt Seitenzahl {b}, die davor {a} - fehlt eine Seite?", i + 1);
+            }
+        }
     }
-    std::fs::remove_dir_all(&tmp).ok();
-    println!("{} ({} Seiten)", ziel.display(), seiten.len());
-    Ok(())
+    starts.push(texte.len());
+    starts.windows(2).map(|w| w[0]..w[1]).filter(|r| !r.is_empty()).collect()
 }
 
 /// Eine erkannte Textzeile. `oben` ist der Abstand der Oberkante vom oberen
@@ -235,18 +324,11 @@ struct Zeile {
     breite: f64,
 }
 
-type Erkennung = (Option<String>, Option<String>, Vec<Vec<Zeile>>);
 
 /// Datum und Titel aus den Seitenbildern.
-/// Datum, Titel und die Zeilen jeder Seite.
-fn erkennen(seiten: &[PathBuf]) -> anyhow::Result<Erkennung> {
-    let mut alle = Vec::new();
-    for s in seiten {
-        alle.push(ocr::zeilen(s)?);
-    }
-    let datum = datum_finden(&alle);
-    let titel = alle.first().and_then(|z| titel_finden(z));
-    Ok((datum, titel, alle))
+/// Die erkannten Zeilen jeder Seite.
+fn erkennen(seiten: &[PathBuf]) -> anyhow::Result<Vec<Vec<Zeile>>> {
+    seiten.iter().map(|s| ocr::zeilen(s)).collect()
 }
 
 #[cfg(not(target_os = "macos"))]
@@ -791,6 +873,34 @@ mod tests {
         assert_eq!(ziele("siehe http://schizo.li."), vec!["http://schizo.li"]);
         assert_eq!(ziele("Mail: info@ganglion.ch"), vec!["mailto:info@ganglion.ch"]);
         assert!(ziele("Dr. med. U. Davatz").is_empty());
+    }
+
+    #[test]
+    fn trennen() {
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5 };
+        let texte = vec![
+            vec![z("Vortrag vom 2.12.2003", 0.05), z("U. Davatz, www.ganglion.ch", 0.15)],
+            vec![z("Fliesstext", 0.1), z("Dr. med. U. Davatz", 0.25)],
+            vec![z("Votrag vom 20.11.2003", 0.05), z("Alkohol und Familie", 0.1)],
+            vec![z("Fliesstext", 0.1)],
+        ];
+        assert_eq!(vortraege_trennen(&texte), vec![0..2, 2..4]);
+    }
+
+    #[test]
+    fn trennen_mit_laufendem_kopf_und_seitenzahlen() {
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5 };
+        let kopf = "Ganglion Frau Dr. med. Ursula Davatz - www.ganglion.ch";
+        let texte = vec![
+            vec![z(kopf, 0.03), z("Alkohol und Familie", 0.1), z("1", 0.95)],
+            vec![z(&kopf.replace(" - ", "-"), 0.03), z("Fliesstext", 0.1), z("2", 0.95)],
+            vec![z(kopf, 0.03), z("Fliesstext", 0.1)],
+            vec![z("Familiendynamik", 0.05), z("Dr. med. U. Davatz", 0.1), z("www.ganglion.ch", 0.12)],
+            vec![z("Fliesstext", 0.1), z("- 2 -", 0.95)],
+        ];
+        assert_eq!(vortraege_trennen(&texte), vec![0..3, 3..5]);
+        assert_eq!(seitenzahl(&[z("Seite 3 von 7", 0.96)]), Some(3));
+        assert_eq!(seitenzahl(&[z("2003", 0.5)]), None);
     }
 
     #[test]

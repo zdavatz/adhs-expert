@@ -126,6 +126,12 @@ Die Erkennung kann sich verlesen, ein Link kann darum auch einmal falsch zeigen.
 `--lesen BILD…` zeigt nur, was erkannt wird,
 `--aus BILD…` baut das PDF aus schon gescannten JPEGs.
 
+Mehrere Vorträge dürfen in einem Stapel liegen; je Vortrag entsteht ein PDF.
+Getrennt wird nach der Seitenzahl unten (1 beginnt einen Vortrag, «Seite 3 von
+7» setzt ihn fort, eine Lücke in der Zählung wird gemeldet). Ohne Seitenzahl
+entscheidet der Kopf: «Vortrag vom …» oder die Autorenzeile mit Adresse. Ein
+laufender Kopf, der auf jeder Seite wiederkehrt, zählt dabei nicht.
+
 Der Scanner läuft über SANE (Backend `epson2`, dort als ES-H300 geführt), nicht
 über Epson Scan 2: Dessen Argument `-SCAN` ist nicht dokumentiert, und der
 Image-Capture-Treiber «EPSON Scanner.app» ist nur für Intel gebaut und startet
