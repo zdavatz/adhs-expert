@@ -32,6 +32,7 @@ cargo run --release --bin scannen -- --aus bild1.jpg bild2.jpg   # ohne Scanner
 cargo run --release --bin scannen -- --lesen bild1.jpg           # nur Erkennung
 cargo run --release --bin scannen -- --ein --aus kurz.jpg v1.jpg  # nicht trennen
 cargo run --release --bin scannen -- --adresse-behalten           # Strasse im Kopf lassen
+cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
@@ -204,6 +205,9 @@ Was dabei Zeit gekostet hat:
   aus – das letzte ausgegebene Wort ist dann nicht das Seitenende. Einmal wurde
   so ein fehlendes Blatt vermutet, das es nicht gab. Das Seitenende im Bild
   prüfen.
+- **Duplex:** `--duplex` setzt `--adf-mode Duplex`. Ist das Blatt an der
+  kurzen Kante gewendet bedruckt, steht die Rückseite auf dem Kopf – dann
+  `magick … -rotate 180` und mit `--ein --aus` neu setzen.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE

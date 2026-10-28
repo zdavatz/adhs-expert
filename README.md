@@ -163,6 +163,7 @@ zusammen, etwa wenn ein Kurztext als erste Seite vor den Vortrag gehört und
 sonst als eigener Vortrag abgetrennt würde. `--adresse-behalten` lässt
 Strassenangaben stehen, etwa den Vortragsort im Kopf; Mail und Telefon werden
 trotzdem entfernt.
+`--duplex` zieht beidseitig bedruckte Blätter mit Vorder- und Rückseite ein.
 
 **Warum SANE und nicht Epson Scan 2:** Dessen Argument `-SCAN` ist nicht
 dokumentiert, und der Image-Capture-Treiber «EPSON Scanner.app» ist nur für
@@ -171,10 +172,11 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-102 PDFs, 403 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+103 PDFs, 405 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
+| `Ausländerfamilien_28.09.1987.pdf` | 2 (Familientherapiekurs, Schreibmaschine; ein Blatt beidseitig, Rückseite gedreht) |
 | `Aufteilung_der_verschiedenen_Themen_in_Familientheorie_und_07.03.1988.pdf` | 1 (Fortbildung in Familientheorie und Familienberatung, II. Teil; Themenübersicht, Schreibmaschine, geschrieben am 9.2.1988) |
 | `Das_Fehlen_eines_aktiven_Erziehungspartners_19.07.1988.pdf` | 1 (Kurs in Familientheorie, Schreibmaschine) |
 | `Asthma_in_der_Familie_Welches_therapeutische_Vorgehen_03.10.1988.pdf` | 2 (Kurs II in Familientheorie, Schreibmaschine; «… schlagen wir vor?») |

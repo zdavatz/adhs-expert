@@ -51,6 +51,8 @@ struct Optionen {
     titel: Option<String>,
     dpi: u32,
     farbe: bool,
+    /// Beidseitig bedruckte Blätter: Vorder- und Rückseite einziehen.
+    duplex: bool,
     /// Der ganze Stapel ist ein Vortrag, auch wenn ein Blatt wie ein Anfang aussieht.
     ein: bool,
     ordner: PathBuf,
@@ -65,6 +67,7 @@ fn optionen() -> anyhow::Result<Optionen> {
         titel: None,
         dpi: 150,
         farbe: false,
+        duplex: false,
         ein: false,
         ordner: PathBuf::from("scan"),
         geraet: None,
@@ -88,6 +91,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             "--geraet" => o.geraet = Some(wert()?),
             "--farbe" => o.farbe = true,
             "--ein" => o.ein = true,
+            "--duplex" => o.duplex = true,
             "--adresse-behalten" => ADRESSE_BEHALTEN.store(true, std::sync::atomic::Ordering::Relaxed),
             "--lesen" | "--aus" => {
                 let liste = if a == "--lesen" { &mut o.lesen } else { &mut o.aus };
@@ -97,7 +101,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             }
             "-h" | "--help" => {
                 println!(
-                    "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--ein] [--adresse-behalten] \
+                    "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--duplex] [--ein] [--adresse-behalten] \
                      [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…]"
                 );
                 std::process::exit(0);
@@ -144,7 +148,7 @@ fn scannen(opt: &Optionen, tmp: &Path) -> anyhow::Result<Vec<PathBuf>> {
     // legt keine Datei an - das fangen wir unten über die leere Liste ab.
     let status = Command::new("scanimage")
         .args(["-d", &geraet, "--source", "Automatic Document Feeder"])
-        .args(["--adf-mode", "Simplex"])
+        .args(["--adf-mode", if opt.duplex { "Duplex" } else { "Simplex" }])
         .args(["--mode", if opt.farbe { "Color" } else { "Gray" }])
         .args(["--resolution", &opt.dpi.to_string()])
         .args(["-x", "210", "-y", "297", "--format=jpeg"])
