@@ -206,6 +206,13 @@ fn lauf() -> anyhow::Result<()> {
             vec![Vec::new(); seiten.len()]
         }
     };
+    // Eine Seite ohne jeden Text ist fast immer eine Rückseite: das Blatt lag
+    // verkehrt herum im Einzug.
+    for (i, zeilen) in texte.iter().enumerate() {
+        if zeilen.iter().all(|z| z.text.trim().is_empty()) {
+            eprintln!("Achtung: Scan-Seite {} ist leer - lag das Blatt verkehrt herum im Einzug?", i + 1);
+        }
+    }
     std::fs::create_dir_all(&opt.ordner).with_context(|| format!("{}", opt.ordner.display()))?;
 
     // Mailadressen, Strassenadressen und Telefonnummern aus den Bildern
@@ -634,7 +641,12 @@ fn titel_finden(zeilen: &[Zeile]) -> Option<String> {
     for z in zeilen {
         let text = z.text.trim();
         if let Some(v) = vorige {
-            let luecke = z.oben - (v.oben + v.hoehe) > 0.7 * v.hoehe;
+            // Eine Zeile, die klein beginnt («zur Prävention beitragen»),
+            // setzt die vorige fort, auch über eine Lücke hinweg: Tesseract
+            // misst die Zeilen enger als Vision, Titelzeilen mit normalem
+            // Zeilenabstand sähen sonst wie getrennte Blöcke aus.
+            let klein = text.starts_with(|c: char| c.is_lowercase());
+            let luecke = !klein && z.oben - (v.oben + v.hoehe) > 0.7 * v.hoehe;
             if luecke {
                 titel.push_str(" – ");
             } else if titel.ends_with('-') && text.starts_with(|c: char| c.is_lowercase()) {
@@ -1123,6 +1135,23 @@ mod tests {
         assert_eq!(heikle_stellen("Tel. 056 222 33 44").len(), 1);
         assert!(heikle_stellen("Vortrag vom 20.11.2003, Seite 3 von 7").is_empty());
         assert!(heikle_stellen("die Strasse und der Weg").is_empty());
+    }
+
+    #[test]
+    fn titel_ueber_mehrere_zeilen() {
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.014, ..Default::default() };
+        let zeilen = vec![
+            z("Artikel über Prävention im Clic", 0.093),
+            z("über das Thema", 0.122),
+            z("Was und wieviel kann die Mütter- und Väterberatung", 0.151),
+            z("zur Prävention beitragen", 0.180),
+            z("U. Davatz, www.ganglion.ch", 0.226),
+        ];
+        let titel = titel_finden(&zeilen).unwrap();
+        assert_eq!(
+            titel.rsplit(" – ").next().unwrap(),
+            "Was und wieviel kann die Mütter- und Väterberatung zur Prävention beitragen"
+        );
     }
 
     #[test]
