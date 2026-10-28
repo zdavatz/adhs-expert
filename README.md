@@ -171,10 +171,11 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-98 PDFs, 398 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+99 PDFs, 400 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
+| `Asthma_in_der_Familie_Welches_therapeutische_Vorgehen_03.10.1988.pdf` | 2 (Kurs II in Familientheorie, Schreibmaschine; «… schlagen wir vor?») |
 | `Familientherapeutische_Interventionen_in_der_22.11.1988.pdf` | 4 (Kurs in Familientheorie II, Schreibmaschine; Datum vom Schluss des Skripts) |
 | `Führungsposition_im_Zusammenhang_mit_Geschwisterposition_05.11.1989.pdf` | 3 (Familienberatung Kurs II; Arbeit der Kursteilnehmerin Heidi Deplazes-Kunz nach Walter Toman, Schreibmaschine) |
 | `Adoleszentenpsychiatrie_Prävention_im_Adoleszentenalter_03.09.1990.pdf` | 2 (Familientherapiekurs II, Schreibmaschine) |
