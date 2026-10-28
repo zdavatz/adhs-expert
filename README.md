@@ -167,7 +167,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-71 PDFs, 283 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+72 PDFs, 285 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -227,6 +227,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Das_POS-ADS_in_der_Pubertät_Wie_Eltern_helfen_können_17.11.2005.pdf` | 3 (ELPOS Zürich, Glarus, Schaffhausen, Zentrum Karl der Grosse Zürich) |
 | `Gedanken_im_Anschluss_an_die_Tagung_Therapeutische_23.03.2006.pdf` | 3 (zur Tagung Therapeutische Jurisprudenz «Homo invalidus – oder der wertlose Mensch») |
 | `Das_Alter_mit_seinen_Würden_und_Bürden_06.04.2006.pdf` | 3 (Spitex Oftringen) |
+| `Familien_mit_POS-Kindern_24.08.2006.pdf` | 2 (Abschlusskurs Neuromotorik) |
 | `Woher_die_vielen_Ess-Störung_in_der_heutigen_Zeit_und_wie_02.09.2006.pdf` | 5 («Essverhalten und Psyche … und wie gehen wir damit um?»; überarbeitete Fassung des Vortrags vom 8.3.2003) |
 | `Woher_die_vielen_Ess-Störung_in_der_heutigen_Zeit_und_wie_02.09.2006_2.pdf` | 5 (Entwurf mit Handkorrekturen, Titel noch «Warum so viele …», Seiten 3-5 stark überarbeitet) |
 | `Familientherapie_nach_Bowen_mit_einer_Person_im_02.03.2007.pdf` | 2 (Weiterbildung; «… im sozial-psychiatrischen Setting») |
