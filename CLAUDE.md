@@ -208,6 +208,13 @@ Was dabei Zeit gekostet hat:
 - **Duplex:** `--duplex` setzt `--adf-mode Duplex`. Ist das Blatt an der
   kurzen Kante gewendet bedruckt, steht die Rückseite auf dem Kopf – dann
   `magick … -rotate 180` und mit `--ein --aus` neu setzen.
+- **Patientendaten und persönliche Texte Dritter:** Kursarbeiten enthalten
+  teils Fallbeispiele mit Vornamen, Initialen, Geburtsdaten und Diagnosen von
+  Kindern oder sehr persönliche Berichte von Teilnehmern. Vor dem Push den
+  Benutzer fragen. Gewählt wurde bisher: anonymisieren (Wortkästen aus dem
+  Tesseract-TSV weiss übermalen, Textebene neu lesen lassen) oder den Namen
+  durch ein Pseudonym ersetzen. Danach `pdftotext` und `strings` auf jeden
+  alten Namen prüfen; echte Namen nicht in Commit oder README.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
