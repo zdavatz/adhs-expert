@@ -167,10 +167,11 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-34 PDFs, 154 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+35 PDFs, 158 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
+| `Was_machen_wir_mit_den_ewig_Unverstandenen,_Abgewiesenen_16.10.2002.pdf` | 4 (Tagung Therapeutische Jurisprudenz, Workshop 3; «… Störefrieden und Querulanten, die später auch gefährlich werden können?») |
 | `Vom_Paar_zur_Familie_Fruchtbarkeit_und_Unfruchtbarkeit_22.10.2002.pdf` | 3 (Praxis Claudia Lutz) |
 | `Krisen_in_der_Familie_als_therapeutische_Chance,_betrachtet_30.10.2002.pdf` | 4 (Weiterbildung ZASP/SGSP «Krisen und Umgang mit Krisen»; «… durch verschiedene interkulturelle Aspekte») |
 | `Wie_erkenne_ich_meine_Achillesferse_Was_sind_meine_typischen_31.10.2002.pdf` | 3 («Engagiert pflegen ohne Burnout», Beratung/Weiterbildung) |
