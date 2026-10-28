@@ -25,5 +25,5 @@ AggregateAnalytics*.xlsx
 
 # Gescannte Vorträge gehören nach scan/ und werden dort committet. Was
 # versehentlich im Hauptverzeichnis landet, bleibt draussen.
-/[0-3][0-9].[01][0-9].[12][0-9][0-9][0-9] *.pdf
-/ohne Datum *.pdf
+/*_[0-3][0-9].[01][0-9].[12][0-9][0-9][0-9].pdf
+/*_[0-3][0-9].[01][0-9].[12][0-9][0-9][0-9]_[0-9]*.pdf

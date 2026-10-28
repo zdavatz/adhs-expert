@@ -652,12 +652,15 @@ fn datum_iso(s: &str) -> Option<String> {
 /// Dokumenteigenschaften.
 const MAX_TITEL_IM_NAMEN: usize = 60;
 
-/// Dateiname aus Datum und Titel: höchstens `MAX_TITEL_IM_NAMEN` Zeichen,
-/// an einer Wortgrenze gekürzt; was im Finder stört, wird ersetzt. `nr` ab 2
-/// unterscheidet gleiche Namen.
+/// Dateiname aus Titel und Datum, etwa `Alkohol_und_Familie_20.11.2003.pdf`:
+/// Titel zuerst, höchstens `MAX_TITEL_IM_NAMEN` Zeichen, an einer Wortgrenze
+/// gekürzt, Unterstriche statt Leerschlägen, Datum am Schluss. Was in
+/// Dateinamen stört (/ : \\ ? * " < > |), fällt weg oder wird zum Strich.
+/// `nr` ab 2 unterscheidet gleiche Namen (`…_20.11.2003_2.pdf`).
 fn dateiname(datum: &str, titel: &str, nr: u32) -> String {
     let titel: String = titel
         .chars()
+        .filter(|c| !matches!(c, '?' | '*' | '"' | '<' | '>' | '|'))
         .map(|c| match c {
             '/' | ':' | '\\' => '-',
             c if c.is_control() => ' ',
@@ -665,22 +668,22 @@ fn dateiname(datum: &str, titel: &str, nr: u32) -> String {
         })
         .collect();
     let mut kurz = String::new();
-    for wort in titel.split_whitespace() {
+    for wort in titel.split_whitespace().filter(|w| *w != "-" && *w != "–") {
         let laenge = kurz.chars().count() + 1 + wort.chars().count();
         if !kurz.is_empty() && laenge > MAX_TITEL_IM_NAMEN {
             break;
         }
         if !kurz.is_empty() {
-            kurz.push(' ');
+            kurz.push('_');
         }
         kurz.push_str(wort);
     }
     let kurz: String = kurz.chars().take(MAX_TITEL_IM_NAMEN).collect();
-    let kurz = kurz.trim_end_matches([',', ';', '-', ' ']);
-    let datum = datum_ch(datum);
+    let kurz = kurz.trim_end_matches([',', ';', '-', '_', '.']);
+    let datum = datum_ch(datum).replace(' ', "_");
     match nr {
-        0 | 1 => format!("{datum} {kurz}.pdf"),
-        n => format!("{datum} {kurz} ({n}).pdf"),
+        0 | 1 => format!("{kurz}_{datum}.pdf"),
+        n => format!("{kurz}_{datum}_{n}.pdf"),
     }
 }
 
@@ -1051,14 +1054,18 @@ mod tests {
     fn name() {
         assert_eq!(
             dateiname("2003-06-01", "Cannabis und  Schizophrenie: ein Überblick", 1),
-            "01.06.2003 Cannabis und Schizophrenie- ein Überblick.pdf"
+            "Cannabis_und_Schizophrenie-_ein_Überblick_01.06.2003.pdf"
         );
         assert_eq!(
             dateiname("2003-12-02", "Jugendliche und Sucht Freiheit oder Sackgasse auf dem Weg der Suchenden", 2),
-            "02.12.2003 Jugendliche und Sucht Freiheit oder Sackgasse auf dem Weg (2).pdf"
+            "Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003_2.pdf"
         );
         let lang = dateiname("2014-03-05", &"Wort ".repeat(30), 1);
-        assert!(lang.chars().count() <= "05.03.2014 .pdf".len() + MAX_TITEL_IM_NAMEN);
-        assert_eq!(dateiname("2021-10", "Titel", 1), "10.2021 Titel.pdf");
+        assert!(lang.chars().count() <= "_05.03.2014.pdf".len() + MAX_TITEL_IM_NAMEN);
+        assert_eq!(dateiname("2021-10", "Titel", 1), "Titel_10.2021.pdf");
+        assert_eq!(
+            dateiname("2003-11-11", "Das trotzende Kind - Bin ich zu lieb oder bin ich zu streng?", 1),
+            "Das_trotzende_Kind_Bin_ich_zu_lieb_oder_bin_ich_zu_streng_11.11.2003.pdf"
+        );
     }
 }
