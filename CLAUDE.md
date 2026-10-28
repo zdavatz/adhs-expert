@@ -212,8 +212,13 @@ Was dabei Zeit gekostet hat:
   teils Fallbeispiele mit Vornamen, Initialen, Geburtsdaten und Diagnosen von
   Kindern oder sehr persönliche Berichte von Teilnehmern. Vor dem Push den
   Benutzer fragen. Gewählt wurde bisher: anonymisieren (Wortkästen aus dem
-  Tesseract-TSV weiss übermalen, Textebene neu lesen lassen) oder den Namen
-  durch ein Pseudonym ersetzen. Danach `pdftotext` und `strings` auf jeden
+  Tesseract-TSV weiss übermalen, Textebene neu lesen lassen) oder Namen und
+  Daten durch erfundene ersetzen – das liest sich besser. Beim Ersetzen:
+  gleiches Geschlecht, je Person überall derselbe Ersatz, Namen nicht breiter
+  als das Original (sonst gestaucht), Daten so verschieben, dass Alter und
+  Geschwisterreihenfolge stimmen. Schrift je Wort am Originalwort eichen
+  (Arial ist breiter als die Vorlagen), in dunklem Grau setzen;
+  Unterstreichungen erkennen, mit übermalen und neu ziehen. Danach `pdftotext` und `strings` auf jeden
   alten Namen prüfen; echte Namen nicht in Commit oder README.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
