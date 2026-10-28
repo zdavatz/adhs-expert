@@ -115,7 +115,11 @@ Gescannt wird einseitig, A4, 300 dpi in Graustufen (`--farbe` für Farbe,
 macOS (Vision) aus den Seiten: der Titel ist der Kopf der ersten Seite bis zur
 Autorenzeile, das Datum das erste im Kopf der ersten Seite, sonst das letzte im
 Dokument. `--datum` und `--titel` überschreiben die Erkennung; fehlt ein Datum,
-heisst die Datei «ohne Datum …». `--lesen BILD…` zeigt nur, was erkannt wird,
+heisst die Datei «ohne Datum …». Dieselbe Erkennung legt eine unsichtbare
+Textebene über die Seitenbilder, damit sich das PDF markieren und durchsuchen
+lässt, und macht erkannte Adressen (`www.…`, `http…`, Mailadressen) anklickbar.
+Die Erkennung kann sich verlesen, ein Link kann darum auch einmal falsch zeigen.
+`--lesen BILD…` zeigt nur, was erkannt wird,
 `--aus BILD…` baut das PDF aus schon gescannten JPEGs.
 
 Der Scanner läuft über SANE (Backend `epson2`, dort als ES-H300 geführt), nicht

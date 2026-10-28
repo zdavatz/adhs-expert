@@ -153,7 +153,7 @@ fn scannen(opt: &Optionen, tmp: &Path) -> anyhow::Result<Vec<PathBuf>> {
 fn lauf() -> anyhow::Result<()> {
     let opt = optionen()?;
     if !opt.lesen.is_empty() {
-        let (datum, titel) = erkennen(&opt.lesen)?;
+        let (datum, titel, _) = erkennen(&opt.lesen)?;
         println!("Datum: {}", datum.as_deref().unwrap_or("(keines gefunden)"));
         println!("Titel: {}", titel.as_deref().unwrap_or("(keiner gefunden)"));
         return Ok(());
@@ -169,17 +169,21 @@ fn lauf() -> anyhow::Result<()> {
         }
     };
 
+    // Die Texterkennung läuft immer: sie liefert nicht nur Datum und Titel,
+    // sondern auch die unsichtbare Textebene und die Links im PDF.
     let (mut datum, mut titel) = (opt.datum.clone(), opt.titel.clone());
-    if datum.is_none() || titel.is_none() {
-        eprintln!("Lese Datum und Titel aus {} Seiten …", seiten.len());
-        match erkennen(&seiten) {
-            Ok((d, t)) => {
-                datum = datum.or(d);
-                titel = titel.or(t);
-            }
-            Err(e) => eprintln!("Hinweis: Texterkennung fehlgeschlagen: {e:#}"),
+    eprintln!("Texterkennung über {} Seiten …", seiten.len());
+    let texte = match erkennen(&seiten) {
+        Ok((d, t, texte)) => {
+            datum = datum.or(d);
+            titel = titel.or(t);
+            texte
         }
-    }
+        Err(e) => {
+            eprintln!("Hinweis: Texterkennung fehlgeschlagen, PDF ohne Textebene: {e:#}");
+            vec![Vec::new(); seiten.len()]
+        }
+    };
     let datum = datum.unwrap_or_else(|| {
         eprintln!("Hinweis: kein Datum gefunden - mit --datum nachtragen.");
         "ohne Datum".into()
@@ -197,7 +201,7 @@ fn lauf() -> anyhow::Result<()> {
         ziel = opt.ordner.join(dateiname(&datum, &format!("{titel} ({n})")));
         n += 1;
     }
-    if let Err(e) = pdf_bauen(&seiten, opt.dpi, &datum, &titel, &ziel) {
+    if let Err(e) = pdf_bauen(&seiten, &texte, opt.dpi, &datum, &titel, &ziel) {
         eprintln!("Die gescannten Seiten liegen in {}", tmp.display());
         return Err(e);
     }
@@ -206,22 +210,30 @@ fn lauf() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Eine erkannte Textzeile; `oben` ist der Abstand der Oberkante vom oberen
-/// Seitenrand, `hoehe` die Zeilenhöhe, beides als Anteil der Seitenhöhe.
+/// Eine erkannte Textzeile. `oben` ist der Abstand der Oberkante vom oberen
+/// Seitenrand, `hoehe` die Zeilenhöhe, beides als Anteil der Seitenhöhe;
+/// `links` und `breite` entsprechend als Anteil der Seitenbreite.
 #[derive(Debug, Clone)]
 struct Zeile {
     text: String,
     oben: f64,
     hoehe: f64,
+    links: f64,
+    breite: f64,
 }
 
+type Erkennung = (Option<String>, Option<String>, Vec<Vec<Zeile>>);
+
 /// Datum und Titel aus den Seitenbildern.
-fn erkennen(seiten: &[PathBuf]) -> anyhow::Result<(Option<String>, Option<String>)> {
+/// Datum, Titel und die Zeilen jeder Seite.
+fn erkennen(seiten: &[PathBuf]) -> anyhow::Result<Erkennung> {
     let mut alle = Vec::new();
     for s in seiten {
         alle.push(ocr::zeilen(s)?);
     }
-    Ok((datum_finden(&alle), alle.first().and_then(|z| titel_finden(z))))
+    let datum = datum_finden(&alle);
+    let titel = alle.first().and_then(|z| titel_finden(z));
+    Ok((datum, titel, alle))
 }
 
 #[cfg(not(target_os = "macos"))]
@@ -270,6 +282,8 @@ mod ocr {
                 text: kandidat.string().to_string(),
                 oben: 1.0 - (r.origin.y + r.size.height),
                 hoehe: r.size.height,
+                links: r.origin.x,
+                breite: r.size.width,
             });
         }
         zeilen.sort_by(|a, b| a.oben.total_cmp(&b.oben));
@@ -454,9 +468,148 @@ fn pdf_text(s: &str) -> lopdf::Object {
     lopdf::Object::String(b, lopdf::StringFormat::Hexadecimal)
 }
 
+/// Breite eines Zeichens in Helvetica, in Tausendsteln der Schriftgrösse.
+/// Akzente und Umlaute laufen so breit wie ihr Grundbuchstabe.
+fn helvetica_breite(c: char) -> f64 {
+    let basis = match c {
+        'ä' | 'à' | 'á' | 'â' => 'a',
+        'ö' | 'ò' | 'ó' | 'ô' => 'o',
+        'ü' | 'ù' | 'ú' | 'û' => 'u',
+        'é' | 'è' | 'ê' | 'ë' => 'e',
+        'ï' | 'î' | 'í' | 'ì' => 'i',
+        'Ä' => 'A',
+        'Ö' => 'O',
+        'Ü' => 'U',
+        'É' | 'È' => 'E',
+        'ç' => 'c',
+        c => c,
+    };
+    (match basis {
+        'i' | 'j' | 'l' | '\'' => 222,
+        ' ' | 'f' | 't' | 'I' | '.' | ',' | ':' | ';' | '/' | '!' | '[' | ']' => 278,
+        'r' | '-' | '(' | ')' | '«' | '»' => 333,
+        'c' | 'k' | 's' | 'v' | 'x' | 'y' | 'z' | 'J' | '"' => 500,
+        'F' | 'T' | 'Z' | 'ß' => 611,
+        'A' | 'B' | 'E' | 'K' | 'P' | 'S' | 'V' | 'X' | 'Y' | '&' => 667,
+        'C' | 'D' | 'H' | 'N' | 'R' | 'U' | 'w' => 722,
+        'G' | 'O' | 'Q' => 778,
+        'm' | 'M' => 833,
+        'W' => 944,
+        '@' => 1015,
+        'L' => 556,
+        _ => 556,
+    }) as f64
+}
+
+/// Text in WinAnsi (Windows-1252), Klammern und Backslash maskiert.
+fn winansi(text: &str) -> Vec<u8> {
+    let mut b = Vec::new();
+    for c in text.chars() {
+        let byte = match c {
+            '(' | ')' | '\\' => {
+                b.push(b'\\');
+                c as u8
+            }
+            c if (c as u32) < 0x80 && !c.is_control() => c as u8,
+            c if (0xA0..=0xFF).contains(&(c as u32)) => c as u32 as u8,
+            '€' => 0x80,
+            '‚' => 0x82,
+            '„' => 0x84,
+            '…' => 0x85,
+            '‘' => 0x91,
+            '’' => 0x92,
+            '“' => 0x93,
+            '”' => 0x94,
+            '•' => 0x95,
+            '–' => 0x96,
+            '—' => 0x97,
+            _ => b'?',
+        };
+        b.push(byte);
+    }
+    b
+}
+
+/// Unsichtbarer Text (Rendermodus 3) genau über den erkannten Zeilen, damit
+/// sich das PDF markieren, kopieren und durchsuchen lässt. Jede Zeile wird
+/// über die horizontale Skalierung (Tz) auf die Breite ihres Kastens
+/// gezogen, damit die Markierung mit dem Bild übereinstimmt.
+fn textebene(zeilen: &[Zeile], w: f64, hh: f64) -> Vec<u8> {
+    let mut s = Vec::new();
+    if zeilen.is_empty() {
+        return s;
+    }
+    s.extend_from_slice(b"BT 3 Tr\n");
+    for z in zeilen {
+        let text = z.text.trim();
+        let einheiten: f64 = text.chars().map(helvetica_breite).sum();
+        if text.is_empty() || einheiten <= 0.0 {
+            continue;
+        }
+        // Der Kasten umfasst Ober- und Unterlängen, gut 1.15 Schriftgrössen.
+        let groesse = z.hoehe * hh / 1.15;
+        let x = z.links * w;
+        let grundlinie = (1.0 - z.oben - z.hoehe) * hh + 0.22 * groesse;
+        let tz = 100.0 * z.breite * w / (einheiten / 1000.0 * groesse);
+        s.extend(
+            format!("/F1 {groesse:.2} Tf {tz:.1} Tz 1 0 0 1 {x:.2} {grundlinie:.2} Tm (").into_bytes(),
+        );
+        s.extend(winansi(text));
+        s.extend_from_slice(b") Tj\n");
+    }
+    s.extend_from_slice(b"ET\n");
+    s
+}
+
+/// Adressen in den erkannten Zeilen, mit ihrer Fläche auf der Seite
+/// (x1, y1, x2, y2 in Punkten). Die Lage innerhalb der Zeile wird über die
+/// Zeichenbreiten bemessen, wie bei der Textebene.
+fn links_finden(zeilen: &[Zeile], w: f64, hh: f64) -> Vec<(String, [f32; 4])> {
+    use std::sync::LazyLock;
+    static URL: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"(?i)\b(?:https?://[^\s<>]+|www\.[^\s<>]+|[a-z0-9][a-z0-9.-]*\.(?:ch|com|de|org|net|li|at)\b[^\s<>]*|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})",
+        )
+        .unwrap()
+    });
+    let mut links = Vec::new();
+    for z in zeilen {
+        let text = z.text.trim();
+        let gesamt: f64 = text.chars().map(helvetica_breite).sum();
+        if gesamt <= 0.0 {
+            continue;
+        }
+        for m in URL.find_iter(text) {
+            let roh = m.as_str().trim_end_matches(['.', ',', ';', ':', ')', '»', '"']);
+            // E-Mail-Adressen: das Muster für Domains darf sie nicht zerschneiden
+            if roh.contains('@') && !roh.contains("://") {
+                if !m.as_str().starts_with(roh) || roh.starts_with('@') {
+                    continue;
+                }
+            }
+            let ziel = if roh.contains('@') && !roh.contains("://") {
+                format!("mailto:{roh}")
+            } else if roh.to_lowercase().starts_with("http") {
+                roh.to_string()
+            } else {
+                format!("https://{roh}")
+            };
+            let vor: f64 = text[..m.start()].chars().map(helvetica_breite).sum();
+            let lang: f64 = roh.chars().map(helvetica_breite).sum();
+            let x1 = (z.links + z.breite * vor / gesamt) * w;
+            let x2 = (z.links + z.breite * (vor + lang) / gesamt) * w;
+            let y1 = (1.0 - z.oben - z.hoehe) * hh;
+            let y2 = (1.0 - z.oben) * hh;
+            links.push((ziel, [x1 as f32, y1 as f32, x2 as f32, y2 as f32]));
+        }
+    }
+    links
+}
+
 /// Setzt die gescannten JPEG-Seiten zu einem PDF zusammen.
 fn pdf_bauen(
     seiten: &[PathBuf],
+    texte: &[Vec<Zeile>],
     dpi: u32,
     datum: &str,
     titel: &str,
@@ -466,6 +619,14 @@ fn pdf_bauen(
 
     let mut doc = Document::with_version("1.5");
     let pages_id = doc.new_object_id();
+    // Helvetica gehört zu den 14 Standardschriften und muss nicht eingebettet
+    // werden; die Textebene ist ohnehin unsichtbar.
+    let schrift_id = doc.add_object(dictionary! {
+        "Type" => "Font",
+        "Subtype" => "Type1",
+        "BaseFont" => "Helvetica",
+        "Encoding" => "WinAnsiEncoding",
+    });
     let mut kids = Vec::new();
 
     for (n, pfad) in seiten.iter().enumerate() {
@@ -494,15 +655,35 @@ fn pdf_bauen(
 
         let w = b as f32 * 72.0 / dpi as f32;
         let hh = h as f32 * 72.0 / dpi as f32;
-        let inhalt = format!("q {w:.2} 0 0 {hh:.2} 0 0 cm /Im0 Do Q");
-        let inhalt_id = doc.add_object(Stream::new(dictionary! {}, inhalt.into_bytes()));
-        let seite_id = doc.add_object(dictionary! {
+        let zeilen = texte.get(n).map(Vec::as_slice).unwrap_or(&[]);
+        let mut inhalt = format!("q {w:.2} 0 0 {hh:.2} 0 0 cm /Im0 Do Q\n").into_bytes();
+        inhalt.extend(textebene(zeilen, w as f64, hh as f64));
+        let inhalt_id = doc.add_object(Stream::new(dictionary! {}, inhalt));
+
+        let mut annots = Vec::new();
+        for (url, [x1, y1, x2, y2]) in links_finden(zeilen, w as f64, hh as f64) {
+            annots.push(Object::Reference(doc.add_object(dictionary! {
+                "Type" => "Annot",
+                "Subtype" => "Link",
+                "Rect" => vec![x1.into(), y1.into(), x2.into(), y2.into()],
+                "Border" => vec![0.into(), 0.into(), 0.into()],
+                "A" => dictionary! { "S" => "URI", "URI" => Object::string_literal(url) },
+            })));
+        }
+        let mut seite = dictionary! {
             "Type" => "Page",
             "Parent" => pages_id,
             "MediaBox" => vec![0.into(), 0.into(), Object::Real(w), Object::Real(hh)],
-            "Resources" => dictionary! { "XObject" => dictionary! { "Im0" => bild_id } },
+            "Resources" => dictionary! {
+                "XObject" => dictionary! { "Im0" => bild_id },
+                "Font" => dictionary! { "F1" => schrift_id },
+            },
             "Contents" => inhalt_id,
-        });
+        };
+        if !annots.is_empty() {
+            seite.set("Annots", annots);
+        }
+        let seite_id = doc.add_object(seite);
         kids.push(seite_id.into());
         eprintln!("  Seite {} – {b}×{h} px", n + 1);
     }
@@ -552,6 +733,18 @@ mod tests {
         assert_eq!(daten_in("Basel, 12.11.03"), vec!["2003-11-12"]);
         assert_eq!(daten_in("im Oktober 2021 gehalten"), vec!["2021-10"]);
         assert!(daten_in("Seite 3 von 12").is_empty());
+    }
+
+    #[test]
+    fn links() {
+        let z = |t: &str| Zeile { text: t.into(), oben: 0.1, hoehe: 0.01, links: 0.1, breite: 0.5 };
+        let ziele = |t: &str| -> Vec<String> {
+            links_finden(&[z(t)], 595.0, 842.0).into_iter().map(|(u, _)| u).collect()
+        };
+        assert_eq!(ziele("U. Davatz, www.ganglion.ch"), vec!["https://www.ganglion.ch"]);
+        assert_eq!(ziele("siehe http://schizo.li."), vec!["http://schizo.li"]);
+        assert_eq!(ziele("Mail: info@ganglion.ch"), vec!["mailto:info@ganglion.ch"]);
+        assert!(ziele("Dr. med. U. Davatz").is_empty());
     }
 
     #[test]
