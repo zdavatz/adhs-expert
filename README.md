@@ -160,7 +160,9 @@ Bleistiftnotizen `--dpi 300`, für Farbe `--farbe`.
 Papierstau den Rest mit den ersten Seiten zusammenzusetzen. Die JPEGs eines
 fertigen PDFs holt `pdfimages -j` wieder heraus. `--ein` hält den Stapel
 zusammen, etwa wenn ein Kurztext als erste Seite vor den Vortrag gehört und
-sonst als eigener Vortrag abgetrennt würde.
+sonst als eigener Vortrag abgetrennt würde. `--adresse-behalten` lässt
+Strassenangaben stehen, etwa den Vortragsort im Kopf; Mail und Telefon werden
+trotzdem entfernt.
 
 **Warum SANE und nicht Epson Scan 2:** Dessen Argument `-SCAN` ist nicht
 dokumentiert, und der Image-Capture-Treiber «EPSON Scanner.app» ist nur für
@@ -169,7 +171,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-88 PDFs, 340 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+89 PDFs, 344 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -184,6 +186,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Zusammenarbeit_unter_Sozialtherapeutischen_Systemen_bei_30.04.2002.pdf` | 3 (SV Psychiatriestützpunkt Biel; «… gefährdeter Mutter-Kind Beziehung») |
 | `Ist_die_menschliche_Brutpflege_in_unserer_globalisierten_15.05.2002.pdf` | 6 (Mütter- und Väterberatungsstelle des Bezirks Baden; «… Gesellschaft ernsthaft gefährdet?»; Seite 6 Illustration «Die Folgekosten sind enorm!») |
 | `POS_bei_Erwachsenen,_Wie_gehe_ich_mit_dem_POS-ADD_am_22.05.2002.pdf` | 4 (Eingliederung WWB Basel; «… Arbeitsplatz um?»; Kontaktangaben im Kopf entfernt) |
+| `POS_bei_Erwachsenen,_Wie_gehe_ich_mit_dem_POS-ADD_am_22.05.2002_2.pdf` | 4 (zweite Fassung mit Ganglion-Briefkopf, Mailadresse entfernt; Vortragsort «Flughafenstrasse 235» bleibt stehen) |
 | `Mutterschaft_und_Krise_und_Eltern_werden_Eltern_sein_24.05.2002.pdf` | 5 (Nachdiplomkurs der Hebammen in Geburtsvorbereitung, Atelierbewegung Zürich; Strassenadresse entfernt) |
 | `Loslassen,_bedingungslos_loslassen_25.05.2002.pdf` | 3 (Seminar für Eltern von Pubertierenden, Reinach) |
 | `Was_bedeutet_mir_Lebensqualität_Was_ist_sie_mir_wert_04.06.2002.pdf` | 4 (Kath. Frauenbund Untersiggenthal) |

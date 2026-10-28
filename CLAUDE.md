@@ -31,6 +31,7 @@ cargo run --release --bin scannen   # Stapel aus dem Einzug nach scan/
 cargo run --release --bin scannen -- --aus bild1.jpg bild2.jpg   # ohne Scanner
 cargo run --release --bin scannen -- --lesen bild1.jpg           # nur Erkennung
 cargo run --release --bin scannen -- --ein --aus kurz.jpg v1.jpg  # nicht trennen
+cargo run --release --bin scannen -- --adresse-behalten           # Strasse im Kopf lassen
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
@@ -159,6 +160,9 @@ Was dabei Zeit gekostet hat:
   selbst – ein weisses Rechteck im PDF liesse das Bild darunter auslesbar.
   Der Kasten reicht 15 % der Zeilenhöhe nach oben und 5 % nach unten; mehr
   schneidet die Umlautpunkte der nächsten Zeile ab.
+  Mit `--adresse-behalten` bleiben Strassenangaben stehen (Wunsch des
+  Benutzers beim Vortragsort im Kopf, etwa «Flughafenstrasse 235»); Mail und
+  Telefon fallen weiter weg.
 - **Fehlende und doppelte Blätter.** Die Seitenzahl, die der Benutzer nennt,
   mit der Zahl der eingezogenen Blätter vergleichen; der Einzug zieht
   gelegentlich zwei auf einmal oder lässt eines liegen. Wo das Blatt

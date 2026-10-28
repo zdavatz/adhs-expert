@@ -88,6 +88,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             "--geraet" => o.geraet = Some(wert()?),
             "--farbe" => o.farbe = true,
             "--ein" => o.ein = true,
+            "--adresse-behalten" => ADRESSE_BEHALTEN.store(true, std::sync::atomic::Ordering::Relaxed),
             "--lesen" | "--aus" => {
                 let liste = if a == "--lesen" { &mut o.lesen } else { &mut o.aus };
                 while let Some(p) = args.next_if(|p| !p.starts_with("--")) {
@@ -96,7 +97,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             }
             "-h" | "--help" => {
                 println!(
-                    "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--ein] \
+                    "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--ein] [--adresse-behalten] \
                      [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…]"
                 );
                 std::process::exit(0);
@@ -429,17 +430,31 @@ struct Wort {
 
 /// Stellen, die nicht ins öffentliche PDF gehören: Mailadressen,
 /// Strassenadressen mit Hausnummer, Telefonnummern. Byte-Bereiche in `text`.
+/// `--adresse-behalten`: Strassenangaben stehen lassen, etwa den Ort eines
+/// Vortrags im Kopf. Mail und Telefon fallen trotzdem weg.
+static ADRESSE_BEHALTEN: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+
 fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
     use std::sync::LazyLock;
     static HEIKEL: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(concat!(
             r"(?i)[a-z0-9._%+-]+\s?@\s?[a-z0-9.-]+\.[a-z]{2,}",
-            r"|\b[A-ZÄÖÜ][\wäöüé-]*(?:strasse|straße|str\.|gasse|weg|platz|rain|halde|allee)\s*\d+\s?[a-z]?\b",
             r"|(?:\+41|\b0)\s?\(?\d{2}\)?[\s/]?\d{3}[\s.]?\d{2}[\s.]?\d{2}\b",
         ))
         .unwrap()
     });
-    HEIKEL.find_iter(text).map(|m| m.range()).collect()
+    static STRASSE: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(
+            r"\b[A-ZÄÖÜ][\wäöüé-]*(?:strasse|straße|str\.|gasse|weg|platz|rain|halde|allee)\s*\d+\s?[a-z]?\b",
+        )
+        .unwrap()
+    });
+    let mut stellen: Vec<_> = HEIKEL.find_iter(text).map(|m| m.range()).collect();
+    if !ADRESSE_BEHALTEN.load(std::sync::atomic::Ordering::Relaxed) {
+        stellen.extend(STRASSE.find_iter(text).map(|m| m.range()));
+        stellen.sort_by_key(|r| r.start);
+    }
+    stellen
 }
 
 /// Übermalt die Kästen weiss und schreibt das Bild als JPEG nach `ziel`.
