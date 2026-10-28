@@ -30,6 +30,7 @@ brew install sane-backends tesseract tesseract-lang   # einmalig, für scannen
 cargo run --release --bin scannen   # Stapel aus dem Einzug nach scan/
 cargo run --release --bin scannen -- --aus bild1.jpg bild2.jpg   # ohne Scanner
 cargo run --release --bin scannen -- --lesen bild1.jpg           # nur Erkennung
+cargo run --release --bin scannen -- --ein --aus kurz.jpg v1.jpg  # nicht trennen
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).

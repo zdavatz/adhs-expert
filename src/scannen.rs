@@ -51,6 +51,8 @@ struct Optionen {
     titel: Option<String>,
     dpi: u32,
     farbe: bool,
+    /// Der ganze Stapel ist ein Vortrag, auch wenn ein Blatt wie ein Anfang aussieht.
+    ein: bool,
     ordner: PathBuf,
     geraet: Option<String>,
     lesen: Vec<PathBuf>,
@@ -63,6 +65,7 @@ fn optionen() -> anyhow::Result<Optionen> {
         titel: None,
         dpi: 150,
         farbe: false,
+        ein: false,
         ordner: PathBuf::from("scan"),
         geraet: None,
         lesen: Vec::new(),
@@ -84,6 +87,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             "--ordner" => o.ordner = PathBuf::from(wert()?),
             "--geraet" => o.geraet = Some(wert()?),
             "--farbe" => o.farbe = true,
+            "--ein" => o.ein = true,
             "--lesen" | "--aus" => {
                 let liste = if a == "--lesen" { &mut o.lesen } else { &mut o.aus };
                 while let Some(p) = args.next_if(|p| !p.starts_with("--")) {
@@ -92,7 +96,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             }
             "-h" | "--help" => {
                 println!(
-                    "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] \
+                    "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--ein] \
                      [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…]"
                 );
                 std::process::exit(0);
@@ -235,7 +239,11 @@ fn lauf() -> anyhow::Result<()> {
     }
 
     // Mehrere Vorträge in einem Stapel: je Vortrag ein PDF.
-    let teile = vortraege_trennen(&texte, &nummern);
+    let teile = if opt.ein {
+        vec![0..seiten.len()]
+    } else {
+        vortraege_trennen(&texte, &nummern)
+    };
     if teile.len() > 1 {
         eprintln!("{} Vorträge im Stapel erkannt.", teile.len());
     }
