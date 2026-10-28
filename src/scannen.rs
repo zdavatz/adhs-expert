@@ -30,7 +30,7 @@
 // Weitere Schalter: --dpi 150 (300 für kleine Schrift oder Notizen),
 // --farbe (Vorgabe Graustufen),
 // --ordner DIR (Vorgabe: scan/, wird angelegt), --geraet <SANE-Gerät>
-// (Vorgabe: das erste epson2-Gerät aus `scanimage -L`),
+// (Vorgabe: der GT-2500 aus `scanimage -L`, nicht ein Epson im Netz),
 // --lesen BILD… (nur Erkennung zeigen, nichts scannen),
 // --aus BILD… (PDF aus schon gescannten JPEGs, nichts scannen).
 
@@ -103,19 +103,29 @@ fn optionen() -> anyhow::Result<Optionen> {
     Ok(o)
 }
 
-/// Das erste epson2-Gerät aus `scanimage -L`, etwa `epson2:libusb:001:004`.
-/// Die USB-Nummern wechseln beim Umstecken, darum nicht fest verdrahten.
+/// Der GT-2500 aus `scanimage -L`, etwa `epson2:libusb:001:004`. Die
+/// USB-Nummern wechseln beim Umstecken, darum nicht fest verdrahten. Im Netz
+/// meldet sich zeitweise ein zweites Epson-Gerät (`epson2:net:…`, ein
+/// Multifunktionsdrucker ohne diesen Einzug) - und manchmal zuerst. Darum
+/// zählt das Modell (SANE nennt den GT-2500 «ES-H300»), dann USB vor Netz.
 fn epson_geraet() -> anyhow::Result<String> {
     let aus = Command::new("scanimage")
         .arg("-L")
         .output()
         .context("scanimage nicht gefunden - brew install sane-backends")?;
     let text = String::from_utf8_lossy(&aus.stdout);
-    text.lines()
+    let geraete: Vec<(&str, &str)> = text
+        .lines()
         .filter_map(|z| z.strip_prefix("device `")?.split_once('\''))
-        .map(|(geraet, _)| geraet.to_string())
-        .find(|g| g.starts_with("epson2:"))
-        .with_context(|| format!("kein Epson-Scanner gefunden - eingeschaltet und eingesteckt?\n{text}"))
+        .filter(|(g, _)| g.starts_with("epson2:"))
+        .collect();
+    let modell = |(_, rest): &&(&str, &str)| rest.contains("ES-H300") || rest.contains("GT-2500");
+    geraete
+        .iter()
+        .find(modell)
+        .or_else(|| geraete.iter().find(|(g, _)| g.contains(":libusb:")))
+        .map(|(g, _)| g.to_string())
+        .with_context(|| format!("GT-2500 nicht gefunden - eingeschaltet und eingesteckt?\n{text}"))
 }
 
 /// Alle Seiten aus dem Einzug als JPEG nach `tmp`.
