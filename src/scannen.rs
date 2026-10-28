@@ -602,6 +602,16 @@ fn titel_finden(zeilen: &[Zeile]) -> Option<String> {
     (!titel.is_empty()).then_some(titel)
 }
 
+/// `JJJJ-MM-TT` als `TT.MM.JJJJ`, `JJJJ-MM` als `MM.JJJJ`; alles andere
+/// bleibt, wie es ist.
+fn datum_ch(datum: &str) -> String {
+    match datum.split('-').collect::<Vec<_>>()[..] {
+        [j, m, t] if datum_iso(datum).is_some() => format!("{t}.{m}.{j}"),
+        [j, m] if datum_iso(&format!("{datum}-01")).is_some() => format!("{m}.{j}"),
+        _ => datum.to_string(),
+    }
+}
+
 /// Das heutige Datum als `JJJJ-MM-TT`, in der Ortszeit des Rechners.
 fn heute() -> String {
     Command::new("date")
@@ -657,6 +667,7 @@ fn dateiname(datum: &str, titel: &str, nr: u32) -> String {
     }
     let kurz: String = kurz.chars().take(MAX_TITEL_IM_NAMEN).collect();
     let kurz = kurz.trim_end_matches([',', ';', '-', ' ']);
+    let datum = datum_ch(datum);
     match nr {
         0 | 1 => format!("{datum} {kurz}.pdf"),
         n => format!("{datum} {kurz} ({n}).pdf"),
@@ -1030,13 +1041,14 @@ mod tests {
     fn name() {
         assert_eq!(
             dateiname("2003-06-01", "Cannabis und  Schizophrenie: ein Überblick", 1),
-            "2003-06-01 Cannabis und Schizophrenie- ein Überblick.pdf"
+            "01.06.2003 Cannabis und Schizophrenie- ein Überblick.pdf"
         );
         assert_eq!(
             dateiname("2003-12-02", "Jugendliche und Sucht Freiheit oder Sackgasse auf dem Weg der Suchenden", 2),
-            "2003-12-02 Jugendliche und Sucht Freiheit oder Sackgasse auf dem Weg (2).pdf"
+            "02.12.2003 Jugendliche und Sucht Freiheit oder Sackgasse auf dem Weg (2).pdf"
         );
         let lang = dateiname("2014-03-05", &"Wort ".repeat(30), 1);
-        assert!(lang.chars().count() <= "2014-03-05 .pdf".len() + MAX_TITEL_IM_NAMEN);
+        assert!(lang.chars().count() <= "05.03.2014 .pdf".len() + MAX_TITEL_IM_NAMEN);
+        assert_eq!(dateiname("2021-10", "Titel", 1), "10.2021 Titel.pdf");
     }
 }
