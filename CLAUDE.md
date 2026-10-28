@@ -172,6 +172,12 @@ Was dabei Zeit gekostet hat:
   weiter - einmal wurde so nur die README-Zeile committet und gepusht, das
   PDF blieb alt. `rm -rf ordner; mkdir -p ordner` verwenden und vor dem
   Commit `pdfinfo` auf die Seitenzahl prüfen.
+- **Querverweistabelle klassisch schreiben.** Der XRef-Stream, den `lopdf`
+  0.34 standardmässig schreibt, liess Poppler (`pdfinfo`, `pdftotext`) bei
+  einem Titel über ~130 Zeichen «Syntax Error: Invalid XRef entry 0» melden,
+  obwohl alle Offsets stimmten. `pdf_bauen()` setzt darum
+  `XrefType::CrossReferenceTable`. Nach jedem Bau auf stderr von `pdfinfo`
+  achten.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE

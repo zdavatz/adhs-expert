@@ -1166,6 +1166,9 @@ fn pdf_bauen(
     });
     doc.trailer.set("Info", info_id);
 
+    // Klassische Querverweistabelle: Den XRef-Stream von lopdf meldet Poppler
+    // als «Invalid XRef entry 0», sobald der Titel über ~130 Zeichen lang ist.
+    doc.reference_table.cross_reference_type = lopdf::xref::XrefType::CrossReferenceTable;
     doc.save(ziel).with_context(|| format!("{}", ziel.display()))?;
     Ok(())
 }
