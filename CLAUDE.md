@@ -183,6 +183,17 @@ Was dabei Zeit gekostet hat:
   obwohl alle Offsets stimmten. `pdf_bauen()` setzt darum
   `XrefType::CrossReferenceTable`. Nach jedem Bau auf stderr von `pdfinfo`
   achten.
+- **Mehrzeilige Titel brauchen oft `--titel`.** Endet eine Titelzeile klein
+  und beginnt die nächste gross («… bei geistig behinderten / Jugendlichen
+  und Erwachsenen»), nimmt `titel_finden()` nur die letzte Zeile. Ebenso, wenn
+  der Kopf Veranstaltung und Datum über dem Titel trägt oder Handschrift im
+  Kopf steht. Seite 1 immer ansehen und den Titel von Hand setzen.
+- **Weitere Exemplare:** Satzgleiche Kopien ohne Notizen verwerfen; Kopien mit
+  Handkorrekturen oder Randnotizen als `_2` behalten (Wunsch des Benutzers).
+  Gleicher Titel und gleiches Datum heisst nicht gleicher Text – zweimal war es
+  ein anderer Vortrag, darum immer `difflib` laufen lassen.
+- **Kein Vortragsdatum, aber Datum in der Fusszeile:** dieses (meist
+  Druckdatum) mit `--datum` setzen statt des Scantags, im Bestand vermerken.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
