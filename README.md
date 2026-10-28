@@ -167,7 +167,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-60 PDFs, 247 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+61 PDFs, 251 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -223,6 +223,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Alkohol_und_Familie_20.11.2003.pdf` | 6 |
 | `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
 | `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
+| `Das_Burn-out-Syndrom_27.09.2007.pdf` | 4 (Frauenzmorge Auenstein) |
 | `Psychische_Krankheiten_und_ihre_Auswirkungen_auf_die_08.11.2007.pdf` | 3 (Vereinigung Schweizer Amtsvormünder; «… betroffene Person») |
 | `Kinder-_Jugend-_und_Familientherapie_04.03.2008.pdf` | 4 (Vortrag BDK) |
 | `Prevention_in_the_field_of_law_and_mental_health_28.10.2026.pdf` | 4 (englisch, «Therapeutic Jurisprudence», 28. Congress of Law and Mental Health in den Niederlanden; ohne Datum im Text, Scantag) |
