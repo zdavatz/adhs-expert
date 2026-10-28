@@ -101,12 +101,8 @@ Google Analytics ist auf adhs.expert nicht eingebunden.
 ## Vorträge scannen
 
 `scannen` holt Papiervorlagen über den automatischen Einzug des Epson GT-2500
-und legt ein PDF an, das Datum und Titel des Vortrags trägt — im Dateinamen
-(`Titel_des_Vortrags_05.03.2014.pdf`: Titel zuerst, Unterstriche statt
-Leerschlägen, Datum am Schluss) und in den Dokumenteigenschaften. In den Namen kommt
-nur der Block direkt über der Autorenzeile, höchstens 60 Zeichen – darüber
-stehen meist Datum und Veranstalter. Die Eigenschaften tragen den ganzen Kopf. Die PDFs liegen in `scan/` und
-werden mit dem Repo committet; `--ordner` legt sie anderswo ab.
+und legt je Vortrag ein durchsuchbares PDF in `scan/` ab. Die PDFs werden mit
+dem Repo committet.
 
 ```bash
 brew install sane-backends
@@ -114,35 +110,59 @@ cargo run --release --bin scannen
 cargo run --release --bin scannen -- --datum 5.3.2014 --titel "Titel"
 ```
 
-Gescannt wird einseitig, A4, 150 dpi in Graustufen (`--farbe` für Farbe,
-`--dpi` für eine andere Auflösung). Datum und Titel liest die Texterkennung von
-macOS (Vision) aus den Seiten: der Titel ist der Kopf der ersten Seite bis zur
-Autorenzeile, das Datum das erste im Kopf der ersten Seite, sonst das letzte im
-Dokument. `--datum` und `--titel` überschreiben die Erkennung. Steht im Text
-kein Datum, gilt der Scantag; in den Dokumenteigenschaften heisst es dann
-«gescannt am» statt «Vortrag vom». Dieselbe Erkennung legt eine unsichtbare
-Textebene über die Seitenbilder, damit sich das PDF markieren und durchsuchen
-lässt, und macht erkannte Adressen (`www.…`, `http…`, Mailadressen) anklickbar.
-Die Erkennung kann sich verlesen, ein Link kann darum auch einmal falsch zeigen.
-`--lesen BILD…` zeigt nur, was erkannt wird,
-`--aus BILD…` baut das PDF aus schon gescannten JPEGs.
+**Dateiname:** `Titel_des_Vortrags_05.03.2014.pdf` – Titel zuerst,
+Unterstriche statt Leerschlägen, Datum am Schluss, höchstens 60 Zeichen Titel,
+an einer Wortgrenze gekürzt. In den Namen kommt der Titelblock direkt über der
+Autorenzeile; darüber stehen meist Datum und Veranstalter («FDP Villmergen»,
+«Elternbildung Reinach»). Die Dokumenteigenschaften tragen den ganzen Kopf.
+Gleiche Namen bekommen `_2`, `_3`.
 
-Mehrere Vorträge dürfen in einem Stapel liegen; je Vortrag entsteht ein PDF.
-Getrennt wird nach der Seitenzahl unten (1 beginnt einen Vortrag, «Seite 3 von
-7» setzt ihn fort, eine Lücke in der Zählung wird gemeldet). Ohne Seitenzahl
-entscheidet der Kopf: «Vortrag vom …» oder die Autorenzeile mit Adresse. Ein
-laufender Kopf, der auf jeder Seite wiederkehrt, zählt dabei nicht.
+**Datum und Titel** liest die Texterkennung von macOS (Vision) aus den Seiten:
+das Datum im Kopf der ersten Seite, sonst das letzte im Dokument (oft steht am
+Schluss «6. August 2003»). Steht keines im Text, gilt der Scantag; in den
+Dokumenteigenschaften heisst es dann «gescannt am» statt «Vortrag vom».
+`--datum` und `--titel` überschreiben die Erkennung.
 
-Mailadressen, Strassenadressen mit Hausnummer und Telefonnummern werden vor
-dem Ablegen entfernt: im Bild weiss übermalt (ein Kasten im PDF genügte nicht,
-das Bild darunter liesse sich herausziehen) und aus der Textebene gelöscht.
-Die Lage im Bild liefert die Texterkennung zeichengenau.
+**Textebene und Links:** Die erkannten Zeilen liegen unsichtbar über den
+Seitenbildern, das PDF lässt sich markieren und durchsuchen. Erkannte
+Webadressen sind anklickbar. Die Erkennung kann sich verlesen.
 
-Der Scanner läuft über SANE (Backend `epson2`, dort als ES-H300 geführt), nicht
-über Epson Scan 2: Dessen Argument `-SCAN` ist nicht dokumentiert, und der
-Image-Capture-Treiber «EPSON Scanner.app» ist nur für Intel gebaut und startet
-auf Apple Silicon ohne Rosetta nicht. Immer im Batch-Modus scannen — ein
-Einzelscan lässt den Einzug das nächste Blatt vorladen und ungescannt auswerfen.
+**Mehrere Vorträge in einem Stapel** ergeben je ein PDF. Getrennt wird nach der
+Seitenzahl unten (1 beginnt einen Vortrag, «Seite 3 von 7» setzt ihn fort, eine
+Lücke in der Zählung wird gemeldet). Ohne Seitenzahl entscheidet der Kopf:
+«Vortrag vom …» oder die Autorenzeile mit Adresse. Ein laufender Kopf, der auf
+jeder Seite wiederkehrt, zählt dabei nicht.
+
+**Kontaktdaten:** Mailadressen, Strassenadressen mit Hausnummer und
+Telefonnummern werden vor dem Ablegen entfernt – im Bild weiss übermalt (ein
+Kasten im PDF genügte nicht, das Bild darunter liesse sich herausziehen) und
+aus der Textebene gelöscht.
+
+**Auflösung:** 150 dpi in Graustufen, einseitig, A4. Für kleine Schrift oder
+Bleistiftnotizen `--dpi 300`, für Farbe `--farbe`.
+
+**Werkzeuge ohne Scanner:** `--lesen BILD…` zeigt nur, was erkannt wird;
+`--aus BILD…` baut die PDFs aus schon gescannten JPEGs – etwa um nach einem
+Papierstau den Rest mit den ersten Seiten zusammenzusetzen. Die JPEGs eines
+fertigen PDFs holt `pdfimages -j` wieder heraus.
+
+**Warum SANE und nicht Epson Scan 2:** Dessen Argument `-SCAN` ist nicht
+dokumentiert, und der Image-Capture-Treiber «EPSON Scanner.app» ist nur für
+Intel gebaut und startet auf Apple Silicon ohne Rosetta nicht. SANE führt den
+GT-2500 im Backend `epson2` als «ES-H300».
+
+### Bestand
+
+| Datei | Seiten |
+|---|---|
+| `Alkohol_und_Familie_20.11.2003.pdf` | 6 |
+| `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
+| `Das_trotzende_Kind_Bin_ich_zu_lieb_oder_bin_ich_zu_streng_11.11.2003.pdf` | 5 |
+| `Familiendynamik_mit_einem_POS-ADS-Kind_06.08.2003.pdf` | 7 |
+| `Gedanken_zum_Tod_in_der_Familie_13.11.2003.pdf` | 4 |
+| `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
+| `Text_für_Werbung_Familientherapie_28.10.2026.pdf` | 2 (ohne Datum im Text, Scantag) |
+| `Welche_Chancen_bietet_die_familienergänzende_Betreuung_von_06.11.2003.pdf` | 4 |
 
 ## Aufbau
 

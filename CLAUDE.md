@@ -5,7 +5,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Overview
 
 Erzeugt ein PDF, das alle Beiträge von [adhs.expert](https://adhs.expert)
-auflistet, deren Text jetzt vollständig im Beitrag selbst steht.
+auflistet, deren Text jetzt vollständig im Beitrag selbst steht. Ein zweites
+Programm, `scannen`, digitalisiert Papiervorlagen von Vorträgen über den
+Einzug des Epson GT-2500 nach `scan/`.
 
 Der Anlass: viele Beiträge bestanden nur aus einem Audio-Player und einem
 nackten Link auf ein PDF – für Suchmaschinen praktisch leere Seiten. Der
@@ -21,6 +23,13 @@ Kommentare, Dokumententexte und Commit-Messages sind auf Deutsch
 ```bash
 cargo run --release --bin uebersicht
 cargo run --release --bin uebersicht -- --out /pfad/zum.pdf
+```
+
+```bash
+brew install sane-backends          # einmalig, für scannen
+cargo run --release --bin scannen   # Stapel aus dem Einzug nach scan/
+cargo run --release --bin scannen -- --aus bild1.jpg bild2.jpg   # ohne Scanner
+cargo run --release --bin scannen -- --lesen bild1.jpg           # nur Erkennung
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
@@ -71,6 +80,62 @@ selbst. Zwei Fallstricke, die dabei Zeit gekostet haben:
   eine leere Schlussseite.
 
 `MASS_DEBUG=1` gibt die gemessenen Hoehen auf stderr aus.
+
+### Scannen (`src/scannen.rs`)
+
+Ablauf: `scanimage --batch` (SANE, Backend `epson2`) holt den Stapel als JPEG,
+Vision (objc2-vision) liest jede Seite, der Stapel wird in Vorträge geteilt,
+Kontaktdaten werden aus Bild und Text entfernt, `lopdf` setzt je Vortrag ein
+PDF mit Bild (DCTDecode, unverändert), unsichtbarer Textebene (Rendermodus 3,
+Helvetica, per `Tz` auf die Kastenbreite gezogen) und Link-Annotationen.
+Benutzerwünsche, die im Code stecken: Dateiname `Titel_TT.MM.JJJJ.pdf`,
+Unterstriche, Datum am Schluss; 150 dpi Graustufen; ohne Datum im Text der
+Scantag; jeder Scan wird committet **und** gepusht.
+
+Was dabei Zeit gekostet hat:
+
+- **Epson Scan 2 ist nicht skriptbar.** `-SCAN` existiert, das Format ist
+  undokumentiert. Der Image-Capture-Treiber `/Library/Image Capture/Devices/
+  EPSON Scanner.app` ist x86_64/i386 – ohne Rosetta (auf diesem Mac nicht
+  installiert, ab macOS 28 ganz weg) startet ihn `icdd` nicht, ImageCaptureCore
+  findet das Gerät, die Sitzung läuft nach 30 s in einen Timeout. SANE ist der
+  Weg; dort heisst der GT-2500 «ES-H300».
+- **Zwei Epson-Scanner.** `scanimage -L` meldet zeitweise auch
+  `epson2:net:192.168.0.163` (ein Multifunktionsgerät im Netz), und zwar
+  **zuerst**. Wer das erste `epson2:`-Gerät nimmt, scannt ins Leere und bekommt
+  `Error during device I/O`. `epson_geraet()` wählt nach Modell, dann USB.
+  Beim Aufruf von `scanimage` von Hand dasselbe beachten.
+- **Nie ohne `--batch` scannen.** Ein Einzelscan (`-o`) lässt den Einzug das
+  nächste Blatt vorladen und ungescannt auswerfen – der Benutzer muss den
+  Stapel neu ordnen.
+- **Papierstau mitten im Stapel:** `scanimage` endet mit Status 9, die bis
+  dahin fertigen Seiten liegen da, das gestaute Blatt fehlt. Nach dem
+  Beheben ab dem gestauten Blatt neu einlegen, den Rest scannen und mit
+  `--aus` zusammensetzen. Hat der Vortrag Seitenzahlen, meldet
+  `vortraege_trennen()` die Lücke; ohne Seitenzahlen nicht – dann den Benutzer
+  nach der Seitenzahl fragen. Der erste Anlauf nach einem Stau meldet
+  manchmal noch einmal einen Stau (ADF-Status `0xe4`), der zweite geht.
+  `SANE_DEBUG_EPSON2=5` zeigt den ADF-Status (`0x80` bereit, `0xc0` Papier da,
+  `0xe8` leer).
+- **Stapeltrennung:** Die Seitenzahl unten ist das verlässliche Merkmal. Ohne
+  sie gilt der Kopf – aber Vorlagen mit laufendem Briefkopf («Ganglion Frau
+  Dr. med. Ursula Davatz – www.ganglion.ch …» auf jeder Seite) haben sonst
+  jede Seite zum eigenen Vortrag gemacht, und «Dr. med. U. Davatz» /
+  «www.ganglion.ch» auf zwei Zeilen wurde übersehen. Die Unterschrift am
+  Textende («Dr. med. U. Davatz» ohne Adresse) darf nie trennen.
+- **Titel:** Der Block direkt über der Autorenzeile ist der Titel, die Blöcke
+  darüber sind Veranstalter («La vida Wohlen», «Praxis Frau Lutz»). Vision
+  verschluckt gelegentlich Trennstriche am Zeilenende («Be-/Treuung» wurde
+  «Be Treuung») – dann mit `--titel` korrigieren.
+- **Kontaktdaten:** `heikle_stellen()` findet Mail-, Strassen- und
+  Telefonangaben; `boundingBoxForRange:error:` (fehlt in den objc2-Bindings,
+  darum `msg_send!`) liefert den Kasten zeichengenau. Übermalt wird im JPEG
+  selbst – ein weisses Rechteck im PDF liesse das Bild darunter auslesbar.
+  Der Kasten reicht 15 % der Zeilenhöhe nach oben und 5 % nach unten; mehr
+  schneidet die Umlautpunkte der nächsten Zeile ab.
+- **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
+  '@|strasse [0-9]|tel\.'` muss leer bleiben, und Seite 1 rendern
+  (`pdftoppm -png -r 55 -f 1 -l 1`), um Datum und Titel anzusehen.
 
 ### Daten (`src/eintraege.rs`)
 
@@ -259,6 +324,9 @@ geführt:
   Daten es sind.
 - `credentials`, `token*.json`, `client_secret_*.json`, `*.env`
 - das erzeugte `adhs_expert_beitraege_mit_volltext.pdf` (reproduzierbar)
+- Scans, die versehentlich im Hauptverzeichnis landen (`/*_TT.MM.JJJJ.pdf`).
+  Gewollt eingecheckt sind nur die Scans in `scan/` – mit entfernten
+  Mail-, Strassen- und Telefonangaben (Wunsch des Benutzers).
 - `target/`
 
 Ein `.gitignore`-Eintrag ist eine Vorsichtsmassnahme, kein Schutz – ein
