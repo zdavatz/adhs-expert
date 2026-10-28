@@ -167,10 +167,11 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-30 PDFs, 137 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+31 PDFs, 140 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
+| `Wie_erkenne_ich_meine_Achillesferse_Was_sind_meine_typischen_31.10.2002.pdf` | 3 («Engagiert pflegen ohne Burnout», Beratung/Weiterbildung) |
 | `Hilfe,_mein_Kind_wird_gemobbt_07.11.2002.pdf` | 4 (Elternzirkel Reinach) |
 | `Pflegende_Angehörige_Dureschnufe_dank_Spitex_09.11.2002.pdf` | 3 (St. Galler Gesundheitstag) |
 | `Psychisch_Kranke_in_der_Spitex_13.11.2002.pdf` | 3 (Spitex St. Gallen) |
