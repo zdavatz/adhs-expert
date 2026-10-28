@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-122 PDFs, 519 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+123 PDFs, 525 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -189,6 +189,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989_2.pdf` | 7 (überarbeitete Fassung, dichter gesetzt; Seite 7 Literaturliste im Querformat) |
 | `Emanzipation_eines_Partners_und_die_Folgen_auf_die_18.04.1989.pdf` | 2 (Referat von F. Haller, Kurs II Familientherapie; vier anonyme Paarfälle; Adresse entfernt) |
 | `Prävention_sinnvoller_Ansatz_bei_gefährdeten_Familien_mit_03.07.1989.pdf` | 3 (Kursarbeit von E. Maarse Bäbler, Familientheoriekurs II; ein Blatt beidseitig) |
+| `Loyalität_und_Familie_04.09.1989.pdf` | 6 (Kursarbeit von Canzek, Kurs II in Familientherapie) |
 | `Führungsposition_im_Zusammenhang_mit_Geschwisterposition_05.11.1989.pdf` | 3 (Familienberatung Kurs II; Arbeit der Kursteilnehmerin Heidi Deplazes-Kunz nach Walter Toman, Schreibmaschine) |
 | `Adoleszentenpsychiatrie_Prävention_im_Adoleszentenalter_03.09.1990.pdf` | 2 (Familientherapiekurs II, Schreibmaschine) |
 | `Sexualverhalten_Sexualstörungen_16.10.1990.pdf` | 4 (Kursskript «FT II», Schreibmaschine; Datum vom Schluss) |
