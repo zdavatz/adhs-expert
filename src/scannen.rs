@@ -200,10 +200,17 @@ fn lauf() -> anyhow::Result<()> {
 
     std::fs::create_dir_all(&opt.ordner).with_context(|| format!("{}", opt.ordner.display()))?;
     // Nie überschreiben: bei gleichem Namen eine Nummer anhängen.
-    let mut ziel = opt.ordner.join(dateiname(&datum, &titel, 1));
+    // Erkannte Titel bestehen aus mehreren Blöcken: Datum, Veranstalter oder
+    // Anlass zuoberst, der eigentliche Titel direkt über der Autorenzeile.
+    // In den Namen kommt nur dieser letzte Block, ins PDF der ganze Kopf.
+    let name_titel = match &opt.titel {
+        Some(t) => t.as_str(),
+        None => titel.rsplit(" – ").next().unwrap_or(&titel),
+    };
+    let mut ziel = opt.ordner.join(dateiname(&datum, name_titel, 1));
     let mut n = 2;
     while ziel.exists() {
-        ziel = opt.ordner.join(dateiname(&datum, &titel, n));
+        ziel = opt.ordner.join(dateiname(&datum, name_titel, n));
         n += 1;
     }
     if let Err(e) = pdf_bauen(&seiten, &texte, opt.dpi, &datum, scandatum, &titel, &ziel) {
@@ -433,11 +440,10 @@ fn datum_iso(s: &str) -> Option<String> {
 /// Dokumenteigenschaften.
 const MAX_TITEL_IM_NAMEN: usize = 60;
 
-/// Dateiname aus Datum und Titel. Nur der erste Titelblock (vor « – »),
-/// höchstens `MAX_TITEL_IM_NAMEN` Zeichen, an einer Wortgrenze gekürzt; was
-/// im Finder stört, wird ersetzt. `nr` ab 2 unterscheidet gleiche Namen.
+/// Dateiname aus Datum und Titel: höchstens `MAX_TITEL_IM_NAMEN` Zeichen,
+/// an einer Wortgrenze gekürzt; was im Finder stört, wird ersetzt. `nr` ab 2
+/// unterscheidet gleiche Namen.
 fn dateiname(datum: &str, titel: &str, nr: u32) -> String {
-    let titel = titel.split(" – ").next().unwrap_or(titel);
     let titel: String = titel
         .chars()
         .map(|c| match c {
@@ -793,12 +799,8 @@ mod tests {
             "2003-06-01 Cannabis und Schizophrenie- ein Überblick.pdf"
         );
         assert_eq!(
-            dateiname(
-                "ohne Datum",
-                "Text für Werbung Familientherapie – Was ist Familientherapie und wie unterscheidet sie sich",
-                2
-            ),
-            "ohne Datum Text für Werbung Familientherapie (2).pdf"
+            dateiname("2003-12-02", "Jugendliche und Sucht Freiheit oder Sackgasse auf dem Weg der Suchenden", 2),
+            "2003-12-02 Jugendliche und Sucht Freiheit oder Sackgasse auf dem Weg (2).pdf"
         );
         let lang = dateiname("2014-03-05", &"Wort ".repeat(30), 1);
         assert!(lang.chars().count() <= "2014-03-05 .pdf".len() + MAX_TITEL_IM_NAMEN);

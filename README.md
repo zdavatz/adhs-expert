@@ -102,8 +102,9 @@ Google Analytics ist auf adhs.expert nicht eingebunden.
 
 `scannen` holt Papiervorlagen über den automatischen Einzug des Epson GT-2500
 und legt ein PDF an, das Datum und Titel des Vortrags trägt — im Dateinamen
-(`2014-03-05 Titel.pdf`, nur der erste Titelblock, höchstens 60 Zeichen) und
-in den Dokumenteigenschaften (voller Titel). Die PDFs liegen in `scan/` und
+(`2014-03-05 Titel.pdf`) und in den Dokumenteigenschaften. In den Namen kommt
+nur der Block direkt über der Autorenzeile, höchstens 60 Zeichen – darüber
+stehen meist Datum und Veranstalter. Die Eigenschaften tragen den ganzen Kopf. Die PDFs liegen in `scan/` und
 werden mit dem Repo committet; `--ordner` legt sie anderswo ab.
 
 ```bash
