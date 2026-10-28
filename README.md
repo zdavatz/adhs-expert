@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-114 PDFs, 482 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+114 PDFs, 483 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -284,7 +284,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_28.10.2026_2.pdf` | 3 (andere Fassung: grösser gesetzt, mit Autorenzeile statt Unterschrift, ohne Literaturhinweise) |
 | `Automatismus_Motivation_28.10.2026.pdf` | 22 (Kursarbeit «FT II», ohne Datum, Scantag; handschriftliche Adresse entfernt) |
 | `Weshalb_habe_ich_einen_18_Jahre_älteren_Mann_geheiratet_28.10.2026.pdf` | 2 (persönliche Kursarbeit, Familientherapie 1993; Name der Verfasserin geändert; ohne Tagesdatum, Scantag) |
-| `Differenzierung_im_Ehekonflikt_28.10.2026.pdf` | 6 (Seminararbeit Familientherapie Seminar II, um 1990, ohne Datum, Scantag; Adresse entfernt, Schlussseite lag doppelt) |
+| `Differenzierung_im_Ehekonflikt_28.10.2026.pdf` | 7 (Seminararbeit Familientherapie Seminar II, um 1990, ohne Datum, Scantag; Adresse entfernt, Schlussseite lag doppelt) |
 | `Krankheit_als_Konfliktlösung_28.10.2026.pdf` | 1 (Kursunterlage ohne Verfasser und Datum, Scantag) |
 | `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.2026.pdf` | 3 (leerer Fragebogen von Eva Zimmerli, Familientheorie-Kurs «FT II/93», ohne Tagesdatum, Scantag; gehört zur Arbeit vom 30.1.1994) |
 | `Ablösung_von_der_Autorität_28.10.2026.pdf` | 2 (Familientheorie Kurs II/91, FTH291, Schreibmaschine; ohne Tagesdatum, Scantag – der Kurs deutet auf 1991) |
