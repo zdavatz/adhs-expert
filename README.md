@@ -167,10 +167,11 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-38 PDFs, 168 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+39 PDFs, 172 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
+| `Begleitung_von_Menschen_mit_depressiven_Symptomen_im_14.03.2002.pdf` | 4 (Fortbildungsseminar am KSB; frühere Fassung des Seminars vom 13.2.2003) |
 | `Depression_eine_Zeiterscheinung_19.09.2002.pdf` | 4 (Kath., ref. und gemeinnütziger Frauenbund) |
 | `Der_Emanzipierte_Mann_24.09.2002.pdf` | 3 (La Vida) |
 | `Designerdrogen,_die_modernen_chemischen_Problemlöser_der_26.09.2002.pdf` | 3 (Samariterverein Wölflinswil; «… der Jugend») |
