@@ -199,6 +199,11 @@ Was dabei Zeit gekostet hat:
   `magick seite.jpg -rotate 90` drehen (Richtung am Bild prüfen, Text muss
   danach waagrecht laufen) und mit `--aus` einsetzen. Dafür den Stapel zuerst
   von Hand mit `scanimage --batch` in den Scratchpad holen.
+- **Schreibmaschinenseiten und `pdftotext`:** Bei weit gesetzter
+  Schreibmaschinenschrift gibt `pdftotext` die Wörter nicht in Lesereihenfolge
+  aus – das letzte ausgegebene Wort ist dann nicht das Seitenende. Einmal wurde
+  so ein fehlendes Blatt vermutet, das es nicht gab. Das Seitenende im Bild
+  prüfen.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
