@@ -195,10 +195,10 @@ fn lauf() -> anyhow::Result<()> {
     eprintln!("Datum: {datum}\nTitel: {titel}");
 
     // Nie überschreiben: bei gleichem Namen eine Nummer anhängen.
-    let mut ziel = opt.ordner.join(dateiname(&datum, &titel));
+    let mut ziel = opt.ordner.join(dateiname(&datum, &titel, 1));
     let mut n = 2;
     while ziel.exists() {
-        ziel = opt.ordner.join(dateiname(&datum, &format!("{titel} ({n})")));
+        ziel = opt.ordner.join(dateiname(&datum, &titel, n));
         n += 1;
     }
     if let Err(e) = pdf_bauen(&seiten, &texte, opt.dpi, &datum, &titel, &ziel) {
@@ -414,8 +414,15 @@ fn datum_iso(s: &str) -> Option<String> {
     Some(format!("{j:04}-{m:02}-{t:02}"))
 }
 
-/// Dateiname aus Datum und Titel; nur was im Finder stört, wird ersetzt.
-fn dateiname(datum: &str, titel: &str) -> String {
+/// Längster Titelteil im Dateinamen; der volle Titel steht in den
+/// Dokumenteigenschaften.
+const MAX_TITEL_IM_NAMEN: usize = 60;
+
+/// Dateiname aus Datum und Titel. Nur der erste Titelblock (vor « – »),
+/// höchstens `MAX_TITEL_IM_NAMEN` Zeichen, an einer Wortgrenze gekürzt; was
+/// im Finder stört, wird ersetzt. `nr` ab 2 unterscheidet gleiche Namen.
+fn dateiname(datum: &str, titel: &str, nr: u32) -> String {
+    let titel = titel.split(" – ").next().unwrap_or(titel);
     let titel: String = titel
         .chars()
         .map(|c| match c {
@@ -424,8 +431,23 @@ fn dateiname(datum: &str, titel: &str) -> String {
             c => c,
         })
         .collect();
-    let titel = titel.split_whitespace().collect::<Vec<_>>().join(" ");
-    format!("{datum} {titel}.pdf")
+    let mut kurz = String::new();
+    for wort in titel.split_whitespace() {
+        let laenge = kurz.chars().count() + 1 + wort.chars().count();
+        if !kurz.is_empty() && laenge > MAX_TITEL_IM_NAMEN {
+            break;
+        }
+        if !kurz.is_empty() {
+            kurz.push(' ');
+        }
+        kurz.push_str(wort);
+    }
+    let kurz: String = kurz.chars().take(MAX_TITEL_IM_NAMEN).collect();
+    let kurz = kurz.trim_end_matches([',', ';', '-', ' ']);
+    match nr {
+        0 | 1 => format!("{datum} {kurz}.pdf"),
+        n => format!("{datum} {kurz} ({n}).pdf"),
+    }
 }
 
 /// Breite, Höhe und Farbkanäle aus dem SOF-Segment eines JPEG.
@@ -750,8 +772,18 @@ mod tests {
     #[test]
     fn name() {
         assert_eq!(
-            dateiname("2003-06-01", "Cannabis und  Schizophrenie: ein Überblick"),
+            dateiname("2003-06-01", "Cannabis und  Schizophrenie: ein Überblick", 1),
             "2003-06-01 Cannabis und Schizophrenie- ein Überblick.pdf"
         );
+        assert_eq!(
+            dateiname(
+                "ohne Datum",
+                "Text für Werbung Familientherapie – Was ist Familientherapie und wie unterscheidet sie sich",
+                2
+            ),
+            "ohne Datum Text für Werbung Familientherapie (2).pdf"
+        );
+        let lang = dateiname("2014-03-05", &"Wort ".repeat(30), 1);
+        assert!(lang.chars().count() <= "2014-03-05 .pdf".len() + MAX_TITEL_IM_NAMEN);
     }
 }
