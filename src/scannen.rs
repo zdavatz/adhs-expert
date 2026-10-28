@@ -27,7 +27,8 @@
 // Jede Seite kommt als JPEG an und wird unverändert (DCTDecode) ins PDF
 // gestellt, eine Seite je Bild, Seitengrösse aus Pixelzahl und Auflösung.
 //
-// Weitere Schalter: --dpi 300, --farbe (Vorgabe Graustufen),
+// Weitere Schalter: --dpi 150 (300 für kleine Schrift oder Notizen),
+// --farbe (Vorgabe Graustufen),
 // --ordner DIR (Vorgabe: scan/, wird angelegt), --geraet <SANE-Gerät>
 // (Vorgabe: das erste epson2-Gerät aus `scanimage -L`),
 // --lesen BILD… (nur Erkennung zeigen, nichts scannen),
@@ -60,7 +61,7 @@ fn optionen() -> anyhow::Result<Optionen> {
     let mut o = Optionen {
         datum: None,
         titel: None,
-        dpi: 300,
+        dpi: 150,
         farbe: false,
         ordner: PathBuf::from("scan"),
         geraet: None,
@@ -91,7 +92,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             }
             "-h" | "--help" => {
                 println!(
-                    "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 300] [--farbe] \
+                    "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] \
                      [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…]"
                 );
                 std::process::exit(0);

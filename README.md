@@ -113,7 +113,7 @@ cargo run --release --bin scannen
 cargo run --release --bin scannen -- --datum 5.3.2014 --titel "Titel"
 ```
 
-Gescannt wird einseitig, A4, 300 dpi in Graustufen (`--farbe` für Farbe,
+Gescannt wird einseitig, A4, 150 dpi in Graustufen (`--farbe` für Farbe,
 `--dpi` für eine andere Auflösung). Datum und Titel liest die Texterkennung von
 macOS (Vision) aus den Seiten: der Titel ist der Kopf der ersten Seite bis zur
 Autorenzeile, das Datum das erste im Kopf der ersten Seite, sonst das letzte im
