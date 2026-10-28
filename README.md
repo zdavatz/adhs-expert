@@ -167,7 +167,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-77 PDFs, 300 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+78 PDFs, 302 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -223,6 +223,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Alkohol_und_Familie_20.11.2003.pdf` | 6 |
 | `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
 | `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
+| `Symbiose_zwischen_Mutter_und_Kind_sowie_symbiotische_22.09.2004.pdf` | 2 (Fortbildung Psychiatrisches Zentrum Biel; «… Beziehung in der Paarbeziehung»; Adresse, Telefon und Fax im Briefkopf entfernt) |
 | `Das_Leben_der_Frau_im_steten_Wandel_01.06.2005.pdf` | 3 (Morgentreff Gränichen) |
 | `Psychisch_krank_scheininvalid_18.06.2005.pdf` | 4 (20-jähriges Jubiläum Stiftung Guyerweg) |
 | `Das_Leiden_der_Familienangehörigen_und_ihr_Potential_als_25.08.2005.pdf` | 4 (VASK Aargau; «… als Co-Therapeuten») |
