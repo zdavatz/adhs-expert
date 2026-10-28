@@ -167,7 +167,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-74 PDFs, 290 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+75 PDFs, 293 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -224,6 +224,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
 | `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
 | `Psychisch_krank_scheininvalid_18.06.2005.pdf` | 4 (20-jähriges Jubiläum Stiftung Guyerweg) |
+| `Patientenautonomie_und_Verwahrlosung_Recht_auf_Freiheit_25.10.2005.pdf` | 3 (Kantonaler Spitexverband Aargau; «… versus Pflicht zur Hygiene und Ordnung») |
 | `Das_POS-ADS_in_der_Pubertät_Wie_Eltern_helfen_können_17.11.2005.pdf` | 3 (ELPOS Zürich, Glarus, Schaffhausen, Zentrum Karl der Grosse Zürich) |
 | `Das_POS-ADS_in_der_Pubertät_Wie_Eltern_helfen_können_17.11.2005_2.pdf` | 3 (andere Fassung: ohne das Meerschweinchen-Beispiel, Abschnitte umformuliert) |
 | `Gedanken_im_Anschluss_an_die_Tagung_Therapeutische_23.03.2006.pdf` | 3 (zur Tagung Therapeutische Jurisprudenz «Homo invalidus – oder der wertlose Mensch») |
