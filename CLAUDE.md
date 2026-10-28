@@ -226,6 +226,10 @@ Was dabei Zeit gekostet hat:
   Festbreitenschrift einsetzen. Querformat-Seiten mit Kopfzeile im Hochformat:
   erst den Kopf im Hochformat ersetzen, dann drehen, dann die Beschriftungen. Danach `pdftotext` und `strings` auf jeden
   alten Namen prüfen; echte Namen nicht in Commit oder README.
+- **Seitenzahlen auch oben suchen.** Viele Kursarbeiten tragen die Zahl im
+  Kopf («-2-»), nicht in der Fusszeile – `fusszahl()` sieht sie nicht. Vor dem
+  Zusammensetzen die Köpfe aller Blätter als Ausschnitt ansehen. Satzübergänge
+  allein täuschen: Einmal passte Seite 3 scheinbar nahtlos an Seite 6.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
