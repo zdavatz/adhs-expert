@@ -169,7 +169,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-83 PDFs, 322 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+84 PDFs, 327 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -229,6 +229,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Symbiose_zwischen_Mutter_und_Kind_sowie_symbiotische_22.09.2004.pdf` | 2 (Fortbildung Psychiatrisches Zentrum Biel; «… Beziehung in der Paarbeziehung»; Adresse, Telefon und Fax im Briefkopf entfernt) |
 | `POS-ADS_Sinnvoller_Umgang_damit_im_Kindes-_Und_28.10.2004.pdf` | 4 (Frauengemeinschaft Gebenstorf; «… Kindes- und Erwachsenenalter») |
 | `POS-ADS_Sinnvoller_Umgang_damit_im_Kindes-_Und_28.10.2004_2.pdf` | 3 (gleicher Anlass und Titel, aber ein anderer Text: hohe Sensibilität, Impulskontrolle, Erziehung) |
+| `Kompetenter_Umgang_von_Eltern_und_Lehrern_mit_POS-ADHS-Kind_24.02.2005.pdf` | 5 (Spitex Wolfwil, Pfarrschür; «… als Prävention einer Sekundärerkrankung») |
 | `Jugend_und_Alkohol_05.04.2005.pdf` | 4 (Birr) |
 | `Pubertät_Rollenverlust_der_Eltern_24.04.2005.pdf` | 4 (ohne Vortragsdatum; Datum aus der Fusszeile, vermutlich Druckdatum) |
 | `Das_Leben_der_Frau_im_steten_Wandel_01.06.2005.pdf` | 3 (Morgentreff Gränichen) |
