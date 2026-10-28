@@ -169,7 +169,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-86 PDFs, 333 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+87 PDFs, 335 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -225,6 +225,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Alkohol_und_Familie_20.11.2003.pdf` | 6 |
 | `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
 | `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
+| `POS_im_Kindes-_und_Erwachsenenalter_03.03.2004.pdf` | 2 (Besuchsdienst PKK; fast derselbe Text wie die erste Gebenstorfer Fassung vom 28.10.2004) |
 | `POS_im_Erwachsenenalter_26.08.2004.pdf` | 5 (Seite 1 Kurztext «Sinnvoller Umgang mit POS/ADS im Kindes- und Erwachsenenalter» zum Abend in Gebenstorf; Seiten 2-5 derselbe Text wie die zweite Gebenstorfer Fassung vom 28.10.2004) |
 | `Symbiose_zwischen_Mutter_und_Kind_sowie_symbiotische_22.09.2004.pdf` | 2 (Fortbildung Psychiatrisches Zentrum Biel; «… Beziehung in der Paarbeziehung»; Adresse, Telefon und Fax im Briefkopf entfernt) |
 | `POS-ADS_Sinnvoller_Umgang_damit_im_Kindes-_Und_28.10.2004.pdf` | 4 (Frauengemeinschaft Gebenstorf; «… Kindes- und Erwachsenenalter») |
