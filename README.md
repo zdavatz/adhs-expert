@@ -167,11 +167,12 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-14 PDFs, 79 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+15 PDFs, 86 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
 | `Familiendynamik_mit_einem_POS-ADS-Kind_06.08.2003.pdf` | 7 |
+| `Familiendynamik_mit_einem_POS-ADS-Kind_06.08.2003_2.pdf` | 7 (überarbeitete Fassung: Seiten 1-4 gleich, ab Seite 5 umformuliert, ohne den Absatz zur Angehörigengruppe) |
 | `Das_POS-ADS-Kind_13.10.2003.pdf` | 8 (Kath. Pfarreizentrum Rampart Frick) |
 | `Das_POS-ADS-Kind_13.10.2003_2.pdf` | 9 (zweite Fassung desselben Vortrags, anderer Kopf) |
 | `Wie_wirkt_sich_meine_Vergangenheit_auf_unser_Kind_aus_20.10.2003.pdf` | 5 (Kreis junger Mütter, Mütter- und Väterberatung Bezirk Frick) |
