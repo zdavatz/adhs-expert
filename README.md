@@ -167,21 +167,37 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
+13 PDFs, 74 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+
 | Datei | Seiten |
 |---|---|
-| `Alkohol_und_Familie_20.11.2003.pdf` | 6 |
-| `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
-| `Das_trotzende_Kind_Bin_ich_zu_lieb_oder_bin_ich_zu_streng_11.11.2003.pdf` | 5 |
 | `Familiendynamik_mit_einem_POS-ADS-Kind_06.08.2003.pdf` | 7 |
-| `Gedanken_zum_Tod_in_der_Familie_13.11.2003.pdf` | 4 |
-| `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
-| `Text_für_Werbung_Familientherapie_28.10.2026.pdf` | 2 (ohne Datum im Text, Scantag) |
-| `Welche_Chancen_bietet_die_familienergänzende_Betreuung_von_06.11.2003.pdf` | 4 |
-| `Was_und_wieviel_kann_die_Mütter-_und_Väterberatung_zur_28.10.2026.pdf` | 8 (Artikel für «Clic», ohne Datum im Text, Scantag) |
-| `Depression,_eine_Frauenkrankheit_und_wie_sieht_es_bei_den_21.10.2003.pdf` | 4 (Kath. Pfarreizentrum Nussbaumen, mit Briefkopf) |
-| `Wie_wirkt_sich_meine_Vergangenheit_auf_unser_Kind_aus_20.10.2003.pdf` | 5 (Kreis junger Mütter, Mütter- und Väterberatung Bezirk Frick) |
 | `Das_POS-ADS-Kind_13.10.2003.pdf` | 8 (Kath. Pfarreizentrum Rampart Frick) |
 | `Das_POS-ADS-Kind_13.10.2003_2.pdf` | 9 (zweite Fassung desselben Vortrags, anderer Kopf) |
+| `Wie_wirkt_sich_meine_Vergangenheit_auf_unser_Kind_aus_20.10.2003.pdf` | 5 (Kreis junger Mütter, Mütter- und Väterberatung Bezirk Frick) |
+| `Depression,_eine_Frauenkrankheit_und_wie_sieht_es_bei_den_21.10.2003.pdf` | 4 (Kath. Pfarreizentrum Nussbaumen, mit Briefkopf) |
+| `Welche_Chancen_bietet_die_familienergänzende_Betreuung_von_06.11.2003.pdf` | 4 |
+| `Das_trotzende_Kind_Bin_ich_zu_lieb_oder_bin_ich_zu_streng_11.11.2003.pdf` | 5 |
+| `Gedanken_zum_Tod_in_der_Familie_13.11.2003.pdf` | 4 |
+| `Alkohol_und_Familie_20.11.2003.pdf` | 6 |
+| `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
+| `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
+| `Text_für_Werbung_Familientherapie_28.10.2026.pdf` | 2 (ohne Datum im Text, Scantag) |
+| `Was_und_wieviel_kann_die_Mütter-_und_Väterberatung_zur_28.10.2026.pdf` | 8 (Artikel für «Clic», ohne Datum im Text, Scantag) |
+
+### Wenn etwas fehlt oder doppelt ist
+
+- **Weniger Blätter als angekündigt:** Die Seitenübergänge prüfen (Ende der
+  einen, Anfang der nächsten Seite) und die Seitenzahlen in den Fusszeilen.
+  Das fehlende Blatt einzeln nachscannen und mit `--aus` an der richtigen
+  Stelle einfügen.
+- **Ein Blatt doppelt:** Seiten mit fast gleichem Text (Wortvergleich über
+  99 %) sind eine Kopie; sie kommt nicht ins PDF. So lag beim «POS/ADS-Kind»
+  Seite 7 zweimal im Stapel.
+- **Leere Seite:** Das Blatt lag verkehrt herum; das Programm warnt.
+- **Derselbe Vortrag nochmals:** Eine zweite Fassung (anderer Kopf, anderer
+  Umbruch) wird mit `_2` abgelegt; dieselben Blätter nochmals gescannt
+  werden verworfen.
 
 ## Aufbau
 

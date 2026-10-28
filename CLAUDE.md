@@ -158,6 +158,22 @@ Was dabei Zeit gekostet hat:
   selbst – ein weisses Rechteck im PDF liesse das Bild darunter auslesbar.
   Der Kasten reicht 15 % der Zeilenhöhe nach oben und 5 % nach unten; mehr
   schneidet die Umlautpunkte der nächsten Zeile ab.
+- **Fehlende und doppelte Blätter.** Die Seitenzahl, die der Benutzer nennt,
+  mit der Zahl der eingezogenen Blätter vergleichen; der Einzug zieht
+  gelegentlich zwei auf einmal oder lässt eines liegen. Wo das Blatt
+  hingehört, zeigen die Seitenübergänge («das passt doch nicht zu-» /
+  «sammen!»). Doppelte Blätter erkennt ein Wortvergleich der Tesseract-
+  Ausgabe (`difflib`, > 0,99). Ein zweiter Scan desselben Vortrags ist
+  entweder eine Dublette (dieselben Blätter, verwerfen) oder eine zweite
+  Fassung (anderer Kopf/Umbruch, Seitenähnlichkeit 0,3-0,9, als `_2`
+  ablegen) - der Benutzer wollte bisher beide Fassungen behalten.
+- **Shell-Falle beim Nachbauen:** In zsh bricht `rm -f ordner/*.pdf` bei
+  leerem Ordner mit «no matches found» ab, und eine `&&`-Kette läuft nicht
+  weiter - einmal wurde so nur die README-Zeile committet und gepusht, das
+  PDF blieb alt. `rm -rf ordner; mkdir -p ordner` verwenden und vor dem
+  Commit `pdfinfo` auf die Seitenzahl prüfen.
+- **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
+  das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
   '@|strasse [0-9]|tel\.'` muss leer bleiben, und Seite 1 rendern
   (`pdftoppm -png -r 55 -f 1 -l 1`), um Datum und Titel anzusehen.
