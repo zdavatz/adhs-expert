@@ -167,11 +167,12 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-53 PDFs, 225 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+54 PDFs, 228 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
+| `Ausstiegshilfen_unter_Berücksichtigung_der_Kultwellen_und_11.03.2002.pdf` | 3 (Suchtpräventionsveranstaltung im Gfellergut, 11./12.3.2002; «… geschlechtsspezifischen Aspekte»; Seite 1 mit Handnotizen) |
 | `Begleitung_von_Menschen_mit_depressiven_Symptomen_im_14.03.2002.pdf` | 4 (Fortbildungsseminar am KSB; frühere Fassung des Seminars vom 13.2.2003) |
 | `Verstecktes_Leiden_Suchtkranke_und_Pflegende_in_der_Spitex_18.04.2002.pdf` | 3 (Weiterbildung Spitex Gelterkinden) |
 | `Umgang_mit_schwierigen_Familiensituationen_23.04.2002.pdf` | 4 (Fortbildung Spitex, Kirchgemeindehaus Neumünster Zürich; Strassenadresse entfernt) |
