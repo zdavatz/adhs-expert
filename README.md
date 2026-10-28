@@ -167,10 +167,11 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-18 PDFs, 95 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+19 PDFs, 99 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
+| `Das_POS-Kind_in_der_Pubertät_24.03.2003.pdf` | 4 (ELPOS Zürich, Glarus, Schaffhausen) |
 | `Die_Kommunikation_im_therapeutischen_Prozess_27.05.2003.pdf` | 3 (Weiterbildung Psychiatriestützpunkt Biel; Seite 2 mit handschriftlichen Randnotizen) |
 | `Die_Kommunikation_im_therapeutischen_Prozess_27.05.2003_2.pdf` | 3 (überarbeitete Fassung, die Randnotizen abgetippt) |
 | `Betreuung_psychisch_Kranker_in_der_Spitex_05.06.2003.pdf` | 3 (Spitex Windisch) |
