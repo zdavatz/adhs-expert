@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-127 PDFs, 532 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+128 PDFs, 537 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -298,6 +298,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Differenzierung_in_Bilderbuchfamilien_28.10.2026.pdf` | 3 (Kursarbeit von Ruth Buser, November 1988; ohne Tagesdatum, Scantag) |
 | `Krankheit_als_Anpassung_28.10.2026.pdf` | 7 (Referat von Jakob Wehrli, Kurs II/89 Familientherapie; zwei Blätter beidseitig, Seitenzahlen oben; ohne Tagesdatum, Scantag) |
 | `Krankheit_als_Konfliktlösung_28.10.2026.pdf` | 1 (Kursunterlage ohne Verfasser und Datum, Scantag) |
+| `Gerechtigkeit_in_Beziehungen_28.10.2026.pdf` | 5 (Kursarbeit von Ch. Hofmann, November 1988, ohne Tagesdatum, Scantag; Patientenname in Text und handgezeichnetem Genogramm durch erfundenen ersetzt) |
 | `Adoptiv-_und_Stieffamilien_28.10.2026.pdf` | 6 (Kursarbeit von M. Friedli, Herbst 1988; ohne Tagesdatum, Scantag) |
 | `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.2026.pdf` | 3 (leerer Fragebogen von Eva Zimmerli, Familientheorie-Kurs «FT II/93», ohne Tagesdatum, Scantag; gehört zur Arbeit vom 30.1.1994) |
 | `Ablösung_von_der_Autorität_28.10.2026.pdf` | 2 (Familientheorie Kurs II/91, FTH291, Schreibmaschine; ohne Tagesdatum, Scantag – der Kurs deutet auf 1991) |
