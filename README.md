@@ -167,11 +167,12 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-27 PDFs, 127 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+28 PDFs, 130 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
 | `Psychisch_Kranke_in_der_Spitex_13.11.2002.pdf` | 3 (Spitex St. Gallen) |
+| `Psychisch_Kranke_in_der_Spitex_13.11.2002_2.pdf` | 3 (zweites Exemplar, Seite 3 mit Handnotiz «Kontrolle, Medi-abgabe …») |
 | `Unser_Teenager_wirkt_komisch,_Pubertät_oder_eine_beginnende_21.11.2002.pdf` | 5 (VASK Aargau; «… beginnende Psychose?») |
 | `Einige_Worte_zur_Aufarbeitung_von_Frau_Ursula_Müller-Biondi_25.11.2002.pdf` | 1 (Ansprache zur Buchvernissage in Zürich) |
 | `Therapeutische_Jurisprudenz_27.11.2002.pdf` | 3 (Fortbildung am Psychiatrie-Zentrum Biel) |
