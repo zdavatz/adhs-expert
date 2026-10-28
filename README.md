@@ -132,6 +132,11 @@ Getrennt wird nach der Seitenzahl unten (1 beginnt einen Vortrag, «Seite 3 von
 entscheidet der Kopf: «Vortrag vom …» oder die Autorenzeile mit Adresse. Ein
 laufender Kopf, der auf jeder Seite wiederkehrt, zählt dabei nicht.
 
+Mailadressen, Strassenadressen mit Hausnummer und Telefonnummern werden vor
+dem Ablegen entfernt: im Bild weiss übermalt (ein Kasten im PDF genügte nicht,
+das Bild darunter liesse sich herausziehen) und aus der Textebene gelöscht.
+Die Lage im Bild liefert die Texterkennung zeichengenau.
+
 Der Scanner läuft über SANE (Backend `epson2`, dort als ES-H300 geführt), nicht
 über Epson Scan 2: Dessen Argument `-SCAN` ist nicht dokumentiert, und der
 Image-Capture-Treiber «EPSON Scanner.app» ist nur für Intel gebaut und startet

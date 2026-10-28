@@ -187,6 +187,21 @@ fn lauf() -> anyhow::Result<()> {
     };
     std::fs::create_dir_all(&opt.ordner).with_context(|| format!("{}", opt.ordner.display()))?;
 
+    // Mailadressen, Strassenadressen und Telefonnummern aus den Bildern
+    // entfernen - aus dem Text sind sie schon draussen. Ein weisser Kasten im
+    // PDF genügte nicht: das Bild darunter liesse sich herausziehen.
+    let mut seiten = seiten;
+    for (i, zeilen) in texte.iter().enumerate() {
+        let kaesten: Vec<[f64; 4]> = zeilen.iter().flat_map(|z| z.schwaerzen.iter().copied()).collect();
+        if kaesten.is_empty() {
+            continue;
+        }
+        let ziel = tmp.join(format!("geschwaerzt-{:03}.jpg", i + 1));
+        bild_schwaerzen(&seiten[i], &kaesten, &ziel)?;
+        eprintln!("Seite {}: {} Stelle(n) entfernt (Mail, Adresse, Telefon)", i + 1, kaesten.len());
+        seiten[i] = ziel;
+    }
+
     // Mehrere Vorträge in einem Stapel: je Vortrag ein PDF.
     let teile = vortraege_trennen(&texte);
     if teile.len() > 1 {
@@ -315,13 +330,81 @@ fn vortraege_trennen(texte: &[Vec<Zeile>]) -> Vec<std::ops::Range<usize>> {
 /// Eine erkannte Textzeile. `oben` ist der Abstand der Oberkante vom oberen
 /// Seitenrand, `hoehe` die Zeilenhöhe, beides als Anteil der Seitenhöhe;
 /// `links` und `breite` entsprechend als Anteil der Seitenbreite.
-#[derive(Debug, Clone)]
+/// `schwaerzen` sind Kästen (links, oben, breite, hoehe, gleich normiert)
+/// mit Mailadressen, Strassenadressen oder Telefonnummern: sie werden im
+/// Bild übermalt und stehen in `text` schon nicht mehr.
+#[derive(Debug, Clone, Default)]
 struct Zeile {
     text: String,
     oben: f64,
     hoehe: f64,
     links: f64,
     breite: f64,
+    schwaerzen: Vec<[f64; 4]>,
+}
+
+/// Stellen, die nicht ins öffentliche PDF gehören: Mailadressen,
+/// Strassenadressen mit Hausnummer, Telefonnummern. Byte-Bereiche in `text`.
+fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
+    use std::sync::LazyLock;
+    static HEIKEL: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(concat!(
+            r"(?i)[a-z0-9._%+-]+\s?@\s?[a-z0-9.-]+\.[a-z]{2,}",
+            r"|\b[A-ZÄÖÜ][\wäöüé-]*(?:strasse|straße|str\.|gasse|weg|platz|rain|halde|allee)\s*\d+\s?[a-z]?\b",
+            r"|(?:\+41|\b0)\s?\(?\d{2}\)?[\s/]?\d{3}[\s.]?\d{2}[\s.]?\d{2}\b",
+        ))
+        .unwrap()
+    });
+    HEIKEL.find_iter(text).map(|m| m.range()).collect()
+}
+
+/// `text` ohne die Bereiche; übrig gebliebene Trennstriche am Rand fallen weg.
+fn ohne_stellen(text: &str, stellen: &[std::ops::Range<usize>]) -> String {
+    let mut rest = String::new();
+    let mut ab = 0;
+    for r in stellen {
+        rest.push_str(&text[ab..r.start]);
+        ab = r.end;
+    }
+    rest.push_str(&text[ab..]);
+    let rest = rest.split_whitespace().collect::<Vec<_>>().join(" ");
+    rest.trim_matches(|c: char| c == '-' || c == '–' || c.is_whitespace()).to_string()
+}
+
+/// Übermalt die Kästen weiss und schreibt das Bild als JPEG nach `ziel`.
+fn bild_schwaerzen(quelle: &Path, kaesten: &[[f64; 4]], ziel: &Path) -> anyhow::Result<()> {
+    let mut bild = image::open(quelle).with_context(|| format!("{}", quelle.display()))?;
+    let (b, h) = (bild.width() as f64, bild.height() as f64);
+    for &[links, oben, breite, hoehe] in kaesten {
+        // Etwas Rand, damit keine angeschnittenen Buchstaben stehen bleiben
+        let x0 = ((links - 0.004) * b).max(0.0) as u32;
+        let x1 = ((links + breite + 0.004) * b).min(b) as u32;
+        let y0 = ((oben - 0.15 * hoehe) * h).max(0.0) as u32;
+        let y1 = ((oben + 1.05 * hoehe) * h).min(h) as u32;
+        match &mut bild {
+            image::DynamicImage::ImageLuma8(g) => {
+                for y in y0..y1 {
+                    for x in x0..x1 {
+                        g.put_pixel(x, y, image::Luma([255]));
+                    }
+                }
+            }
+            andere => {
+                let mut rgb = andere.to_rgb8();
+                for y in y0..y1 {
+                    for x in x0..x1 {
+                        rgb.put_pixel(x, y, image::Rgb([255, 255, 255]));
+                    }
+                }
+                *andere = image::DynamicImage::ImageRgb8(rgb);
+            }
+        }
+    }
+    let datei = std::fs::File::create(ziel).with_context(|| format!("{}", ziel.display()))?;
+    let mut kodierer =
+        image::codecs::jpeg::JpegEncoder::new_with_quality(std::io::BufWriter::new(datei), 85);
+    kodierer.encode_image(&bild)?;
+    Ok(())
 }
 
 
@@ -342,11 +425,24 @@ mod ocr {
 mod ocr {
     use anyhow::Context;
     use objc2::rc::Retained;
-    use objc2::AllocAnyThread;
-    use objc2_foundation::{NSArray, NSDictionary, NSString, NSURL};
+    use objc2::{msg_send, AllocAnyThread};
+    use objc2_foundation::{NSArray, NSDictionary, NSError, NSRange, NSString, NSURL};
     use objc2_vision::{
-        VNImageRequestHandler, VNRecognizeTextRequest, VNRequest, VNRequestTextRecognitionLevel,
+        VNImageRequestHandler, VNRecognizeTextRequest, VNRecognizedText, VNRectangleObservation,
+        VNRequest, VNRequestTextRecognitionLevel,
     };
+
+    /// Kasten eines Textbereichs (Byte-Bereich in `text`) im Bild, normiert
+    /// wie `Zeile`. Vision zählt in UTF-16-Einheiten.
+    fn kasten(kandidat: &VNRecognizedText, text: &str, r: &std::ops::Range<usize>) -> Option<[f64; 4]> {
+        let start = text[..r.start].encode_utf16().count();
+        let laenge = text[r.clone()].encode_utf16().count();
+        let bereich = NSRange::new(start, laenge);
+        let beob: Result<Retained<VNRectangleObservation>, Retained<NSError>> =
+            unsafe { msg_send![kandidat, boundingBoxForRange: bereich, error: _] };
+        let k = unsafe { beob.ok()?.boundingBox() };
+        Some([k.origin.x, 1.0 - (k.origin.y + k.size.height), k.size.width, k.size.height])
+    }
 
     pub fn zeilen(bild: &std::path::Path) -> anyhow::Result<Vec<super::Zeile>> {
         let pfad = bild.canonicalize().with_context(|| format!("{}", bild.display()))?;
@@ -373,12 +469,25 @@ mod ocr {
             let Some(kandidat) = beob.topCandidates(1).firstObject() else { continue };
             // Vision misst von unten links, normiert auf 0..1
             let r = unsafe { beob.boundingBox() };
+            let text = kandidat.string().to_string();
+            let stellen = super::heikle_stellen(&text);
+            let mut schwaerzen = Vec::new();
+            for st in &stellen {
+                // Lässt sich die Stelle nicht genau orten, die ganze Zeile
+                schwaerzen.push(kasten(&kandidat, &text, st).unwrap_or([
+                    r.origin.x,
+                    1.0 - (r.origin.y + r.size.height),
+                    r.size.width,
+                    r.size.height,
+                ]));
+            }
             zeilen.push(super::Zeile {
-                text: kandidat.string().to_string(),
+                text: super::ohne_stellen(&text, &stellen),
                 oben: 1.0 - (r.origin.y + r.size.height),
                 hoehe: r.size.height,
                 links: r.origin.x,
                 breite: r.size.width,
+                schwaerzen,
             });
         }
         zeilen.sort_by(|a, b| a.oben.total_cmp(&b.oben));
@@ -865,7 +974,7 @@ mod tests {
 
     #[test]
     fn links() {
-        let z = |t: &str| Zeile { text: t.into(), oben: 0.1, hoehe: 0.01, links: 0.1, breite: 0.5 };
+        let z = |t: &str| Zeile { text: t.into(), oben: 0.1, hoehe: 0.01, links: 0.1, breite: 0.5, schwaerzen: Vec::new() };
         let ziele = |t: &str| -> Vec<String> {
             links_finden(&[z(t)], 595.0, 842.0).into_iter().map(|(u, _)| u).collect()
         };
@@ -877,7 +986,7 @@ mod tests {
 
     #[test]
     fn trennen() {
-        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5 };
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5, schwaerzen: Vec::new() };
         let texte = vec![
             vec![z("Vortrag vom 2.12.2003", 0.05), z("U. Davatz, www.ganglion.ch", 0.15)],
             vec![z("Fliesstext", 0.1), z("Dr. med. U. Davatz", 0.25)],
@@ -889,7 +998,7 @@ mod tests {
 
     #[test]
     fn trennen_mit_laufendem_kopf_und_seitenzahlen() {
-        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5 };
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5, schwaerzen: Vec::new() };
         let kopf = "Ganglion Frau Dr. med. Ursula Davatz - www.ganglion.ch";
         let texte = vec![
             vec![z(kopf, 0.03), z("Alkohol und Familie", 0.1), z("1", 0.95)],
@@ -901,6 +1010,20 @@ mod tests {
         assert_eq!(vortraege_trennen(&texte), vec![0..3, 3..5]);
         assert_eq!(seitenzahl(&[z("Seite 3 von 7", 0.96)]), Some(3));
         assert_eq!(seitenzahl(&[z("2003", 0.5)]), None);
+    }
+
+    #[test]
+    fn heikles_entfernen() {
+        let t = "Ganglion Frau Dr. med. Ursula Davatz - www.ganglion.ch - ursula.davatz@ganglion.ch";
+        assert_eq!(
+            ohne_stellen(t, &heikle_stellen(t)),
+            "Ganglion Frau Dr. med. Ursula Davatz - www.ganglion.ch"
+        );
+        let t = "der Mäderstrasse 13 in Baden einmal pro Monat";
+        assert_eq!(ohne_stellen(t, &heikle_stellen(t)), "der in Baden einmal pro Monat");
+        assert_eq!(heikle_stellen("Tel. 056 222 33 44").len(), 1);
+        assert!(heikle_stellen("Vortrag vom 20.11.2003, Seite 3 von 7").is_empty());
+        assert!(heikle_stellen("die Strasse und der Weg").is_empty());
     }
 
     #[test]
