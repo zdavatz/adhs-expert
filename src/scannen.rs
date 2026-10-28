@@ -184,9 +184,13 @@ fn lauf() -> anyhow::Result<()> {
             vec![Vec::new(); seiten.len()]
         }
     };
+    // Ohne Datum im Text gilt der Scantag; im PDF heisst es dann «gescannt
+    // am», damit niemand ihn für das Vortragsdatum hält.
+    let scandatum = datum.is_none();
     let datum = datum.unwrap_or_else(|| {
-        eprintln!("Hinweis: kein Datum gefunden - mit --datum nachtragen.");
-        "ohne Datum".into()
+        let heute = heute();
+        eprintln!("Hinweis: kein Datum im Text - nehme den Scantag {heute}; --datum überschreibt.");
+        heute
     });
     let titel = titel.unwrap_or_else(|| {
         eprintln!("Hinweis: kein Titel gefunden - mit --titel nachtragen.");
@@ -202,7 +206,7 @@ fn lauf() -> anyhow::Result<()> {
         ziel = opt.ordner.join(dateiname(&datum, &titel, n));
         n += 1;
     }
-    if let Err(e) = pdf_bauen(&seiten, &texte, opt.dpi, &datum, &titel, &ziel) {
+    if let Err(e) = pdf_bauen(&seiten, &texte, opt.dpi, &datum, scandatum, &titel, &ziel) {
         eprintln!("Die gescannten Seiten liegen in {}", tmp.display());
         return Err(e);
     }
@@ -397,6 +401,16 @@ fn titel_finden(zeilen: &[Zeile]) -> Option<String> {
     }
     let titel = titel.split_whitespace().collect::<Vec<_>>().join(" ");
     (!titel.is_empty()).then_some(titel)
+}
+
+/// Das heutige Datum als `JJJJ-MM-TT`, in der Ortszeit des Rechners.
+fn heute() -> String {
+    Command::new("date")
+        .arg("+%F")
+        .output()
+        .ok()
+        .and_then(|a| datum_iso(String::from_utf8_lossy(&a.stdout).trim()))
+        .unwrap_or_else(|| "ohne Datum".into())
 }
 
 /// Wandelt `JJJJ-MM-TT` oder `TT.MM.JJJJ` in `JJJJ-MM-TT`.
@@ -635,6 +649,7 @@ fn pdf_bauen(
     texte: &[Vec<Zeile>],
     dpi: u32,
     datum: &str,
+    scandatum: bool,
     titel: &str,
     ziel: &Path,
 ) -> anyhow::Result<()> {
@@ -719,10 +734,11 @@ fn pdf_bauen(
     let katalog_id = doc.add_object(dictionary! { "Type" => "Catalog", "Pages" => pages_id });
     doc.trailer.set("Root", katalog_id);
 
+    let art = if scandatum { "gescannt am" } else { "Vortrag vom" };
     let vom = match (datum.get(..4), datum.get(5..7), datum.get(8..10)) {
-        (Some(j), Some(m), Some(t)) if datum_iso(datum).is_some() => format!("Vortrag vom {t}.{m}.{j}"),
+        (Some(j), Some(m), Some(t)) if datum_iso(datum).is_some() => format!("{art} {t}.{m}.{j}"),
         (Some(j), Some(m), None) if datum_iso(&format!("{datum}-01")).is_some() => {
-            format!("Vortrag vom {m}.{j}")
+            format!("{art} {m}.{j}")
         }
         _ => "Vortrag".to_string(),
     };

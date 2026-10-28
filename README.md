@@ -116,8 +116,9 @@ Gescannt wird einseitig, A4, 300 dpi in Graustufen (`--farbe` für Farbe,
 `--dpi` für eine andere Auflösung). Datum und Titel liest die Texterkennung von
 macOS (Vision) aus den Seiten: der Titel ist der Kopf der ersten Seite bis zur
 Autorenzeile, das Datum das erste im Kopf der ersten Seite, sonst das letzte im
-Dokument. `--datum` und `--titel` überschreiben die Erkennung; fehlt ein Datum,
-heisst die Datei «ohne Datum …». Dieselbe Erkennung legt eine unsichtbare
+Dokument. `--datum` und `--titel` überschreiben die Erkennung. Steht im Text
+kein Datum, gilt der Scantag; in den Dokumenteigenschaften heisst es dann
+«gescannt am» statt «Vortrag vom». Dieselbe Erkennung legt eine unsichtbare
 Textebene über die Seitenbilder, damit sich das PDF markieren und durchsuchen
 lässt, und macht erkannte Adressen (`www.…`, `http…`, Mailadressen) anklickbar.
 Die Erkennung kann sich verlesen, ein Link kann darum auch einmal falsch zeigen.
