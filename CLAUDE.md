@@ -194,6 +194,11 @@ Was dabei Zeit gekostet hat:
   ein anderer Vortrag, darum immer `difflib` laufen lassen.
 - **Kein Vortragsdatum, aber Datum in der Fusszeile:** dieses (meist
   Druckdatum) mit `--datum` setzen statt des Scantags, im Bestand vermerken.
+- **Querformat-Seiten:** Der Einzug liefert jedes Blatt hochkant. Die Seite
+  bekommt ihre Grösse aus den JPEG-Massen; also das Rohbild mit
+  `magick seite.jpg -rotate 90` drehen (Richtung am Bild prüfen, Text muss
+  danach waagrecht laufen) und mit `--aus` einsetzen. Dafür den Stapel zuerst
+  von Hand mit `scanimage --batch` in den Scratchpad holen.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
