@@ -174,6 +174,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Was_und_wieviel_kann_die_Mütter-_und_Väterberatung_zur_28.10.2026.pdf` | 8 (Artikel für «Clic», ohne Datum im Text, Scantag) |
 | `Depression,_eine_Frauenkrankheit_und_wie_sieht_es_bei_den_21.10.2003.pdf` | 4 (Kath. Pfarreizentrum Nussbaumen, mit Briefkopf) |
 | `Wie_wirkt_sich_meine_Vergangenheit_auf_unser_Kind_aus_20.10.2003.pdf` | 5 (Kreis junger Mütter, Mütter- und Väterberatung Bezirk Frick) |
+| `Das_POS-ADS-Kind_13.10.2003.pdf` | 8 (Kath. Pfarreizentrum Rampart Frick) |
 
 ## Aufbau
 
