@@ -167,11 +167,12 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-16 PDFs, 89 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+17 PDFs, 92 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
 | `Die_Kommunikation_im_therapeutischen_Prozess_27.05.2003.pdf` | 3 (Weiterbildung Psychiatriestützpunkt Biel; Seite 2 mit handschriftlichen Randnotizen) |
+| `Die_Kommunikation_im_therapeutischen_Prozess_27.05.2003_2.pdf` | 3 (überarbeitete Fassung, die Randnotizen abgetippt) |
 | `Familiendynamik_mit_einem_POS-ADS-Kind_06.08.2003.pdf` | 7 |
 | `Familiendynamik_mit_einem_POS-ADS-Kind_06.08.2003_2.pdf` | 7 (überarbeitete Fassung: Seiten 1-4 gleich, ab Seite 5 umformuliert, ohne den Absatz zur Angehörigengruppe) |
 | `Das_POS-ADS-Kind_13.10.2003.pdf` | 8 (Kath. Pfarreizentrum Rampart Frick) |
