@@ -171,7 +171,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-90 PDFs, 351 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+91 PDFs, 353 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -228,6 +228,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Alkohol_und_Familie_20.11.2003.pdf` | 6 |
 | `Alkohol_und_Familie_20.11.2003_2.pdf` | 5 (zweite Fassung mit Briefkopf) |
 | `Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf` | 7 |
+| `Einbezug_von_Familienangehörigen_bei_Depressionen_03.12.2003.pdf` | 2 (Weiterbildung Stützpunkt Biel) |
 | `Paarbeziehungen_24.02.2004.pdf` | 7 (Frauenverein Egliswil) |
 | `POS_im_Kindes-_und_Erwachsenenalter_03.03.2004.pdf` | 2 (Besuchsdienst PKK; fast derselbe Text wie die erste Gebenstorfer Fassung vom 28.10.2004) |
 | `Pubertät_18.03.2004.pdf` | 5 (Familienforum Münchenstein) |
