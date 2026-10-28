@@ -167,10 +167,11 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-22 PDFs, 112 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+23 PDFs, 115 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
+| `Begleitung_von_Menschen_mit_depressiven_Symtomen_im_13.02.2003.pdf` | 3 (Fortbildungsseminar am KSB; «… im Akutspital», «Symtomen» wie auf der Vorlage) |
 | `Wie_wirkt_sich_meine_Vergangenheit_auf_unser_Kind_aus_06.03.2003.pdf` | 5 (Elternverein Muri, Mütter- und Väterberatung Bezirk Muri; derselbe Vortrag wie am 20.10.2003 in Frick) |
 | `Warum_so_viele_Ess-Störungen_in_der_heutigen_08.03.2003.pdf` | 4 («… Überflussgesellschaft?») |
 | `Depression_Gibt_es_das_auch_bei_geistig_behinderten_10.03.2003.pdf` | 4 (Insieme Region Baden; «… Jugendlichen und Erwachsenen?») |
