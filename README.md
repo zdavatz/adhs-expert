@@ -171,7 +171,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-91 PDFs, 353 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+92 PDFs, 374 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -243,6 +243,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Psychisch_krank_scheininvalid_18.06.2005.pdf` | 4 (20-jähriges Jubiläum Stiftung Guyerweg) |
 | `Das_Leiden_der_Familienangehörigen_und_ihr_Potential_als_25.08.2005.pdf` | 4 (VASK Aargau; «… als Co-Therapeuten») |
 | `Patientenautonomie_und_Verwahrlosung_Recht_auf_Freiheit_25.10.2005.pdf` | 3 (Kantonaler Spitexverband Aargau; «… versus Pflicht zur Hygiene und Ordnung») |
+| `Familien-Systemtheorie_nach_Murray_Bowen_15.11.2005.pdf` | 21 (Folien-Handout mit Inhaltsverzeichnis; Firmenlogo, Vermerk im Kopf und Firmenname in der Fusszeile entfernt) |
 | `Das_POS-ADS_in_der_Pubertät_Wie_Eltern_helfen_können_17.11.2005.pdf` | 3 (ELPOS Zürich, Glarus, Schaffhausen, Zentrum Karl der Grosse Zürich) |
 | `Das_POS-ADS_in_der_Pubertät_Wie_Eltern_helfen_können_17.11.2005_2.pdf` | 3 (andere Fassung: ohne das Meerschweinchen-Beispiel, Abschnitte umformuliert) |
 | `Gedanken_im_Anschluss_an_die_Tagung_Therapeutische_23.03.2006.pdf` | 3 (zur Tagung Therapeutische Jurisprudenz «Homo invalidus – oder der wertlose Mensch») |
