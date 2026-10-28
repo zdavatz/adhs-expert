@@ -26,7 +26,7 @@ cargo run --release --bin uebersicht -- --out /pfad/zum.pdf
 ```
 
 ```bash
-brew install sane-backends          # einmalig, für scannen
+brew install sane-backends tesseract tesseract-lang   # einmalig, für scannen
 cargo run --release --bin scannen   # Stapel aus dem Einzug nach scan/
 cargo run --release --bin scannen -- --aus bild1.jpg bild2.jpg   # ohne Scanner
 cargo run --release --bin scannen -- --lesen bild1.jpg           # nur Erkennung
@@ -84,7 +84,8 @@ selbst. Zwei Fallstricke, die dabei Zeit gekostet haben:
 ### Scannen (`src/scannen.rs`)
 
 Ablauf: `scanimage --batch` (SANE, Backend `epson2`) holt den Stapel als JPEG,
-Vision (objc2-vision) liest jede Seite, der Stapel wird in Vorträge geteilt,
+Tesseract (`deu`, TSV-Ausgabe mit Wortkästen) liest jede Seite, der Stapel
+wird in Vorträge geteilt,
 Kontaktdaten werden aus Bild und Text entfernt, `lopdf` setzt je Vortrag ein
 PDF mit Bild (DCTDecode, unverändert), unsichtbarer Textebene (Rendermodus 3,
 Helvetica, per `Tz` auf die Kastenbreite gezogen) und Link-Annotationen.
@@ -124,12 +125,22 @@ Was dabei Zeit gekostet hat:
   «www.ganglion.ch» auf zwei Zeilen wurde übersehen. Die Unterschrift am
   Textende («Dr. med. U. Davatz» ohne Adresse) darf nie trennen.
 - **Titel:** Der Block direkt über der Autorenzeile ist der Titel, die Blöcke
-  darüber sind Veranstalter («La vida Wohlen», «Praxis Frau Lutz»). Vision
-  verschluckt gelegentlich Trennstriche am Zeilenende («Be-/Treuung» wurde
-  «Be Treuung») – dann mit `--titel` korrigieren.
+  darüber sind Veranstalter («La vida Wohlen», «Praxis Frau Lutz»). Steht
+  im Titel eine Trennung mit grossem Anschluss («Be-/Treuung»), wird sie
+  nicht zusammengefügt – dann mit `--titel` korrigieren.
+- **Vision lässt Zeilen aus – darum Tesseract.** Apples Vision lieferte aus
+  dem Rust-Programm (objc2-vision) auf derselben Seite 15 statt 23 Zeilen,
+  die ein Swift-Programm vollständig las – bei gleichen Einstellungen,
+  Revision 3, gleichem Deployment-Target, auch mit `usesCPUOnly`. Die
+  Ursache blieb offen. Fehlende Zeilen fehlen in der Textebene, und «alles
+  markieren» verpasst Text; der Benutzer verlangt, dass **kein Buchstabe**
+  fehlt. Tesseract liest alle Zeilen. Prüfen lässt sich das, indem man
+  `tesseract <bild> - -l deu` mit `pdftotext` der fertigen Seite vergleicht.
+  Tesseract-Eigenheiten: «www,» statt «www.» (wird beim Verlinken
+  korrigiert), «l» statt «I», Logos als Buchstabensalat («Ga ngl ION»).
 - **Kontaktdaten:** `heikle_stellen()` findet Mail-, Strassen- und
-  Telefonangaben; `boundingBoxForRange:error:` (fehlt in den objc2-Bindings,
-  darum `msg_send!`) liefert den Kasten zeichengenau. Übermalt wird im JPEG
+  Telefonangaben in der Zeile; die betroffenen Wörter fallen aus dem Text,
+  ihre Tesseract-Wortkästen werden übermalt. Übermalt wird im JPEG
   selbst – ein weisses Rechteck im PDF liesse das Bild darunter auslesbar.
   Der Kasten reicht 15 % der Zeilenhöhe nach oben und 5 % nach unten; mehr
   schneidet die Umlautpunkte der nächsten Zeile ab.

@@ -105,7 +105,7 @@ und legt je Vortrag ein durchsuchbares PDF in `scan/` ab. Die PDFs werden mit
 dem Repo committet.
 
 ```bash
-brew install sane-backends
+brew install sane-backends tesseract tesseract-lang
 cargo run --release --bin scannen
 cargo run --release --bin scannen -- --datum 5.3.2014 --titel "Titel"
 ```
@@ -117,15 +117,23 @@ Autorenzeile; darüber stehen meist Datum und Veranstalter («FDP Villmergen»,
 «Elternbildung Reinach»). Die Dokumenteigenschaften tragen den ganzen Kopf.
 Gleiche Namen bekommen `_2`, `_3`.
 
-**Datum und Titel** liest die Texterkennung von macOS (Vision) aus den Seiten:
+**Datum und Titel** liest die Texterkennung (Tesseract, Deutsch) aus den Seiten:
 das Datum im Kopf der ersten Seite, sonst das letzte im Dokument (oft steht am
 Schluss «6. August 2003»). Steht keines im Text, gilt der Scantag; in den
 Dokumenteigenschaften heisst es dann «gescannt am» statt «Vortrag vom».
 `--datum` und `--titel` überschreiben die Erkennung.
 
-**Textebene und Links:** Die erkannten Zeilen liegen unsichtbar über den
-Seitenbildern, das PDF lässt sich markieren und durchsuchen. Erkannte
-Webadressen sind anklickbar. Die Erkennung kann sich verlesen.
+**Textebene und Links:** Die erkannten Wörter liegen unsichtbar über den
+Seitenbildern, jedes an seiner Stelle; das PDF lässt sich vollständig
+markieren und durchsuchen. Erkannte Webadressen sind anklickbar. Die
+Erkennung kann sich verlesen («www,ganglion.ch», «l Einleitung»), lässt aber
+keine Zeile aus.
+
+Bis Oktober 2026 lief hier Apples Vision. Aus dem Rust-Programm heraus liess
+es auf vielen Seiten ganze Zeilen aus – beim «Trotzenden Kind» fehlte rund ein
+Drittel des Textes in der Textebene. Alle Scans sind seither mit Tesseract neu
+aufgebaut; ein Wortvergleich zeigte, dass dabei nichts verloren ging, was
+Vision gelesen hatte.
 
 **Mehrere Vorträge in einem Stapel** ergeben je ein PDF. Getrennt wird nach der
 Seitenzahl unten (1 beginnt einen Vortrag, «Seite 3 von 7» setzt ihn fort, eine

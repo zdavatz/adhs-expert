@@ -5,7 +5,7 @@
 // und in den Dokumenteigenschaften (Titel, Thema, Stichwörter).
 //
 // Datum und Titel liest das Programm aus den gescannten Seiten selbst
-// (Texterkennung von macOS, Vision-Framework): der Titel ist der Kopf der
+// (Texterkennung mit Tesseract, siehe `mod ocr`): der Titel ist der Kopf der
 // ersten Seite bis zur Autorenzeile, das Datum das erste im Kopf der ersten
 // Seite, sonst das letzte im Dokument - dort steht meist «Ort, Datum».
 // `--datum` und `--titel` überschreiben die Erkennung. Was erkannt wurde,
@@ -18,7 +18,7 @@
 // «EPSON Scanner.app» ist nur für Intel gebaut und startet auf Apple
 // Silicon ohne Rosetta nicht.
 //
-//   brew install sane-backends
+//   brew install sane-backends tesseract tesseract-lang
 //   cargo run --release --bin scannen
 //
 // Immer `--batch` scannen: ein Einzelscan (`scanimage -o`) lässt den Einzug
@@ -164,7 +164,18 @@ fn scannen(opt: &Optionen, tmp: &Path) -> anyhow::Result<Vec<PathBuf>> {
 fn lauf() -> anyhow::Result<()> {
     let opt = optionen()?;
     if !opt.lesen.is_empty() {
-        let texte = erkennen(&opt.lesen)?;
+        let texte = erkennen(&opt.lesen, opt.dpi)?;
+        // SCAN_ZEILEN=1 zeigt jede erkannte Zeile mit ihrem Kasten
+        if std::env::var_os("SCAN_ZEILEN").is_some() {
+            for (n, zeilen) in texte.iter().enumerate() {
+                for z in zeilen {
+                    eprintln!(
+                        "S.{} oben={:.3} hoehe={:.3} links={:.3} breite={:.3} {:?}",
+                        n + 1, z.oben, z.hoehe, z.links, z.breite, z.text
+                    );
+                }
+            }
+        }
         for teil in vortraege_trennen(&texte) {
             let texte = &texte[teil.clone()];
             println!("Seiten {}-{}", teil.start + 1, teil.end);
@@ -188,7 +199,7 @@ fn lauf() -> anyhow::Result<()> {
     // Die Texterkennung läuft immer: sie liefert nicht nur Datum und Titel,
     // sondern auch die unsichtbare Textebene und die Links im PDF.
     eprintln!("Texterkennung über {} Seiten …", seiten.len());
-    let texte = match erkennen(&seiten) {
+    let texte = match erkennen(&seiten, opt.dpi) {
         Ok(t) => t,
         Err(e) => {
             eprintln!("Hinweis: Texterkennung fehlgeschlagen, PDF ohne Textebene: {e:#}");
@@ -304,7 +315,7 @@ fn beginnt_vortrag(zeilen: &[Zeile], vorher: &[Zeile]) -> bool {
         (t.starts_with("vortrag") || t.starts_with("votrag")) && !daten_in(&z.text).is_empty()
     });
     let autor = eigen.iter().any(|t| t.contains("davatz"))
-        && eigen.iter().any(|t| t.contains("ganglion") || t.contains("www."));
+        && eigen.iter().any(|t| t.contains("ganglion") || (t.contains("www.") || t.contains("www,")));
     // Neuer laufender Kopf: oben eine Zeile mit Adresse, die vorher fehlte,
     // obwohl die Seite davor einen Kopf hatte oder keinen.
     let neuer_kopf = oben.iter().any(|z| z.oben < 0.12 && !laufend(z) && ist_autorenzeile(&z.text))
@@ -351,6 +362,16 @@ struct Zeile {
     links: f64,
     breite: f64,
     schwaerzen: Vec<[f64; 4]>,
+    /// Die Wörter der Zeile mit ihrer Lage (links, breite); leer heisst:
+    /// die Zeile wird als Ganzes gesetzt.
+    woerter: Vec<Wort>,
+}
+
+#[derive(Debug, Clone, Default)]
+struct Wort {
+    text: String,
+    links: f64,
+    breite: f64,
 }
 
 /// Stellen, die nicht ins öffentliche PDF gehören: Mailadressen,
@@ -366,19 +387,6 @@ fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
         .unwrap()
     });
     HEIKEL.find_iter(text).map(|m| m.range()).collect()
-}
-
-/// `text` ohne die Bereiche; übrig gebliebene Trennstriche am Rand fallen weg.
-fn ohne_stellen(text: &str, stellen: &[std::ops::Range<usize>]) -> String {
-    let mut rest = String::new();
-    let mut ab = 0;
-    for r in stellen {
-        rest.push_str(&text[ab..r.start]);
-        ab = r.end;
-    }
-    rest.push_str(&text[ab..]);
-    let rest = rest.split_whitespace().collect::<Vec<_>>().join(" ");
-    rest.trim_matches(|c: char| c == '-' || c == '–' || c.is_whitespace()).to_string()
 }
 
 /// Übermalt die Kästen weiss und schreibt das Bild als JPEG nach `ziel`.
@@ -420,88 +428,118 @@ fn bild_schwaerzen(quelle: &Path, kaesten: &[[f64; 4]], ziel: &Path) -> anyhow::
 
 /// Datum und Titel aus den Seitenbildern.
 /// Die erkannten Zeilen jeder Seite.
-fn erkennen(seiten: &[PathBuf]) -> anyhow::Result<Vec<Vec<Zeile>>> {
-    seiten.iter().map(|s| ocr::zeilen(s)).collect()
+fn erkennen(seiten: &[PathBuf], dpi: u32) -> anyhow::Result<Vec<Vec<Zeile>>> {
+    seiten.iter().map(|s| ocr::zeilen(s, dpi)).collect()
 }
 
-#[cfg(not(target_os = "macos"))]
-mod ocr {
-    pub fn zeilen(_bild: &std::path::Path) -> anyhow::Result<Vec<super::Zeile>> {
-        anyhow::bail!("Texterkennung gibt es nur unter macOS - --datum und --titel angeben")
-    }
-}
-
-#[cfg(target_os = "macos")]
+/// Texterkennung mit Tesseract (`brew install tesseract tesseract-lang`).
+///
+/// Bis Oktober 2026 lief hier Apples Vision. Aus einem Rust-Programm heraus
+/// liess es auf manchen Seiten ganze Zeilen aus - 15 statt 23 auf derselben
+/// Seite, die ein Swift-Programm vollständig las, bei gleichen Einstellungen
+/// und Revision 3. Fehlende Zeilen fehlen in der Textebene, und «alles
+/// markieren» verpasst Text. Tesseract liest alle Zeilen und liefert dazu die
+/// Lage jedes Wortes.
 mod ocr {
     use anyhow::Context;
-    use objc2::rc::Retained;
-    use objc2::{msg_send, AllocAnyThread};
-    use objc2_foundation::{NSArray, NSDictionary, NSError, NSRange, NSString, NSURL};
-    use objc2_vision::{
-        VNImageRequestHandler, VNRecognizeTextRequest, VNRecognizedText, VNRectangleObservation,
-        VNRequest, VNRequestTextRecognitionLevel,
-    };
 
-    /// Kasten eines Textbereichs (Byte-Bereich in `text`) im Bild, normiert
-    /// wie `Zeile`. Vision zählt in UTF-16-Einheiten.
-    fn kasten(kandidat: &VNRecognizedText, text: &str, r: &std::ops::Range<usize>) -> Option<[f64; 4]> {
-        let start = text[..r.start].encode_utf16().count();
-        let laenge = text[r.clone()].encode_utf16().count();
-        let bereich = NSRange::new(start, laenge);
-        let beob: Result<Retained<VNRectangleObservation>, Retained<NSError>> =
-            unsafe { msg_send![kandidat, boundingBoxForRange: bereich, error: _] };
-        let k = unsafe { beob.ok()?.boundingBox() };
-        Some([k.origin.x, 1.0 - (k.origin.y + k.size.height), k.size.width, k.size.height])
+    /// Zeilen einer Seite aus der TSV-Ausgabe von Tesseract.
+    pub fn zeilen(bild: &std::path::Path, dpi: u32) -> anyhow::Result<Vec<super::Zeile>> {
+        let aus = std::process::Command::new("tesseract")
+            .arg(bild)
+            .args(["stdout", "-l", "deu", "--dpi", &dpi.to_string(), "--psm", "3", "tsv"])
+            .output()
+            .context("tesseract nicht gefunden - brew install tesseract tesseract-lang")?;
+        if !aus.status.success() {
+            anyhow::bail!(
+                "tesseract {}: {}",
+                bild.display(),
+                String::from_utf8_lossy(&aus.stderr).trim()
+            );
+        }
+        Ok(tsv_lesen(&String::from_utf8_lossy(&aus.stdout)))
     }
 
-    pub fn zeilen(bild: &std::path::Path) -> anyhow::Result<Vec<super::Zeile>> {
-        let pfad = bild.canonicalize().with_context(|| format!("{}", bild.display()))?;
-        let url = NSURL::fileURLWithPath(&NSString::from_str(&pfad.to_string_lossy()));
-        let handler = unsafe {
-            VNImageRequestHandler::initWithURL_options(
-                VNImageRequestHandler::alloc(),
-                &url,
-                &NSDictionary::new(),
-            )
-        };
-        let anfrage = VNRecognizeTextRequest::new();
-        anfrage.setRecognitionLevel(VNRequestTextRecognitionLevel::Accurate);
-        anfrage.setRecognitionLanguages(&NSArray::from_retained_slice(&[NSString::from_str("de-DE")]));
-        anfrage.setUsesLanguageCorrection(true);
-        let als_request: Retained<VNRequest> = Retained::into_super(Retained::into_super(anfrage.clone()));
-        handler
-            .performRequests_error(&NSArray::from_retained_slice(&[als_request]))
-            .map_err(|e| anyhow::anyhow!("{}", e.localizedDescription()))
-            .with_context(|| format!("Texterkennung {}", bild.display()))?;
+    /// TSV-Spalten: level page block par line word left top width height conf text.
+    /// Level 1 ist die Seite (liefert die Bildgrösse), Level 5 ein Wort.
+    pub fn tsv_lesen(tsv: &str) -> Vec<super::Zeile> {
+        let (mut bb, mut bh) = (1.0f64, 1.0f64);
+        // Wörter je Zeile sammeln, Schlüssel (block, par, line)
+        let mut gruppen: Vec<((u32, u32, u32), Vec<(String, f64, f64, f64, f64)>)> = Vec::new();
+        for z in tsv.lines().skip(1) {
+            let f: Vec<&str> = z.split('\t').collect();
+            if f.len() < 12 {
+                continue;
+            }
+            let zahl = |i: usize| f[i].parse::<f64>().unwrap_or(0.0);
+            match f[0] {
+                "1" => {
+                    bb = zahl(8).max(1.0);
+                    bh = zahl(9).max(1.0);
+                }
+                "5" => {
+                    let text = f[11].trim();
+                    if text.is_empty() {
+                        continue;
+                    }
+                    let schluessel = (zahl(2) as u32, zahl(3) as u32, zahl(4) as u32);
+                    let wort = (text.to_string(), zahl(6), zahl(7), zahl(8), zahl(9));
+                    match gruppen.last_mut() {
+                        Some((k, w)) if *k == schluessel => w.push(wort),
+                        _ => gruppen.push((schluessel, vec![wort])),
+                    }
+                }
+                _ => {}
+            }
+        }
 
         let mut zeilen = Vec::new();
-        for beob in anfrage.results().into_iter().flatten() {
-            let Some(kandidat) = beob.topCandidates(1).firstObject() else { continue };
-            // Vision misst von unten links, normiert auf 0..1
-            let r = unsafe { beob.boundingBox() };
-            let text = kandidat.string().to_string();
+        for (_, mut woerter) in gruppen {
+            // Kontaktdaten: betroffene Wörter fallen ganz heraus, ihr Kasten
+            // wird im Bild übermalt.
+            let text: String = woerter.iter().map(|w| w.0.as_str()).collect::<Vec<_>>().join(" ");
             let stellen = super::heikle_stellen(&text);
             let mut schwaerzen = Vec::new();
-            for st in &stellen {
-                // Lässt sich die Stelle nicht genau orten, die ganze Zeile
-                schwaerzen.push(kasten(&kandidat, &text, st).unwrap_or([
-                    r.origin.x,
-                    1.0 - (r.origin.y + r.size.height),
-                    r.size.width,
-                    r.size.height,
-                ]));
+            if !stellen.is_empty() {
+                let mut ab = 0;
+                let mut behalten = Vec::new();
+                for w in woerter {
+                    let bereich = ab..ab + w.0.len();
+                    ab = bereich.end + 1;
+                    if stellen.iter().any(|st| st.start < bereich.end && bereich.start < st.end) {
+                        schwaerzen.push([w.1 / bb, w.2 / bh, w.3 / bb, w.4 / bh]);
+                    } else {
+                        behalten.push(w);
+                    }
+                }
+                woerter = behalten;
+                // Übrig gebliebene Trennstriche am Rand
+                while woerter.last().is_some_and(|w| w.0 == "-" || w.0 == "–") {
+                    woerter.pop();
+                }
             }
-            zeilen.push(super::Zeile {
-                text: super::ohne_stellen(&text, &stellen),
-                oben: 1.0 - (r.origin.y + r.size.height),
-                hoehe: r.size.height,
-                links: r.origin.x,
-                breite: r.size.width,
+            let links = woerter.iter().map(|w| w.1).fold(f64::MAX, f64::min);
+            let rechts = woerter.iter().map(|w| w.1 + w.3).fold(0.0, f64::max);
+            let oben = woerter.iter().map(|w| w.2).fold(f64::MAX, f64::min);
+            let unten = woerter.iter().map(|w| w.2 + w.4).fold(0.0, f64::max);
+            let zeile = super::Zeile {
+                text: woerter.iter().map(|w| w.0.as_str()).collect::<Vec<_>>().join(" "),
+                oben: if woerter.is_empty() { 0.0 } else { oben / bh },
+                hoehe: if woerter.is_empty() { 0.0 } else { (unten - oben) / bh },
+                links: if woerter.is_empty() { 0.0 } else { links / bb },
+                breite: if woerter.is_empty() { 0.0 } else { (rechts - links) / bb },
                 schwaerzen,
-            });
+                woerter: woerter
+                    .iter()
+                    .map(|w| super::Wort { text: w.0.clone(), links: w.1 / bb, breite: w.3 / bb })
+                    .collect(),
+            };
+            if !zeile.text.is_empty() || !zeile.schwaerzen.is_empty() {
+                zeilen.push(zeile);
+            }
         }
         zeilen.sort_by(|a, b| a.oben.total_cmp(&b.oben));
-        Ok(zeilen)
+        zeilen
     }
 }
 
@@ -564,7 +602,7 @@ fn datum_finden(seiten: &[Vec<Zeile>]) -> Option<String> {
 /// Zeilen, die zum Kopf gehören, aber nicht zum Titel: Autor, Adresse, Datum.
 fn ist_autorenzeile(text: &str) -> bool {
     let t = text.to_lowercase();
-    t.contains("davatz") || t.contains("ganglion") || t.contains("www.") || t.contains('@')
+    t.contains("davatz") || t.contains("ganglion") || (t.contains("www.") || t.contains("www,")) || t.contains('@')
 }
 
 /// Der Titel: die Zeilen oben auf der ersten Seite bis zur Autorenzeile.
@@ -799,7 +837,30 @@ fn textebene(zeilen: &[Zeile], w: f64, hh: f64) -> Vec<u8> {
         return s;
     }
     s.extend_from_slice(b"BT 3 Tr\n");
-    for z in zeilen {
+    for z in zeilen.iter().filter(|z| !z.woerter.is_empty()) {
+        // Wort für Wort, jedes auf seine eigene Breite gezogen; ein
+        // Leerzeichen dahinter, damit beim Kopieren Wortabstände entstehen.
+        let groesse = z.hoehe * hh / 1.15;
+        let grundlinie = (1.0 - z.oben - z.hoehe) * hh + 0.22 * groesse;
+        let anzahl = z.woerter.len();
+        for (i, wort) in z.woerter.iter().enumerate() {
+            let einheiten: f64 = wort.text.chars().map(helvetica_breite).sum();
+            if einheiten <= 0.0 || groesse <= 0.0 {
+                continue;
+            }
+            let tz = 100.0 * wort.breite * w / (einheiten / 1000.0 * groesse);
+            let x = wort.links * w;
+            s.extend(
+                format!("/F1 {groesse:.2} Tf {tz:.1} Tz 1 0 0 1 {x:.2} {grundlinie:.2} Tm (").into_bytes(),
+            );
+            s.extend(winansi(&wort.text));
+            if i + 1 < anzahl {
+                s.push(b' ');
+            }
+            s.extend_from_slice(b") Tj\n");
+        }
+    }
+    for z in zeilen.iter().filter(|z| z.woerter.is_empty()) {
         let text = z.text.trim();
         let einheiten: f64 = text.chars().map(helvetica_breite).sum();
         if text.is_empty() || einheiten <= 0.0 {
@@ -827,7 +888,7 @@ fn links_finden(zeilen: &[Zeile], w: f64, hh: f64) -> Vec<(String, [f32; 4])> {
     use std::sync::LazyLock;
     static URL: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(
-            r"(?i)\b(?:https?://[^\s<>]+|www\.[^\s<>]+|[a-z0-9][a-z0-9.-]*\.(?:ch|com|de|org|net|li|at)\b[^\s<>]*|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})",
+            r"(?i)\b(?:https?://[^\s<>]+|www[.,][^\s<>]+|[a-z0-9][a-z0-9.-]*\.(?:ch|com|de|org|net|li|at)\b[^\s<>]*|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})",
         )
         .unwrap()
     });
@@ -851,7 +912,8 @@ fn links_finden(zeilen: &[Zeile], w: f64, hh: f64) -> Vec<(String, [f32; 4])> {
             } else if roh.to_lowercase().starts_with("http") {
                 roh.to_string()
             } else {
-                format!("https://{roh}")
+                // Tesseract liest den Punkt nach «www» gern als Komma
+                format!("https://{}", roh.replacen("www,", "www.", 1))
             };
             let vor: f64 = text[..m.start()].chars().map(helvetica_breite).sum();
             let lang: f64 = roh.chars().map(helvetica_breite).sum();
@@ -998,7 +1060,7 @@ mod tests {
 
     #[test]
     fn links() {
-        let z = |t: &str| Zeile { text: t.into(), oben: 0.1, hoehe: 0.01, links: 0.1, breite: 0.5, schwaerzen: Vec::new() };
+        let z = |t: &str| Zeile { text: t.into(), oben: 0.1, hoehe: 0.01, links: 0.1, breite: 0.5, ..Default::default() };
         let ziele = |t: &str| -> Vec<String> {
             links_finden(&[z(t)], 595.0, 842.0).into_iter().map(|(u, _)| u).collect()
         };
@@ -1010,7 +1072,7 @@ mod tests {
 
     #[test]
     fn trennen() {
-        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5, schwaerzen: Vec::new() };
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5, ..Default::default() };
         let texte = vec![
             vec![z("Vortrag vom 2.12.2003", 0.05), z("U. Davatz, www.ganglion.ch", 0.15)],
             vec![z("Fliesstext", 0.1), z("Dr. med. U. Davatz", 0.25)],
@@ -1022,7 +1084,7 @@ mod tests {
 
     #[test]
     fn trennen_mit_laufendem_kopf_und_seitenzahlen() {
-        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5, schwaerzen: Vec::new() };
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, links: 0.1, breite: 0.5, ..Default::default() };
         let kopf = "Ganglion Frau Dr. med. Ursula Davatz - www.ganglion.ch";
         let texte = vec![
             vec![z(kopf, 0.03), z("Alkohol und Familie", 0.1), z("1", 0.95)],
@@ -1036,15 +1098,28 @@ mod tests {
         assert_eq!(seitenzahl(&[z("2003", 0.5)]), None);
     }
 
+    /// Eine Zeile als Tesseract-TSV, ein Wort je 100 px breit.
+    fn tsv(woerter: &[&str]) -> String {
+        let mut t = String::from("level\tpage_num\tblock_num\tpar_num\tline_num\tword_num\tleft\ttop\twidth\theight\tconf\ttext\n");
+        t.push_str("1\t1\t0\t0\t0\t0\t0\t0\t2000\t3000\t-1\t\n");
+        for (i, w) in woerter.iter().enumerate() {
+            t.push_str(&format!("5\t1\t1\t1\t1\t{}\t{}\t100\t90\t30\t95\t{w}\n", i + 1, 100 + i * 100));
+        }
+        t
+    }
+
     #[test]
     fn heikles_entfernen() {
-        let t = "Ganglion Frau Dr. med. Ursula Davatz - www.ganglion.ch - ursula.davatz@ganglion.ch";
-        assert_eq!(
-            ohne_stellen(t, &heikle_stellen(t)),
-            "Ganglion Frau Dr. med. Ursula Davatz - www.ganglion.ch"
-        );
-        let t = "der Mäderstrasse 13 in Baden einmal pro Monat";
-        assert_eq!(ohne_stellen(t, &heikle_stellen(t)), "der in Baden einmal pro Monat");
+        let z = ocr::tsv_lesen(&tsv(&[
+            "Ganglion", "Frau", "Dr.", "med.", "Ursula", "Davatz", "-", "www.ganglion.ch", "-",
+            "ursula.davatz@ganglion.ch",
+        ]));
+        assert_eq!(z[0].text, "Ganglion Frau Dr. med. Ursula Davatz - www.ganglion.ch");
+        assert_eq!(z[0].schwaerzen.len(), 1);
+        assert!((z[0].schwaerzen[0][0] - 1000.0 / 2000.0).abs() < 1e-9);
+        let z = ocr::tsv_lesen(&tsv(&["der", "Mäderstrasse", "13", "in", "Baden"]));
+        assert_eq!(z[0].text, "der in Baden");
+        assert_eq!(z[0].schwaerzen.len(), 2);
         assert_eq!(heikle_stellen("Tel. 056 222 33 44").len(), 1);
         assert!(heikle_stellen("Vortrag vom 20.11.2003, Seite 3 von 7").is_empty());
         assert!(heikle_stellen("die Strasse und der Weg").is_empty());
