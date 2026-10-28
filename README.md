@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-114 PDFs, 483 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+115 PDFs, 484 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -180,6 +180,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Schichtung_Klasse_26.10.1987.pdf` | 4 (Kursunterlage von B. Baumann, Kurs in Familientherapie, über soziale Ungleichheit und Schichtmodelle) |
 | `Aufteilung_der_verschiedenen_Themen_in_Familientheorie_und_07.03.1988.pdf` | 1 (Fortbildung in Familientheorie und Familienberatung, II. Teil; Themenübersicht, Schreibmaschine, geschrieben am 9.2.1988) |
 | `Das_Fehlen_eines_aktiven_Erziehungspartners_19.07.1988.pdf` | 1 (Kurs in Familientheorie, Schreibmaschine) |
+| `Gedanken_zum_Thema_Ablösung_von_Alleinerziehern_15.08.1988.pdf` | 1 (Kurstext von L. Müller, Kurs in Familientherapie) |
 | `Asthma_in_der_Familie_Welches_therapeutische_Vorgehen_03.10.1988.pdf` | 2 (Kurs II in Familientheorie, Schreibmaschine; «… schlagen wir vor?») |
 | `Aussterbende_Familien_Welches_therapeutische_Vorgehen_wäre_03.10.1988.pdf` | 1 (Kurs II in Familientheorie, Schreibmaschine; «… um Familien vor dem Aussterben zu bewahren») |
 | `Familientherapeutische_Interventionen_in_der_22.11.1988.pdf` | 4 (Kurs in Familientheorie II, Schreibmaschine; Datum vom Schluss des Skripts) |
