@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-107 PDFs, 436 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+108 PDFs, 439 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -186,6 +186,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Adoleszentenpsychiatrie_Prävention_im_Adoleszentenalter_03.09.1990.pdf` | 2 (Familientherapiekurs II, Schreibmaschine) |
 | `Sexualverhalten_Sexualstörungen_16.10.1990.pdf` | 4 (Kursskript «FT II», Schreibmaschine; Datum vom Schluss) |
 | `Meine_Familie_aus_systemischer_Sicht_von_der_Herkunft_bis_12.1990.pdf` | 9 (Fragebogen «… bis heute», Dezember 1990, nach Unterlagen von Sepp Duss-von Werdt; Seiten 8-9 Beilagen im Querformat: Symbole zur Familienstruktur, Beziehungsrad) |
+| `Der_Einfluss_des_Berufes_des_Mannes_auf_die_Frau_und_auf_die_30.01.1994.pdf` | 3 (Kursarbeit von Eva Zimmerli, FT II/93, Auswertung ihres Fragebogens zur Arbeits- und Freizeitplanung) |
 | `Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf` | 15 (zu einer Studie über Schizophreniefamilien und Erziehungsstil) |
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
@@ -279,7 +280,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Was_und_wieviel_kann_die_Mütter-_und_Väterberatung_zur_28.10.2026.pdf` | 8 (Artikel für «Clic», ohne Datum im Text, Scantag) |
 | `Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_28.10.2026.pdf` | 2 (Artikel für die Spitex Zeitung mit Literaturhinweisen, ohne Datum im Text, Scantag; zur Fortbildung vom 23.4.2002) |
 | `Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_28.10.2026_2.pdf` | 3 (andere Fassung: grösser gesetzt, mit Autorenzeile statt Unterschrift, ohne Literaturhinweise) |
-| `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.2026.pdf` | 3 (leerer Fragebogen, Familientheorie-Kurs «FT II/88», ohne Tagesdatum, Scantag – handschriftlich 1988) |
+| `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.2026.pdf` | 3 (leerer Fragebogen von Eva Zimmerli, Familientheorie-Kurs «FT II/93», ohne Tagesdatum, Scantag; gehört zur Arbeit vom 30.1.1994) |
 | `Ablösung_von_der_Autorität_28.10.2026.pdf` | 2 (Familientheorie Kurs II/91, FTH291, Schreibmaschine; ohne Tagesdatum, Scantag – der Kurs deutet auf 1991) |
 | `Das_Leiden_der_Familienangehörigen_und_ihr_Potential_als_28.10.2026.pdf` | 3 (Zeitschriftenartikel mit Lead und Autorenhinweis, ohne Datum im Text, Scantag; neuer Text zum Thema des VASK-Vortrags vom 25.8.2005) |
 | `Gibt_es_das_auch_Depressionen_bei_geistig_behinderten_28.10.2026.pdf` | 3 («… Jugendlichen und Erwachsenen», ohne Datum im Text, Scantag; neuer Text zum Thema des Insieme-Vortrags vom 10.3.2003) |
