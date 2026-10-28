@@ -167,7 +167,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-13 PDFs, 74 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+14 PDFs, 79 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -175,6 +175,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Das_POS-ADS-Kind_13.10.2003.pdf` | 8 (Kath. Pfarreizentrum Rampart Frick) |
 | `Das_POS-ADS-Kind_13.10.2003_2.pdf` | 9 (zweite Fassung desselben Vortrags, anderer Kopf) |
 | `Wie_wirkt_sich_meine_Vergangenheit_auf_unser_Kind_aus_20.10.2003.pdf` | 5 (Kreis junger Mütter, Mütter- und Väterberatung Bezirk Frick) |
+| `Wie_wirkt_sich_meine_Vergangenheit_auf_unser_Kind_aus_20.10.2003_2.pdf` | 5 (zweite Fassung, Titel direkt unter dem Briefkopf) |
 | `Depression,_eine_Frauenkrankheit_und_wie_sieht_es_bei_den_21.10.2003.pdf` | 4 (Kath. Pfarreizentrum Nussbaumen, mit Briefkopf) |
 | `Welche_Chancen_bietet_die_familienergänzende_Betreuung_von_06.11.2003.pdf` | 4 |
 | `Das_trotzende_Kind_Bin_ich_zu_lieb_oder_bin_ich_zu_streng_11.11.2003.pdf` | 5 |
