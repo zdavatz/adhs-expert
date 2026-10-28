@@ -172,6 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Text_für_Werbung_Familientherapie_28.10.2026.pdf` | 2 (ohne Datum im Text, Scantag) |
 | `Welche_Chancen_bietet_die_familienergänzende_Betreuung_von_06.11.2003.pdf` | 4 |
 | `Was_und_wieviel_kann_die_Mütter-_und_Väterberatung_zur_28.10.2026.pdf` | 8 (Artikel für «Clic», ohne Datum im Text, Scantag) |
+| `Depression,_eine_Frauenkrankheit_und_wie_sieht_es_bei_den_21.10.2003.pdf` | 4 (Kath. Pfarreizentrum Nussbaumen, mit Briefkopf) |
 
 ## Aufbau
 

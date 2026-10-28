@@ -291,11 +291,35 @@ fn seitenzahl(zeilen: &[Zeile]) -> Option<u32> {
     static NR: LazyLock<regex::Regex> = LazyLock::new(|| {
         regex::Regex::new(r"(?i)^[-–\s]*(?:seite\s*)?(\d{1,3})(?:\s*(?:/|von)\s*\d{1,3})?[-–\s]*$").unwrap()
     });
-    zeilen
-        .iter()
-        .rev()
-        .filter(|z| z.oben > 0.85)
-        .find_map(|z| NR.captures(z.text.trim())?[1].parse().ok())
+    // Auch am Ende einer Fusszeile: «Knotenpunkt menschlicher Beziehungen -3-»
+    static AM_ENDE: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?:^|\s)[-–]\s?(\d{1,3})\s?[-–]\s*$").unwrap());
+    zeilen.iter().rev().filter(|z| z.oben > 0.85).find_map(|z| {
+        let t = z.text.trim();
+        NR.captures(t).or_else(|| AM_ENDE.captures(t))?[1].parse().ok()
+    })
+}
+
+/// Ob zwei Kopfzeilen dieselbe sind, trotz Lesefehlern («ION»/«1ON»,
+/// «ganglion»/«gangliön»): Dice-Koeffizient über Buchstabenpaare.
+fn aehnlich(a: &str, b: &str) -> bool {
+    let paare = |s: &str| -> Vec<(char, char)> {
+        let c: Vec<char> = buchstaben(s).chars().collect();
+        c.windows(2).map(|w| (w[0], w[1])).collect()
+    };
+    let (pa, mut pb) = (paare(a), paare(b));
+    if pa.is_empty() || pb.is_empty() {
+        return a == b;
+    }
+    let gesamt = pa.len() + pb.len();
+    let mut gemeinsam = 0;
+    for p in &pa {
+        if let Some(i) = pb.iter().position(|q| q == p) {
+            pb.swap_remove(i);
+            gemeinsam += 1;
+        }
+    }
+    2.0 * gemeinsam as f64 / gesamt as f64 >= 0.7
 }
 
 /// Zeile ohne alles ausser Buchstaben, zum Vergleich von Kopfzeilen über
@@ -311,10 +335,10 @@ fn buchstaben(text: &str) -> String {
 /// auf der Seite davor stand, ist ein laufender Kopf und zählt ebenfalls
 /// nicht - taucht dagegen ein neuer laufender Kopf auf, beginnt etwas Neues.
 fn beginnt_vortrag(zeilen: &[Zeile], vorher: &[Zeile]) -> bool {
-    let kopf_vorher: Vec<String> =
-        vorher.iter().filter(|z| z.oben < 0.12).map(|z| buchstaben(&z.text)).collect();
+    let kopf_vorher: Vec<&str> =
+        vorher.iter().filter(|z| z.oben < 0.12).map(|z| z.text.as_str()).collect();
     let oben: Vec<&Zeile> = zeilen.iter().filter(|z| z.oben < 0.35).collect();
-    let laufend = |z: &Zeile| z.oben < 0.12 && kopf_vorher.contains(&buchstaben(&z.text));
+    let laufend = |z: &Zeile| z.oben < 0.12 && kopf_vorher.iter().any(|k| aehnlich(k, &z.text));
     let eigen: Vec<String> = oben.iter().filter(|z| !laufend(z)).map(|z| z.text.to_lowercase()).collect();
 
     let vortrag = oben.iter().any(|z| {
@@ -718,7 +742,7 @@ fn dateiname(datum: &str, titel: &str, nr: u32) -> String {
         })
         .collect();
     let mut kurz = String::new();
-    for wort in titel.split_whitespace().filter(|w| *w != "-" && *w != "–") {
+    for wort in titel.split_whitespace().filter(|w| !matches!(*w, "-" | "–" | "—")) {
         let laenge = kurz.chars().count() + 1 + wort.chars().count();
         if !kurz.is_empty() && laenge > MAX_TITEL_IM_NAMEN {
             break;
@@ -1152,6 +1176,20 @@ mod tests {
             titel.rsplit(" – ").next().unwrap(),
             "Was und wieviel kann die Mütter- und Väterberatung zur Prävention beitragen"
         );
+    }
+
+    #[test]
+    fn laufender_kopf_mit_lesefehlern() {
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.015, ..Default::default() };
+        let texte = vec![
+            vec![z("Ga ngl ION Frau Dr, med. Ursula Davatz - www.ganglion.ch -", 0.04), z("Depression", 0.14), z("Knotenpunkt menschlicher Beziehungen -1-", 0.935)],
+            vec![z("Ga ngl ION Frau Dr. med. Ursula Davatz - www.gangliön.ch -", 0.04), z("Das Leben", 0.08), z("Knotenpunkt menschlicher Beziehungen -2-", 0.936)],
+            vec![z("Ga ngl 1ON Frau Dr. med. Ursula Davatz - www.ganglion.ch -", 0.04), z("In solchen", 0.08), z("Knotenpunkt menschlicher Beziehungen -3-", 0.935)],
+            vec![z("Ga nglion Frau Dr, med. Ursula Davatz - www.gänglion.ch -", 0.04), z("- Gelingt es", 0.08), z("Knotenpunkt menschlicher Beziehungen -A-", 0.935)],
+        ];
+        assert_eq!(vortraege_trennen(&texte), vec![0..4]);
+        assert_eq!(seitenzahl(&texte[2]), Some(3));
+        assert_eq!(seitenzahl(&texte[3]), None);
     }
 
     #[test]
