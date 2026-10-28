@@ -829,10 +829,10 @@ const MAX_TITEL_IM_NAMEN: usize = 60;
 fn dateiname(datum: &str, titel: &str, nr: u32) -> String {
     let titel: String = titel
         .chars()
-        // Anführungszeichen stören in der Shell und kosten Platz für den Titel
-        .filter(|c| !matches!(c, '?' | '*' | '"' | '<' | '>' | '|' | '„' | '“' | '”' | '«' | '»'))
+        // Anführungszeichen und Doppelpunkt stören in der Shell und kosten Platz für den Titel
+        .filter(|c| !matches!(c, '?' | '*' | '"' | '<' | '>' | '|' | ':' | '„' | '“' | '”' | '«' | '»'))
         .map(|c| match c {
-            '/' | ':' | '\\' => '-',
+            '/' | '\\' => '-',
             c if c.is_control() => ' ',
             c => c,
         })
@@ -1309,7 +1309,7 @@ mod tests {
     fn name() {
         assert_eq!(
             dateiname("2003-06-01", "Cannabis und  Schizophrenie: ein Überblick", 1),
-            "Cannabis_und_Schizophrenie-_ein_Überblick_01.06.2003.pdf"
+            "Cannabis_und_Schizophrenie_ein_Überblick_01.06.2003.pdf"
         );
         assert_eq!(
             dateiname("2003-12-02", "Jugendliche und Sucht Freiheit oder Sackgasse auf dem Weg der Suchenden", 2),
