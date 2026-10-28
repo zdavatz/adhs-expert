@@ -218,7 +218,13 @@ Was dabei Zeit gekostet hat:
   als das Original (sonst gestaucht), Daten so verschieben, dass Alter und
   Geschwisterreihenfolge stimmen. Schrift je Wort am Originalwort eichen
   (Arial ist breiter als die Vorlagen), in dunklem Grau setzen;
-  Unterstreichungen erkennen, mit übermalen und neu ziehen. Danach `pdftotext` und `strings` auf jeden
+  Unterstreichungen erkennen, mit übermalen und neu ziehen.
+  Auf grauem Kopierpapier nicht weiss übermalen, sondern mit dem Median der
+  Seite – sonst stehen helle Kästen da. Genogramme in Schreibmaschinenschrift
+  haben feste Zeichenbreite; die Tesseract-Kästen fehlen dort oft (Linien
+  durch die Beschriftung), die Lage dann aus dem Bild schätzen und in einer
+  Festbreitenschrift einsetzen. Querformat-Seiten mit Kopfzeile im Hochformat:
+  erst den Kopf im Hochformat ersetzen, dann drehen, dann die Beschriftungen. Danach `pdftotext` und `strings` auf jeden
   alten Namen prüfen; echte Namen nicht in Commit oder README.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
