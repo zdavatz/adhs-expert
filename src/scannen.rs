@@ -829,7 +829,8 @@ const MAX_TITEL_IM_NAMEN: usize = 60;
 fn dateiname(datum: &str, titel: &str, nr: u32) -> String {
     let titel: String = titel
         .chars()
-        .filter(|c| !matches!(c, '?' | '*' | '"' | '<' | '>' | '|'))
+        // Anführungszeichen stören in der Shell und kosten Platz für den Titel
+        .filter(|c| !matches!(c, '?' | '*' | '"' | '<' | '>' | '|' | '„' | '“' | '”' | '«' | '»'))
         .map(|c| match c {
             '/' | ':' | '\\' => '-',
             c if c.is_control() => ' ',
@@ -1320,6 +1321,10 @@ mod tests {
         assert_eq!(
             dateiname("2003-11-11", "Das trotzende Kind - Bin ich zu lieb oder bin ich zu streng?", 1),
             "Das_trotzende_Kind_Bin_ich_zu_lieb_oder_bin_ich_zu_streng_11.11.2003.pdf"
+        );
+        assert_eq!(
+            dateiname("2002-11-25", "Einige Worte zur „Aufarbeitung“ von «Frau»", 1),
+            "Einige_Worte_zur_Aufarbeitung_von_Frau_25.11.2002.pdf"
         );
     }
 }
