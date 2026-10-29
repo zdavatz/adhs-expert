@@ -180,7 +180,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-143 PDFs, 576 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+144 PDFs, 578 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -227,6 +227,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Abschlussarbeit_Kurs_II_Familientheorie_und_-beratung_30.12.1993.pdf` | 8 (Abschlussarbeit eines Kursteilnehmers über die eigene Familie; Namen, Wohnort und Jahreszahlen durch erfundene ersetzt, Adresse entfernt; Seite 3 Genogramm im Querformat) |
 | `Der_Einfluss_des_Berufes_des_Mannes_auf_die_Frau_und_auf_die_30.01.1994.pdf` | 3 (Kursarbeit von Eva Zimmerli, FT II/93, Auswertung ihres Fragebogens zur Arbeits- und Freizeitplanung) |
 | `Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf` | 15 (zu einer Studie über Schizophreniefamilien und Erziehungsstil) |
+| `Familien_mit_Kind_mit_schwerer_Behinderung_oder_Krankheit_30.11.1998.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1998) |
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
