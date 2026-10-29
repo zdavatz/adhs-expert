@@ -124,6 +124,8 @@ Dokumenteigenschaften heisst es dann «gescannt am» statt «Vortrag vom».
 Nennt der Kopf nur ein Jahr («Familientherapie-Kurs I 1991», «Kurs II/89»),
 kommt dieses Jahr mit Tag und Monat vom Scan in den Dateinamen
 (`…_29.10.1991.pdf`); die Dokumenteigenschaften sagen das ausdrücklich.
+Nennt er Monat und Jahr («Dezember 1991»), heisst die Datei `Titel_12.1991.pdf`;
+eine Jahreszeit («Herbst 1988») gilt wie ein blosses Jahr.
 `--datum` und `--titel` überschreiben die Erkennung.
 
 **Textebene und Links:** Die erkannten Wörter liegen unsichtbar über den
