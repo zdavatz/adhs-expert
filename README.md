@@ -229,7 +229,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf` | 15 (zu einer Studie über Schizophreniefamilien und Erziehungsstil) |
 | `Familien_mit_Kind_mit_schwerer_Behinderung_oder_Krankheit_30.11.1998.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1998) |
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
-| `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
+| `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
 | `Vorwort_zu_dieser_Arbeit_von_Stephan_Meyer_08.02.2002.pdf` | 1 (Vorwort zur Arbeit eines Betroffenen über POS/ADD) |
 | `Ausstiegshilfen_unter_Berücksichtigung_der_Kultwellen_und_11.03.2002.pdf` | 3 (Suchtpräventionsveranstaltung im Gfellergut, 11./12.3.2002; «… geschlechtsspezifischen Aspekte»; Seite 1 mit Handnotizen) |
