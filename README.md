@@ -121,6 +121,9 @@ Gleiche Namen bekommen `_2`, `_3`.
 das Datum im Kopf der ersten Seite, sonst das letzte im Dokument (oft steht am
 Schluss «6. August 2003»). Steht keines im Text, gilt der Scantag; in den
 Dokumenteigenschaften heisst es dann «gescannt am» statt «Vortrag vom».
+Nennt der Kopf nur ein Jahr («Familientherapie-Kurs I 1991», «Kurs II/89»),
+kommt dieses Jahr mit Tag und Monat vom Scan in den Dateinamen
+(`…_29.10.1991.pdf`); die Dokumenteigenschaften sagen das ausdrücklich.
 `--datum` und `--titel` überschreiben die Erkennung.
 
 **Textebene und Links:** Die erkannten Wörter liegen unsichtbar über den
@@ -177,13 +180,14 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-143 PDFs, 576 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+143 PDFs, 576 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Emotioneller_Prozess_in_der_Kernfamilie_Möglichkeiten_zur_02.02.1987.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I; «… Möglichkeiten zur Stressabsorption oder Adaptionsmechanismen einer Familie auf Überlastungssituationen») |
 | `Ausländerfamilien_28.09.1987.pdf` | 2 (Familientherapiekurs, Schreibmaschine; ein Blatt beidseitig, Rückseite gedreht) |
 | `Schichtung_Klasse_26.10.1987.pdf` | 4 (Kursunterlage von B. Baumann, Kurs in Familientherapie, über soziale Ungleichheit und Schichtmodelle) |
+| `Das_Konzept_des_cut-off-Verhaltens_in_einer_Beziehung_oder_29.10.1987.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Aufteilung_der_verschiedenen_Themen_in_Familientheorie_und_07.03.1988.pdf` | 1 (Fortbildung in Familientheorie und Familienberatung, II. Teil; Themenübersicht, Schreibmaschine, geschrieben am 9.2.1988) |
 | `Gerechtigkeit_07.03.1988.pdf` | 2 (Kurstext von Ch. Hofmann, Kurs in Familientheorie; frühe, rein theoretische Fassung von «Gerechtigkeit in Beziehungen») |
 | `Das_Tellereisen_06.06.1988.pdf` | 2 (Kursarbeit von K. Bachmann, Kurs in Familientheorie, zu Walther Kauers Roman «Tellereisen») |
@@ -201,12 +205,21 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Cut-off_29.05.1989.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1989: Cut-off als Problemlösungsstrategie) |
 | `Prävention_sinnvoller_Ansatz_bei_gefährdeten_Familien_mit_03.07.1989.pdf` | 3 (Kursarbeit von E. Maarse Bäbler, Familientheoriekurs II; ein Blatt beidseitig) |
 | `Loyalität_und_Familie_04.09.1989.pdf` | 6 (Kursarbeit von Canzek, Kurs II in Familientherapie) |
+| `Krankheit_als_Anpassung_28.10.1989.pdf` | 7 (Referat von Jakob Wehrli, Kurs II/89 Familientherapie; zwei Blätter beidseitig, Seitenzahlen oben; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Führungsposition_im_Zusammenhang_mit_Geschwisterposition_05.11.1989.pdf` | 3 (Familienberatung Kurs II; Arbeit der Kursteilnehmerin Heidi Deplazes-Kunz nach Walter Toman, Schreibmaschine) |
 | `Adoleszentenpsychiatrie_Prävention_im_Adoleszentenalter_03.09.1990.pdf` | 2 (Familientherapiekurs II, Schreibmaschine) |
 | `Sexualverhalten_Sexualstörungen_16.10.1990.pdf` | 4 (Kursskript «FT II», Schreibmaschine; Datum vom Schluss) |
 | `Meine_Familie_aus_systemischer_Sicht_von_der_Herkunft_bis_12.1990.pdf` | 9 (Fragebogen «… bis heute», Dezember 1990, nach Unterlagen von Sepp Duss-von Werdt; Seiten 8-9 Beilagen im Querformat: Symbole zur Familienstruktur, Beziehungsrad) |
 | `Literaturliste_für_Kurs_in_Familientheorie_25.02.1991.pdf` | 2 (Literaturliste zum Kurs in Familientheorie) |
+| `Ablösung_von_der_Autorität_28.10.1991.pdf` | 2 (Familientheorie Kurs II/91, FTH291, Schreibmaschine; nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Anpassungsmechanismen_innerhalb_der_Kernfamilie_in_29.10.1991.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1991, nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Soziale_Vererbung_in_menschlichen_Systemen_oder_Weitergabe_29.10.1991.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1991, nur das Jahr im Text, Tag und Monat vom Scan; Seite 4 Muster-Genogramm im Querformat) |
+| `Scheidungsfamilien_Zusammengewürfelte_Familien_29.10.1991.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1991, nur das Jahr im Text, Tag und Monat vom Scan; Seite 2 deckt sich mit Seite 2 von «Das gesunde Cut-off») |
+| `Vom_Umgang_mit_Cut-off_(Beziehungsabbruch)_und_dessen_29.10.1992.pdf` | 3 (anonyme Kursarbeit, Familientheorie II 1992, nur das Jahr im Text, Tag und Monat vom Scan; mit Handnotizen) |
 | `Die_Zweierbeziehung_in_der_Ehe_23.11.1992.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1992) |
+| `Weshalb_habe_ich_einen_18_Jahre_älteren_Mann_geheiratet_28.10.1993.pdf` | 2 (persönliche Kursarbeit, Familientherapie 1993; Name der Verfasserin geändert; nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.1993.pdf` | 3 (leerer Fragebogen von Eva Zimmerli, Familientheorie-Kurs «FT II/93», nur das Jahr im Text, Tag und Monat vom Scan; gehört zur Arbeit vom 30.1.1994) |
+| `Das_gesunde_Cut-off_29.10.1993.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1993, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Abschlussarbeit_Kurs_II_Familientheorie_und_-beratung_30.12.1993.pdf` | 8 (Abschlussarbeit eines Kursteilnehmers über die eigene Familie; Namen, Wohnort und Jahreszahlen durch erfundene ersetzt, Adresse entfernt; Seite 3 Genogramm im Querformat) |
 | `Der_Einfluss_des_Berufes_des_Mannes_auf_die_Frau_und_auf_die_30.01.1994.pdf` | 3 (Kursarbeit von Eva Zimmerli, FT II/93, Auswertung ihres Fragebogens zur Arbeits- und Freizeitplanung) |
 | `Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf` | 15 (zu einer Studie über Schizophreniefamilien und Erziehungsstil) |
@@ -301,29 +314,19 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Text_für_Werbung_Familientherapie_28.10.2026.pdf` | 2 (ohne Datum im Text, Scantag) |
 | `Was_und_wieviel_kann_die_Mütter-_und_Väterberatung_zur_28.10.2026.pdf` | 8 (Artikel für «Clic», ohne Datum im Text, Scantag) |
 | `Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_28.10.2026.pdf` | 2 (Artikel für die Spitex Zeitung mit Literaturhinweisen, ohne Datum im Text, Scantag; zur Fortbildung vom 23.4.2002) |
-| `Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_28.10.2026_2.pdf` | 3 (andere Fassung: grösser gesetzt, mit Autorenzeile statt Unterschrift, ohne Literaturhinweise) |
 | `Automatismus_Motivation_28.10.2026.pdf` | 22 (Kursarbeit «FT II», ohne Datum, Scantag; handschriftliche Adresse entfernt) |
-| `Weshalb_habe_ich_einen_18_Jahre_älteren_Mann_geheiratet_28.10.2026.pdf` | 2 (persönliche Kursarbeit, Familientherapie 1993; Name der Verfasserin geändert; ohne Tagesdatum, Scantag) |
 | `Differenzierung_im_Ehekonflikt_28.10.2026.pdf` | 7 (Seminararbeit Familientherapie Seminar II, um 1990, ohne Datum, Scantag; Adresse entfernt, Schlussseite lag doppelt) |
 | `Differenzierung_in_Bilderbuchfamilien_28.10.2026.pdf` | 3 (Kursarbeit von Ruth Buser, November 1988; ohne Tagesdatum, Scantag) |
-| `Krankheit_als_Anpassung_28.10.2026.pdf` | 7 (Referat von Jakob Wehrli, Kurs II/89 Familientherapie; zwei Blätter beidseitig, Seitenzahlen oben; ohne Tagesdatum, Scantag) |
 | `Krankheit_als_Konfliktlösung_28.10.2026.pdf` | 1 (Kursunterlage ohne Verfasser und Datum, Scantag) |
 | `Gerechtigkeit_in_Beziehungen_28.10.2026.pdf` | 5 (Kursarbeit von Ch. Hofmann, November 1988, ohne Tagesdatum, Scantag; Patientenname in Text und handgezeichnetem Genogramm durch erfundenen ersetzt) |
-| `Familienschema_od._Familiendiagramm_od._Genogramm_29.10.2026.pdf` | 1 (leeres Muster-Genogramm mit Legende, Querformat; ohne Datum, Scantag) |
-| `Überbrückung_vom_Cut-off_in_meiner_Herkunftsfamilie_29.10.2026.pdf` | 5 (Kursarbeit von Pasquale Carucci, Familientheorie-Kurs II, Dezember 1991, ohne Tagesdatum, Scantag; Adresse entfernt) |
-| `Vom_Umgang_mit_Cut-off_(Beziehungsabbruch)_und_dessen_29.10.2026.pdf` | 3 (anonyme Kursarbeit, Familientheorie II 1992, ohne Tagesdatum, Scantag; mit Handnotizen) |
-| `Das_Konzept_des_cut-off-Verhaltens_in_einer_Beziehung_oder_29.10.2026.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, ohne Tagesdatum, Scantag) |
-| `Das_gesunde_Cut-off_29.10.2026.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1993, ohne Tagesdatum, Scantag) |
-| `Anpassungsmechanismen_innerhalb_der_Kernfamilie_in_29.10.2026.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1991, ohne Tagesdatum, Scantag) |
-| `Soziale_Vererbung_in_menschlichen_Systemen_oder_Weitergabe_29.10.2026.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1991, ohne Tagesdatum, Scantag; Seite 4 Muster-Genogramm im Querformat) |
-| `Scheidungsfamilien_Zusammengewürfelte_Familien_29.10.2026.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1991, ohne Tagesdatum, Scantag; Seite 2 deckt sich mit Seite 2 von «Das gesunde Cut-off») |
-| `Psychoseerleben_in_der_Literatur_29.10.2026.pdf` | 1 (Literaturhinweise nach Asmus Finzen 1993, ohne Datum, Scantag) |
-| `Übersicht_der_Kursarbeiten_Familientherapie_29.10.2026.pdf` | 2 (Liste der Kursarbeiten nach Thema mit Jahr, 1987–2001; ohne Überschrift und Datum, Scantag) |
 | `Adoptiv-_und_Stieffamilien_28.10.2026.pdf` | 6 (Kursarbeit von M. Friedli, Herbst 1988; ohne Tagesdatum, Scantag) |
-| `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.2026.pdf` | 3 (leerer Fragebogen von Eva Zimmerli, Familientheorie-Kurs «FT II/93», ohne Tagesdatum, Scantag; gehört zur Arbeit vom 30.1.1994) |
-| `Ablösung_von_der_Autorität_28.10.2026.pdf` | 2 (Familientheorie Kurs II/91, FTH291, Schreibmaschine; ohne Tagesdatum, Scantag – der Kurs deutet auf 1991) |
 | `Das_Leiden_der_Familienangehörigen_und_ihr_Potential_als_28.10.2026.pdf` | 3 (Zeitschriftenartikel mit Lead und Autorenhinweis, ohne Datum im Text, Scantag; neuer Text zum Thema des VASK-Vortrags vom 25.8.2005) |
 | `Gibt_es_das_auch_Depressionen_bei_geistig_behinderten_28.10.2026.pdf` | 3 («… Jugendlichen und Erwachsenen», ohne Datum im Text, Scantag; neuer Text zum Thema des Insieme-Vortrags vom 10.3.2003) |
+| `Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_28.10.2026_2.pdf` | 3 (andere Fassung: grösser gesetzt, mit Autorenzeile statt Unterschrift, ohne Literaturhinweise) |
+| `Familienschema_od._Familiendiagramm_od._Genogramm_29.10.2026.pdf` | 1 (leeres Muster-Genogramm mit Legende, Querformat; ohne Datum, Scantag) |
+| `Überbrückung_vom_Cut-off_in_meiner_Herkunftsfamilie_29.10.2026.pdf` | 5 (Kursarbeit von Pasquale Carucci, Familientheorie-Kurs II, Dezember 1991, ohne Tagesdatum, Scantag; Adresse entfernt) |
+| `Psychoseerleben_in_der_Literatur_29.10.2026.pdf` | 1 (Literaturhinweise nach Asmus Finzen 1993, ohne Datum, Scantag) |
+| `Übersicht_der_Kursarbeiten_Familientherapie_29.10.2026.pdf` | 2 (Liste der Kursarbeiten nach Thema mit Jahr, 1987–2001; ohne Überschrift und Datum, Scantag) |
 
 ### Wenn etwas fehlt oder doppelt ist
 

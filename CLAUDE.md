@@ -95,7 +95,9 @@ PDF mit Bild (DCTDecode, unverändert), unsichtbarer Textebene (Rendermodus 3,
 Helvetica, per `Tz` auf die Kastenbreite gezogen) und Link-Annotationen.
 Benutzerwünsche, die im Code stecken: Dateiname `Titel_TT.MM.JJJJ.pdf`,
 Unterstriche, Datum am Schluss; 150 dpi Graustufen; ohne Datum im Text der
-Scantag; jeder Scan wird committet **und** gepusht.
+Scantag, bei blosser Jahresangabe im Kopf das Jahr mit Tag und Monat vom Scan
+(`jahr_finden()`, `Datumsart::JahrUndScan`); jeder Scan wird committet **und**
+gepusht.
 
 Was dabei Zeit gekostet hat:
 

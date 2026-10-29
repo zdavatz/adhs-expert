@@ -285,13 +285,26 @@ fn vortrag_ablegen(opt: &Optionen, seiten: &[PathBuf], texte: &[Vec<Zeile>]) -> 
     let datum = opt.datum.clone().or_else(|| datum_finden(texte));
     let titel = opt.titel.clone().or_else(|| texte.first().and_then(|z| titel_finden(z)));
     // Ohne Datum im Text gilt der Scantag; im PDF heisst es dann «gescannt
-    // am», damit niemand ihn für das Vortragsdatum hält.
-    let scandatum = datum.is_none();
-    let datum = datum.unwrap_or_else(|| {
-        let heute = heute();
-        eprintln!("Hinweis: kein Datum im Text - nehme den Scantag {heute}; --datum überschreibt.");
-        heute
-    });
+    // am», damit niemand ihn für das Vortragsdatum hält. Nennt der Kopf nur
+    // ein Jahr («Kurs I 1991», «Kurs II/89»), kommt dieses Jahr mit Tag und
+    // Monat vom Scan in den Namen (Wunsch des Benutzers).
+    let (datum, art) = match datum {
+        Some(d) => (d, Datumsart::Vortrag),
+        None => {
+            let heute = heute();
+            match texte.first().and_then(|z| jahr_finden(z)) {
+                Some(jahr) if heute.len() == 10 => {
+                    let d = format!("{jahr}{}", &heute[4..]);
+                    eprintln!("Hinweis: nur das Jahr {jahr} im Text - nehme {d} (Tag und Monat vom Scan); --datum überschreibt.");
+                    (d, Datumsart::JahrUndScan)
+                }
+                _ => {
+                    eprintln!("Hinweis: kein Datum im Text - nehme den Scantag {heute}; --datum überschreibt.");
+                    (heute, Datumsart::Scan)
+                }
+            }
+        }
+    };
     let titel = titel.unwrap_or_else(|| {
         eprintln!("Hinweis: kein Titel gefunden - mit --titel nachtragen.");
         "Scan".into()
@@ -312,7 +325,7 @@ fn vortrag_ablegen(opt: &Optionen, seiten: &[PathBuf], texte: &[Vec<Zeile>]) -> 
         ziel = opt.ordner.join(dateiname(&datum, name_titel, n));
         n += 1;
     }
-    pdf_bauen(seiten, texte, opt.dpi, &datum, scandatum, &titel, &ziel)?;
+    pdf_bauen(seiten, texte, opt.dpi, &datum, art, &titel, &ziel)?;
     Ok(ziel)
 }
 
@@ -755,6 +768,36 @@ fn daten_in(text: &str) -> Vec<String> {
 
 /// Das Datum des Vortrags: im Kopf der ersten Seite (oberes Drittel), sonst
 /// das letzte Datum im Dokument.
+/// Woher das Datum im Dateinamen stammt.
+#[derive(Clone, Copy)]
+enum Datumsart {
+    Vortrag,
+    Scan,
+    JahrUndScan,
+}
+
+/// Nur ein Jahr im Kopf der ersten Seite: «Familientherapie-Kurs I 1991»,
+/// «Kurs II/89», «FT II/93». Jahreszahlen in Literaturangaben weiter unten
+/// zählen nicht.
+fn jahr_finden(zeilen: &[Zeile]) -> Option<u32> {
+    use std::sync::LazyLock;
+    static VOLL: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"\b(19[4-9]\d|20[0-4]\d)\b").unwrap());
+    static KURS: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?i)(?:kurs|ft|seminar)\s*[IVX1l|]*\s*/\s*(\d{2})\b").unwrap());
+    let kopf = zeilen.iter().filter(|z| z.oben < 0.25);
+    for z in kopf {
+        if let Some(m) = VOLL.captures(&z.text) {
+            return m[1].parse().ok();
+        }
+        if let Some(m) = KURS.captures(&z.text) {
+            let j: u32 = m[1].parse().ok()?;
+            return Some(if j >= 40 { 1900 + j } else { 2000 + j });
+        }
+    }
+    None
+}
+
 fn datum_finden(seiten: &[Vec<Zeile>]) -> Option<String> {
     let kopf = seiten
         .first()?
@@ -1215,7 +1258,7 @@ fn pdf_bauen(
     texte: &[Vec<Zeile>],
     dpi: u32,
     datum: &str,
-    scandatum: bool,
+    art: Datumsart,
     titel: &str,
     ziel: &Path,
 ) -> anyhow::Result<()> {
@@ -1314,7 +1357,15 @@ fn pdf_bauen(
     let katalog_id = doc.add_object(dictionary! { "Type" => "Catalog", "Pages" => pages_id });
     doc.trailer.set("Root", katalog_id);
 
-    let art = if scandatum { "gescannt am" } else { "Vortrag vom" };
+    let art = match art {
+        Datumsart::JahrUndScan => {
+            let jahr = datum.get(..4).unwrap_or("");
+            let vom = format!("Vortrag von {jahr}; Tag und Monat im Dateinamen vom Scan");
+            return info_und_speichern(doc, titel, &vom, datum, ziel);
+        }
+        Datumsart::Scan => "gescannt am",
+        Datumsart::Vortrag => "Vortrag vom",
+    };
     let vom = match (datum.get(..4), datum.get(5..7), datum.get(8..10)) {
         (Some(j), Some(m), Some(t)) if datum_iso(datum).is_some() => format!("{art} {t}.{m}.{j}"),
         (Some(j), Some(m), None) if datum_iso(&format!("{datum}-01")).is_some() => {
@@ -1322,9 +1373,21 @@ fn pdf_bauen(
         }
         _ => "Vortrag".to_string(),
     };
+    info_und_speichern(doc, titel, &vom, datum, ziel)
+}
+
+/// Info-Wörterbuch setzen und speichern.
+fn info_und_speichern(
+    mut doc: lopdf::Document,
+    titel: &str,
+    vom: &str,
+    datum: &str,
+    ziel: &Path,
+) -> anyhow::Result<()> {
+    use lopdf::dictionary;
     let info_id = doc.add_object(dictionary! {
         "Title" => pdf_text(titel),
-        "Subject" => pdf_text(&vom),
+        "Subject" => pdf_text(vom),
         "Keywords" => pdf_text(&format!("{datum}; {titel}")),
         "Creator" => pdf_text("adhs-expert scannen (Epson GT-2500, Einzug)"),
     });
@@ -1347,6 +1410,16 @@ mod tests {
         assert_eq!(datum_iso("5.3.2014").as_deref(), Some("2014-03-05"));
         assert_eq!(datum_iso("2014-13-05"), None);
         assert_eq!(datum_iso("gestern"), None);
+    }
+
+    #[test]
+    fn nur_jahr() {
+        let z = |t: &str, oben: f64| Zeile { text: t.into(), oben, hoehe: 0.01, ..Default::default() };
+        assert_eq!(jahr_finden(&[z("Familientherapie-Kurs I 1991", 0.05)]), Some(1991));
+        assert_eq!(jahr_finden(&[z("Kurs II/89 Familientherapie", 0.05)]), Some(1989));
+        assert_eq!(jahr_finden(&[z("Eva Zimmerli FT II/93", 0.03)]), Some(1993));
+        // Literatur weiter unten zählt nicht
+        assert_eq!(jahr_finden(&[z("Titel", 0.05), z("Stuttgart 1985", 0.8)]), None);
     }
 
     #[test]
