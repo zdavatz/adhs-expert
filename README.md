@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-134 PDFs, 550 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+135 PDFs, 553 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -303,6 +303,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Gerechtigkeit_in_Beziehungen_28.10.2026.pdf` | 5 (Kursarbeit von Ch. Hofmann, November 1988, ohne Tagesdatum, Scantag; Patientenname in Text und handgezeichnetem Genogramm durch erfundenen ersetzt) |
 | `Familienschema_od._Familiendiagramm_od._Genogramm_29.10.2026.pdf` | 1 (leeres Muster-Genogramm mit Legende, Querformat; ohne Datum, Scantag) |
 | `Überbrückung_vom_Cut-off_in_meiner_Herkunftsfamilie_29.10.2026.pdf` | 5 (Kursarbeit von Pasquale Carucci, Familientheorie-Kurs II, Dezember 1991, ohne Tagesdatum, Scantag; Adresse entfernt) |
+| `Vom_Umgang_mit_Cut-off_(Beziehungsabbruch)_und_dessen_29.10.2026.pdf` | 3 (anonyme Kursarbeit, Familientheorie II 1992, ohne Tagesdatum, Scantag; mit Handnotizen) |
 | `Psychoseerleben_in_der_Literatur_29.10.2026.pdf` | 1 (Literaturhinweise nach Asmus Finzen 1993, ohne Datum, Scantag) |
 | `Übersicht_der_Kursarbeiten_Familientherapie_29.10.2026.pdf` | 2 (Liste der Kursarbeiten nach Thema mit Jahr, 1987–2001; ohne Überschrift und Datum, Scantag) |
 | `Adoptiv-_und_Stieffamilien_28.10.2026.pdf` | 6 (Kursarbeit von M. Friedli, Herbst 1988; ohne Tagesdatum, Scantag) |
