@@ -33,6 +33,7 @@ cargo run --release --bin scannen -- --lesen bild1.jpg           # nur Erkennung
 cargo run --release --bin scannen -- --ein --aus kurz.jpg v1.jpg  # nicht trennen
 cargo run --release --bin scannen -- --adresse-behalten           # Strasse im Kopf lassen
 cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
+cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
@@ -230,6 +231,13 @@ Was dabei Zeit gekostet hat:
   Kopf («-2-»), nicht in der Fusszeile – `fusszahl()` sieht sie nicht. Vor dem
   Zusammensetzen die Köpfe aller Blätter als Ausschnitt ansehen. Satzübergänge
   allein täuschen: Einmal passte Seite 3 scheinbar nahtlos an Seite 6.
+- **Fusszeile «https://adhs.expert»:** Wunsch des Benutzers für alle Vorlagen
+  ohne eigenen Hinweis auf ganglion.ch. `hat_ganglion()` prüft den erkannten
+  Text grosszügig (`[gq]an[gq]li[oö]n`), `fusszeile()` setzt den Text (7 pt,
+  grau) samt Link-Annotation. `--fuss` hängt beides an bestehende PDFs an und
+  überspringt Seiten, die den Link schon tragen. Falle: `Tz`, `Tc`, `Tw`
+  gelten über `BT/ET` hinaus – ohne `100 Tz` erbt die Fusszeile die Stauchung
+  des letzten Worts der unsichtbaren Textebene.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE

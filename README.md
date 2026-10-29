@@ -165,6 +165,11 @@ Strassenangaben stehen, etwa den Vortragsort im Kopf; Mail und Telefon werden
 trotzdem entfernt.
 `--duplex` zieht beidseitig bedruckte Blätter mit Vorder- und Rückseite ein.
 
+**Hinweis auf adhs.expert:** Vorlagen, die selbst nicht auf ganglion.ch
+verweisen (Kursarbeiten, Skripte ohne Briefkopf), bekommen auf jeder Seite
+unten eine kleine graue Fusszeile «https://adhs.expert», klickbar. Bestehende
+PDFs rüstet `--fuss PDF…` nach, ohne Bild oder Textebene anzutasten.
+
 **Warum SANE und nicht Epson Scan 2:** Dessen Argument `-SCAN` ist nicht
 dokumentiert, und der Image-Capture-Treiber «EPSON Scanner.app» ist nur für
 Intel gebaut und startet auf Apple Silicon ohne Rosetta nicht. SANE führt den

@@ -59,6 +59,8 @@ struct Optionen {
     geraet: Option<String>,
     lesen: Vec<PathBuf>,
     aus: Vec<PathBuf>,
+    /// Bestehende PDFs um die adhs.expert-Fusszeile ergänzen.
+    fuss: Vec<PathBuf>,
 }
 
 fn optionen() -> anyhow::Result<Optionen> {
@@ -73,6 +75,7 @@ fn optionen() -> anyhow::Result<Optionen> {
         geraet: None,
         lesen: Vec::new(),
         aus: Vec::new(),
+        fuss: Vec::new(),
     };
     let mut args = std::env::args().skip(1).peekable();
     while let Some(a) = args.next() {
@@ -93,8 +96,12 @@ fn optionen() -> anyhow::Result<Optionen> {
             "--ein" => o.ein = true,
             "--duplex" => o.duplex = true,
             "--adresse-behalten" => ADRESSE_BEHALTEN.store(true, std::sync::atomic::Ordering::Relaxed),
-            "--lesen" | "--aus" => {
-                let liste = if a == "--lesen" { &mut o.lesen } else { &mut o.aus };
+            "--lesen" | "--aus" | "--fuss" => {
+                let liste = match a.as_str() {
+                    "--lesen" => &mut o.lesen,
+                    "--aus" => &mut o.aus,
+                    _ => &mut o.fuss,
+                };
                 while let Some(p) = args.next_if(|p| !p.starts_with("--")) {
                     liste.push(PathBuf::from(p));
                 }
@@ -102,7 +109,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             "-h" | "--help" => {
                 println!(
                     "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--duplex] [--ein] [--adresse-behalten] \
-                     [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…]"
+                     [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…] [--fuss PDF…]"
                 );
                 std::process::exit(0);
             }
@@ -172,6 +179,13 @@ fn scannen(opt: &Optionen, tmp: &Path) -> anyhow::Result<Vec<PathBuf>> {
 
 fn lauf() -> anyhow::Result<()> {
     let opt = optionen()?;
+    if !opt.fuss.is_empty() {
+        for pdf in &opt.fuss {
+            let n = fuss_nachruesten(pdf)?;
+            println!("{}: {n} Seiten ergänzt", pdf.display());
+        }
+        return Ok(());
+    }
     if !opt.lesen.is_empty() {
         let (texte, nummern) = erkennen(&opt.lesen, opt.dpi)?;
         // SCAN_ZEILEN=1 zeigt jede erkannte Zeile mit ihrem Kasten
@@ -1087,6 +1101,115 @@ fn links_finden(zeilen: &[Zeile], w: f64, hh: f64) -> Vec<(String, [f32; 4])> {
 }
 
 /// Setzt die gescannten JPEG-Seiten zu einem PDF zusammen.
+/// Fusszeile für Vorlagen ohne eigenen Hinweis auf ganglion.ch (Kursarbeiten,
+/// Skripte ohne Briefkopf): klein, grau, klickbar.
+const WEBSITE: &str = "https://adhs.expert";
+
+/// Zeigt eine Seite des Stapels schon auf ganglion.ch? Tesseract liest das Logo
+/// auch als «qanqlion» oder «gangliön», darum grosszügig.
+fn hat_ganglion(texte: &[Vec<Zeile>]) -> bool {
+    use std::sync::LazyLock;
+    static G: LazyLock<regex::Regex> =
+        LazyLock::new(|| regex::Regex::new(r"(?i)[gq]an[gq]li[oö]n").unwrap());
+    texte.iter().flatten().any(|z| G.is_match(&z.text))
+}
+
+/// Inhalt und Klickfläche der Fusszeile, unten mittig auf einer Seite der Breite `w`.
+fn fusszeile(w: f64) -> (Vec<u8>, [f64; 4]) {
+    let groesse = 7.0;
+    let breite: f64 = WEBSITE.chars().map(helvetica_breite).sum::<f64>() * groesse / 1000.0;
+    let (x, y) = ((w - breite) / 2.0, 10.0);
+    // Tz, Tc, Tw gelten über BT/ET hinaus; die Textebene hinterlässt sonst ihre
+    // letzte Stauchung, und die Fusszeile erbt sie.
+    let mut s = format!("q BT 0 Tr 100 Tz 0 Tc 0 Tw 0.45 g /F1 {groesse} Tf 1 0 0 1 {x:.2} {y:.2} Tm (")
+        .into_bytes();
+    s.extend(winansi(WEBSITE));
+    s.extend_from_slice(b") Tj ET Q\n");
+    (s, [x - 1.0, y - 2.0, x + breite + 1.0, y + groesse])
+}
+
+/// Setzt die Fusszeile nachträglich in ein schon gebautes PDF: eigener
+/// Inhaltsstrom und Link-Annotation je Seite, Bild und Textebene bleiben
+/// unberührt. Seiten, die den Link schon tragen, werden übersprungen.
+fn fuss_nachruesten(pfad: &Path) -> anyhow::Result<usize> {
+    use lopdf::{dictionary, Document, Object, Stream};
+    let mut doc = Document::load(pfad).with_context(|| format!("{}", pfad.display()))?;
+    let schrift_id = doc.add_object(dictionary! {
+        "Type" => "Font",
+        "Subtype" => "Type1",
+        "BaseFont" => "Helvetica",
+        "Encoding" => "WinAnsiEncoding",
+    });
+    let mut ergaenzt = 0;
+    for (_, seite_id) in doc.get_pages() {
+        let seite = doc.get_dictionary(seite_id)?.clone();
+        let hat_link = match seite.get(b"Annots") {
+            Ok(Object::Array(a)) => a.iter().any(|o| {
+                let d = match o {
+                    Object::Reference(id) => doc.get_dictionary(*id).ok(),
+                    Object::Dictionary(d) => Some(d),
+                    _ => None,
+                };
+                d.and_then(|d| d.get(b"A").ok())
+                    .and_then(|a| a.as_dict().ok())
+                    .and_then(|a| a.get(b"URI").ok())
+                    .and_then(|u| u.as_str().ok())
+                    .is_some_and(|u| u == WEBSITE.as_bytes())
+            }),
+            _ => false,
+        };
+        if hat_link {
+            continue;
+        }
+        let breite = match seite.get(b"MediaBox").and_then(Object::as_array) {
+            Ok(b) if b.len() == 4 => b[2].as_float().or_else(|_| b[2].as_i64().map(|i| i as f32))? as f64,
+            _ => 595.2,
+        };
+        let (text, [x1, y1, x2, y2]) = fusszeile(breite);
+        let strom_id = doc.add_object(Stream::new(dictionary! {}, text));
+        let link_id = doc.add_object(dictionary! {
+            "Type" => "Annot",
+            "Subtype" => "Link",
+            "Rect" => vec![x1.into(), y1.into(), x2.into(), y2.into()],
+            "Border" => vec![0.into(), 0.into(), 0.into()],
+            "A" => dictionary! { "S" => "URI", "URI" => Object::string_literal(WEBSITE) },
+        });
+        let mut neu = seite.clone();
+        let mut inhalte = match seite.get(b"Contents") {
+            Ok(Object::Array(a)) => a.clone(),
+            Ok(o) => vec![o.clone()],
+            Err(_) => Vec::new(),
+        };
+        inhalte.push(strom_id.into());
+        neu.set("Contents", inhalte);
+        let mut annots = match seite.get(b"Annots") {
+            Ok(Object::Array(a)) => a.clone(),
+            _ => Vec::new(),
+        };
+        annots.push(link_id.into());
+        neu.set("Annots", annots);
+        // Eigene Schrift unter einem Namen, der sicher frei ist
+        let mut res = match seite.get(b"Resources") {
+            Ok(Object::Reference(id)) => doc.get_dictionary(*id)?.clone(),
+            Ok(Object::Dictionary(d)) => d.clone(),
+            _ => lopdf::Dictionary::new(),
+        };
+        let mut fonts = match res.get(b"Font") {
+            Ok(Object::Dictionary(d)) => d.clone(),
+            Ok(Object::Reference(id)) => doc.get_dictionary(*id)?.clone(),
+            _ => lopdf::Dictionary::new(),
+        };
+        fonts.set("F1", schrift_id);
+        res.set("Font", fonts);
+        neu.set("Resources", res);
+        doc.objects.insert(seite_id, Object::Dictionary(neu));
+        ergaenzt += 1;
+    }
+    doc.reference_table.cross_reference_type = lopdf::xref::XrefType::CrossReferenceTable;
+    doc.save(pfad).with_context(|| format!("{}", pfad.display()))?;
+    Ok(ergaenzt)
+}
+
 fn pdf_bauen(
     seiten: &[PathBuf],
     texte: &[Vec<Zeile>],
@@ -1109,6 +1232,7 @@ fn pdf_bauen(
         "Encoding" => "WinAnsiEncoding",
     });
     let mut kids = Vec::new();
+    let mit_fuss = !hat_ganglion(texte);
 
     for (n, pfad) in seiten.iter().enumerate() {
         let daten = std::fs::read(pfad).with_context(|| format!("{}", pfad.display()))?;
@@ -1139,6 +1263,10 @@ fn pdf_bauen(
         let zeilen = texte.get(n).map(Vec::as_slice).unwrap_or(&[]);
         let mut inhalt = format!("q {w:.2} 0 0 {hh:.2} 0 0 cm /Im0 Do Q\n").into_bytes();
         inhalt.extend(textebene(zeilen, w as f64, hh as f64));
+        let fuss = mit_fuss.then(|| fusszeile(w as f64));
+        if let Some((text, _)) = &fuss {
+            inhalt.extend(text);
+        }
         let inhalt_id = doc.add_object(Stream::new(dictionary! {}, inhalt));
 
         let mut annots = Vec::new();
@@ -1149,6 +1277,15 @@ fn pdf_bauen(
                 "Rect" => vec![x1.into(), y1.into(), x2.into(), y2.into()],
                 "Border" => vec![0.into(), 0.into(), 0.into()],
                 "A" => dictionary! { "S" => "URI", "URI" => Object::string_literal(url) },
+            })));
+        }
+        if let Some((_, [x1, y1, x2, y2])) = fuss {
+            annots.push(Object::Reference(doc.add_object(dictionary! {
+                "Type" => "Annot",
+                "Subtype" => "Link",
+                "Rect" => vec![x1.into(), y1.into(), x2.into(), y2.into()],
+                "Border" => vec![0.into(), 0.into(), 0.into()],
+                "A" => dictionary! { "S" => "URI", "URI" => Object::string_literal(WEBSITE) },
             })));
         }
         let mut seite = dictionary! {
