@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-136 PDFs, 556 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+137 PDFs, 558 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -192,6 +192,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989.pdf` | 8 (Kursarbeit von G. Petrazzo, Familientherapie Kurs II; mit Beiblatt zu den Redeverboten des Bundesrats; Seite 6 lag doppelt) |
 | `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989_2.pdf` | 7 (überarbeitete Fassung, dichter gesetzt; Seite 7 Literaturliste im Querformat) |
 | `Emanzipation_eines_Partners_und_die_Folgen_auf_die_18.04.1989.pdf` | 2 (Referat von F. Haller, Kurs II Familientherapie; vier anonyme Paarfälle; Adresse entfernt) |
+| `Cut-off_29.05.1989.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1989: Cut-off als Problemlösungsstrategie) |
 | `Prävention_sinnvoller_Ansatz_bei_gefährdeten_Familien_mit_03.07.1989.pdf` | 3 (Kursarbeit von E. Maarse Bäbler, Familientheoriekurs II; ein Blatt beidseitig) |
 | `Loyalität_und_Familie_04.09.1989.pdf` | 6 (Kursarbeit von Canzek, Kurs II in Familientherapie) |
 | `Führungsposition_im_Zusammenhang_mit_Geschwisterposition_05.11.1989.pdf` | 3 (Familienberatung Kurs II; Arbeit der Kursteilnehmerin Heidi Deplazes-Kunz nach Walter Toman, Schreibmaschine) |
