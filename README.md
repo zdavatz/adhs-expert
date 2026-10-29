@@ -180,7 +180,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-146 PDFs, 583 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+147 PDFs, 587 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -233,6 +233,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
+| `Geschwisterposition_29.10.2000.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2000; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Vorwort_zu_dieser_Arbeit_von_Stephan_Meyer_08.02.2002.pdf` | 1 (Vorwort zur Arbeit eines Betroffenen über POS/ADD) |
 | `Ausstiegshilfen_unter_Berücksichtigung_der_Kultwellen_und_11.03.2002.pdf` | 3 (Suchtpräventionsveranstaltung im Gfellergut, 11./12.3.2002; «… geschlechtsspezifischen Aspekte»; Seite 1 mit Handnotizen) |
 | `Begleitung_von_Menschen_mit_depressiven_Symptomen_im_14.03.2002.pdf` | 4 (Fortbildungsseminar am KSB; frühere Fassung des Seminars vom 13.2.2003) |
