@@ -177,7 +177,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-141 PDFs, 571 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+142 PDFs, 573 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -315,6 +315,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Das_gesunde_Cut-off_29.10.2026.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1993, ohne Tagesdatum, Scantag) |
 | `Anpassungsmechanismen_innerhalb_der_Kernfamilie_in_29.10.2026.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1991, ohne Tagesdatum, Scantag) |
 | `Soziale_Vererbung_in_menschlichen_Systemen_oder_Weitergabe_29.10.2026.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1991, ohne Tagesdatum, Scantag; Seite 4 Muster-Genogramm im Querformat) |
+| `Scheidungsfamilien_Zusammengewürfelte_Familien_29.10.2026.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1991, ohne Tagesdatum, Scantag; Seite 2 deckt sich mit Seite 2 von «Das gesunde Cut-off») |
 | `Psychoseerleben_in_der_Literatur_29.10.2026.pdf` | 1 (Literaturhinweise nach Asmus Finzen 1993, ohne Datum, Scantag) |
 | `Übersicht_der_Kursarbeiten_Familientherapie_29.10.2026.pdf` | 2 (Liste der Kursarbeiten nach Thema mit Jahr, 1987–2001; ohne Überschrift und Datum, Scantag) |
 | `Adoptiv-_und_Stieffamilien_28.10.2026.pdf` | 6 (Kursarbeit von M. Friedli, Herbst 1988; ohne Tagesdatum, Scantag) |
