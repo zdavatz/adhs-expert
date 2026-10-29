@@ -172,7 +172,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Bestand
 
-132 PDFs, 543 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
+133 PDFs, 545 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt).
 
 | Datei | Seiten |
 |---|---|
@@ -303,6 +303,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Gerechtigkeit_in_Beziehungen_28.10.2026.pdf` | 5 (Kursarbeit von Ch. Hofmann, November 1988, ohne Tagesdatum, Scantag; Patientenname in Text und handgezeichnetem Genogramm durch erfundenen ersetzt) |
 | `Familienschema_od._Familiendiagramm_od._Genogramm_29.10.2026.pdf` | 1 (leeres Muster-Genogramm mit Legende, Querformat; ohne Datum, Scantag) |
 | `Psychoseerleben_in_der_Literatur_29.10.2026.pdf` | 1 (Literaturhinweise nach Asmus Finzen 1993, ohne Datum, Scantag) |
+| `Übersicht_der_Kursarbeiten_Familientherapie_29.10.2026.pdf` | 2 (Liste der Kursarbeiten nach Thema mit Jahr, 1987–2001; ohne Überschrift und Datum, Scantag) |
 | `Adoptiv-_und_Stieffamilien_28.10.2026.pdf` | 6 (Kursarbeit von M. Friedli, Herbst 1988; ohne Tagesdatum, Scantag) |
 | `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.2026.pdf` | 3 (leerer Fragebogen von Eva Zimmerli, Familientheorie-Kurs «FT II/93», ohne Tagesdatum, Scantag; gehört zur Arbeit vom 30.1.1994) |
 | `Ablösung_von_der_Autorität_28.10.2026.pdf` | 2 (Familientheorie Kurs II/91, FTH291, Schreibmaschine; ohne Tagesdatum, Scantag – der Kurs deutet auf 1991) |
