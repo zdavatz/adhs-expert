@@ -198,6 +198,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Adoleszentenpsychiatrie_Prävention_im_Adoleszentenalter_03.09.1990.pdf` | 2 (Familientherapiekurs II, Schreibmaschine) |
 | `Sexualverhalten_Sexualstörungen_16.10.1990.pdf` | 4 (Kursskript «FT II», Schreibmaschine; Datum vom Schluss) |
 | `Meine_Familie_aus_systemischer_Sicht_von_der_Herkunft_bis_12.1990.pdf` | 9 (Fragebogen «… bis heute», Dezember 1990, nach Unterlagen von Sepp Duss-von Werdt; Seiten 8-9 Beilagen im Querformat: Symbole zur Familienstruktur, Beziehungsrad) |
+| `Literaturliste_für_Kurs_in_Familientheorie_25.02.1991.pdf` | 2 (Literaturliste zum Kurs in Familientheorie) |
 | `Abschlussarbeit_Kurs_II_Familientheorie_und_-beratung_30.12.1993.pdf` | 8 (Abschlussarbeit eines Kursteilnehmers über die eigene Familie; Namen, Wohnort und Jahreszahlen durch erfundene ersetzt, Adresse entfernt; Seite 3 Genogramm im Querformat) |
 | `Der_Einfluss_des_Berufes_des_Mannes_auf_die_Frau_und_auf_die_30.01.1994.pdf` | 3 (Kursarbeit von Eva Zimmerli, FT II/93, Auswertung ihres Fragebogens zur Arbeits- und Freizeitplanung) |
 | `Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf` | 15 (zu einer Studie über Schizophreniefamilien und Erziehungsstil) |
@@ -301,7 +302,6 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | `Krankheit_als_Konfliktlösung_28.10.2026.pdf` | 1 (Kursunterlage ohne Verfasser und Datum, Scantag) |
 | `Gerechtigkeit_in_Beziehungen_28.10.2026.pdf` | 5 (Kursarbeit von Ch. Hofmann, November 1988, ohne Tagesdatum, Scantag; Patientenname in Text und handgezeichnetem Genogramm durch erfundenen ersetzt) |
 | `Familienschema_od._Familiendiagramm_od._Genogramm_29.10.2026.pdf` | 1 (leeres Muster-Genogramm mit Legende, Querformat; ohne Datum, Scantag) |
-| `Literaturliste_für_Kurs_in_Familientheorie_29.10.2026.pdf` | 2 (Literaturliste zum Kurs in Familientheorie, ohne Datum, Scantag; jüngste Titel von 1990) |
 | `Adoptiv-_und_Stieffamilien_28.10.2026.pdf` | 6 (Kursarbeit von M. Friedli, Herbst 1988; ohne Tagesdatum, Scantag) |
 | `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.2026.pdf` | 3 (leerer Fragebogen von Eva Zimmerli, Familientheorie-Kurs «FT II/93», ohne Tagesdatum, Scantag; gehört zur Arbeit vom 30.1.1994) |
 | `Ablösung_von_der_Autorität_28.10.2026.pdf` | 2 (Familientheorie Kurs II/91, FTH291, Schreibmaschine; ohne Tagesdatum, Scantag – der Kurs deutet auf 1991) |
