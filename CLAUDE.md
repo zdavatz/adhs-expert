@@ -223,6 +223,10 @@ Was dabei Zeit gekostet hat:
   Geschwisterreihenfolge stimmen. Schrift je Wort am Originalwort eichen
   (Arial ist breiter als die Vorlagen), in dunklem Grau setzen;
   Unterstreichungen erkennen, mit übermalen und neu ziehen.
+  Initialen («K…») liest Tesseract je nach Exemplar mit einem, zwei oder drei
+  Punkten – nach der Initiale vor einem Namen suchen, nicht nach «K...».
+  Schmale Wörter wie die Tageszahl «22.» täuschen mit der nächsten Zeile eine
+  Unterstreichung vor; dort keine suchen.
   Auf grauem Kopierpapier nicht weiss übermalen, sondern mit dem Median der
   Seite – sonst stehen helle Kästen da. Genogramme in Schreibmaschinenschrift
   haben feste Zeichenbreite; die Tesseract-Kästen fehlen dort oft (Linien
