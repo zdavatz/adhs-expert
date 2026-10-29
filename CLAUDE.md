@@ -96,8 +96,9 @@ Helvetica, per `Tz` auf die Kastenbreite gezogen) und Link-Annotationen.
 Benutzerwünsche, die im Code stecken: Dateiname `Titel_TT.MM.JJJJ.pdf`,
 Unterstriche, Datum am Schluss; 150 dpi Graustufen; ohne Datum im Text der
 Scantag, bei blosser Jahresangabe im Kopf das Jahr mit Tag und Monat vom Scan
-(`jahr_finden()`, `Datumsart::JahrUndScan`); jeder Scan wird committet **und**
-gepusht.
+(`jahr_finden()`, `Datumsart::JahrUndScan`), bei Monat und Jahr («Dezember
+1991») `Titel_MM.JJJJ.pdf`; «Herbst 1988» gilt als blosses Jahr; jeder Scan
+wird committet **und** gepusht.
 
 Was dabei Zeit gekostet hat:
 
