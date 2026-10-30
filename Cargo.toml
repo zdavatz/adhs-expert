@@ -11,6 +11,10 @@ path = "src/uebersicht.rs"
 name = "scannen"
 path = "src/scannen.rs"
 
+[[bin]]
+name = "scanliste"
+path = "src/scanliste.rs"
+
 [dependencies]
 anyhow = "1"
 genpdf = "0.2"

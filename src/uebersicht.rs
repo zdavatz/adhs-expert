@@ -19,6 +19,7 @@
 // Schriftverzeichnis überschreibbar via $FONT_DIR (Vorgabe: ./fonts).
 
 mod eintraege;
+mod pdflinks;
 
 use std::env;
 use std::path::{Path, PathBuf};
@@ -29,6 +30,7 @@ use genpdf::style::{Color, Style};
 use genpdf::{Alignment, Element};
 
 use eintraege::{Eintrag, EINTRAEGE};
+use pdflinks::{add_links, Link, LINK_FONT_SIZE};
 
 const DEFAULT_FONT_DIR: &str = "fonts";
 const DEFAULT_OUT: &str = "adhs_expert_beitraege_mit_volltext.pdf";
@@ -43,12 +45,8 @@ const LINK: Color = Color::Rgb(0x2c, 0x5a, 0x8a);
 // genpdf 0.2 kennt keine Hyperlinks. Die URL-Zeilen sind die einzigen Zeilen
 // des Dokuments in dieser Schriftgrösse; nach dem Rendern legt `add_links`
 // über jede solche Zeile eine Link-Annotation. Sobald irgendwo sonst im Satz
-// diese Grösse auftaucht, verschiebt sich die Zuordnung - deshalb laufen
+// diese Grösse (`LINK_FONT_SIZE`) auftaucht, verschiebt sich die Zuordnung - deshalb laufen
 // Kopfzeile und Beiwerk bewusst auf 7 pt und die Metazeilen auf 9 pt.
-const LINK_FONT_SIZE: u8 = 8;
-const A4_WIDTH_PT: f64 = 595.276;
-const MARGIN_PT: f64 = 22.0 * 72.0 / 25.4;
-const AVG_ADVANCE_EM: f64 = 0.55;
 const MAX_LINK_CHARS: usize = 88;
 
 // Seitengeometrie in Millimetern, fuer den selbstgebauten Seitenumbruch.
@@ -445,103 +443,6 @@ fn load_font_family(font_dir: &str) -> Result<genpdf::fonts::FontFamily<genpdf::
     })
 }
 
-/// Legt über jede in LINK_FONT_SIZE gesetzte Textzeile eine Link-Annotation.
-///
-/// Der Inhaltsstrom wird Seite für Seite in Zeichenreihenfolge durchlaufen;
-/// printpdf schreibt je Zeile `BT / TL / Td x y / Tf /F n / TJ [...]`, sodass
-/// das letzte `Td` vor einem `TJ` die Grundlinie der Zeile angibt.
-fn add_links(pdf: &Path, urls: &[&str]) -> Result<usize> {
-    use lopdf::{Dictionary, Document, Object, StringFormat};
-
-    let mut doc = Document::load(pdf)?;
-    let seiten: Vec<(u32, lopdf::ObjectId)> = doc.get_pages().into_iter().collect();
-
-    let num = |o: &Object| -> Option<f64> {
-        match o {
-            Object::Real(r) => Some(*r as f64),
-            Object::Integer(i) => Some(*i as f64),
-            _ => None,
-        }
-    };
-
-    let mut gesetzt = 0usize;
-    for (_, page_id) in seiten {
-        let content = doc.get_and_decode_page_content(page_id)?;
-
-        let mut pos = (0.0f64, 0.0f64);
-        let mut size = 0.0f64;
-        let mut origins: Vec<(f64, f64)> = Vec::new();
-        for op in &content.operations {
-            match op.operator.as_str() {
-                "Td" | "TD" if op.operands.len() >= 2 => {
-                    if let (Some(x), Some(y)) = (num(&op.operands[0]), num(&op.operands[1])) {
-                        pos = (x, y);
-                    }
-                }
-                "Tm" if op.operands.len() >= 6 => {
-                    if let (Some(x), Some(y)) = (num(&op.operands[4]), num(&op.operands[5])) {
-                        pos = (x, y);
-                    }
-                }
-                "Tf" if op.operands.len() >= 2 => {
-                    if let Some(s) = num(&op.operands[1]) {
-                        size = s;
-                    }
-                }
-                "Tj" | "TJ" => {
-                    if (size - LINK_FONT_SIZE as f64).abs() < 0.01 && origins.last() != Some(&pos) {
-                        origins.push(pos);
-                    }
-                }
-                _ => {}
-            }
-        }
-        if origins.is_empty() {
-            continue;
-        }
-
-        let mut annots: Vec<Object> = Vec::new();
-        for (x, y) in &origins {
-            let Some(url) = urls.get(gesetzt) else { break };
-            gesetzt += 1;
-
-            let breite =
-                (link_text(url).chars().count() as f64) * LINK_FONT_SIZE as f64 * AVG_ADVANCE_EM;
-            let rechts = (x + breite + 2.0).min(A4_WIDTH_PT - MARGIN_PT);
-
-            let mut action = Dictionary::new();
-            action.set("S", Object::Name(b"URI".to_vec()));
-            action.set(
-                "URI",
-                Object::String(url.as_bytes().to_vec(), StringFormat::Literal),
-            );
-
-            let mut annot = Dictionary::new();
-            annot.set("Type", Object::Name(b"Annot".to_vec()));
-            annot.set("Subtype", Object::Name(b"Link".to_vec()));
-            annot.set(
-                "Rect",
-                Object::Array(vec![
-                    Object::Real((*x - 2.0) as f32),
-                    Object::Real((*y - 2.0) as f32),
-                    Object::Real(rechts as f32),
-                    Object::Real((*y + LINK_FONT_SIZE as f64 + 2.0) as f32),
-                ]),
-            );
-            annot.set("Border", Object::Array(vec![0.into(), 0.into(), 0.into()]));
-            annot.set("A", Object::Dictionary(action));
-            annots.push(Object::Dictionary(annot));
-        }
-
-        if let Ok(page) = doc.get_object_mut(page_id).and_then(|o| o.as_dict_mut()) {
-            page.set("Annots", Object::Array(annots));
-        }
-    }
-
-    doc.save(pdf)?;
-    Ok(gesetzt)
-}
-
 fn render(out: &Path, font_dir: &str) -> Result<()> {
     let family = load_font_family(font_dir)?;
     let mut doc = genpdf::Document::new(family);
@@ -577,7 +478,11 @@ fn render(out: &Path, font_dir: &str) -> Result<()> {
         .map_err(|e| anyhow!("PDF schreiben {}: {}", out.display(), e))?;
 
     let urls = urls();
-    let gesetzt = add_links(out, &urls)?;
+    let links: Vec<Link> = urls
+        .iter()
+        .map(|u| Link { url: u.to_string(), zeichen: link_text(u).chars().count() })
+        .collect();
+    let gesetzt = add_links(out, &links)?;
     if gesetzt != urls.len() {
         return Err(anyhow!(
             "Link-Overlay: {} URL-Zeilen im Satz gefunden, aber {} URLs erwartet - \

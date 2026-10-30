@@ -34,6 +34,7 @@ cargo run --release --bin scannen -- --ein --aus kurz.jpg v1.jpg  # nicht trenne
 cargo run --release --bin scannen -- --adresse-behalten           # Strasse im Kopf lassen
 cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
 cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
+cargo run --release --bin scanliste   # scan_uebersicht.pdf mit Zusammenfassungen
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
@@ -250,6 +251,29 @@ Was dabei Zeit gekostet hat:
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
   '@|strasse [0-9]|tel\.'` muss leer bleiben, und Seite 1 rendern
   (`pdftoppm -png -r 55 -f 1 -l 1`), um Datum und Titel anzusehen.
+
+### Übersicht der Scans (`src/scanliste.rs`)
+
+Erzeugt `scan_uebersicht.pdf` (eingecheckt): je PDF in `scan/` Titel und
+Datum aus dem Dateinamen, Seitenzahl, Zusammenfassung aus
+`src/zusammenfassungen.rs` und ein Link auf
+`github.com/zdavatz/adhs-expert/blob/main/scan/<Datei>` (prozentkodiert).
+Gleiche Link-Mechanik wie `uebersicht`, gemeinsam in `src/pdflinks.rs`; die
+Link-Zeile zeigt den Pfad und wird über 88 Zeichen in der Mitte gekürzt.
+
+- **Nach jedem neuen Scan** einen Eintrag (3–5 Sätze, ss, keine Namen oder
+  Daten aus Fallbeispielen, keine Kontaktdaten) in `src/zusammenfassungen.rs`
+  ergänzen, `cargo run --release --bin scanliste` laufen lassen und das PDF
+  mitcommitten. Ohne Eintrag bricht das Programm ab – gewollt.
+- **genpdf setzt jede Zeile mindestens in der Zeilenhöhe der Grundschrift**
+  (10 pt), auch 9-, 8- und 7-pt-Zeilen. Wer die Höhe mit der kleineren
+  Schrift misst, unterschätzt die Einträge, und genpdf bricht sie selbst
+  mitten im Text um. Umgekehrt überlappen die Zeilen eines umbrochenen
+  22-pt-Titels, solange der Absatz nicht selbst `.styled(stil)` trägt.
+- Die Reserve beim Umbruch ist hier fest (`RESERVE_MM`), nicht der grösste
+  Eintrag wie in `uebersicht.rs` – Einträge bis 70 mm liessen sonst die
+  Seiten halb leer. Nach Änderungen prüfen, dass jede Seite mit einem Titel
+  beginnt und keine leere Seite entsteht.
 
 ### Daten (`src/eintraege.rs`)
 

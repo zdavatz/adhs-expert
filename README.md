@@ -180,6 +180,20 @@ dokumentiert, und der Image-Capture-Treiber «EPSON Scanner.app» ist nur für
 Intel gebaut und startet auf Apple Silicon ohne Rosetta nicht. SANE führt den
 GT-2500 im Backend `epson2` als «ES-H300».
 
+### Übersicht der Scans
+
+[`scan_uebersicht.pdf`](scan_uebersicht.pdf) führt alle Scans nach
+Vortragsdatum auf, je Datei mit Seitenzahl, einer Zusammenfassung in drei bis
+fünf Sätzen und einem Link auf das PDF hier auf GitHub. Die Zusammenfassungen
+stehen in `src/zusammenfassungen.rs`; nach jedem neuen Scan dort einen Eintrag
+nachtragen und neu erzeugen:
+
+```bash
+cargo run --release --bin scanliste
+```
+
+Fehlt zu einem PDF in `scan/` die Zusammenfassung, bricht das Programm ab.
+
 ### Bestand
 
 147 PDFs, 587 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
@@ -353,6 +367,9 @@ GT-2500 im Backend `epson2` als «ES-H300».
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
+| `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und GitHub-Link (`scan_uebersicht.pdf`) |
+| `src/zusammenfassungen.rs` | je Scan drei bis fünf Sätze Zusammenfassung |
+| `src/pdflinks.rs` | Link-Overlay, gemeinsam für beide Übersichten |
 | `src/scannen.rs` | Vorträge über den Einzug des GT-2500 scannen, Datum und Titel erkennen |
 | `scan/` | gescannte Vorträge als durchsuchbare PDFs |
 | `src/eintraege.rs` | generierte Daten: 150 Beiträge mit Aufrufzahlen, Feld `ocr` markiert die OCR-Fälle |
@@ -361,7 +378,8 @@ GT-2500 im Backend `epson2` als «ES-H300».
 ## Hyperlinks
 
 `genpdf` 0.2 kennt keine Hyperlinks. Deshalb werden die URL-Zeilen als einzige
-Zeilen des Dokuments in 8 pt gesetzt; nach dem Rendern legt `add_links()` mit
+Zeilen des Dokuments in 8 pt gesetzt; nach dem Rendern legt `add_links()`
+(`src/pdflinks.rs`) mit
 `lopdf` über jede solche Zeile eine Link-Annotation. Sobald irgendwo sonst im
 Satz diese Schriftgrösse auftaucht, verschiebt sich die Zuordnung — Kopfzeile
 läuft deshalb auf 7 pt, die Metazeilen auf 9 pt. Eine Assertion bricht ab,
