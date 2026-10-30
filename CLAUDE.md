@@ -34,7 +34,7 @@ cargo run --release --bin scannen -- --ein --aus kurz.jpg v1.jpg  # nicht trenne
 cargo run --release --bin scannen -- --adresse-behalten           # Strasse im Kopf lassen
 cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
 cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
-cargo run --release --bin scanliste   # scan_uebersicht.pdf mit Zusammenfassungen
+cargo run --release --bin scanliste   # Übersicht der Scans mit Zusammenfassungen
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
@@ -254,7 +254,11 @@ Was dabei Zeit gekostet hat:
 
 ### Übersicht der Scans (`src/scanliste.rs`)
 
-Erzeugt `scan_uebersicht.pdf` (eingecheckt): je PDF in `scan/` Titel und
+Erzeugt `Vorträge_Dr.med._Ursula_Davatz_von_<J>_bis_<J>.pdf` (eingecheckt;
+Name auf Wunsch des Benutzers). Die Jahre berechnet `jahre()` aus dem Bestand,
+ohne das laufende Jahr (Scantag bei Vorlagen ohne Datum); ändern sie sich,
+entfernt das Programm die alte Datei – im Commit mit `git add -A` aufnehmen.
+Je PDF in `scan/` Titel und
 Datum aus dem Dateinamen, Seitenzahl, Zusammenfassung aus
 `src/zusammenfassungen.rs` und ein Link auf
 `github.com/zdavatz/adhs-expert/blob/main/scan/<Datei>` (prozentkodiert).

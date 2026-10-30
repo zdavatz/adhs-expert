@@ -182,7 +182,8 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Übersicht der Scans
 
-[`scan_uebersicht.pdf`](scan_uebersicht.pdf) führt alle Scans nach
+[`Vorträge_Dr.med._Ursula_Davatz_von_1987_bis_2008.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1987_bis_2008.pdf)
+führt alle Scans nach
 Vortragsdatum auf, je Datei mit Seitenzahl, einer Zusammenfassung in drei bis
 fünf Sätzen und einem Link auf das PDF hier auf GitHub. Die Zusammenfassungen
 stehen in `src/zusammenfassungen.rs`; nach jedem neuen Scan dort einen Eintrag
@@ -193,6 +194,8 @@ cargo run --release --bin scanliste
 ```
 
 Fehlt zu einem PDF in `scan/` die Zusammenfassung, bricht das Programm ab.
+Die Jahre im Dateinamen sind das erste und das letzte Vortragsjahr; ändern
+sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
@@ -367,7 +370,7 @@ Fehlt zu einem PDF in `scan/` die Zusammenfassung, bricht das Programm ab.
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
-| `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und GitHub-Link (`scan_uebersicht.pdf`) |
+| `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und GitHub-Link (`Vorträge_Dr.med._Ursula_Davatz_von_…_bis_….pdf`) |
 | `src/zusammenfassungen.rs` | je Scan drei bis fünf Sätze Zusammenfassung |
 | `src/pdflinks.rs` | Link-Overlay, gemeinsam für beide Übersichten |
 | `src/scannen.rs` | Vorträge über den Einzug des GT-2500 scannen, Datum und Titel erkennen |

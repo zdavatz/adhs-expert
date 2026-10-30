@@ -6,7 +6,7 @@
 // PDF aus scan/ - oder führt die Liste eines, das es nicht mehr gibt -, bricht
 // das Programm ab: nach jedem neuen Scan also den Eintrag nachtragen.
 //
-//   cargo run --release --bin scanliste
+//   cargo run --release --bin scanliste   # → Vorträge_Dr.med._Ursula_Davatz_von_<J>_bis_<J>.pdf
 //   cargo run --release --bin scanliste -- --out /pfad/zum.pdf
 //
 // Schriftverzeichnis überschreibbar via $FONT_DIR (Vorgabe: ./fonts).
@@ -30,7 +30,10 @@ use pdflinks::{add_links, Link, LINK_FONT_SIZE};
 use zusammenfassungen::ZUSAMMENFASSUNGEN;
 
 const DEFAULT_FONT_DIR: &str = "fonts";
-const DEFAULT_OUT: &str = "scan_uebersicht.pdf";
+// Dateiname nach Wunsch des Benutzers: «Vorträge Dr.med. Ursula Davatz von
+// <Jahr> bis <Jahr>», mit Unterstrichen wie die Scans. Die Jahre kommen aus
+// dem Bestand (`jahre()`); ändern sie sich, wird die alte Datei entfernt.
+const OUT_PRAEFIX: &str = "Vorträge_Dr.med._Ursula_Davatz_von_";
 const SCAN_DIR: &str = "scan";
 const TITEL: &str = "adhs.expert - Gescannte Vorträge und Kursunterlagen";
 const GITHUB: &str = "https://github.com/zdavatz/adhs-expert/blob/main/scan/";
@@ -182,6 +185,28 @@ fn heute() -> String {
     }
 }
 
+fn jahr_heute() -> u32 {
+    Command::new("date")
+        .arg("+%Y")
+        .output()
+        .ok()
+        .and_then(|a| String::from_utf8_lossy(&a.stdout).trim().parse().ok())
+        .unwrap_or(u32::MAX)
+}
+
+/// Erstes und letztes Vortragsjahr. Vorlagen ohne Datum tragen den Scantag;
+/// deren Jahr (das laufende) zählt nicht mit.
+fn jahre(scans: &[Scan]) -> (u32, u32) {
+    let heute = jahr_heute();
+    let j = scans.iter().map(|s| s.schluessel.0).filter(|&j| j < heute);
+    (j.clone().min().unwrap_or(0), j.max().unwrap_or(0))
+}
+
+fn dateiname(scans: &[Scan]) -> String {
+    let (von, bis) = jahre(scans);
+    format!("{OUT_PRAEFIX}{von}_bis_{bis}.pdf")
+}
+
 // ---------------------------------------------------------------------------
 // Seitenumbruch von Hand (wie in uebersicht.rs: genpdf kennt kein
 // "keep together", ein Eintrag soll nicht über zwei Seiten laufen)
@@ -288,7 +313,10 @@ fn push_titelseite(doc: &mut genpdf::Document, scans: &[Scan]) {
     doc.push(Break::new(2.0));
     doc.push(
         zeile(
-            format!("{} PDFs   ·   {} Seiten", scans.len(), seiten),
+            {
+                let (von, bis) = jahre(scans);
+                format!("{} PDFs   ·   {} Seiten   ·   {von}–{bis}", scans.len(), seiten)
+            },
             Style::new().with_color(INK).with_font_size(11).bold(),
         )
         .aligned(Alignment::Center),
@@ -359,8 +387,24 @@ fn load_font_family(font_dir: &str) -> Result<genpdf::fonts::FontFamily<genpdf::
     })
 }
 
-fn render(out: &Path, font_dir: &str) -> Result<()> {
+fn render(out: Option<PathBuf>, font_dir: &str) -> Result<PathBuf> {
     let scans = bestand()?;
+    let out = match out {
+        Some(p) => p,
+        None => {
+            // Fassung mit anderen Jahren im Namen entfernen
+            let neu = dateiname(&scans);
+            for e in std::fs::read_dir(".")? {
+                let name = e?.file_name().to_string_lossy().into_owned();
+                if name.starts_with(OUT_PRAEFIX) && name.ends_with(".pdf") && name != neu {
+                    std::fs::remove_file(&name)?;
+                    println!("  alte Fassung {name} entfernt");
+                }
+            }
+            PathBuf::from(neu)
+        }
+    };
+    let out = out.as_path();
     let family = load_font_family(font_dir)?;
     let mut doc = genpdf::Document::new(family);
     doc.set_title(TITEL);
@@ -401,7 +445,7 @@ fn render(out: &Path, font_dir: &str) -> Result<()> {
         );
     }
     println!("  {} Scans, {gesetzt} Links gesetzt", scans.len());
-    Ok(())
+    Ok(out.to_path_buf())
 }
 
 fn main() -> Result<()> {
@@ -410,11 +454,10 @@ fn main() -> Result<()> {
         .iter()
         .position(|a| a == "--out")
         .and_then(|i| args.get(i + 1))
-        .map(PathBuf::from)
-        .unwrap_or_else(|| PathBuf::from(DEFAULT_OUT));
+        .map(PathBuf::from);
     let font_dir = env::var("FONT_DIR").unwrap_or_else(|_| DEFAULT_FONT_DIR.to_string());
 
-    render(&out, &font_dir)?;
+    let out = render(out, &font_dir)?;
     let bytes = std::fs::metadata(&out)?.len();
     println!("→ {} ({} B)", out.display(), bytes);
     Ok(())
