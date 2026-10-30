@@ -25,11 +25,12 @@ pub struct Link {
 
 /// Legt über jede in LINK_FONT_SIZE gesetzte Textzeile eine Link-Annotation,
 /// in der Reihenfolge von `links`. Gibt die Zahl der gesetzten Links zurück.
+/// Schreibt dabei auch `titel` neu ins Info-Verzeichnis (siehe `utf16`).
 ///
 /// Der Inhaltsstrom wird Seite für Seite in Zeichenreihenfolge durchlaufen;
 /// printpdf schreibt je Zeile `BT / TL / Td x y / Tf /F n / TJ [...]`, sodass
 /// das letzte `Td` vor einem `TJ` die Grundlinie der Zeile angibt.
-pub fn add_links(pdf: &Path, links: &[Link]) -> Result<usize> {
+pub fn add_links(pdf: &Path, links: &[Link], titel: &str) -> Result<usize> {
     use lopdf::{Dictionary, Document, Object, StringFormat};
 
     let mut doc = Document::load(pdf)?;
@@ -116,6 +117,23 @@ pub fn add_links(pdf: &Path, links: &[Link]) -> Result<usize> {
         }
     }
 
+    if let Ok(info) = doc.trailer.get(b"Info").and_then(Object::as_reference) {
+        if let Ok(info) = doc.get_object_mut(info).and_then(Object::as_dict_mut) {
+            info.set("Title", utf16(titel));
+        }
+    }
+
     doc.save(pdf)?;
     Ok(gesetzt)
+}
+
+/// printpdf schreibt den Titel als rohes UTF-8 in eine Literal-Zeichenkette;
+/// Leser deuten das als PDFDocEncoding und zeigen «VortrÃ¤ge». Richtig ist
+/// UTF-16BE mit Byte-Order-Mark.
+fn utf16(s: &str) -> lopdf::Object {
+    let mut b = vec![0xFE, 0xFF];
+    for e in s.encode_utf16() {
+        b.extend_from_slice(&e.to_be_bytes());
+    }
+    lopdf::Object::String(b, lopdf::StringFormat::Hexadecimal)
 }

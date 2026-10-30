@@ -34,6 +34,7 @@ use pdflinks::{add_links, Link, LINK_FONT_SIZE};
 
 const DEFAULT_FONT_DIR: &str = "fonts";
 const DEFAULT_OUT: &str = "adhs_expert_beitraege_mit_volltext.pdf";
+const TITEL: &str = "adhs.expert - Beiträge mit vollständigem Text";
 const STAND: &str = "Stand: 25. August 2026";
 
 const INK: Color = Color::Rgb(0x1b, 0x1b, 0x1d);
@@ -446,7 +447,7 @@ fn load_font_family(font_dir: &str) -> Result<genpdf::fonts::FontFamily<genpdf::
 fn render(out: &Path, font_dir: &str) -> Result<()> {
     let family = load_font_family(font_dir)?;
     let mut doc = genpdf::Document::new(family);
-    doc.set_title("adhs.expert - Beiträge mit vollständigem Text");
+    doc.set_title(TITEL);
     doc.set_minimal_conformance();
     doc.set_font_size(10);
     doc.set_line_spacing(ZEILENABSTAND);
@@ -482,7 +483,7 @@ fn render(out: &Path, font_dir: &str) -> Result<()> {
         .iter()
         .map(|u| Link { url: u.to_string(), zeichen: link_text(u).chars().count() })
         .collect();
-    let gesetzt = add_links(out, &links)?;
+    let gesetzt = add_links(out, &links, TITEL)?;
     if gesetzt != urls.len() {
         return Err(anyhow!(
             "Link-Overlay: {} URL-Zeilen im Satz gefunden, aber {} URLs erwartet - \

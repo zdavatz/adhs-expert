@@ -270,6 +270,13 @@ Link-Zeile zeigt den Pfad und wird über 88 Zeichen in der Mitte gekürzt.
   Schrift misst, unterschätzt die Einträge, und genpdf bricht sie selbst
   mitten im Text um. Umgekehrt überlappen die Zeilen eines umbrochenen
   22-pt-Titels, solange der Absatz nicht selbst `.styled(stil)` trägt.
+- Der Dateiname kürzt den Titel auf 60 Zeichen und lässt «?» und «:» weg.
+  Wo das stört, trägt der Eintrag in `src/zusammenfassungen.rs` den vollen
+  Titel im Feld `titel` (leer: Titel aus dem Dateinamen). Den vollen Titel aus
+  Seite 1 nehmen, nicht raten.
+- **Titel im Info-Verzeichnis:** printpdf schreibt ihn als rohes UTF-8, Leser
+  zeigen dann «VortrÃ¤ge». `add_links()` schreibt ihn darum als UTF-16BE mit
+  BOM neu – gilt für beide Übersichten.
 - Die Reserve beim Umbruch ist hier fest (`RESERVE_MM`), nicht der grösste
   Eintrag wie in `uebersicht.rs` – Einträge bis 70 mm liessen sonst die
   Seiten halb leer. Nach Änderungen prüfen, dass jede Seite mit einem Titel

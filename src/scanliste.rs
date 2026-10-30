@@ -32,6 +32,7 @@ use zusammenfassungen::ZUSAMMENFASSUNGEN;
 const DEFAULT_FONT_DIR: &str = "fonts";
 const DEFAULT_OUT: &str = "scan_uebersicht.pdf";
 const SCAN_DIR: &str = "scan";
+const TITEL: &str = "adhs.expert - Gescannte Vorträge und Kursunterlagen";
 const GITHUB: &str = "https://github.com/zdavatz/adhs-expert/blob/main/scan/";
 
 const INK: Color = Color::Rgb(0x1b, 0x1b, 0x1d);
@@ -116,13 +117,15 @@ fn bestand() -> Result<Vec<Scan>> {
 
     let mut scans = Vec::new();
     for z in ZUSAMMENFASSUNGEN {
-        let (titel, datum, schluessel, fassung) =
+        let (aus_namen, datum, schluessel, fassung) =
             zerlegen(z.datei).ok_or_else(|| anyhow!("Dateiname ohne Datum: {}", z.datei))?;
         let pfad = Path::new(SCAN_DIR).join(z.datei);
         let seiten = lopdf::Document::load(&pfad)
             .map_err(|e| anyhow!("{}: {e}", pfad.display()))?
             .get_pages()
             .len();
+        // Der Dateiname kürzt den Titel auf 60 Zeichen und lässt «?» und «:» weg.
+        let titel = if z.titel.is_empty() { aus_namen } else { z.titel.to_string() };
         scans.push(Scan { datei: z.datei.into(), titel, datum, schluessel, fassung, seiten, text: z.text });
     }
     scans.sort_by(|a, b| (a.schluessel, &a.titel, a.fassung).cmp(&(b.schluessel, &b.titel, b.fassung)));
@@ -360,7 +363,7 @@ fn render(out: &Path, font_dir: &str) -> Result<()> {
     let scans = bestand()?;
     let family = load_font_family(font_dir)?;
     let mut doc = genpdf::Document::new(family);
-    doc.set_title("adhs.expert - Gescannte Vorträge und Kursunterlagen");
+    doc.set_title(TITEL);
     doc.set_minimal_conformance();
     doc.set_font_size(10);
     doc.set_line_spacing(ZEILENABSTAND);
@@ -389,7 +392,7 @@ fn render(out: &Path, font_dir: &str) -> Result<()> {
         .iter()
         .map(|s| Link { url: format!("{GITHUB}{}", kodieren(&s.datei)), zeichen: link_text(&s.datei).chars().count() })
         .collect();
-    let gesetzt = add_links(out, &links)?;
+    let gesetzt = add_links(out, &links, TITEL)?;
     if gesetzt != links.len() {
         bail!(
             "Link-Overlay: {gesetzt} Link-Zeilen im Satz gefunden, aber {} erwartet - \
