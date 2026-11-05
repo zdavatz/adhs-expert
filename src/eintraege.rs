@@ -52,7 +52,7 @@ pub const EINTRAEGE: &[Eintrag] = &[
         datum: "07.05.2022",
         titel: "Sie hat im Aargau Spuren hinterlassen",
         url: "https://adhs.expert/2022/05/07/sie-hat-im-aargau-spuren-hinterlassen/",
-        woerter: 909,
+        woerter: 898,
         aufrufe: 265,
         ocr: false,
     },
