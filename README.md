@@ -219,11 +219,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-269 PDFs, 1042 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+270 PDFs, 1044 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
+| `Umgang_mit_Psychiatriepatienten_ausserhalb_der_Klinik_03.06.1986.pdf` | 2 (Vortrag für die Sozialtätigen im Bezirk Bremgarten, St. Josefsheim; Patientenname im Beispiel durch erfundenen ersetzt) |
 | `Ziele_und_Organisation_des_sozialpsychiatrischen_Dienstes_10.06.1986.pdf` | 2 (Vortrag beim Schweizerischen Verband der Akademikerinnen, Sektion Aargau, Hotel Du Parc Baden; zwei Personennamen im Beispiel durch erfundene ersetzt) |
 | `Bürokratisierung_und_Entbürokratisierung_der_Sozialhilfe_25.08.1986.pdf` | 12 («… demokratische Alternativen zum bürokratischen Wohlfahrtsstaat», Vortrag an der GDI-Konferenz 25.–29.8.1986; spätere Reinschrift mit www.ganglion.ch; Datum erster Konferenztag) |
 | `Bureaucratization_and_De-Bureaucratization_of_Social_Welfare_25.08.1986.pdf` | 15 (englisches Original des GDI-Vortrags, «… Democratic Alternatives to the Bureaucratized Welfare State», mit Summary und Literatur; mit `--sprache eng` gelesen) |
