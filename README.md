@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-163 PDFs, 626 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+164 PDFs, 629 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -256,6 +256,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Soziale_Vererbung_09.11.1994.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1994, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Die_soziale_Vererbung_19.01.1998.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1998; Datum am Textende) |
 | `Suchtmechanismen_und_Essen_27.07.1998.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs 1998; Datum am Textende) |
+| `Therapie_von_Essstörungen_31.08.1998.pdf` | 3 (Skript von U. Davatz, ohne Kursangabe; Datum am Textende) |
 | `Differenzierung_von_der_Ursprungsfamilie_25.10.1998.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1998; Datum am Textende) |
 | `Differenzierung_von_der_Ursprungsfamilie_25.10.1998_2.pdf` | 3 (zweite Fassung, neu gesetzt: Kopf zentriert, Seitenzahlen; Text gleich) |
 | `Fusionsbeziehung_oder_Symbiose_09.11.1998.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1998, nur das Jahr im Text, Tag und Monat vom Scan) |
