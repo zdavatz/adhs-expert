@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-197 PDFs, 761 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+198 PDFs, 765 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -368,6 +368,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
 | `Kindheitstraumatas_heilen_ablösen_21.07.2014.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2014) |
 | `Geschwisterpositionen_ihre_Vor-_und_Nachteile_21.08.2016.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2016; Seite 4 einzeln nachgescannt, der Überlauf unten auf Seite 3 weiss übermalt) |
+| `Sexueller_Missbrauch_Wie_heilt_man_ihn_19.09.2016.pdf` | 4 (Skript von U. Davatz, Familientheorie-Kurs I; in vier Durchgängen eingezogen) |
 | `Prozess-Management_versus_Case-Management_in_der_Medizin_und_17.10.2016.pdf` | 5 (Skript von U. Davatz, Familientheorie-Kurs I; «… insbesondere bei der Behandlung von Schizophreniepatienten»; in vier Durchgängen eingezogen) |
 | `Trauma_und_Migration_21.11.2016.pdf` | 2 (Skript von U. Davatz, Familientheorie-Kurs I) |
 | `Burnout_und_Gesellschaft_09.01.2017.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2016; Datum am Textende) |
