@@ -219,11 +219,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-274 PDFs, 1053 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+275 PDFs, 1054 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
+| `Drogenprobleme_in_der_Familie_wie_gehe_ich_damit_um_17.03.1986.pdf` | 1 (Vortrag für die Elternvereinigung DAJ Aargau in der Psychiatrischen Klinik; Stichworte) |
 | `Spitex_in_der_Psychiatrie_18.03.1986.pdf` | 2 (Vortrag an der Generalversammlung des Haus- und Krankenpflegevereins Würenlingen/Station Siggenthal, Bären Würenlingen; Stichworte) |
 | `Viel_Wissen_um_Krankheit_macht_noch_nicht_gesund_20.03.1986.pdf` | 2 (Diskussionsrunde, staatsbürgerliche Woche der Kantonsschule Zug; Stichworte) |
 | `Das_Kind_als_schwächstes_Glied_im_System,_wie_gehen_wir_28.05.1986.pdf` | 4 (Vortrag zur Tagung «Schule und Prävention», Lehrertagung HTL Windisch; Text datiert 22.5.1986) |
