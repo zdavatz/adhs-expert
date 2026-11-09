@@ -202,11 +202,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-246 PDFs, 904 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+247 PDFs, 915 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Emotioneller_Prozess_in_der_Kernfamilie_Möglichkeiten_zur_02.02.1987.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I; «… Möglichkeiten zur Stressabsorption oder Adaptionsmechanismen einer Familie auf Überlastungssituationen») |
+| `Warum_sucht_die_heutige_Jugend_so_oft_die_Flucht_in_die_20.09.1987.pdf` | 11 (Vortrag in Widen, Abschrift; die Vortragsliste 1986–1988 nennt den 24.9., Freisinnig-Demokratische Partei) |
 | `Sogenannt_verhaltensgestörte_resp._verhaltensauffällige_25.09.1987.pdf` | 3 («… Schüler», Vortrag an der Lehramtschule Liebegg; Seite 2 nur wenige Zeilen) |
 | `Ausländerfamilien_28.09.1987.pdf` | 2 (Familientherapiekurs, Schreibmaschine; ein Blatt beidseitig, Rückseite gedreht) |
 | `Schichtung_Klasse_26.10.1987.pdf` | 4 (Kursunterlage von B. Baumann, Kurs in Familientherapie, über soziale Ungleichheit und Schichtmodelle) |
