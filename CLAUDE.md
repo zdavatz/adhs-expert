@@ -173,6 +173,8 @@ Was dabei Zeit gekostet hat:
   Mit `--adresse-behalten` bleiben Strassenangaben stehen (Wunsch des
   Benutzers beim Vortragsort im Kopf, etwa «Flughafenstrasse 235»); Mail und
   Telefon fallen weiter weg.
+  Auch «Postfach 151» und deutsche Nummern mit Schrägstrich («09191/34874»)
+  gelten als Kontaktangaben; Postleitzahl und Ort bleiben stehen.
 - **Fehlende und doppelte Blätter.** Die Seitenzahl, die der Benutzer nennt,
   mit der Zahl der eingezogenen Blätter vergleichen; der Einzug zieht
   gelegentlich zwei auf einmal oder lässt eines liegen. Wo das Blatt
@@ -214,6 +216,12 @@ Was dabei Zeit gekostet hat:
   aus – das letzte ausgegebene Wort ist dann nicht das Seitenende. Einmal wurde
   so ein fehlendes Blatt vermutet, das es nicht gab. Das Seitenende im Bild
   prüfen.
+- **Doppeleinzug mit Überlauf:** Zweimal zog der Einzug das nächste Blatt
+  halb mit: Unten im Bild der Seite steht dann das Ende der folgenden Seite
+  (zu erkennen an einer zweiten Fusszeile oder an Text weit unter der
+  üblichen letzten Zeile, im Tesseract-TSV `top` über ~1600 bei 150 dpi),
+  deren Anfang fehlt. Den Überlauf weiss übermalen und die Seite einzeln
+  nachscannen lassen.
 - **Duplex:** `--duplex` setzt `--adf-mode Duplex`. Ist das Blatt an der
   kurzen Kante gewendet bedruckt, steht die Rückseite auf dem Kopf – dann
   `magick … -rotate 180` und mit `--ein --aus` neu setzen.

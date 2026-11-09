@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-169 PDFs, 642 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+170 PDFs, 651 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -256,6 +256,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Soziale_Vererbung_09.11.1994.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1994, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Kommunikation_unter_Spannungssituationen_09.11.1994.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1994, nur das Jahr im Text, Tag und Monat vom Scan; Teil III fehlt in der Nummerierung) |
 | `Elternberatung_von_Schizophrenen_25.11.1996.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I; Datum am Textende) |
+| `Behandlungsansätze_bei_Erwachsenen_mit_ADS_15.11.1997.pdf` | 9 (Vortrag von Dr. med. Johanna Krause für die Elterninitiative zur Förderung hyperaktiver Kinder, Forchheim; Postfach-Adressen und Faxnummer entfernt; Seite 7 einzeln nachgescannt, weil der Einzug sie mit Seite 6 zog) |
 | `Die_soziale_Vererbung_19.01.1998.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1998; Datum am Textende) |
 | `Suchtmechanismen_und_Essen_27.07.1998.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs 1998; Datum am Textende) |
 | `Therapie_von_Essstörungen_31.08.1998.pdf` | 3 (Skript von U. Davatz, ohne Kursangabe; Datum am Textende) |
