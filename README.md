@@ -219,11 +219,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-260 PDFs, 955 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+261 PDFs, 958 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
+| `Bedeutung_von_Randgruppen_in_unserer_Gesellschaft_20.11.1986.pdf` | 3 (Vortrag, Clubabend der Badener Berufs- und Geschäftsfrauen, Hotel Du Parc Baden; Stichworte) |
 | `Sozialpsychiatrie_11.12.1986.pdf` | 2 (Fortbildung PKK, Stichworte) |
 | `Vernissage_der_Malgruppe_im_Kurzentrum_in_Rheinfelden_06.01.1987.pdf` | 2 (eigenes Stichwortblatt zur selben Vernissage, Belsola-Galerie; «Vortrag vom 6.1.87») |
 | `Vernissage_Malgruppe_Rheinfelden_Ansprache_06.01.1987.pdf` | 2 (Ansprache zur Vernissage der Malgruppe der Gesundheits-Beratungsstelle Rheinfelden; ohne Datum, Datum aus der Vortragsliste 1986–1988 («Was verbindet Malen u. Leben») und dem Stichwortblatt zur selben Vernissage; Adresse und Telefon im Briefkopf entfernt; auf Seite 2 aufgeklebter Zeitungsartikel von Willy Oser, «Die Kunst als heilende Kraft») |
