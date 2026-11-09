@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-186 PDFs, 720 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+187 PDFs, 721 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -388,6 +388,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Übersicht_der_Kursarbeiten_Familientherapie_29.10.2026.pdf` | 2 (Liste der Kursarbeiten nach Thema mit Jahr, 1987–2001; ohne Überschrift und Datum, Scantag) |
 | `ADHS_ist_keine_Krankheit_09.11.2026.pdf` | 10 (Aufsatz von U. Davatz ohne Datum, Scantag; zitiert die NZZ am Sonntag vom 15.7.2018, ist also danach entstanden; Seiten 8 und 10 einzeln nachgescannt; Praxisadresse, Telefon und Mail entfernt) |
 | `ADHS_ist_keine_Krankheit_09.11.2026_2.pdf` | 10 (zweite Fassung, anders umbrochen, Text gleich; Praxisadresse, Telefon und Mail entfernt) |
+| `Familie_Bowen_09.11.2026.pdf` | 1 (Genogramm der Herkunftsfamilie von Murray Bowen, Querformat, ohne Datum, Scantag) |
 | `Epigenetisches_Potential_in_der_Psychiatrie_09.11.2026.pdf` | 14 (Aufsatz von U. Davatz ohne Datum, Scantag; zitiert Literatur bis 2018; «Gravierende Mängel im Denkmodell und Versorgungskonzept der Psychiatrie»; Seiten 3-5 und 12-14 in vier weiteren Durchgängen nachgescannt, der Überlauf unten auf Seite 11 weiss übermalt; Praxisadresse, Telefon und Mail entfernt) |
 
 ### Wenn etwas fehlt oder doppelt ist
