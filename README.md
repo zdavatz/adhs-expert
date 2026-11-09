@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-168 PDFs, 639 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+169 PDFs, 642 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -263,6 +263,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Differenzierung_von_der_Ursprungsfamilie_25.10.1998_2.pdf` | 3 (zweite Fassung, neu gesetzt: Kopf zentriert, Seitenzahlen; Text gleich) |
 | `Fusionsbeziehung_oder_Symbiose_09.11.1998.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1998, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Familien_mit_Kind_mit_schwerer_Behinderung_oder_Krankheit_30.11.1998.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1998) |
+| `Ablösungskonflikt_von_betagten_Eltern_mit_Starrköpfigkeit_06.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1999, 2. Hälfte; «… oder Loyalitätskonflikt zwischen den Generationen»; Seite 3 einzeln nachgescannt, weil der Einzug sie mit Seite 2 zog) |
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
