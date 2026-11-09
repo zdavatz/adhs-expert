@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-215 PDFs, 812 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+216 PDFs, 815 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -371,6 +371,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Die_Kunst_des_Fragenstellens_25.10.2010.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2010) |
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
 | `Schuld-_und_Schamgefühle_Sühne_09.11.2011.pdf` | 3 (Skript von U. Davatz, Familienkurs I 2011, nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Verhalten_in_der_Partnerbeziehung,_welche_Rückschlüsse_09.11.2011.pdf` | 3 (Skript von U. Davatz, Familienkurs I 2011; «… können auf die Ursprungsfamilie gemacht werden»; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Sucht_aus_systemischer_Sicht_24.09.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; frühere, kürzere Fassung des Skripts vom 16.12.2013; Strassenangabe der Praxis entfernt) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012_2.pdf` | 3 (vollständige Fassung: Teil IV ausgeführt, dazu Teil V «Umgang mit Clanstrukturen»; Strassenangabe der Praxis entfernt) |
