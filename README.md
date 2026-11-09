@@ -219,12 +219,13 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-263 PDFs, 980 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+264 PDFs, 999 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
 | `Psychiatrie_im_täglichen_Leben_15.09.1986.pdf` | 16 (Abschrift der Tonbandaufnahme eines Vortrags in der EPK-Reihe, Schwerpunkt Rolle der Frau; Datum auf Seite 1 markiert) |
+| `Psychiatrie_im_täglichen_Leben_15.09.1986_2.pdf` | 19 (überarbeitete Reinschrift desselben Vortrags, Seitenzahlen unten) |
 | `Genuss_ohne_Sucht_Motivation_zum_Leben_als_Prävention_13.11.1986.pdf` | 6 (Vortrag an der GDI-Tagung «Suchtverhalten in der Wohlstandsgesellschaft», mit der SGGP; Titelblatt und Inhaltsverzeichnis des Tagungsbands vorn, auf Wunsch nicht anonymisiert) |
 | `Bedeutung_von_Randgruppen_in_unserer_Gesellschaft_20.11.1986.pdf` | 3 (Vortrag, Clubabend der Badener Berufs- und Geschäftsfrauen, Hotel Du Parc Baden; Stichworte) |
 | `Sozialpsychiatrie_11.12.1986.pdf` | 2 (Fortbildung PKK, Stichworte) |
