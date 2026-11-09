@@ -176,7 +176,7 @@ Was dabei Zeit gekostet hat:
   Benutzers beim Vortragsort im Kopf, etwa «Flughafenstrasse 235»); Mail und
   Telefon fallen weiter weg.
   Auch «Postfach 151», deutsche Nummern mit Schrägstrich («09191/34874») und
-  alte sechsstellige Schweizer Nummern («056 41 99 50», «061/87 55 54»)
+  alte sechsstellige Schweizer Nummern («056 41 99 50», «061/87 55 54», mit Zürcher Vorwahl «01/248 45 43»; «01/55 86 78» fängt das Muster noch nicht, darum jeden Scan mit Kontaktblock im Bild prüfen)
   gelten als Kontaktangaben; Postleitzahl und Ort bleiben stehen.
 - **Fehlende und doppelte Blätter.** Die Seitenzahl, die der Benutzer nennt,
   mit der Zahl der eingezogenen Blätter vergleichen; der Einzug zieht
