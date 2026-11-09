@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-184 PDFs, 696 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+185 PDFs, 710 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -387,6 +387,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Psychoseerleben_in_der_Literatur_29.10.2026.pdf` | 1 (Literaturhinweise nach Asmus Finzen 1993, ohne Datum, Scantag) |
 | `Übersicht_der_Kursarbeiten_Familientherapie_29.10.2026.pdf` | 2 (Liste der Kursarbeiten nach Thema mit Jahr, 1987–2001; ohne Überschrift und Datum, Scantag) |
 | `ADHS_ist_keine_Krankheit_09.11.2026.pdf` | 10 (Aufsatz von U. Davatz ohne Datum, Scantag; zitiert die NZZ am Sonntag vom 15.7.2018, ist also danach entstanden; Seiten 8 und 10 einzeln nachgescannt; Praxisadresse, Telefon und Mail entfernt) |
+| `Epigenetisches_Potential_in_der_Psychiatrie_09.11.2026.pdf` | 14 (Aufsatz von U. Davatz ohne Datum, Scantag; zitiert Literatur bis 2018; «Gravierende Mängel im Denkmodell und Versorgungskonzept der Psychiatrie»; Seiten 3-5 und 12-14 in vier weiteren Durchgängen nachgescannt, der Überlauf unten auf Seite 11 weiss übermalt; Praxisadresse, Telefon und Mail entfernt) |
 
 ### Wenn etwas fehlt oder doppelt ist
 
