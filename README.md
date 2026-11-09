@@ -167,7 +167,8 @@ fertigen PDFs holt `pdfimages -j` wieder heraus. `--ein` hält den Stapel
 zusammen, etwa wenn ein Kurztext als erste Seite vor den Vortrag gehört und
 sonst als eigener Vortrag abgetrennt würde. `--adresse-behalten` lässt
 Strassenangaben stehen, etwa den Vortragsort im Kopf; Mail und Telefon werden
-trotzdem entfernt.
+trotzdem entfernt. `--sprache eng` (oder `deu+eng`) liest englische
+Vorlagen; Vorgabe ist `deu`.
 `--duplex` zieht beidseitig bedruckte Blätter mit Vorder- und Rückseite ein.
 Schief eingezogene Seiten (ab 0,2°, gemessen mit `magick -deskew 80%`)
 richtet `scannen` vor der Texterkennung selbst gerade; Geraderichten und
@@ -202,11 +203,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-248 PDFs, 918 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+249 PDFs, 925 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Emotioneller_Prozess_in_der_Kernfamilie_Möglichkeiten_zur_02.02.1987.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I; «… Möglichkeiten zur Stressabsorption oder Adaptionsmechanismen einer Familie auf Überlastungssituationen») |
+| `How_can_global_perspectives_be_taught_and_learned_Global_04.08.1987.pdf` | 7 (englisch, «… Global versus territorial thinking», Weiterbildungstagung Dalian, China; Text datiert 6.1.1988; mit `--sprache eng` gelesen) |
 | `Angst_Schuldgefühle_Sinnfindung_29.08.1987.pdf` | 3 (Tagung für Eltern von drogenabhängigen und drogengefährdeten Jugendlichen, 29./30.8.1987, Tagungszentrum Boldern, VEV-DAJ; Text datiert 7.9.1987) |
 | `Warum_sucht_die_heutige_Jugend_so_oft_die_Flucht_in_die_20.09.1987.pdf` | 11 (Vortrag in Widen, Abschrift; die Vortragsliste 1986–1988 nennt den 24.9., Freisinnig-Demokratische Partei) |
 | `Sogenannt_verhaltensgestörte_resp._verhaltensauffällige_25.09.1987.pdf` | 3 («… Schüler», Vortrag an der Lehramtschule Liebegg; Seite 2 nur wenige Zeilen) |

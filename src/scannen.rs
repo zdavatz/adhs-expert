@@ -96,6 +96,9 @@ fn optionen() -> anyhow::Result<Optionen> {
             "--ein" => o.ein = true,
             "--duplex" => o.duplex = true,
             "--adresse-behalten" => ADRESSE_BEHALTEN.store(true, std::sync::atomic::Ordering::Relaxed),
+            "--sprache" => {
+                let _ = SPRACHE.set(wert()?);
+            }
             "--lesen" | "--aus" | "--fuss" => {
                 let liste = match a.as_str() {
                     "--lesen" => &mut o.lesen,
@@ -109,7 +112,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             "-h" | "--help" => {
                 println!(
                     "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--duplex] [--ein] [--adresse-behalten] \
-                     [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…] [--fuss PDF…]"
+                     [--sprache deu+eng] [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…] [--fuss PDF…]"
                 );
                 std::process::exit(0);
             }
@@ -483,6 +486,11 @@ struct Wort {
 /// Vortrags im Kopf. Mail und Telefon fallen trotzdem weg.
 static ADRESSE_BEHALTEN: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
 
+/// `--sprache`: Tesseract-Sprachen, Vorgabe «deu». Für englische Vorlagen
+/// «eng» oder «deu+eng» – mit «deu» liest Tesseract englischen Text
+/// schlechter (Umlaute in englischen Wörtern, falsche Trennungen).
+static SPRACHE: std::sync::OnceLock<String> = std::sync::OnceLock::new();
+
 fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
     use std::sync::LazyLock;
     static HEIKEL: LazyLock<regex::Regex> = LazyLock::new(|| {
@@ -723,7 +731,7 @@ mod ocr {
         let aus = std::process::Command::new("tesseract")
             .env("OMP_THREAD_LIMIT", "1")
             .arg(bild)
-            .args(["stdout", "-l", "deu"])
+            .args(["stdout", "-l", super::SPRACHE.get().map_or("deu", String::as_str)])
             .args(args)
             .output()
             .context("tesseract nicht gefunden - brew install tesseract tesseract-lang")?;

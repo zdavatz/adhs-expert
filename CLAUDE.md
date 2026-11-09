@@ -32,6 +32,7 @@ cargo run --release --bin scannen -- --aus bild1.jpg bild2.jpg   # ohne Scanner
 cargo run --release --bin scannen -- --lesen bild1.jpg           # nur Erkennung
 cargo run --release --bin scannen -- --ein --aus kurz.jpg v1.jpg  # nicht trennen
 cargo run --release --bin scannen -- --adresse-behalten           # Strasse im Kopf lassen
+cargo run --release --bin scannen -- --sprache eng                # englische Vorlage (Vorgabe deu)
 cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
 cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
 cargo run --release --bin scanliste   # Übersicht der Scans mit Zusammenfassungen
