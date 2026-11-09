@@ -219,7 +219,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-265 PDFs, 1006 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+266 PDFs, 1013 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -240,6 +240,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Wo_liegen_mögliche_Ansatzpunkte_für_die_Sozial-_und_11.06.1987.pdf` | 4 («… Präventivmedizin», SPD-Tagung über Prävention; Text datiert 4.6.1987; Überlauf eines Doppeleinzugs auf Seite 2 übermalt) |
 | `List_of_Participants_Visions_of_Higher_Education,_Dalian_03.08.1987.pdf` | 2 (Teilnehmerliste der Third International Conference «Visions of Higher Education – Trans-National Dialogues», 3.–7.8.1987, Dalian, Gottlieb Duttweiler Institut; zwei Blätter beidseitig; auf Wunsch des Benutzers ungekürzt mit Adressen, öffentliche Liste) |
 | `How_can_global_perspectives_be_taught_and_learned_Global_04.08.1987.pdf` | 7 (englisch, «… Global versus territorial thinking», Weiterbildungstagung Dalian, China; Text datiert 6.1.1988; mit `--sprache eng` gelesen) |
+| `How_can_global_perspectives_be_taught_and_learned_Global_04.08.1987_2.pdf` | 7 (zweites Exemplar, Kopf anders gesetzt, Datum von Hand und Randnotiz «schon geschrieben + E-mail») |
 | `Angst_Schuldgefühle_Sinnfindung_29.08.1987.pdf` | 3 (Tagung für Eltern von drogenabhängigen und drogengefährdeten Jugendlichen, 29./30.8.1987, Tagungszentrum Boldern, VEV-DAJ; Text datiert 7.9.1987) |
 | `Warum_sucht_die_heutige_Jugend_so_oft_die_Flucht_in_die_20.09.1987.pdf` | 11 (Vortrag in Widen, Abschrift; die Vortragsliste 1986–1988 nennt den 24.9., Freisinnig-Demokratische Partei) |
 | `Sogenannt_verhaltensgestörte_resp._verhaltensauffällige_25.09.1987.pdf` | 3 («… Schüler», Vortrag an der Lehramtschule Liebegg; Seite 2 nur wenige Zeilen) |
