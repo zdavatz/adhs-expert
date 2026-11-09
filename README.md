@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-223 PDFs, 836 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+224 PDFs, 838 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -224,6 +224,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Adoptiv-_und_Stieffamilien_28.10.1988.pdf` | 6 (Kursarbeit von M. Friedli, Herbst 1988; nur das Jahr, Tag und Monat vom Scan) |
 | `Differenzierung_in_Bilderbuchfamilien_11.1988.pdf` | 3 (Kursarbeit von Ruth Buser, November 1988; Monat und Jahr im Text) |
 | `Gerechtigkeit_in_Beziehungen_11.1988.pdf` | 5 (Kursarbeit von Ch. Hofmann, November 1988; Monat und Jahr im Text; Patientenname in Text und handgezeichnetem Genogramm durch erfundenen ersetzt) |
+| `Vorträge_und_Veröffentlichungen_09.11.1988.pdf` | 2 (Verzeichnis «Vorträge und Veröffentlichungen U. Davatz 1988», 20 Einträge Januar bis Juni; nur das Jahr, Tag und Monat vom Scan) |
 | `Familientherapeutische_Interventionen_in_der_22.11.1988.pdf` | 4 (Kurs in Familientheorie II, Schreibmaschine; Datum vom Schluss des Skripts) |
 | `Der_Ablösungs-_und_Trennungsprozess_bei_Affenkindern_05.12.1988.pdf` | 2 (Kurstext von D. Faust) |
 | `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989.pdf` | 8 (Kursarbeit von G. Petrazzo, Familientherapie Kurs II; mit Beiblatt zu den Redeverboten des Bundesrats; Seite 6 lag doppelt) |

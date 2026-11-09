@@ -1037,6 +1037,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Anonyme Kursarbeit im Familientheorie-Kurs II (1992): Der Verfasser setzt sich mit dem Cut-off (Beziehungsabbruch) in der eigenen Familie auseinander, die er über mehrere Generationen als Tradition von Beziehungsabbrüchen erlebt. Als konkretes Vorgehen nimmt er sich vor, in heiklen Momenten im Gespräch zu bleiben und den anderen erzählen zu lassen. Theoretisch stützt er sich auf Bowen und auf Nagys «Familien-Konti», auf denen offen oder verdeckt über Soll und Haben Buch geführt wird. Weitere Themen sind unerledigte Verletzungen, die Rolle der Geschlechterbilder in der Familie und der Unterschied zwischen Kontakt- und Beziehungsabbruch. Das Exemplar trägt Handnotizen.",
     },
     Zusammenfassung {
+        datei: "Vorträge_und_Veröffentlichungen_09.11.1988.pdf",
+        titel: "Vorträge und Veröffentlichungen U. Davatz 1988",
+        text: "Verzeichnis der Vorträge und Veröffentlichungen von U. Davatz aus dem ersten Halbjahr 1988, 20 nummerierte Einträge mit Titel, Anlass und Datum. Mehrfach erscheint die Reihe «Psychiatrie im täglichen Leben» der EPK in verschiedenen Aargauer Gemeinden. Daneben stehen Vorträge zu Sucht und Suchtberatung, zur Ablösung der Jugendlichen, zu Autorität und Toleranz in der Erziehung, zur Familientherapie, zu Depressionen und zum Hospitalismus, eine Podiumsdiskussion zur Prävention sowie ein Beitrag zur Tablettensucht in der Zeitschrift «Sozialarbeit & Suchtprobleme». Die Liste zeigt die breite Vortragstätigkeit vor Laien, Pflegenden, Behörden und Fachleuten.",
+    },
+    Zusammenfassung {
         datei: "Vorwort_zu_dieser_Arbeit_von_Stephan_Meyer_08.02.2002.pdf",
         titel: "",
         text: "Vorwort von U. Davatz (8.2.2002) zur Arbeit eines selbst Betroffenen über das frühkindliche POS, das heute als ADD bezeichnet wird. Sie ordnet den umstrittenen Begriff als altbekanntes Krankheitsbild ein, das sich mit bildgebenden Verfahren darstellen lasse, und plädiert dafür, die neurologische Störung ernst zu nehmen. Wer sie durch harte, bestrafende Erziehung «heilen» wolle, füge den Betroffenen zusätzlich ein psychisches Trauma zu. Die Arbeit sei für Lehrer, Eltern, Sozialämter, Hausärzte und Arbeitgeber von Lehrlingen lesenswert.",
