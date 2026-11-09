@@ -169,7 +169,7 @@ sonst als eigener Vortrag abgetrennt würde. `--adresse-behalten` lässt
 Strassenangaben stehen, etwa den Vortragsort im Kopf; Mail und Telefon werden
 trotzdem entfernt.
 `--duplex` zieht beidseitig bedruckte Blätter mit Vorder- und Rückseite ein.
-Schief eingezogene Seiten (ab 0,8°) richtet `scannen` vor der Texterkennung
+Schief eingezogene Seiten (ab 0,2°) richtet `scannen` vor der Texterkennung
 selbst gerade.
 
 **Hinweis auf adhs.expert:** Vorlagen, die selbst nicht auf ganglion.ch

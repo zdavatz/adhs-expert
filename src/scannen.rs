@@ -505,9 +505,9 @@ fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
 }
 
 /// Übermalt die Kästen weiss und schreibt das Bild als JPEG nach `ziel`.
-/// Ab diesem Winkel wird eine Seite gerade gerichtet. Sauber eingezogene
-/// Blätter messen bis etwa 0,5°, ein schief eingezogenes lag bei 1,9°.
-const SCHIEF_AB_GRAD: f64 = 0.8;
+/// Ab diesem Winkel wird eine Seite gerade gerichtet. Schon 0,6° fielen dem
+/// Benutzer als schief auf; gerade eingezogene Blätter messen um 0,05°.
+const SCHIEF_AB_GRAD: f64 = 0.2;
 
 /// Richtet eine schief eingezogene Seite mit ImageMagick (`-deskew`) gerade.
 /// Die freien Ecken werden im Median der Seite gefüllt (graues Kopierpapier),

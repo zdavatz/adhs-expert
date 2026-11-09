@@ -223,10 +223,10 @@ Was dabei Zeit gekostet hat:
   deren Anfang fehlt. Den Überlauf weiss übermalen und die Seite einzeln
   nachscannen lassen.
 - **Schiefe Seiten:** `geraderichten()` misst jede Seite mit `magick
-  -deskew 40%` und dreht sie ab `SCHIEF_AB_GRAD` (0,8°) gerade, bevor
-  gelesen wird; die freien Ecken bekommen den Median der Seite. Sauber
-  eingezogene Blätter messen bis etwa 0,5°, ein schief eingezogenes 1,9°
-  (Wunsch des Benutzers). Wer Kästen von Hand übermalt, misst sie am
+  -deskew 40%` und dreht sie ab `SCHIEF_AB_GRAD` (0,2°) gerade, bevor
+  gelesen wird; die freien Ecken bekommen den Median der Seite. Zuerst lag
+  die Schwelle bei 0,8° – aber schon 0,6° sah der Benutzer als schief.
+  Gerade eingezogene Blätter messen um 0,05° (Wunsch des Benutzers). Wer Kästen von Hand übermalt, misst sie am
   geraden Bild.
 - **Duplex:** `--duplex` setzt `--adf-mode Duplex`. Ist das Blatt an der
   kurzen Kante gewendet bedruckt, steht die Rückseite auf dem Kopf – dann
