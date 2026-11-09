@@ -220,6 +220,9 @@ Was dabei Zeit gekostet hat:
   zitierten NZZ-Artikels. Die Ausgabe «Datum: …» immer gegen den Text prüfen.
 - **Nur Monat und Jahr:** `--datum` verlangt einen Tag. Mit `--datum
   JJJJ-MM-01 --ordner <tmp>` bauen und nach `Titel_MM.JJJJ.pdf` umbenennen.
+- **Öffentliche Teilnehmerlisten** (etwa die der Dalian-Konferenz 1987):
+  auf Wunsch des Benutzers ungekürzt, Namen und Postadressen bleiben
+  (`--adresse-behalten`); vorher fragen, wenn private Adressen darin stehen.
 - **Fremdes Kursmaterial** (etwa eine Seite aus dem Lernjournal eines anderen
   Anbieters): vorher fragen. Gewählt wurde: ablegen, Logo und Fusszeile des
   Anbieters übermalen (Median der Seite), Seitenzahl lassen, im Bestand
