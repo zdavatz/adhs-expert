@@ -169,6 +169,8 @@ sonst als eigener Vortrag abgetrennt würde. `--adresse-behalten` lässt
 Strassenangaben stehen, etwa den Vortragsort im Kopf; Mail und Telefon werden
 trotzdem entfernt.
 `--duplex` zieht beidseitig bedruckte Blätter mit Vorder- und Rückseite ein.
+Schief eingezogene Seiten (ab 0,8°) richtet `scannen` vor der Texterkennung
+selbst gerade.
 
 **Hinweis auf adhs.expert:** Vorlagen, die selbst nicht auf ganglion.ch
 verweisen (Kursarbeiten, Skripte ohne Briefkopf), bekommen auf jeder Seite
@@ -369,7 +371,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
 | `Geschwisterliebe_Geschwisterstreit_09.11.2012.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2012, nur das Jahr im Text, Tag und Monat vom Scan) |
-| `Repetition_Genogramme_und_ihre_Symbole_09.11.2012.pdf` | 1 (Seite 30 aus einem fremden Lernjournal «Systemische Sozialpädagogik», Aufbaukurs 2011/12, nicht von U. Davatz; Logo und Fusszeile des Anbieters entfernt, Seitenzahl belassen; Jahr 2012 mit Tag und Monat vom Scan) |
+| `Repetition_Genogramme_und_ihre_Symbole_09.11.2012.pdf` | 1 (Seite 30 aus einem fremden Lernjournal «Systemische Sozialpädagogik», Aufbaukurs 2011/12, nicht von U. Davatz; Logo und Fusszeile des Anbieters entfernt, Seitenzahl belassen, schräg eingezogene Seite gerade gerichtet; Jahr 2012 mit Tag und Monat vom Scan) |
 | `Gewalt_im_Familiensystem_22.07.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013) |
 | `Herkunftsfamilie_und_Identitätsfindung_19.08.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013) |
 | `Angst_Panik_Zwang_Sucht_Lüge_18.11.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013; Seite 3 einzeln nachgescannt, der Überlauf unten auf Seite 2 weiss übermalt) |

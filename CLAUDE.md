@@ -222,6 +222,12 @@ Was dabei Zeit gekostet hat:
   üblichen letzten Zeile, im Tesseract-TSV `top` über ~1600 bei 150 dpi),
   deren Anfang fehlt. Den Überlauf weiss übermalen und die Seite einzeln
   nachscannen lassen.
+- **Schiefe Seiten:** `geraderichten()` misst jede Seite mit `magick
+  -deskew 40%` und dreht sie ab `SCHIEF_AB_GRAD` (0,8°) gerade, bevor
+  gelesen wird; die freien Ecken bekommen den Median der Seite. Sauber
+  eingezogene Blätter messen bis etwa 0,5°, ein schief eingezogenes 1,9°
+  (Wunsch des Benutzers). Wer Kästen von Hand übermalt, misst sie am
+  geraden Bild.
 - **Duplex:** `--duplex` setzt `--adf-mode Duplex`. Ist das Blatt an der
   kurzen Kante gewendet bedruckt, steht die Rückseite auf dem Kopf – dann
   `magick … -rotate 180` und mit `--ein --aus` neu setzen.

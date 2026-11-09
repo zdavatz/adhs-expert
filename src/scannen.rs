@@ -223,6 +223,21 @@ fn lauf() -> anyhow::Result<()> {
         }
     };
 
+    // Schief eingezogene Blätter gerade richten, bevor gelesen wird - sonst
+    // stehen Bild und Textebene schräg, und Tesseract liest schlechter.
+    let mut seiten = seiten;
+    for (i, s) in seiten.iter_mut().enumerate() {
+        let ziel = tmp.join(format!("gerade-{:03}.jpg", i + 1));
+        match geraderichten(s, &ziel) {
+            Ok(Some(winkel)) => {
+                eprintln!("Seite {}: um {winkel:.1}° gerade gerichtet", i + 1);
+                *s = ziel;
+            }
+            Ok(None) => {}
+            Err(e) => eprintln!("Hinweis: Seite {} nicht gerade gerichtet: {e:#}", i + 1),
+        }
+    }
+
     // Die Texterkennung läuft immer: sie liefert nicht nur Datum und Titel,
     // sondern auch die unsichtbare Textebene und die Links im PDF.
     eprintln!("Texterkennung über {} Seiten …", seiten.len());
@@ -245,7 +260,6 @@ fn lauf() -> anyhow::Result<()> {
     // Mailadressen, Strassenadressen und Telefonnummern aus den Bildern
     // entfernen - aus dem Text sind sie schon draussen. Ein weisser Kasten im
     // PDF genügte nicht: das Bild darunter liesse sich herausziehen.
-    let mut seiten = seiten;
     for (i, zeilen) in texte.iter().enumerate() {
         let kaesten: Vec<[f64; 4]> = zeilen.iter().flat_map(|z| z.schwaerzen.iter().copied()).collect();
         if kaesten.is_empty() {
@@ -491,6 +505,39 @@ fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
 }
 
 /// Übermalt die Kästen weiss und schreibt das Bild als JPEG nach `ziel`.
+/// Ab diesem Winkel wird eine Seite gerade gerichtet. Sauber eingezogene
+/// Blätter messen bis etwa 0,5°, ein schief eingezogenes lag bei 1,9°.
+const SCHIEF_AB_GRAD: f64 = 0.8;
+
+/// Richtet eine schief eingezogene Seite mit ImageMagick (`-deskew`) gerade.
+/// Die freien Ecken werden im Median der Seite gefüllt (graues Kopierpapier),
+/// die Bildgrösse bleibt. Gibt den Winkel zurück, wenn gedreht wurde.
+fn geraderichten(quelle: &Path, ziel: &Path) -> anyhow::Result<Option<f64>> {
+    let aus = Command::new("magick")
+        .arg(quelle)
+        .args(["-deskew", "40%", "-format", "%[deskew:angle] %[fx:int(255*median)] %w %h", "info:"])
+        .output()
+        .context("magick")?;
+    let s = String::from_utf8_lossy(&aus.stdout);
+    let w: Vec<&str> = s.split_whitespace().collect();
+    let [winkel, median, breite, hoehe] = w[..] else { bail!("magick lieferte {s:?}") };
+    let winkel: f64 = winkel.parse().context("Winkel")?;
+    if winkel.abs() < SCHIEF_AB_GRAD {
+        return Ok(None);
+    }
+    let status = Command::new("magick")
+        .arg(quelle)
+        .args(["-background", &format!("rgb({median},{median},{median})"), "-deskew", "40%", "+repage"])
+        .args(["-gravity", "center", "-extent", &format!("{breite}x{hoehe}"), "-quality", "92"])
+        .arg(ziel)
+        .status()
+        .context("magick")?;
+    if !status.success() {
+        bail!("magick -deskew fehlgeschlagen");
+    }
+    Ok(Some(winkel))
+}
+
 fn bild_schwaerzen(quelle: &Path, kaesten: &[[f64; 4]], ziel: &Path) -> anyhow::Result<()> {
     let mut bild = image::open(quelle).with_context(|| format!("{}", quelle.display()))?;
     let (b, h) = (bild.width() as f64, bild.height() as f64);
