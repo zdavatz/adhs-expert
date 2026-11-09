@@ -47,6 +47,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Zweite, redaktionell überarbeitete Fassung des Vortrags für die Elternbildung Reinach (BL), mit Briefkopf. Alkohol wird als kulturspezifische Droge für Übergangsrituale dargestellt, die sich von der Religion löste und individuell als «Sorgenkiller» dienen kann. Behandelt werden die Bedeutung für Jugendliche, Ehemänner, Frauen und die Wirkung von Alkopops. Für den Umgang empfiehlt Davatz, bei der Partnerin eines alkoholkranken Mannes anzusetzen, Alkoholikerinnen nicht zu bevormunden und Jugendlichen gegenüber auf die Vorbildfunktion der Erwachsenen im massvollen Umgang mit Alkohol zu setzen.",
     },
     Zusammenfassung {
+        datei: "Anorexia_09.11.1992.pdf",
+        titel: "",
+        text: "Einseitiges Stichwortskript von U. Davatz für den Familientherapie-Kurs I 1992 zur Anorexie. Hunger und Essverhalten gelten als Instinktverhalten, das Erziehungspersonen nicht befehlen können, ohne den natürlichen Instinkt zu stören; schlechtes Essen ist nur Symptom allgemeiner Schwierigkeiten. Greifen Eltern erzieherisch ein, entsteht ein Machtkampf, der das Essverhalten weiter stört und das Symptom fixiert. Therapeutisch empfiehlt sie, vom Symptom zu defokussieren, es sogar zu tabuisieren, damit der Instinkt wieder in Gang kommt, und die Persönlichkeitsentwicklung der Eltern zu fördern.",
+    },
+    Zusammenfassung {
         datei: "Anpassungsmechanismen_innerhalb_der_Kernfamilie_in_29.10.1991.pdf",
         titel: "Anpassungsmechanismen innerhalb der Kernfamilie in Überforderungssituationen",
         text: "Das Skript von U. Davatz für den Familientherapie-Kurs I (1991) beschreibt drei Anpassungsmechanismen der Kernfamilie in Überforderungssituationen, in Anlehnung an Bowen. Der Ehekonflikt wird als Dominanzkampf und zugleich als Ventil verstanden. Reicht dies nicht aus, wird einer der Partner zum Symptomträger (psychisch, physisch oder sozial), oder die elterlichen Spannungen werden auf das schwächste Glied, das Kind, projiziert. Jeder dieser Mechanismen entlastet kurzfristig und führt bei ausschliesslicher, langer Anwendung in einen Teufelskreis mit Krankheitscharakter.",
