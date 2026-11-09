@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-221 PDFs, 833 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+223 PDFs, 836 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -372,6 +372,8 @@ sie sich, ersetzt die neue Datei die alte.
 | `Eifersucht_23.08.2010.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2010) |
 | `Die_Kunst_des_Fragenstellens_25.10.2010.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2010) |
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
+| `Innere_Beheimatung_12.2010.pdf` | 1 (persönlicher Erfahrungsbericht eines Kursteilnehmers, Monat und Jahr im Text; Name durch Pseudonym ersetzt) |
+| `Flexibilisierung_der_Vaterrolle_10.2011.pdf` | 2 (persönlicher Bericht eines Kursteilnehmers über die Beziehung zu seinem Vater, Monat und Jahr im Text; Namen des Verfassers und der Tochter durch Pseudonyme ersetzt) |
 | `Schuld-_und_Schamgefühle_Sühne_09.11.2011.pdf` | 3 (Skript von U. Davatz, Familienkurs I 2011, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Verhalten_in_der_Partnerbeziehung,_welche_Rückschlüsse_09.11.2011.pdf` | 3 (Skript von U. Davatz, Familienkurs I 2011; «… können auf die Ursprungsfamilie gemacht werden»; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Sucht_aus_systemischer_Sicht_24.09.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; frühere, kürzere Fassung des Skripts vom 16.12.2013; Strassenangabe der Praxis entfernt) |

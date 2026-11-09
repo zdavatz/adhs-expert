@@ -527,6 +527,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Stichwortartige Unterlage für eine Weiterbildung zur Familientherapie nach Bowen mit einer Einzelperson im sozialpsychiatrischen Setting. Ausgangspunkt: psychiatrische Krankheiten sind funktionelle Hirnstörungen und Ausdruck gestörter Beziehungen, beeinflussbar durch Medikamente, durch Psychoanalyse oder durch Familientherapie. Der Einzelne wird im Familienkontext gesehen und mit dem Auftrag in die Familie geschickt, Muster zu beobachten und kleine Verhaltensänderungen zu erproben, was das ganze System verändere. Genannte Bowen-Konzepte sind Fusion, Cut-off, Triangle, Mehrgenerationenperspektive, Projektion und Differenzierung. Bei psychotischen, Borderline- und Suchtpatienten werden eher die Eltern beraten, bei Ehetherapie wird an der Entwicklung der Partner in Bezug auf ihre Herkunftsfamilie gearbeitet.",
     },
     Zusammenfassung {
+        datei: "Flexibilisierung_der_Vaterrolle_10.2011.pdf",
+        titel: "",
+        text: "Persönlicher Bericht eines Kursteilnehmers, eines Assistenzarztes, vom Oktober 2011 (Name pseudonymisiert), den die Geburt seiner Tochter und ein autoritärer Chef dazu brachten, die Beziehung zu seinem Vater zu untersuchen. Er schildert den Vater als distanziert, rechthaberisch, ungeduldig und zwanghaft ordentlich, aber auch kreativ, und erzählt dessen Jugend im Zweiten Weltkrieg in Italien, mit Bombenangriffen und einer Gefangennahme durch deutsche Besatzer. Das Verständnis für diese prägenden Erlebnisse hilft ihm, das Misstrauen des Vaters gegenüber Autoritäten einzuordnen und eigene Muster wie den vorwurfsvollen Ton und das ständige Beschäftigtsein zu erkennen. Als Vater will er Zeit mit den Kindern verbringen, partnerschaftlich kommunizieren, durch Vorbild erziehen und Flexibilität statt Perfektion anstreben.",
+    },
+    Zusammenfassung {
         datei: "Früherfassung_von_Psychosen-Schizophrenie_in_der_09.11.2026.pdf",
         titel: "Früherfassung von Psychosen/Schizophrenie in der hausärztlichen Praxis",
         text: "Skript von U. Davatz ohne Datum, das sich an Hausärzte richtet und zur Früherfassung der Schizophrenie aufruft, deren Vorlaufphase im Schnitt fünf Jahre dauert; aus Angst vor Stigmatisierung keine Diagnose zu stellen, nennt sie einen Kunstfehler. Die präpsychotische Phase zeigt sich durch eine rigide, zwanghafte Abwehr, mit der der Patient jede Hilfe ablehnt; das Risiko steigt bei Adoleszenten mit Drogenkonsum wie Haschisch, LSD, Ecstasy oder Amphetaminen, einem frühkindlichen POS, emotionalen Belastungen in Familie, Schule oder Lehre und chronischem Elternkonflikt. Der Arzt soll die Führung übernehmen, Eltern und Lehrmeister getrennt instruieren, dem Patienten väterlich-bestimmte Anweisungen ohne Diskussion geben und Neuroleptika niedrig dosiert als Nachtmedikation verschreiben. Bei Erstpsychosen im Erwachsenenalter steht meist ein verdeckter Konflikt in Ehe oder Beruf dahinter; langfristig sollen Patient und Familie systemisch begleitet werden.",
@@ -610,6 +615,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         datei: "Hilfe,_mein_Kind_wird_gemobbt_07.11.2002.pdf",
         titel: "",
         text: "Mobbing unter Kindern wird im Vortrag für den Elternzirkel Reinach als Gruppenmechanismus beschrieben: Eine gestresste Gruppe wählt einen Sündenbock, um sich von allem Dysfunktionalen zu «säubern». Gefährdet ist, wer aus der Gruppe herausragt, positiv wie negativ (Aussehen, Kleidung, Verhalten, Glauben); POS-Kinder seien durch ihr Störverhalten besonders exponiert. Eltern sollen weder zur Anpassung drängen noch das Kind als Opfer verteidigen, sondern verschiedene Sichtweisen aufzeigen und dabei emotional voll hinter dem Kind stehen. Kommt der Gruppenprozess aus dem Ruder, sollen sie sich ohne Schuldzuweisung an die verantwortliche Person wenden, denn Mobbing sei Zeichen schwacher Führung.",
+    },
+    Zusammenfassung {
+        datei: "Innere_Beheimatung_12.2010.pdf",
+        titel: "",
+        text: "Kurzer persönlicher Erfahrungsbericht eines Kursteilnehmers vom Dezember 2010 (Name pseudonymisiert). Er beschreibt, wie sich mit Motivation und wenigen gezielten Interventionen ein ganzes System zu verändern beginnt, in der Gruppe wie in seiner eigenen Auseinandersetzung mit seiner Entwurzelung und dem daraus entstandenen Leidensdruck. Das Genogramm erlebte er als hilfreiches Werkzeug, um sein Familiensystem zu verstehen und einen psychischen und körperlichen Lähmungszustand zu analysieren. So gelang es ihm, aus einem jahrelangen Teufelskreis auszubrechen und eine neue innere Beheimatung mit Raum für Zukunft und Kreativität zu finden.",
     },
     Zusammenfassung {
         datei: "Inzest_25.10.1999.pdf",
