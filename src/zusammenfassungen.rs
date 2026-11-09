@@ -1042,6 +1042,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Verzeichnis der Vorträge und Veröffentlichungen von U. Davatz aus dem ersten Halbjahr 1988, 20 nummerierte Einträge mit Titel, Anlass und Datum. Mehrfach erscheint die Reihe «Psychiatrie im täglichen Leben» der EPK in verschiedenen Aargauer Gemeinden. Daneben stehen Vorträge zu Sucht und Suchtberatung, zur Ablösung der Jugendlichen, zu Autorität und Toleranz in der Erziehung, zur Familientherapie, zu Depressionen und zum Hospitalismus, eine Podiumsdiskussion zur Prävention sowie ein Beitrag zur Tablettensucht in der Zeitschrift «Sozialarbeit & Suchtprobleme». Die Liste zeigt die breite Vortragstätigkeit vor Laien, Pflegenden, Behörden und Fachleuten.",
     },
     Zusammenfassung {
+        datei: "Vortragsliste_1986_bis_1988_09.11.1988.pdf",
+        titel: "",
+        text: "Tabellarische Liste der Vorträge von U. Davatz von Januar 1986 bis März 1988, mit Datum, veranstaltender Gesellschaft oder Verein und Thema. Die Anlässe reichen von Schulpflegen, Frauen- und Elternvereinen über Krankenpflegeschulen und Fortbildungen bis zum Gottlieb Duttweiler Institut, Coop Schweiz und einer Weiterbildungstagung in Dalian, China. Im Vordergrund stehen Drogen- und Suchtprobleme Jugendlicher, der Umgang mit psychisch Kranken, Sozialpsychiatrie und Erziehungsfragen. Die letzten Einträge von Anfang 1988 sind von Hand durchgestrichen, ein Datum und ein Thema sind handschriftlich korrigiert.",
+    },
+    Zusammenfassung {
         datei: "Vorwort_zu_dieser_Arbeit_von_Stephan_Meyer_08.02.2002.pdf",
         titel: "",
         text: "Vorwort von U. Davatz (8.2.2002) zur Arbeit eines selbst Betroffenen über das frühkindliche POS, das heute als ADD bezeichnet wird. Sie ordnet den umstrittenen Begriff als altbekanntes Krankheitsbild ein, das sich mit bildgebenden Verfahren darstellen lasse, und plädiert dafür, die neurologische Störung ernst zu nehmen. Wer sie durch harte, bestrafende Erziehung «heilen» wolle, füge den Betroffenen zusätzlich ein psychisches Trauma zu. Die Arbeit sei für Lehrer, Eltern, Sozialämter, Hausärzte und Arbeitgeber von Lehrlingen lesenswert.",
