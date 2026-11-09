@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-199 PDFs, 768 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+200 PDFs, 771 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -365,6 +365,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Psychische_Krankheiten_und_ihre_Auswirkungen_auf_die_08.11.2007.pdf` | 3 (Vereinigung Schweizer Amtsvormünder; «… betroffene Person») |
 | `Kinder-_Jugend-_und_Familientherapie_04.03.2008.pdf` | 4 (Vortrag BDK) |
 | `Zusammenfassung_aller_6_Konzepte_von_M._Bowen_26.07.2010.pdf` | 2 (Skript von U. Davatz, Familienkurs I) |
+| `Eifersucht_23.08.2010.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2010) |
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
 | `Kindheitstraumatas_heilen_ablösen_21.07.2014.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2014) |
