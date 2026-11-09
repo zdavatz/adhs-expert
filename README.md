@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-198 PDFs, 765 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+199 PDFs, 768 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -264,6 +264,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Differenzierung_von_der_Ursprungsfamilie_25.10.1998.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1998; Datum am Textende) |
 | `Differenzierung_von_der_Ursprungsfamilie_25.10.1998_2.pdf` | 3 (zweite Fassung, neu gesetzt: Kopf zentriert, Seitenzahlen; Text gleich) |
 | `Fusionsbeziehung_oder_Symbiose_09.11.1998.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1998, nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Streit_unter_Geschwistern_19.11.1998.pdf` | 3 (Vortrag von U. Davatz, Elternbildung Reinach; Mailadresse im Briefkopf entfernt) |
 | `Familien_mit_Kind_mit_schwerer_Behinderung_oder_Krankheit_30.11.1998.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1998) |
 | `Ablösungskonflikt_von_betagten_Eltern_mit_Starrköpfigkeit_06.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1999, 2. Hälfte; «… oder Loyalitätskonflikt zwischen den Generationen»; Seite 3 einzeln nachgescannt, weil der Einzug sie mit Seite 2 zog) |
 | `Depression_als_Verliererkrankheit_oder_Totstellreflex_27.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I) |
