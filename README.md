@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-180 PDFs, 680 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+181 PDFs, 690 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -383,6 +383,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Familienschema_od._Familiendiagramm_od._Genogramm_29.10.2026.pdf` | 1 (leeres Muster-Genogramm mit Legende, Querformat; ohne Datum, Scantag) |
 | `Psychoseerleben_in_der_Literatur_29.10.2026.pdf` | 1 (Literaturhinweise nach Asmus Finzen 1993, ohne Datum, Scantag) |
 | `Übersicht_der_Kursarbeiten_Familientherapie_29.10.2026.pdf` | 2 (Liste der Kursarbeiten nach Thema mit Jahr, 1987–2001; ohne Überschrift und Datum, Scantag) |
+| `ADHS_ist_keine_Krankheit_09.11.2026.pdf` | 10 (Aufsatz von U. Davatz ohne Datum, Scantag; zitiert die NZZ am Sonntag vom 15.7.2018, ist also danach entstanden; Seiten 8 und 10 einzeln nachgescannt; Praxisadresse, Telefon und Mail entfernt) |
 
 ### Wenn etwas fehlt oder doppelt ist
 
