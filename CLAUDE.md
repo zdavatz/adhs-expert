@@ -204,8 +204,23 @@ Was dabei Zeit gekostet hat:
   Handkorrekturen oder Randnotizen als `_2` behalten (Wunsch des Benutzers).
   Gleicher Titel und gleiches Datum heisst nicht gleicher Text – zweimal war es
   ein anderer Vortrag, darum immer `difflib` laufen lassen.
+  Bisher so entschieden: gleicher Text und gleicher Satz → Dublette, nicht
+  ablegen (auch wenn nur der Kopf leicht abweicht, etwa ohne «www.schizo.li»);
+  gleicher Text, anderer Umbruch → `_2`; gleicher Text mit anderem Jahr im
+  Kopf (Kursfassungen 1987/2010/2018) → eigene Datei mit eigenem Datum.
+  Viele Kursskripte kommen in mehreren Exemplaren – vor jedem Bau gegen die
+  schon abgelegten Rohscans im Scratchpad oder `pdftotext scan/…` vergleichen.
 - **Kein Vortragsdatum, aber Datum in der Fusszeile:** dieses (meist
   Druckdatum) mit `--datum` setzen statt des Scantags, im Bestand vermerken.
+  Umgekehrt nimmt `datum_finden()` auch Daten aus dem Text, die nichts mit dem
+  Vortrag zu tun haben – bei «ADHS ist keine Krankheit» das Datum eines
+  zitierten NZZ-Artikels. Die Ausgabe «Datum: …» immer gegen den Text prüfen.
+- **Nur Monat und Jahr:** `--datum` verlangt einen Tag. Mit `--datum
+  JJJJ-MM-01 --ordner <tmp>` bauen und nach `Titel_MM.JJJJ.pdf` umbenennen.
+- **Fremdes Kursmaterial** (etwa eine Seite aus dem Lernjournal eines anderen
+  Anbieters): vorher fragen. Gewählt wurde: ablegen, Logo und Fusszeile des
+  Anbieters übermalen (Median der Seite), Seitenzahl lassen, im Bestand
+  vermerken.
 - **Querformat-Seiten:** Der Einzug liefert jedes Blatt hochkant. Die Seite
   bekommt ihre Grösse aus den JPEG-Massen; also das Rohbild mit
   `magick seite.jpg -rotate 90` drehen (Richtung am Bild prüfen, Text muss
@@ -254,7 +269,11 @@ Was dabei Zeit gekostet hat:
   Schmale Wörter wie die Tageszahl «22.» täuschen mit der nächsten Zeile eine
   Unterstreichung vor; dort keine suchen.
   Auf grauem Kopierpapier nicht weiss übermalen, sondern mit dem Median der
-  Seite – sonst stehen helle Kästen da. Genogramme in Schreibmaschinenschrift
+  Seite – sonst stehen helle Kästen da. Bei mehrteiligen Namen («Vorname Nachname,») die
+  Schriftgrösse am Namen ohne Satzzeichen eichen und die Grundlinie an
+  Buchstaben ohne Unterlänge ausrichten – sonst sitzt der Ersatz ein paar
+  Pixel zu tief oder zu klein; den Kasten nach unten nur so weit ziehen, dass
+  die nächste Zeile nicht angeschnitten wird. Genogramme in Schreibmaschinenschrift
   haben feste Zeichenbreite; die Tesseract-Kästen fehlen dort oft (Linien
   durch die Beschriftung), die Lage dann aus dem Bild schätzen und in einer
   Festbreitenschrift einsetzen. Querformat-Seiten mit Kopfzeile im Hochformat:
