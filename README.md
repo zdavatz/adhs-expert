@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-154 PDFs, 604 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+155 PDFs, 607 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -209,6 +209,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Das_Konzept_des_cut-off-Verhaltens_in_einer_Beziehung_oder_29.10.1987.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Differenzierungsprozess_von_der_Ursprungsfamilie_09.11.1987.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Differenzierungsprozess_von_der_Ursprungsfamilie_09.11.1987_2.pdf` | 2 (zweite Fassung, enger gesetzt, anderer Seitenumbruch; Text gleich) |
+| `Die_Dreieckbeziehung_oder_Triangle_nach_Murray_Bowen_09.11.1987.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Aufteilung_der_verschiedenen_Themen_in_Familientheorie_und_07.03.1988.pdf` | 1 (Fortbildung in Familientheorie und Familienberatung, II. Teil; Themenübersicht, Schreibmaschine, geschrieben am 9.2.1988) |
 | `Gerechtigkeit_07.03.1988.pdf` | 2 (Kurstext von Ch. Hofmann, Kurs in Familientheorie; frühe, rein theoretische Fassung von «Gerechtigkeit in Beziehungen») |
 | `Das_Tellereisen_06.06.1988.pdf` | 2 (Kursarbeit von K. Bachmann, Kurs in Familientheorie, zu Walther Kauers Roman «Tellereisen») |
