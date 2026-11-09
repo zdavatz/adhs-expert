@@ -202,11 +202,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-245 PDFs, 901 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+246 PDFs, 904 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Emotioneller_Prozess_in_der_Kernfamilie_Möglichkeiten_zur_02.02.1987.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I; «… Möglichkeiten zur Stressabsorption oder Adaptionsmechanismen einer Familie auf Überlastungssituationen») |
+| `Sogenannt_verhaltensgestörte_resp._verhaltensauffällige_25.09.1987.pdf` | 3 («… Schüler», Vortrag an der Lehramtschule Liebegg; Seite 2 nur wenige Zeilen) |
 | `Ausländerfamilien_28.09.1987.pdf` | 2 (Familientherapiekurs, Schreibmaschine; ein Blatt beidseitig, Rückseite gedreht) |
 | `Schichtung_Klasse_26.10.1987.pdf` | 4 (Kursunterlage von B. Baumann, Kurs in Familientherapie, über soziale Ungleichheit und Schichtmodelle) |
 | `Das_Konzept_des_cut-off-Verhaltens_in_einer_Beziehung_oder_29.10.1987.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
