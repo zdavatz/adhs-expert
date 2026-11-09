@@ -215,7 +215,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Die_Dreieckbeziehung_oder_Triangle_nach_Murray_Bowen_09.11.1987.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Aufteilung_der_verschiedenen_Themen_in_Familientheorie_und_07.03.1988.pdf` | 1 (Fortbildung in Familientheorie und Familienberatung, II. Teil; Themenübersicht, Schreibmaschine, geschrieben am 9.2.1988) |
 | `Gerechtigkeit_07.03.1988.pdf` | 2 (Kurstext von Ch. Hofmann, Kurs in Familientheorie; frühe, rein theoretische Fassung von «Gerechtigkeit in Beziehungen») |
-| `Psychiatrie_im_täglichen_Leben_10.03.1988.pdf` | 3 (Vortrag EPK in Windisch; Ecke oben links umgeknickt) |
+| `Psychiatrie_im_täglichen_Leben_10.03.1988.pdf` | 3 (Vortrag EPK in Windisch) |
 | `Eltern_sind_gleichzeitig_Führer_und_Partner_ihrer_Kinder_wie_16.03.1988.pdf` | 4 (Vortrag, Mütterberatung und Pro Juventute des Bezirks Brugg) |
 | `Gesundheitsschwester_wo_ist_ihr_Platz_im_heutigen_18.03.1988.pdf` | 2 (Vortrag am Weiterbildungs- und Klassentreffentag der Gesundheitsschwestern, Kurs 7; ein Blatt beidseitig; Text datiert 17.3.1988) |
 | `Psychiatrie_im_täglichen_Leben_24.03.1988.pdf` | 2 (Vortrag EPK in Baldingen; ein Blatt beidseitig) |
