@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-219 PDFs, 827 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+220 PDFs, 830 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -341,6 +341,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Pubertät_18.03.2004.pdf` | 5 (Familienforum Münchenstein) |
 | `POS_im_Erwachsenenalter_26.08.2004.pdf` | 5 (Seite 1 Kurztext «Sinnvoller Umgang mit POS/ADS im Kindes- und Erwachsenenalter» zum Abend in Gebenstorf; Seiten 2-5 derselbe Text wie die zweite Gebenstorfer Fassung vom 28.10.2004) |
 | `Symbiose_zwischen_Mutter_und_Kind_sowie_symbiotische_22.09.2004.pdf` | 2 (Fortbildung Psychiatrisches Zentrum Biel; «… Beziehung in der Paarbeziehung»; Adresse, Telefon und Fax im Briefkopf entfernt) |
+| `Depression_als_Verliererkrankheit_oder_Totstellreflex_27.09.2004.pdf` | 3 (Fassung für den Familientherapie-Kurs I 2004, Text weitgehend gleich wie 1999; Datum in der Fusszeile) |
 | `POS-ADS_Sinnvoller_Umgang_damit_im_Kindes-_Und_28.10.2004.pdf` | 4 (Frauengemeinschaft Gebenstorf; «… Kindes- und Erwachsenenalter») |
 | `POS-ADS_Sinnvoller_Umgang_damit_im_Kindes-_Und_28.10.2004_2.pdf` | 3 (gleicher Anlass und Titel, aber ein anderer Text: hohe Sensibilität, Impulskontrolle, Erziehung) |
 | `Kompetenter_Umgang_von_Eltern_und_Lehrern_mit_POS-ADHS-Kind_24.02.2005.pdf` | 5 (Spitex Wolfwil, Pfarrschür; «… als Prävention einer Sekundärerkrankung») |
