@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-159 PDFs, 617 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+160 PDFs, 619 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -252,6 +252,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Abschlussarbeit_Kurs_II_Familientheorie_und_-beratung_30.12.1993.pdf` | 8 (Abschlussarbeit eines Kursteilnehmers über die eigene Familie; Namen, Wohnort und Jahreszahlen durch erfundene ersetzt, Adresse entfernt; Seite 3 Genogramm im Querformat) |
 | `Der_Einfluss_des_Berufes_des_Mannes_auf_die_Frau_und_auf_die_30.01.1994.pdf` | 3 (Kursarbeit von Eva Zimmerli, FT II/93, Auswertung ihres Fragebogens zur Arbeits- und Freizeitplanung) |
 | `Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf` | 15 (zu einer Studie über Schizophreniefamilien und Erziehungsstil) |
+| `Soziale_Vererbung_09.11.1994.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1994, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Die_soziale_Vererbung_19.01.1998.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1998; Datum am Textende) |
 | `Differenzierung_von_der_Ursprungsfamilie_25.10.1998.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1998; Datum am Textende) |
 | `Differenzierung_von_der_Ursprungsfamilie_25.10.1998_2.pdf` | 3 (zweite Fassung, neu gesetzt: Kopf zentriert, Seitenzahlen; Text gleich) |
