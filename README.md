@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-216 PDFs, 815 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+217 PDFs, 818 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -381,6 +381,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Ablösung_erwachsener_Kinder_von_ihren_betagten_Eltern_17.12.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Strassenangabe der Praxis entfernt) |
 | `Gewalt_im_Familiensystem_22.07.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013) |
 | `Herkunftsfamilie_und_Identitätsfindung_19.08.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013) |
+| `Geschwisterliebe_Geschwisterstreit_21.10.2013.pdf` | 3 (Fassung für den Familientherapie-Kurs I 2013, Text fast gleich wie 2012) |
 | `Angst_Panik_Zwang_Sucht_Lüge_18.11.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013; Seite 3 einzeln nachgescannt, der Überlauf unten auf Seite 2 weiss übermalt) |
 | `Sucht_aus_systemischer_Sicht_16.12.2013.pdf` | 3 (Skript von U. Davatz, Familienkurs I 2013; Seiten 2-3 mit eigenem Kopf «Suchtverhalten in Familien – Sucht und Schizophrenie») |
 | `Kindheitstraumatas_heilen_ablösen_21.07.2014.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2014) |
