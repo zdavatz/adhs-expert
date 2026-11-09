@@ -202,7 +202,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-230 PDFs, 862 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+231 PDFs, 866 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -216,6 +216,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Aufteilung_der_verschiedenen_Themen_in_Familientheorie_und_07.03.1988.pdf` | 1 (Fortbildung in Familientheorie und Familienberatung, II. Teil; Themenübersicht, Schreibmaschine, geschrieben am 9.2.1988) |
 | `Gerechtigkeit_07.03.1988.pdf` | 2 (Kurstext von Ch. Hofmann, Kurs in Familientheorie; frühe, rein theoretische Fassung von «Gerechtigkeit in Beziehungen») |
 | `Das_Tellereisen_06.06.1988.pdf` | 2 (Kursarbeit von K. Bachmann, Kurs in Familientheorie, zu Walther Kauers Roman «Tellereisen») |
+| `Der_Psychiatriepatient_aus_der_Sicht_des_Arztes_23.06.1988.pdf` | 4 (Entwurf für ein Informationsblatt für Eltern, handschriftlich «für neues Infoblatt»; zwei Blätter beidseitig) |
 | `Das_Fehlen_eines_aktiven_Erziehungspartners_19.07.1988.pdf` | 1 (Kurs in Familientheorie, Schreibmaschine) |
 | `Gedanken_zum_Thema_Ablösung_von_Alleinerziehern_15.08.1988.pdf` | 1 (Kurstext von L. Müller, Kurs in Familientherapie) |
 | `Psychosomatische_Erkrankungen_am_Beispiel_von_15.08.1988.pdf` | 1 (Kurstext von M. Schlaepfer: «… Herz-Kreislauferkrankungen, Störungen des Verdauungsapparates, funktionelle Störungen des Bewegungsapparates») |
