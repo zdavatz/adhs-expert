@@ -146,6 +146,10 @@ Was dabei Zeit gekostet hat:
   `tesseract <bild> - -l deu` mit `pdftotext` der fertigen Seite vergleicht.
   Tesseract-Eigenheiten: «www,» statt «www.» (wird beim Verlinken
   korrigiert), «l» statt «I», Logos als Buchstabensalat («Ga ngl ION»).
+  Unter der Unterstreichung las es «www.gandglion.ch»: kein Link, und
+  `hat_ganglion()` sah die Adresse nicht – das PDF bekam fälschlich die
+  adhs.expert-Fusszeile. `ganglion_korrigieren()` stellt solche Wörter vor
+  dem Satz richtig.
 - **Tesseract liest das doppelt vergrösserte Bild.** Bei 150 dpi übersah es
   unterstrichenen Text samt der Zeile («www.ganglion.ch» unter der
   Autorenzeile, darum kein Link) und fast alle kleinen Seitenzahlen. Die

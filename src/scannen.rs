@@ -698,6 +698,9 @@ mod ocr {
                     woerter.pop();
                 }
             }
+            for w in woerter.iter_mut() {
+                w.0 = super::ganglion_korrigieren(&w.0);
+            }
             let links = woerter.iter().map(|w| w.1).fold(f64::MAX, f64::min);
             let rechts = woerter.iter().map(|w| w.1 + w.3).fold(0.0, f64::max);
             let oben = woerter.iter().map(|w| w.2).fold(f64::MAX, f64::min);
@@ -1148,6 +1151,21 @@ fn links_finden(zeilen: &[Zeile], w: f64, hh: f64) -> Vec<(String, [f32; 4])> {
 /// Skripte ohne Briefkopf): klein, grau, klickbar.
 const WEBSITE: &str = "https://adhs.expert";
 
+/// Verlesene Adresse von ganglion.ch richtigstellen. Tesseract las unter der
+/// Unterstreichung schon «www.gandglion.ch» – dann fehlten der Link und die
+/// Erkennung durch `hat_ganglion()`, und das PDF bekam fälschlich die
+/// adhs.expert-Fusszeile.
+fn ganglion_korrigieren(wort: &str) -> String {
+    use std::sync::LazyLock;
+    static G: LazyLock<regex::Regex> = LazyLock::new(|| {
+        regex::Regex::new(r"(?i)^(.*?)www[.,][gq]an[a-z]{0,2}[gq]li[oö0]n[.,]ch(.*)$").unwrap()
+    });
+    match G.captures(wort) {
+        Some(c) => format!("{}www.ganglion.ch{}", &c[1], &c[2]),
+        None => wort.to_string(),
+    }
+}
+
 /// Zeigt eine Seite des Stapels schon auf ganglion.ch? Tesseract liest das Logo
 /// auch als «qanqlion» oder «gangliön», darum grosszügig.
 fn hat_ganglion(texte: &[Vec<Zeile>]) -> bool {
@@ -1437,6 +1455,9 @@ mod tests {
             links_finden(&[z(t)], 595.0, 842.0).into_iter().map(|(u, _)| u).collect()
         };
         assert_eq!(ziele("U. Davatz, www.ganglion.ch"), vec!["https://www.ganglion.ch"]);
+        assert_eq!(ganglion_korrigieren("www.gandglion.ch"), "www.ganglion.ch");
+        assert_eq!(ganglion_korrigieren("(www,qanqlion.ch)"), "(www.ganglion.ch)");
+        assert_eq!(ganglion_korrigieren("Davatz,"), "Davatz,");
         assert_eq!(ziele("siehe http://schizo.li."), vec!["http://schizo.li"]);
         assert_eq!(ziele("Mail: info@ganglion.ch"), vec!["mailto:info@ganglion.ch"]);
         assert!(ziele("Dr. med. U. Davatz").is_empty());

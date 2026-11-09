@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-152 PDFs, 600 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+153 PDFs, 602 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -289,6 +289,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Unser_Teenager_wirkt_komisch,_Pubertät_oder_eine_beginnende_21.11.2002.pdf` | 5 (VASK Aargau; «… beginnende Psychose?») |
 | `Einige_Worte_zur_Aufarbeitung_von_Frau_Ursula_Müller-Biondi_25.11.2002.pdf` | 1 (Ansprache zur Buchvernissage in Zürich) |
 | `Therapeutische_Jurisprudenz_27.11.2002.pdf` | 3 (Fortbildung am Psychiatrie-Zentrum Biel) |
+| `Erkennen_von_Triangulierung_und_wie_kommt_man_wieder_heraus_16.12.2002.pdf` | 2 (Familienkurs I, U. Davatz) |
 | `Begleitung_von_Menschen_mit_depressiven_Symtomen_im_13.02.2003.pdf` | 3 (Fortbildungsseminar am KSB; «… im Akutspital», «Symtomen» wie auf der Vorlage) |
 | `Wie_wirkt_sich_meine_Vergangenheit_auf_unser_Kind_aus_06.03.2003.pdf` | 5 (Elternverein Muri, Mütter- und Väterberatung Bezirk Muri; derselbe Vortrag wie am 20.10.2003 in Frick) |
 | `Warum_so_viele_Ess-Störungen_in_der_heutigen_08.03.2003.pdf` | 4 («… Überflussgesellschaft?») |
