@@ -203,11 +203,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-249 PDFs, 925 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+250 PDFs, 929 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Emotioneller_Prozess_in_der_Kernfamilie_Möglichkeiten_zur_02.02.1987.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I; «… Möglichkeiten zur Stressabsorption oder Adaptionsmechanismen einer Familie auf Überlastungssituationen») |
+| `Wo_liegen_mögliche_Ansatzpunkte_für_die_Sozial-_und_11.06.1987.pdf` | 4 («… Präventivmedizin», SPD-Tagung über Prävention; Text datiert 4.6.1987; Überlauf eines Doppeleinzugs auf Seite 2 übermalt) |
 | `How_can_global_perspectives_be_taught_and_learned_Global_04.08.1987.pdf` | 7 (englisch, «… Global versus territorial thinking», Weiterbildungstagung Dalian, China; Text datiert 6.1.1988; mit `--sprache eng` gelesen) |
 | `Angst_Schuldgefühle_Sinnfindung_29.08.1987.pdf` | 3 (Tagung für Eltern von drogenabhängigen und drogengefährdeten Jugendlichen, 29./30.8.1987, Tagungszentrum Boldern, VEV-DAJ; Text datiert 7.9.1987) |
 | `Warum_sucht_die_heutige_Jugend_so_oft_die_Flucht_in_die_20.09.1987.pdf` | 11 (Vortrag in Widen, Abschrift; die Vortragsliste 1986–1988 nennt den 24.9., Freisinnig-Demokratische Partei) |
