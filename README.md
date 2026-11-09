@@ -202,7 +202,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-240 PDFs, 891 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+241 PDFs, 893 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -213,6 +213,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Differenzierungsprozess_von_der_Ursprungsfamilie_09.11.1987.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Differenzierungsprozess_von_der_Ursprungsfamilie_09.11.1987_2.pdf` | 2 (zweite Fassung, enger gesetzt, anderer Seitenumbruch; Text gleich) |
 | `Die_Dreieckbeziehung_oder_Triangle_nach_Murray_Bowen_09.11.1987.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Wie_bewahre_ich_meine_Frische,_Zuversicht,_Phantasie_und_14.01.1988.pdf` | 2 («… Kraft in der Betreuung von Langzeitpatienten?», Vortrag Spitex-Stützpunkt Leuggern; ein Blatt beidseitig; am Schluss «11.01.1987», wohl verschrieben) |
 | `Aufteilung_der_verschiedenen_Themen_in_Familientheorie_und_07.03.1988.pdf` | 1 (Fortbildung in Familientheorie und Familienberatung, II. Teil; Themenübersicht, Schreibmaschine, geschrieben am 9.2.1988) |
 | `Gerechtigkeit_07.03.1988.pdf` | 2 (Kurstext von Ch. Hofmann, Kurs in Familientheorie; frühe, rein theoretische Fassung von «Gerechtigkeit in Beziehungen») |
 | `Psychiatrie_im_täglichen_Leben_10.03.1988.pdf` | 3 (Vortrag EPK in Windisch) |
