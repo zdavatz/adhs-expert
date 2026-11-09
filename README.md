@@ -219,11 +219,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-275 PDFs, 1054 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+276 PDFs, 1057 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
+| `Emotionelle_Hintergründe_zum_Lernprozess_05.03.1986.pdf` | 3 (Vortrag vor der Krankenpflegeschule Chur, «… Bezugnahme auf die Situation der Krankenpflege»; Titelblatt und zwei Seiten Stichworte) |
 | `Drogenprobleme_in_der_Familie_wie_gehe_ich_damit_um_17.03.1986.pdf` | 1 (Vortrag für die Elternvereinigung DAJ Aargau in der Psychiatrischen Klinik; Stichworte) |
 | `Spitex_in_der_Psychiatrie_18.03.1986.pdf` | 2 (Vortrag an der Generalversammlung des Haus- und Krankenpflegevereins Würenlingen/Station Siggenthal, Bären Würenlingen; Stichworte) |
 | `Viel_Wissen_um_Krankheit_macht_noch_nicht_gesund_20.03.1986.pdf` | 2 (Diskussionsrunde, staatsbürgerliche Woche der Kantonsschule Zug; Stichworte) |
