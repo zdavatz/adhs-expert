@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-202 PDFs, 779 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+203 PDFs, 782 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -371,6 +371,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Geschwisterliebe_Geschwisterstreit_09.11.2012.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2012, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Kindheitstraumatas_heilen_ablösen_21.07.2014.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2014) |
 | `Umgang_mit_Religion_18.08.2014.pdf` | 5 (Skript von U. Davatz, Familientherapie-Kurs I 2014; in fünf Durchgängen eingezogen) |
+| `Normierungswahn_und_Perfektionismus_in_unserer_Gesellschaft_20.10.2014.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2014; «… – Auswirkungen auf das Familien-System»; der Überlauf unten auf Seite 1 weiss übermalt) |
 | `Geschwisterpositionen_ihre_Vor-_und_Nachteile_21.08.2016.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2016; Seite 4 einzeln nachgescannt, der Überlauf unten auf Seite 3 weiss übermalt) |
 | `Sexueller_Missbrauch_Wie_heilt_man_ihn_19.09.2016.pdf` | 4 (Skript von U. Davatz, Familientheorie-Kurs I; in vier Durchgängen eingezogen) |
 | `Prozess-Management_versus_Case-Management_in_der_Medizin_und_17.10.2016.pdf` | 5 (Skript von U. Davatz, Familientheorie-Kurs I; «… insbesondere bei der Behandlung von Schizophreniepatienten»; in vier Durchgängen eingezogen) |
