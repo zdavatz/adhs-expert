@@ -186,7 +186,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Übersicht der Scans
 
-[`Vorträge_Dr.med._Ursula_Davatz_von_1987_bis_2018.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1987_bis_2018.pdf)
+[`Vorträge_Dr.med._Ursula_Davatz_von_1986_bis_2018.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1986_bis_2018.pdf)
 führt alle Scans nach
 Vortragsdatum auf, je Datei mit Seitenzahl, einer Zusammenfassung in drei bis
 fünf Sätzen und einem Link auf das PDF hier auf GitHub. Die Zusammenfassungen
@@ -219,10 +219,11 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-258 PDFs, 950 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+259 PDFs, 952 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
+| `Sozialpsychiatrie_11.12.1986.pdf` | 2 (Fortbildung PKK, Stichworte) |
 | `Vernissage_der_Malgruppe_im_Kurzentrum_in_Rheinfelden_06.01.1987.pdf` | 2 (eigenes Stichwortblatt zur selben Vernissage, Belsola-Galerie; «Vortrag vom 6.1.87») |
 | `Vernissage_Malgruppe_Rheinfelden_Ansprache_06.01.1987.pdf` | 2 (Ansprache zur Vernissage der Malgruppe der Gesundheits-Beratungsstelle Rheinfelden; ohne Datum, Datum aus der Vortragsliste 1986–1988 («Was verbindet Malen u. Leben») und dem Stichwortblatt zur selben Vernissage; Adresse und Telefon im Briefkopf entfernt; auf Seite 2 aufgeklebter Zeitungsartikel von Willy Oser, «Die Kunst als heilende Kraft») |
 | `Emotioneller_Prozess_in_der_Kernfamilie_Möglichkeiten_zur_02.02.1987.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I; «… Möglichkeiten zur Stressabsorption oder Adaptionsmechanismen einer Familie auf Überlastungssituationen») |
