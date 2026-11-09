@@ -739,7 +739,7 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
     Zusammenfassung {
         datei: "List_of_Participants_Visions_of_Higher_Education,_Dalian_03.08.1987.pdf",
         titel: "List of Participants: Visions of Higher Education – Trans-National Dialogues: Praxis and Prospects, Dalian 1987",
-        text: "Teilnehmerliste der dritten internationalen Konferenz «Visions of Higher Education – Trans-National Dialogues: Praxis and Prospects», die das Gottlieb Duttweiler Institut vom 3. bis 7. August 1987 in Dalian, China, durchführte. Aufgeführt sind Hochschullehrer und Bildungsfachleute aus den USA, Europa und China mit Funktion und Institution, darunter U. Davatz als leitende Ärztin des Sozialpsychiatrischen Dienstes der Klinik Königsfelden. An dieser Tagung hielt sie ihren Beitrag über globales und territoriales Denken. Erhalten sind nur Vorder- und Rückseite eines Blattes, die Namen von A bis H und mit Z.",
+        text: "Teilnehmerliste der dritten internationalen Konferenz «Visions of Higher Education – Trans-National Dialogues: Praxis and Prospects», die das Gottlieb Duttweiler Institut vom 3. bis 7. August 1987 in Dalian, China, durchführte. Aufgeführt sind Hochschullehrer und Bildungsfachleute aus den USA, Europa und China mit Funktion und Institution, darunter U. Davatz als leitende Ärztin des Sozialpsychiatrischen Dienstes der Klinik Königsfelden. An dieser Tagung hielt sie ihren Beitrag über globales und territoriales Denken.",
     },
     Zusammenfassung {
         datei: "Literaturliste_für_Kurs_in_Familientheorie_25.02.1991.pdf",
