@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-155 PDFs, 607 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+156 PDFs, 608 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -241,6 +241,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Soziale_Vererbung_in_menschlichen_Systemen_oder_Weitergabe_29.10.1991.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1991, nur das Jahr im Text, Tag und Monat vom Scan; Seite 4 Muster-Genogramm im Querformat) |
 | `Scheidungsfamilien_Zusammengewürfelte_Familien_29.10.1991.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1991, nur das Jahr im Text, Tag und Monat vom Scan; Seite 2 deckt sich mit Seite 2 von «Das gesunde Cut-off») |
 | `Überbrückung_vom_Cut-off_in_meiner_Herkunftsfamilie_12.1991.pdf` | 5 (Kursarbeit von Pasquale Carucci, Familientheorie-Kurs II, Dezember 1991; Monat und Jahr im Text; Adresse entfernt) |
+| `Schuldgefühle_Funktion_und_Dysfunktion_02.12.1991.pdf` | 1 (Kurstext von V. M., Schreibmaschine; Datum am Textende) |
 | `Vom_Umgang_mit_Cut-off_(Beziehungsabbruch)_und_dessen_29.10.1992.pdf` | 3 (anonyme Kursarbeit, Familientheorie II 1992, nur das Jahr im Text, Tag und Monat vom Scan; mit Handnotizen) |
 | `Die_Zweierbeziehung_in_der_Ehe_23.11.1992.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1992) |
 | `Weshalb_habe_ich_einen_18_Jahre_älteren_Mann_geheiratet_28.10.1993.pdf` | 2 (persönliche Kursarbeit, Familientherapie 1993; Name der Verfasserin geändert; nur das Jahr im Text, Tag und Monat vom Scan) |
