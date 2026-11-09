@@ -312,6 +312,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Zweites Exemplar des Vortrags «Depression – eine Zeiterscheinung» für den katholischen, den reformierten und den gemeinnützigen Frauenbund (mit Handkorrekturen und einer Randnotiz «Verlustreaktion»). Depression wird als Folge von Dominanzverlust in wichtigen Beziehungen, von zu hohen eigenen Zielen und von Verlusterlebnissen gedeutet. Die Leistungserwartung der Gesellschaft mache Menschen leicht zu vermeintlichen Verlierern; Antidepressiva wirkten bis zu einem gewissen Grad aufputschend. Positiv betrachtet könne Depression eine Ruhe- und Bedenkphase sein, in der man Ziele und Kampfstrategien überdenkt.",
     },
     Zusammenfassung {
+        datei: "Depressionen_05.05.1988.pdf",
+        titel: "",
+        text: "Stichworte von U. Davatz zu einem Vortrag vor einem Haus- und Krankenpflegeverein (1988). Depression beschreibt sie als gefühlsmässiges Wellental, verursacht durch lang dauernde Überforderung, Überanpassung, dauerndes Verlieren im Dominanzkampf einer Partnerschaft oder Unterordnung. Der depressive Mensch soll herausfinden, wo er sich überfordert, sich besser abgrenzen, weniger Verantwortung für andere tragen und sich in Auseinandersetzungen behaupten. Angehörige sollen weder oberflächlich aufmuntern noch ihm Funktionen abnehmen, sondern ihn als Menschen mit eigener Lebensgeschichte sehen, die Beziehung halten und sich selbst abgrenzen.",
+    },
+    Zusammenfassung {
         datei: "Der_Ablösungs-_und_Trennungsprozess_bei_Affenkindern_05.12.1988.pdf",
         titel: "",
         text: "Kurstext von D. Faust über die Ablösung und Trennung von Mutter und Kind bei Affen, mit Bezug auf Renggli. Menschenaffen reifen etwa doppelt so schnell wie Menschenkinder. Ab dem vierten Monat erkundet das Affenkind seine Umwelt, die Mutter schränkt dies zunächst ein, lässt später grössere Entfernungen zu und weist das Kind schliesslich zurück, auch mit Strafen, was meist mit der Geburt eines neuen Kindes abgeschlossen ist. Beim passiven Trennungsprozess der Schimpansen wendet sich die Mutter nur ab, und die Jungen reagieren mit Wutausbrüchen, Apathie oder Regression. Kurs in Familientherapie, 5.12.1988.",
