@@ -202,7 +202,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-233 PDFs, 873 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+234 PDFs, 875 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -215,6 +215,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Die_Dreieckbeziehung_oder_Triangle_nach_Murray_Bowen_09.11.1987.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Aufteilung_der_verschiedenen_Themen_in_Familientheorie_und_07.03.1988.pdf` | 1 (Fortbildung in Familientheorie und Familienberatung, II. Teil; Themenübersicht, Schreibmaschine, geschrieben am 9.2.1988) |
 | `Gerechtigkeit_07.03.1988.pdf` | 2 (Kurstext von Ch. Hofmann, Kurs in Familientheorie; frühe, rein theoretische Fassung von «Gerechtigkeit in Beziehungen») |
+| `Psychiatrie_im_täglichen_Leben_oder_Psychiatrie_in_27.04.1988.pdf` | 2 (Vortrag EPK, kath. Landfrauen Wettingen; Datum handschriftlich) |
 | `Depressionen_05.05.1988.pdf` | 2 (Vortrag, 15. Generalversammlung des Haus- und Krankenpflegevereins Rein; Stichworte) |
 | `Das_Tellereisen_06.06.1988.pdf` | 2 (Kursarbeit von K. Bachmann, Kurs in Familientheorie, zu Walther Kauers Roman «Tellereisen») |
 | `Wo_steht_der_Patient_zwischen_Krankenkasse,_Arzt_und_Staat_17.06.1988.pdf` | 5 (Vortrag an der Jahresdelegiertenversammlung der Schweizerischen Krankenkasse Zurzach; schräg kopierte Vorlage, alle Seiten gerade gerichtet) |
