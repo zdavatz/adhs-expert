@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-204 PDFs, 785 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+205 PDFs, 788 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -369,6 +369,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
 | `Geschwisterliebe_Geschwisterstreit_09.11.2012.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2012, nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Sucht_aus_systemischer_Sicht_16.12.2013.pdf` | 3 (Skript von U. Davatz, Familienkurs I 2013; Seiten 2-3 mit eigenem Kopf «Suchtverhalten in Familien – Sucht und Schizophrenie») |
 | `Kindheitstraumatas_heilen_ablösen_21.07.2014.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2014) |
 | `Umgang_mit_Religion_18.08.2014.pdf` | 5 (Skript von U. Davatz, Familientherapie-Kurs I 2014; in fünf Durchgängen eingezogen) |
 | `Patchwork_Familie_und_die_Rolle_von_Tieren_im_Familiensystem_22.09.2014.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2014) |
