@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-209 PDFs, 798 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+210 PDFs, 800 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -372,6 +372,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
 | `Geschwisterliebe_Geschwisterstreit_09.11.2012.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2012, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Repetition_Genogramme_und_ihre_Symbole_09.11.2012.pdf` | 1 (Seite 30 aus einem fremden Lernjournal «Systemische Sozialpädagogik», Aufbaukurs 2011/12, nicht von U. Davatz; Logo und Fusszeile des Anbieters entfernt, Seitenzahl belassen, schräg eingezogene Seite gerade gerichtet; Jahr 2012 mit Tag und Monat vom Scan) |
+| `Ablösung_erwachsener_Kinder_von_ihren_betagten_Eltern_17.12.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Strassenangabe der Praxis entfernt) |
 | `Gewalt_im_Familiensystem_22.07.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013) |
 | `Herkunftsfamilie_und_Identitätsfindung_19.08.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013) |
 | `Angst_Panik_Zwang_Sucht_Lüge_18.11.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013; Seite 3 einzeln nachgescannt, der Überlauf unten auf Seite 2 weiss übermalt) |
