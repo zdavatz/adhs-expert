@@ -491,6 +491,8 @@ fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
             r"|(?:\+41|\b0)\s?\(?\d{2}\)?[\s/]?\d{3}[\s.]?\d{2}[\s.]?\d{2}\b",
             // deutsche Vorwahl mit Schrägstrich, etwa «09191/34874»
             r"|\b0\d{2,5}\s?/\s?\d{3,8}\b",
+            // alte Schweizer Nummer mit sechs Ziffern, etwa «056 41 99 50»
+            r"|\b0\d{2}\s\d{2}\s\d{2}\s\d{2}\b",
         ))
         .unwrap()
     });
@@ -1608,6 +1610,8 @@ mod tests {
         assert!(heikle_stellen("Vortrag vom 20.11.2003, Seite 3 von 7").is_empty());
         assert!(heikle_stellen("die Strasse und der Weg").is_empty());
         assert_eq!(heikle_stellen("Postfach 60, 91291 Forchheim (FAX: 09191/34874)").len(), 2);
+        assert_eq!(heikle_stellen("5200 Brugg 056 41 99 50").len(), 1);
+        assert!(heikle_stellen("Mo-Fr 08.15-12.00 Uhr, 21.06.1989").is_empty());
         assert!(heikle_stellen("im Postfach liegt nichts, DSM IV (1994, 1996)").is_empty());
     }
 

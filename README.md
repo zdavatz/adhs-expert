@@ -202,7 +202,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-226 PDFs, 847 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+227 PDFs, 856 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -233,6 +233,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Emigration_Geschichte_der_Emigration,_speziell_der_06.03.1989_2.pdf` | 7 (überarbeitete Fassung, dichter gesetzt; Seite 7 Literaturliste im Querformat) |
 | `Emanzipation_eines_Partners_und_die_Folgen_auf_die_18.04.1989.pdf` | 2 (Referat von F. Haller, Kurs II Familientherapie; vier anonyme Paarfälle; Adresse entfernt) |
 | `Cut-off_29.05.1989.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1989: Cut-off als Problemlösungsstrategie) |
+| `Prävention_im_Kanton_Aargau_21.06.1989.pdf` | 9 (Schreibmaschine, Datum am Schluss; Adressen und Telefonnummern der Beratungsstellen auf Seite 9 entfernt) |
 | `Prävention_sinnvoller_Ansatz_bei_gefährdeten_Familien_mit_03.07.1989.pdf` | 3 (Kursarbeit von E. Maarse Bäbler, Familientheoriekurs II; ein Blatt beidseitig) |
 | `Loyalität_und_Familie_04.09.1989.pdf` | 6 (Kursarbeit von Canzek, Kurs II in Familientherapie) |
 | `Wie_schütze_ich_mein_Kind_vor_Sexualverbrechen_22.08.1989.pdf` | 6 (Vortrag, Gruppe junger Mütter Untersiggenthal; Datum und Veranstalter handschriftlich auf Seite 1, Seitenzahlen oben) |

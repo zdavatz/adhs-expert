@@ -173,7 +173,8 @@ Was dabei Zeit gekostet hat:
   Mit `--adresse-behalten` bleiben Strassenangaben stehen (Wunsch des
   Benutzers beim Vortragsort im Kopf, etwa «Flughafenstrasse 235»); Mail und
   Telefon fallen weiter weg.
-  Auch «Postfach 151» und deutsche Nummern mit Schrägstrich («09191/34874»)
+  Auch «Postfach 151», deutsche Nummern mit Schrägstrich («09191/34874») und
+  alte sechsstellige Schweizer Nummern («056 41 99 50»)
   gelten als Kontaktangaben; Postleitzahl und Ort bleiben stehen.
 - **Fehlende und doppelte Blätter.** Die Seitenzahl, die der Benutzer nennt,
   mit der Zahl der eingezogenen Blätter vergleichen; der Einzug zieht
