@@ -501,8 +501,8 @@ fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
             r"|\b0\d{2,5}\s?/\s?\d{3,8}\b",
             // alte Schweizer Nummer mit sechs Ziffern, etwa «056 41 99 50» oder «061/87 55 54»
             r"|\b0\d{2}\s?[\s/]\s?\d{2}\s?\d{2}\s?\d{2}\b",
-            // alte Zürcher Vorwahl mit einer Ziffer, etwa «01/248 45 43»
-            r"|\b0\d\s?/\s?\d{3}\s?\d{2}\s?\d{2}\b",
+            // alte Zürcher Vorwahl mit einer Ziffer, etwa «01/248 45 43» oder «01/55 86 78»
+            r"|\b0\d\s?/\s?\d{2,3}\s?\d{2}\s?\d{2}\b",
         ))
         .unwrap()
     });
@@ -1624,6 +1624,7 @@ mod tests {
         assert_eq!(heikle_stellen("Telefon 061/87 55 54").len(), 1);
         assert_eq!(heikle_stellen("Telefon 061/87 5554").len(), 1);
         assert_eq!(heikle_stellen("Telfonnummer: 01/248 45 43, Sie").len(), 1);
+        assert_eq!(heikle_stellen("8032 Zürich, Telefon 01/55 86 78.").len(), 1);
         assert!(heikle_stellen("Mo-Fr 08.15-12.00 Uhr, 21.06.1989").is_empty());
         assert!(heikle_stellen("im Postfach liegt nichts, DSM IV (1994, 1996)").is_empty());
     }
