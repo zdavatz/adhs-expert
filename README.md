@@ -219,12 +219,13 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-271 PDFs, 1048 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+272 PDFs, 1049 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
 | `Das_Kind_als_schwächstes_Glied_im_System,_wie_gehen_wir_28.05.1986.pdf` | 4 (Vortrag zur Tagung «Schule und Prävention», Lehrertagung HTL Windisch; Text datiert 22.5.1986) |
+| `Welche_Patienten_können_im_Wohnheim_aufgenommen_werden_28.05.1986.pdf` | 1 (Vortrag an der Generalversammlung der EPK, Restaurant Cardinal, Windisch; Stichworte) |
 | `Umgang_mit_Psychiatriepatienten_ausserhalb_der_Klinik_03.06.1986.pdf` | 2 (Vortrag für die Sozialtätigen im Bezirk Bremgarten, St. Josefsheim; Patientenname im Beispiel durch erfundenen ersetzt) |
 | `Ziele_und_Organisation_des_sozialpsychiatrischen_Dienstes_10.06.1986.pdf` | 2 (Vortrag beim Schweizerischen Verband der Akademikerinnen, Sektion Aargau, Hotel Du Parc Baden; zwei Personennamen im Beispiel durch erfundene ersetzt) |
 | `Bürokratisierung_und_Entbürokratisierung_der_Sozialhilfe_25.08.1986.pdf` | 12 («… demokratische Alternativen zum bürokratischen Wohlfahrtsstaat», Vortrag an der GDI-Konferenz 25.–29.8.1986; spätere Reinschrift mit www.ganglion.ch; Datum erster Konferenztag) |
