@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-220 PDFs, 830 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+221 PDFs, 833 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -340,6 +340,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `POS_im_Kindes-_und_Erwachsenenalter_03.03.2004.pdf` | 2 (Besuchsdienst PKK; fast derselbe Text wie die erste Gebenstorfer Fassung vom 28.10.2004) |
 | `Pubertät_18.03.2004.pdf` | 5 (Familienforum Münchenstein) |
 | `POS_im_Erwachsenenalter_26.08.2004.pdf` | 5 (Seite 1 Kurztext «Sinnvoller Umgang mit POS/ADS im Kindes- und Erwachsenenalter» zum Abend in Gebenstorf; Seiten 2-5 derselbe Text wie die zweite Gebenstorfer Fassung vom 28.10.2004) |
+| `ADS_und_Borderlinepersönlichkeitsstörung,_ihre_Auswirkung_im_30.08.2004.pdf` | 3 (Skript von U. Davatz, Familienkurs I 2004; «… im Familiensystem») |
 | `Symbiose_zwischen_Mutter_und_Kind_sowie_symbiotische_22.09.2004.pdf` | 2 (Fortbildung Psychiatrisches Zentrum Biel; «… Beziehung in der Paarbeziehung»; Adresse, Telefon und Fax im Briefkopf entfernt) |
 | `Depression_als_Verliererkrankheit_oder_Totstellreflex_27.09.2004.pdf` | 3 (Fassung für den Familientherapie-Kurs I 2004, Text weitgehend gleich wie 1999; Datum in der Fusszeile) |
 | `POS-ADS_Sinnvoller_Umgang_damit_im_Kindes-_Und_28.10.2004.pdf` | 4 (Frauengemeinschaft Gebenstorf; «… Kindes- und Erwachsenenalter») |
