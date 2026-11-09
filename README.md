@@ -219,11 +219,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-277 PDFs, 1062 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+278 PDFs, 1063 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
+| `Jugend_und_Drogen_16.01.1986.pdf` | 1 (Vortrag am Elterngesprächsabend, Aula des Oberstufenschulhauses Ebnet, Frick; Stichworte) |
 | `Selbsthilfe_Eigenverantwortung_oder_Laientherapie_04.03.1986.pdf` | 5 (Streitgespräch mit Jakob Bösch im Tages-Anzeiger, abgetippt; Erscheinungsdatum, die Vortragsliste 1986–1988 nennt das Gespräch am 15.1.1986; Kontaktadressen und Telefonnummern entfernt, zum Teil von Hand; ein Abschnitt auf Seite 3 im Original doppelt getippt) |
 | `Emotionelle_Hintergründe_zum_Lernprozess_05.03.1986.pdf` | 3 (Vortrag vor der Krankenpflegeschule Chur, «… Bezugnahme auf die Situation der Krankenpflege»; Titelblatt und zwei Seiten Stichworte) |
 | `Drogenprobleme_in_der_Familie_wie_gehe_ich_damit_um_17.03.1986.pdf` | 1 (Vortrag für die Elternvereinigung DAJ Aargau in der Psychiatrischen Klinik; Stichworte) |
