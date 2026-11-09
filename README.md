@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-212 PDFs, 804 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+213 PDFs, 807 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -371,6 +371,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
 | `Sucht_aus_systemischer_Sicht_24.09.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; frühere, kürzere Fassung des Skripts vom 16.12.2013; Strassenangabe der Praxis entfernt) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
+| `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012_2.pdf` | 3 (vollständige Fassung: Teil IV ausgeführt, dazu Teil V «Umgang mit Clanstrukturen»; Strassenangabe der Praxis entfernt) |
 | `Geschwisterliebe_Geschwisterstreit_09.11.2012.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2012, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Repetition_Genogramme_und_ihre_Symbole_09.11.2012.pdf` | 1 (Seite 30 aus einem fremden Lernjournal «Systemische Sozialpädagogik», Aufbaukurs 2011/12, nicht von U. Davatz; Logo und Fusszeile des Anbieters entfernt, Seitenzahl belassen, schräg eingezogene Seite gerade gerichtet; Jahr 2012 mit Tag und Monat vom Scan) |
 | `Psychisch_kranke_Eltern_26.11.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Strassenangabe der Praxis entfernt) |
