@@ -201,7 +201,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-213 PDFs, 807 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+214 PDFs, 809 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -369,6 +369,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Zusammenfassung_aller_6_Konzepte_von_M._Bowen_26.07.2010.pdf` | 2 (Skript von U. Davatz, Familienkurs I) |
 | `Eifersucht_23.08.2010.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2010) |
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
+| `Die_Kunst_des_Fragenstellens_25.10.2010.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2010) |
 | `Sucht_aus_systemischer_Sicht_24.09.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; frühere, kürzere Fassung des Skripts vom 16.12.2013; Strassenangabe der Praxis entfernt) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012_2.pdf` | 3 (vollständige Fassung: Teil IV ausgeführt, dazu Teil V «Umgang mit Clanstrukturen»; Strassenangabe der Praxis entfernt) |
