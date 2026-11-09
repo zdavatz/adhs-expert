@@ -1127,6 +1127,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Ansprache von U. Davatz zur Vernissage einer Malgruppe der Gesundheits-Beratungsstelle Rheinfelden (1987), in Stichworten. Kunst sei mehr als Können: lebendiger Ausdruck, einmalig, fehlerhaft, spielerisch und nicht kontrollierbar, während die technisch geschulte Gesellschaft das Verständnis für lebendige Prozesse verliere. Beim Malen komme man mit der eigenen Wandlungsfähigkeit in Kontakt; das Fliessenlassen und Entstehenlassen befreie Kräfte, um mit Krankheit und Schwierigkeiten besser fertig zu werden. Auf der zweiten Seite klebt ein Zeitungsbericht über die Ausstellung der zwölf Malerinnen, der auch ihre Ansprache erwähnt.",
     },
     Zusammenfassung {
+        datei: "Vernissage_der_Malgruppe_im_Kurzentrum_in_Rheinfelden_06.01.1987.pdf",
+        titel: "",
+        text: "Stichwortblatt von U. Davatz zu ihrer Ansprache an der Vernissage einer Malgruppe in Rheinfelden (1987). In einer Gegenüberstellung grenzt sie Leben von toter Materie und Technik ab: Leben ist einmalig statt repetitiv, fehlerhaft statt präzis, abwechslungsreich, spielerisch, gewachsen statt konstruiert, komplex und wandlungsfähig statt starr. Malen und künstlerisches Schaffen bringen den lebendigen Prozess näher, lassen Eigenes entstehen und schöpfen daraus neue Lebenskräfte und Anstösse zur Veränderung. Kreativ sein heisse nicht perfekt sein, sondern den Mut haben, das Leben leben zu lassen.",
+    },
+    Zusammenfassung {
         datei: "Verstecktes_Leiden_Suchtkranke_und_Pflegende_in_der_Spitex_18.04.2002.pdf",
         titel: "Verstecktes Leiden: Suchtkranke und Pflegende in der Spitex",
         text: "Sucht wird als fehlgelaufene Beziehung verstanden: Der Suchtkranke tauscht die Abhängigkeit von einer Bezugsperson gegen jene von einer Substanz. Der Vortrag für eine Spitex-Weiterbildung zeigt, wie moralische Verurteilung und Fremdkontrolle durch Fachpersonen Lügen, Verleugnen und Flucht auslösen. Empfohlen werden eine wertneutrale Haltung, keine Verantwortung für die Abstinenz, das Defokussieren der Sucht als blosses Symptom und eine gute emotionale Abgrenzung. Die Kontrolle soll erst bei akutem Kontrollverlust übernommen werden, und zwar ohne Strafcharakter.",
