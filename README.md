@@ -303,8 +303,8 @@ sie sich, ersetzt die neue Datei die alte.
 | `Cut-off_29.05.1989.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1989: Cut-off als Problemlösungsstrategie) |
 | `Prävention_im_Kanton_Aargau_21.06.1989.pdf` | 9 (Schreibmaschine, Datum am Schluss; Adressen und Telefonnummern der Beratungsstellen auf Seite 9 entfernt) |
 | `Prävention_sinnvoller_Ansatz_bei_gefährdeten_Familien_mit_03.07.1989.pdf` | 3 (Kursarbeit von E. Maarse Bäbler, Familientheoriekurs II; ein Blatt beidseitig) |
-| `Loyalität_und_Familie_04.09.1989.pdf` | 6 (Kursarbeit von Canzek, Kurs II in Familientherapie) |
 | `Wie_schütze_ich_mein_Kind_vor_Sexualverbrechen_22.08.1989.pdf` | 6 (Vortrag, Gruppe junger Mütter Untersiggenthal; Datum und Veranstalter handschriftlich auf Seite 1, Seitenzahlen oben) |
+| `Loyalität_und_Familie_04.09.1989.pdf` | 6 (Kursarbeit von Canzek, Kurs II in Familientherapie) |
 | `Krankheit_als_Anpassung_28.10.1989.pdf` | 7 (Referat von Jakob Wehrli, Kurs II/89 Familientherapie; zwei Blätter beidseitig, Seitenzahlen oben; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Führungsposition_im_Zusammenhang_mit_Geschwisterposition_05.11.1989.pdf` | 3 (Familienberatung Kurs II; Arbeit der Kursteilnehmerin Heidi Deplazes-Kunz nach Walter Toman, Schreibmaschine) |
 | `Adoleszentenpsychiatrie_Prävention_im_Adoleszentenalter_03.09.1990.pdf` | 2 (Familientherapiekurs II, Schreibmaschine) |
