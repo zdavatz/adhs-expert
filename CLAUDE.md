@@ -226,7 +226,14 @@ Was dabei Zeit gekostet hat:
   -deskew 40%` und dreht sie ab `SCHIEF_AB_GRAD` (0,2°) gerade, bevor
   gelesen wird; die freien Ecken bekommen den Median der Seite. Zuerst lag
   die Schwelle bei 0,8° – aber schon 0,6° sah der Benutzer als schief.
-  Gerade eingezogene Blätter messen um 0,05° (Wunsch des Benutzers). Wer Kästen von Hand übermalt, misst sie am
+  Gerade eingezogene Blätter messen um 0,05° (Wunsch des Benutzers).
+  Im November 2026 wurden alle älteren Scans nachträglich gerade gerichtet:
+  Bilder mit `pdfimages -j` holen, mit `scannen --ein --adresse-behalten
+  --titel <Info-Titel> --datum <aus dem Dateinamen> --aus …` neu bauen und
+  unter demselben Namen ablegen (`--adresse-behalten`, weil Strassen im Kopf
+  teils gewollt stehen; Mail und Telefon sind in den Bildern schon weg).
+  Geprüft: Seitenzahl und -grösse gleich, Fusszeile gleich, keine neuen
+  Kontaktdaten, keine alten Namen in den pseudonymisierten Arbeiten. Wer Kästen von Hand übermalt, misst sie am
   geraden Bild.
 - **Duplex:** `--duplex` setzt `--adf-mode Duplex`. Ist das Blatt an der
   kurzen Kante gewendet bedruckt, steht die Rückseite auf dem Kopf – dann
