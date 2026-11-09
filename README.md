@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-205 PDFs, 788 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+206 PDFs, 791 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -369,6 +369,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
 | `Migration,_Migrantenfamilien_und_Clanstrukturen_22.10.2012.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2012; Teil IV in der Vorlage nur als Überschrift; Strassenangabe der Praxis entfernt) |
 | `Geschwisterliebe_Geschwisterstreit_09.11.2012.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2012, nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Angst_Panik_Zwang_Sucht_Lüge_18.11.2013.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2013; Seite 3 einzeln nachgescannt, der Überlauf unten auf Seite 2 weiss übermalt) |
 | `Sucht_aus_systemischer_Sicht_16.12.2013.pdf` | 3 (Skript von U. Davatz, Familienkurs I 2013; Seiten 2-3 mit eigenem Kopf «Suchtverhalten in Familien – Sucht und Schizophrenie») |
 | `Kindheitstraumatas_heilen_ablösen_21.07.2014.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 2014) |
 | `Umgang_mit_Religion_18.08.2014.pdf` | 5 (Skript von U. Davatz, Familientherapie-Kurs I 2014; in fünf Durchgängen eingezogen) |
