@@ -182,7 +182,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Übersicht der Scans
 
-[`Vorträge_Dr.med._Ursula_Davatz_von_1987_bis_2008.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1987_bis_2008.pdf)
+[`Vorträge_Dr.med._Ursula_Davatz_von_1987_bis_2018.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1987_bis_2018.pdf)
 führt alle Scans nach
 Vortragsdatum auf, je Datei mit Seitenzahl, einer Zusammenfassung in drei bis
 fünf Sätzen und einem Link auf das PDF hier auf GitHub. Die Zusammenfassungen
@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-173 PDFs, 660 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+174 PDFs, 663 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -362,6 +362,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Das_Burn-out-Syndrom_27.09.2007.pdf` | 4 (Frauenzmorge Auenstein) |
 | `Psychische_Krankheiten_und_ihre_Auswirkungen_auf_die_08.11.2007.pdf` | 3 (Vereinigung Schweizer Amtsvormünder; «… betroffene Person») |
 | `Kinder-_Jugend-_und_Familientherapie_04.03.2008.pdf` | 4 (Vortrag BDK) |
+| `Die_soziale_Vererbung_15.01.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1998 für den Familientherapie-Kurs I 2018, mit Links auf ganglion.ch und schizo.li) |
 | `Prevention_in_the_field_of_law_and_mental_health_28.10.2026.pdf` | 4 (englisch, «Therapeutic Jurisprudence», 28. Congress of Law and Mental Health in den Niederlanden; ohne Datum im Text, Scantag) |
 | `Sind_Mütter_die_besseren_Beraterinnen_28.10.2026.pdf` | 7 (Artikel für «Clic», ohne Datum im Text, Scantag) |
 | `Text_für_Werbung_Familientherapie_28.10.2026.pdf` | 2 (ohne Datum im Text, Scantag) |
