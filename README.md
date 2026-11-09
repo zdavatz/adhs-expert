@@ -203,11 +203,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-251 PDFs, 931 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+252 PDFs, 933 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Emotioneller_Prozess_in_der_Kernfamilie_Möglichkeiten_zur_02.02.1987.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I; «… Möglichkeiten zur Stressabsorption oder Adaptionsmechanismen einer Familie auf Überlastungssituationen») |
+| `Umgang_mit_schwierigen_Mitarbeitern_08.05.1987.pdf` | 2 (Vortrag bei Coop Schweiz, Muttenz; Stichworte) |
 | `Wie_gehe_ich_mit_psychisch_Kranken_um_04.06.1987.pdf` | 2 (Vortrag, Frauenverein Rheinfelden) |
 | `Wo_liegen_mögliche_Ansatzpunkte_für_die_Sozial-_und_11.06.1987.pdf` | 4 («… Präventivmedizin», SPD-Tagung über Prävention; Text datiert 4.6.1987; Überlauf eines Doppeleinzugs auf Seite 2 übermalt) |
 | `How_can_global_perspectives_be_taught_and_learned_Global_04.08.1987.pdf` | 7 (englisch, «… Global versus territorial thinking», Weiterbildungstagung Dalian, China; Text datiert 6.1.1988; mit `--sprache eng` gelesen) |

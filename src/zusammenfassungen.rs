@@ -1087,6 +1087,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Zweite Fassung des Artikels für die Spitex Zeitung über den Umgang mit schwierigen Familiensituationen, grösser gesetzt und mit Autorenzeile von U. Davatz, ohne Literaturhinweise. Inhaltlich entspricht sie der ersten: Familien sind bei schwerer Krankheit überfordert, Spitex-Fachpersonen sollen die ganze Familie statt nur den designierten Patienten einbeziehen, emotional neutral bleiben und sich Lebensgeschichten erzählen lassen. Die eigene Person ist das wichtigste Instrument; Intervision, Humor und systemische Konzepte aus einer Weiterbildung helfen, nicht in Machtkämpfe zu geraten.",
     },
     Zusammenfassung {
+        datei: "Umgang_mit_schwierigen_Mitarbeitern_08.05.1987.pdf",
+        titel: "",
+        text: "Stichworte von U. Davatz zu einem Vortrag bei einem Grossverteiler (1987). Auf schwierige Personen reagiert die Umwelt meist mit Schonung – Watte, extreme Toleranz, stundenlanges Zuhören, Hilfsangebote – oder mit Belehrung – Zurechtweisen, Appelle, Befehle, Kontrolle, Drohungen. Beides verstärkt die Symptome, die Schonung durch Belohnung und Sonderrolle, die Belehrung durch Konflikt und Isolierung, und endet oft im Ausstoss durch Kündigung oder Klinik oder im Davonlaufen. Hilfreich sind eigene Abgrenzung, klare Stellungnahmen und Entscheidungen, Kontrolle der eigenen Gefühle und ein neutraler Kontakt zur Person.",
+    },
+    Zusammenfassung {
         datei: "Umgang_mit_Ängsten_06.06.2002.pdf",
         titel: "",
         text: "Angst gilt als natürliches Alarmsignal, das sich verselbständigen und sozial ansteckend eskalieren kann. Der Vortrag für eine Spitex-Weiterbildung beschreibt die drei Verhaltensmuster Flucht, Kampf/Imponieren und Totstellreflex/Unterwerfung sowie die körperlichen Reaktionen (Kreislauf, Muskeltonus, Hormon- und Immunsystem, Schlaflosigkeit). Ängstliche Pflegende und ängstliche Patienten können sich gegenseitig zu einer «Teufelsspirale» aufschaukeln; verkannte Angst führt zu Machtkämpfen. Empfohlen werden, die Angst des Patienten wahrzunehmen und beruhigend zu reagieren, die eigene Angst einzugestehen und Hilfe zu holen.",
