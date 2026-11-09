@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-194 PDFs, 749 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+195 PDFs, 753 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -255,6 +255,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf` | 15 (zu einer Studie über Schizophreniefamilien und Erziehungsstil) |
 | `Soziale_Vererbung_09.11.1994.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1994, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Kommunikation_unter_Spannungssituationen_09.11.1994.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1994, nur das Jahr im Text, Tag und Monat vom Scan; Teil III fehlt in der Nummerierung) |
+| `Migrationsprobleme_in_der_Psychiatrie_15.05.1996.pdf` | 4 (Vortrag von U. Davatz, Supervision Psychiatrischer Stützpunkt Biel; Seiten in vier Durchgängen eingezogen) |
 | `Elternberatung_von_Schizophrenen_25.11.1996.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I; Datum am Textende) |
 | `Behandlungsansätze_bei_Erwachsenen_mit_ADS_15.11.1997.pdf` | 9 (Vortrag von Dr. med. Johanna Krause für die Elterninitiative zur Förderung hyperaktiver Kinder, Forchheim; Postfach-Adressen und Faxnummer entfernt; Seite 7 einzeln nachgescannt, weil der Einzug sie mit Seite 6 zog) |
 | `Die_soziale_Vererbung_19.01.1998.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1998; Datum am Textende) |
