@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-156 PDFs, 608 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+157 PDFs, 611 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -239,6 +239,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Ablösung_von_der_Autorität_28.10.1991.pdf` | 2 (Familientheorie Kurs II/91, FTH291, Schreibmaschine; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Anpassungsmechanismen_innerhalb_der_Kernfamilie_in_29.10.1991.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1991, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Soziale_Vererbung_in_menschlichen_Systemen_oder_Weitergabe_29.10.1991.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 1991, nur das Jahr im Text, Tag und Monat vom Scan; Seite 4 Muster-Genogramm im Querformat) |
+| `Soziale_Vererbung_in_menschlichen_Systemen_oder_Weitergabe_29.10.1991_2.pdf` | 3 (zweite Fassung, anders gesetzt, ohne Genogramm-Vorlage; Text gleich) |
 | `Scheidungsfamilien_Zusammengewürfelte_Familien_29.10.1991.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1991, nur das Jahr im Text, Tag und Monat vom Scan; Seite 2 deckt sich mit Seite 2 von «Das gesunde Cut-off») |
 | `Überbrückung_vom_Cut-off_in_meiner_Herkunftsfamilie_12.1991.pdf` | 5 (Kursarbeit von Pasquale Carucci, Familientheorie-Kurs II, Dezember 1991; Monat und Jahr im Text; Adresse entfernt) |
 | `Schuldgefühle_Funktion_und_Dysfunktion_02.12.1991.pdf` | 1 (Kurstext von V. M., Schreibmaschine; Datum am Textende) |
