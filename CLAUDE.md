@@ -238,7 +238,7 @@ Was dabei Zeit gekostet hat:
   deren Anfang fehlt. Den Überlauf weiss übermalen und die Seite einzeln
   nachscannen lassen.
 - **Schiefe Seiten:** `geraderichten()` misst jede Seite mit `magick
-  -deskew 40%` und dreht sie ab `SCHIEF_AB_GRAD` (0,2°) gerade, bevor
+  -deskew 80%` und dreht sie ab `SCHIEF_AB_GRAD` (0,2°) gerade, bevor
   gelesen wird; die freien Ecken bekommen den Median der Seite. Zuerst lag
   die Schwelle bei 0,8° – aber schon 0,6° sah der Benutzer als schief.
   Gerade eingezogene Blätter messen um 0,05° (Wunsch des Benutzers).
@@ -250,6 +250,21 @@ Was dabei Zeit gekostet hat:
   Geprüft: Seitenzahl und -grösse gleich, Fusszeile gleich, keine neuen
   Kontaktdaten, keine alten Namen in den pseudonymisierten Arbeiten. Wer Kästen von Hand übermalt, misst sie am
   geraden Bild.
+  **Die Deskew-Schwelle ist 80 %, nicht 40 %.** Auf einer fast leeren
+  Schlussseite (fünf Zeilen) mass `-deskew 40%` 2,3° statt 0,1° und drehte
+  das gerade Blatt schief; der Benutzer sah es. Gegenprobe über alle 696
+  Originalseiten der Stapel-Geraderichtung: Steigung der Wortunterkanten je
+  Zeile aus dem Tesseract-TSV (Wörter ohne Unterlängen, Median über die
+  Zeilen). 40 % lag bis 1,2° daneben, 80 % nie über 0,3°. Danach wurden die
+  sechs PDFs mit deutlich anderer Messung aus den Originalbildern neu gebaut.
+  Die Grundlinien-Messung taugt nicht für Tabellen und Seiten mit wenigen
+  Zeilen – dort im Bild nachsehen.
+- **Parallel:** Geraderichten und Texterkennung laufen je Seite in eigenen
+  Threads (`parallel()`, `std::thread::scope`, so viele wie Kerne);
+  Tesseract bekommt `OMP_THREAD_LIMIT=1`, sonst konkurrieren seine
+  OpenMP-Threads. Sechs Seiten brauchen so etwa 2 s.
+- **Bestehende Datei:** Baut `scannen` ein PDF, das es schon gibt, legt es
+  `_2` daneben statt zu überschreiben – beim Neubau umbenennen.
 - **Duplex:** `--duplex` setzt `--adf-mode Duplex`. Ist das Blatt an der
   kurzen Kante gewendet bedruckt, steht die Rückseite auf dem Kopf – dann
   `magick … -rotate 180` und mit `--ein --aus` neu setzen.

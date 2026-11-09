@@ -169,8 +169,9 @@ sonst als eigener Vortrag abgetrennt würde. `--adresse-behalten` lässt
 Strassenangaben stehen, etwa den Vortragsort im Kopf; Mail und Telefon werden
 trotzdem entfernt.
 `--duplex` zieht beidseitig bedruckte Blätter mit Vorder- und Rückseite ein.
-Schief eingezogene Seiten (ab 0,2°) richtet `scannen` vor der Texterkennung
-selbst gerade.
+Schief eingezogene Seiten (ab 0,2°, gemessen mit `magick -deskew 80%`)
+richtet `scannen` vor der Texterkennung selbst gerade; Geraderichten und
+Texterkennung laufen je Seite parallel.
 
 **Hinweis auf adhs.expert:** Vorlagen, die selbst nicht auf ganglion.ch
 verweisen (Kursarbeiten, Skripte ohne Briefkopf), bekommen auf jeder Seite
@@ -201,7 +202,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-225 PDFs, 841 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+226 PDFs, 847 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -234,6 +235,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Cut-off_29.05.1989.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1989: Cut-off als Problemlösungsstrategie) |
 | `Prävention_sinnvoller_Ansatz_bei_gefährdeten_Familien_mit_03.07.1989.pdf` | 3 (Kursarbeit von E. Maarse Bäbler, Familientheoriekurs II; ein Blatt beidseitig) |
 | `Loyalität_und_Familie_04.09.1989.pdf` | 6 (Kursarbeit von Canzek, Kurs II in Familientherapie) |
+| `Wie_schütze_ich_mein_Kind_vor_Sexualverbrechen_22.08.1989.pdf` | 6 (Vortrag, Gruppe junger Mütter Untersiggenthal; Datum und Veranstalter handschriftlich auf Seite 1, Seitenzahlen oben) |
 | `Krankheit_als_Anpassung_28.10.1989.pdf` | 7 (Referat von Jakob Wehrli, Kurs II/89 Familientherapie; zwei Blätter beidseitig, Seitenzahlen oben; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Führungsposition_im_Zusammenhang_mit_Geschwisterposition_05.11.1989.pdf` | 3 (Familienberatung Kurs II; Arbeit der Kursteilnehmerin Heidi Deplazes-Kunz nach Walter Toman, Schreibmaschine) |
 | `Adoleszentenpsychiatrie_Prävention_im_Adoleszentenalter_03.09.1990.pdf` | 2 (Familientherapiekurs II, Schreibmaschine) |

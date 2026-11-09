@@ -225,13 +225,17 @@ fn lauf() -> anyhow::Result<()> {
 
     // Schief eingezogene Blätter gerade richten, bevor gelesen wird - sonst
     // stehen Bild und Textebene schräg, und Tesseract liest schlechter.
-    let mut seiten = seiten;
-    for (i, s) in seiten.iter_mut().enumerate() {
+    // Je Seite unabhängig, darum parallel.
+    let gerichtet = parallel(&seiten, |i, s| {
         let ziel = tmp.join(format!("gerade-{:03}.jpg", i + 1));
-        match geraderichten(s, &ziel) {
-            Ok(Some(winkel)) => {
+        geraderichten(s, &ziel).map(|w| w.map(|w| (w, ziel)))
+    });
+    let mut seiten = seiten;
+    for (i, r) in gerichtet.into_iter().enumerate() {
+        match r {
+            Ok(Some((winkel, ziel))) => {
                 eprintln!("Seite {}: um {winkel:.1}° gerade gerichtet", i + 1);
-                *s = ziel;
+                seiten[i] = ziel;
             }
             Ok(None) => {}
             Err(e) => eprintln!("Hinweis: Seite {} nicht gerade gerichtet: {e:#}", i + 1),
@@ -504,20 +508,25 @@ fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
     stellen
 }
 
-/// Übermalt die Kästen weiss und schreibt das Bild als JPEG nach `ziel`.
 /// Ab diesem Winkel wird eine Seite gerade gerichtet. Schon 0,6° fielen dem
 /// Benutzer als schief auf; gerade eingezogene Blätter messen um 0,05°.
 const SCHIEF_AB_GRAD: f64 = 0.2;
+const DESKEW_SCHWELLE: &str = "80%";
 
 /// Richtet eine schief eingezogene Seite mit ImageMagick (`-deskew`) gerade.
 /// Die freien Ecken werden im Median der Seite gefüllt (graues Kopierpapier),
 /// die Bildgrösse bleibt. Gibt den Winkel zurück, wenn gedreht wurde.
+///
+/// Schwelle 80 %, nicht 40 %: Auf fast leeren Seiten (eine Schlussseite mit
+/// fünf Zeilen) mass 40 % 2,3° statt 0,1° und drehte die Seite erst schief.
+/// Gegen die Grundlinien der Tesseract-Wortkästen geprüft (696 Seiten) liegt
+/// 80 % nie mehr als 0,3° daneben, 40 % bis 1,2°.
 fn geraderichten(quelle: &Path, ziel: &Path) -> anyhow::Result<Option<f64>> {
     // Grösse vor dem Drehen messen: nach `-deskew` ist die Leinwand grösser,
     // und die Seite würde breiter als A4.
     let aus = Command::new("magick")
         .arg(quelle)
-        .args(["-format", "%w %h %[fx:int(255*median)] ", "-write", "info:", "-deskew", "40%"])
+        .args(["-format", "%w %h %[fx:int(255*median)] ", "-write", "info:", "-deskew", DESKEW_SCHWELLE])
         .args(["-format", "%[deskew:angle]", "info:"])
         .output()
         .context("magick")?;
@@ -530,7 +539,7 @@ fn geraderichten(quelle: &Path, ziel: &Path) -> anyhow::Result<Option<f64>> {
     }
     let status = Command::new("magick")
         .arg(quelle)
-        .args(["-background", &format!("rgb({median},{median},{median})"), "-deskew", "40%", "+repage"])
+        .args(["-background", &format!("rgb({median},{median},{median})"), "-deskew", DESKEW_SCHWELLE, "+repage"])
         .args(["-gravity", "center", "-extent", &format!("{breite}x{hoehe}"), "-quality", "85"])
         .arg(ziel)
         .status()
@@ -541,6 +550,7 @@ fn geraderichten(quelle: &Path, ziel: &Path) -> anyhow::Result<Option<f64>> {
     Ok(Some(winkel))
 }
 
+/// Übermalt die Kästen weiss und schreibt das Bild als JPEG nach `ziel`.
 fn bild_schwaerzen(quelle: &Path, kaesten: &[[f64; 4]], ziel: &Path) -> anyhow::Result<()> {
     let mut bild = image::open(quelle).with_context(|| format!("{}", quelle.display()))?;
     let (b, h) = (bild.width() as f64, bild.height() as f64);
@@ -585,12 +595,39 @@ fn bild_schwaerzen(quelle: &Path, kaesten: &[[f64; 4]], ziel: &Path) -> anyhow::
 fn erkennen(seiten: &[PathBuf], dpi: u32) -> anyhow::Result<(Vec<Vec<Zeile>>, Vec<Option<u32>>)> {
     let mut texte = Vec::new();
     let mut nummern = Vec::new();
-    for s in seiten {
-        let (zeilen, fuss) = ocr::seite(s, dpi)?;
+    for r in parallel(seiten, |_, s| ocr::seite(s, dpi)) {
+        let (zeilen, fuss) = r?;
         nummern.push(seitenzahl(&zeilen).or(fuss));
         texte.push(zeilen);
     }
     Ok((texte, nummern))
+}
+
+/// Wendet `f` auf jedes Element an, verteilt auf so viele Threads, wie der
+/// Rechner Kerne hat; die Ergebnisse kommen in der Reihenfolge der Eingabe.
+/// Die Arbeit selbst machen externe Programme (`magick`, `tesseract`), die
+/// Threads warten nur auf sie.
+fn parallel<T: Sync, R: Send>(eingabe: &[T], f: impl Fn(usize, &T) -> R + Sync) -> Vec<R> {
+    let n = std::thread::available_parallelism().map_or(4, |n| n.get()).min(eingabe.len().max(1));
+    let naechstes = std::sync::atomic::AtomicUsize::new(0);
+    let mut ergebnisse: Vec<(usize, R)> = std::thread::scope(|sc| {
+        let griffe: Vec<_> = (0..n)
+            .map(|_| {
+                sc.spawn(|| {
+                    let mut eigene = Vec::new();
+                    loop {
+                        let i = naechstes.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+                        let Some(x) = eingabe.get(i) else { break };
+                        eigene.push((i, f(i, x)));
+                    }
+                    eigene
+                })
+            })
+            .collect();
+        griffe.into_iter().flat_map(|g| g.join().expect("Thread abgestürzt")).collect()
+    });
+    ergebnisse.sort_by_key(|(i, _)| *i);
+    ergebnisse.into_iter().map(|(_, r)| r).collect()
 }
 
 /// Seitenzahl aus dem Ziffern-Durchgang: nur eine Zahl, die von Strichen
@@ -680,7 +717,9 @@ mod ocr {
     }
 
     fn tesseract(bild: &std::path::Path, args: &[&str]) -> anyhow::Result<String> {
+        // Ein Thread je Prozess: die Seiten laufen schon parallel.
         let aus = std::process::Command::new("tesseract")
+            .env("OMP_THREAD_LIMIT", "1")
             .arg(bild)
             .args(["stdout", "-l", "deu"])
             .args(args)
