@@ -1017,6 +1017,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Fortbildungsvortrag am Psychiatrischen Zentrum Biel über Symbiose zwischen Mutter und Kind und in der Paarbeziehung. Ausgehend von Mahler, Klein und Bowen (Fusion) wird die natürliche Symbiose, in der der Energiefluss auf die nächste Generation gerichtet ist, von der pathologischen unterschieden, in der das Kind zum Versorger der Eltern wird und sich nicht ablösen darf. Bei Paaren würden unbefriedigte Kindheitsbedürfnisse über die Partnerschaft nachgeholt; fehlende Respektierung individueller Grenzen führe zu Kränkung, Aggression und Beziehungsgewalt. Therapeutisch gilt: die Bedürfnisse der Eltern auf anderem Weg als über das Kind erfüllen, bei Paaren beide in ihrer Autonomie stärken und keine Verhandlungstaktik oder Mediation anwenden.",
     },
     Zusammenfassung {
+        datei: "Süchte_Suchtprobleme_13.01.1988.pdf",
+        titel: "Süchte – Suchtprobleme",
+        text: "Stichworte von U. Davatz zu einem Vortrag bei der Elternvereinigung ELPOS (1988). Suchtverhalten definiert sie als einseitige Ersatzbefriedigung, Flucht, Problemlösung mit untauglichen Mitteln und chemische Bekämpfung der Angst. Gebahnt wird es durch unterdrückte Gefühle in der Kindheit, durch das Vorleben eigener Süchte wie Rauchen, Alkohol, Fernsehen oder Arbeit und durch dauernden Stress in der Familie. Bei Sucht der eigenen Kinder rät sie zu Angstreduktion, Blick auf die ganze Familie, Defokussieren der Sucht, objektiver Hilfe und keiner falschen Scham; bei eigener Sucht zu anderen Befriedigungen, Problemlösung und weniger Anpassung.",
+    },
+    Zusammenfassung {
         datei: "Text_für_Werbung_Familientherapie_28.10.2026.pdf",
         titel: "",
         text: "Kurzer Werbetext zur Familientherapie: Sie wird auch Systemtherapie genannt und betrachtet Symptome im Kontext des Familiensystems, wo sie einen kommunikativen Wert haben. Die Intervention setzt zuerst beim Verstehen des Symptoms an und richtet sich vor allem an die «Gesunden», meist Eltern und gesunde Geschwister, weil der Patient das schwächste Glied sei. Das Setting ist flexibel, Familientherapie eigne sich auch bei körperlichen Krankheiten mit psychosomatischen Anteilen und lasse sich auf Arbeitssysteme in Supervision und Consulting übertragen.",
