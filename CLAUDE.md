@@ -297,7 +297,12 @@ Was dabei Zeit gekostet hat:
   die nächste Zeile nicht angeschnitten wird. Genogramme in Schreibmaschinenschrift
   haben feste Zeichenbreite; die Tesseract-Kästen fehlen dort oft (Linien
   durch die Beschriftung), die Lage dann aus dem Bild schätzen und in einer
-  Festbreitenschrift einsetzen. Querformat-Seiten mit Kopfzeile im Hochformat:
+  Festbreitenschrift einsetzen. Bei Fliesstext in Schreibmaschinenschrift alle Namen
+  einer Zeile als eine Zeichenkette in Courier New setzen
+  (`-annotate +x+Grundlinie`), Grösse aus dem Zeichenabstand (Abstand =
+  0,6 × Grösse), Farbe am Original messen (meist ein mittleres Grau, nicht
+  Schwarz) und dünn nachziehen (`-strokewidth 0.5`); Ersatzname gleich lang
+  oder kürzer, damit der Zeilenrest nicht verrutscht. Querformat-Seiten mit Kopfzeile im Hochformat:
   erst den Kopf im Hochformat ersetzen, dann drehen, dann die Beschriftungen. Danach `pdftotext` und `strings` auf jeden
   alten Namen prüfen; echte Namen nicht in Commit oder README.
 - **Seitenzahlen auch oben suchen.** Viele Kursarbeiten tragen die Zahl im
