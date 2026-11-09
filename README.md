@@ -202,7 +202,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-243 PDFs, 897 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+244 PDFs, 899 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -213,6 +213,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Differenzierungsprozess_von_der_Ursprungsfamilie_09.11.1987.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Differenzierungsprozess_von_der_Ursprungsfamilie_09.11.1987_2.pdf` | 2 (zweite Fassung, enger gesetzt, anderer Seitenumbruch; Text gleich) |
 | `Die_Dreieckbeziehung_oder_Triangle_nach_Murray_Bowen_09.11.1987.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1987, nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Beziehungen_Bezugsprobleme_25.11.1987.pdf` | 2 («Schwierigkeiten im Umgang mit Teenager», Vortrag ELPOS Aargau; ein Blatt beidseitig) |
 | `Vorbereitung_der_Eltern_auf_die_Ablösungsphase_13.01.1988.pdf` | 3 (Vortrag bei ELPOS; Datum im Kopf, Text datiert 11.1.1988; die Verzeichnisse 1988 nennen den 13.3. bzw. 9.3.) |
 | `Süchte_Suchtprobleme_13.01.1988.pdf` | 1 (Vortrag bei ELPOS, Stichworte; Text datiert 25.1.1988; Randnotiz von Hand) |
 | `Wie_bewahre_ich_meine_Frische,_Zuversicht,_Phantasie_und_14.01.1988.pdf` | 2 («… Kraft in der Betreuung von Langzeitpatienten?», Vortrag Spitex-Stützpunkt Leuggern; ein Blatt beidseitig; am Schluss «11.01.1987», wohl verschrieben) |
