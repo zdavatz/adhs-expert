@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-158 PDFs, 615 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+159 PDFs, 617 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -245,6 +245,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Schuldgefühle_Funktion_und_Dysfunktion_02.12.1991.pdf` | 1 (Kurstext von V. M., Schreibmaschine; Datum am Textende) |
 | `Vom_Umgang_mit_Cut-off_(Beziehungsabbruch)_und_dessen_29.10.1992.pdf` | 3 (anonyme Kursarbeit, Familientheorie II 1992, nur das Jahr im Text, Tag und Monat vom Scan; mit Handnotizen) |
 | `Die_Zweierbeziehung_in_der_Ehe_23.11.1992.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1992) |
+| `Soziale_Vererbung_Wie_kann_ich_diesen_Prozess_unterbrechen_25.10.1993.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1993; Datum am Textende) |
 | `Weshalb_habe_ich_einen_18_Jahre_älteren_Mann_geheiratet_28.10.1993.pdf` | 2 (persönliche Kursarbeit, Familientherapie 1993; Name der Verfasserin geändert; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Arbeits-_und_Freizeitplanung_innerhalb_der_Familie_28.10.1993.pdf` | 3 (leerer Fragebogen von Eva Zimmerli, Familientheorie-Kurs «FT II/93», nur das Jahr im Text, Tag und Monat vom Scan; gehört zur Arbeit vom 30.1.1994) |
 | `Das_gesunde_Cut-off_29.10.1993.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1993, nur das Jahr im Text, Tag und Monat vom Scan) |
