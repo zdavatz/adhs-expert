@@ -219,10 +219,11 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-255 PDFs, 942 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+256 PDFs, 944 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
+| `Vernissage_Malgruppe_Rheinfelden_Ansprache_06.01.1987.pdf` | 2 (Ansprache zur Vernissage der Malgruppe der Gesundheits-Beratungsstelle Rheinfelden; ohne Datum, Datum aus der Vortragsliste 1986–1988 («Was verbindet Malen u. Leben»); Adresse und Telefon im Briefkopf entfernt; auf Seite 2 aufgeklebter Zeitungsartikel von Willy Oser, «Die Kunst als heilende Kraft») |
 | `Emotioneller_Prozess_in_der_Kernfamilie_Möglichkeiten_zur_02.02.1987.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I; «… Möglichkeiten zur Stressabsorption oder Adaptionsmechanismen einer Familie auf Überlastungssituationen») |
 | `Machtkampf_in_der_pflegerischen_Beziehung_05.02.1987.pdf` | 3 (Fortbildung SBK, mit Rollenspielen und Plenumsdiskussion) |
 | `Angst_ist_ein_schlechter_Lehrmeister_fürs_Leben_26.03.1987.pdf` | 3 (Vortrag, Mütterberatung des Bezirks Laufenburg in Frick; Stichworte) |
