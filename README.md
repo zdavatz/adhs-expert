@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-191 PDFs, 743 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+192 PDFs, 745 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -365,6 +365,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Zusammenfassung_aller_6_Konzepte_von_M._Bowen_26.07.2010.pdf` | 2 (Skript von U. Davatz, Familienkurs I) |
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_09.11.2010.pdf` | 3 (Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2010, nur das Jahr im Text, Tag und Monat vom Scan; Text fast gleich wie die Fassung von 2018) |
 | `Geschwisterpositionen_ihre_Vor-_und_Nachteile_21.08.2016.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2016; Seite 4 einzeln nachgescannt, der Überlauf unten auf Seite 3 weiss übermalt) |
+| `Burnout_und_Gesellschaft_09.01.2017.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2016; Datum am Textende) |
 | `Die_soziale_Vererbung_15.01.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1998 für den Familientherapie-Kurs I 2018, mit Links auf ganglion.ch und schizo.li) |
 | `Fusionsbeziehung_oder_Symbiose_02.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1998 für den Familientherapie-Kurs I 2018; Monat und Jahr am Textende) |
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_15.03.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2018; «… oder die gewaltsame Abtrennung einer Fusions-Beziehung») |
