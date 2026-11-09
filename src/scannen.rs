@@ -513,14 +513,17 @@ const SCHIEF_AB_GRAD: f64 = 0.2;
 /// Die freien Ecken werden im Median der Seite gefüllt (graues Kopierpapier),
 /// die Bildgrösse bleibt. Gibt den Winkel zurück, wenn gedreht wurde.
 fn geraderichten(quelle: &Path, ziel: &Path) -> anyhow::Result<Option<f64>> {
+    // Grösse vor dem Drehen messen: nach `-deskew` ist die Leinwand grösser,
+    // und die Seite würde breiter als A4.
     let aus = Command::new("magick")
         .arg(quelle)
-        .args(["-deskew", "40%", "-format", "%[deskew:angle] %[fx:int(255*median)] %w %h", "info:"])
+        .args(["-format", "%w %h %[fx:int(255*median)] ", "-write", "info:", "-deskew", "40%"])
+        .args(["-format", "%[deskew:angle]", "info:"])
         .output()
         .context("magick")?;
     let s = String::from_utf8_lossy(&aus.stdout);
     let w: Vec<&str> = s.split_whitespace().collect();
-    let [winkel, median, breite, hoehe] = w[..] else { bail!("magick lieferte {s:?}") };
+    let [breite, hoehe, median, winkel] = w[..] else { bail!("magick lieferte {s:?}") };
     let winkel: f64 = winkel.parse().context("Winkel")?;
     if winkel.abs() < SCHIEF_AB_GRAD {
         return Ok(None);
@@ -528,7 +531,7 @@ fn geraderichten(quelle: &Path, ziel: &Path) -> anyhow::Result<Option<f64>> {
     let status = Command::new("magick")
         .arg(quelle)
         .args(["-background", &format!("rgb({median},{median},{median})"), "-deskew", "40%", "+repage"])
-        .args(["-gravity", "center", "-extent", &format!("{breite}x{hoehe}"), "-quality", "92"])
+        .args(["-gravity", "center", "-extent", &format!("{breite}x{hoehe}"), "-quality", "85"])
         .arg(ziel)
         .status()
         .context("magick")?;
