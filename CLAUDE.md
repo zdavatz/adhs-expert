@@ -36,6 +36,7 @@ cargo run --release --bin scannen -- --sprache eng                # englische Vo
 cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
 cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
 cargo run --release --bin scanliste   # Übersicht der Scans mit Zusammenfassungen
+cargo run --release --bin mail -- --an … --betreff … --nachricht … --anhang scan/x.pdf --token …
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
@@ -533,6 +534,10 @@ geführt:
   lokal, nicht weil der Code geheim wäre, sondern weil die eingebetteten
   Daten es sind.
 - `credentials`, `token*.json`, `client_secret_*.json`, `*.env`
+- Empfänger und Token-Pfad für `mail` (`src/mail.rs`): nur auf der
+  Kommandozeile oder in `ADHS_MAIL_TOKEN`, nie in Code, Doku oder Commit.
+  Läuft der Refresh-Token ab (`invalid_grant`), muss er über den
+  OAuth-Ablauf neu ausgestellt werden; das Programm schreibt ihn nicht.
 - das erzeugte `adhs_expert_beitraege_mit_volltext.pdf` (reproduzierbar)
 - Scans, die versehentlich im Hauptverzeichnis landen (`/*_TT.MM.JJJJ.pdf`).
   Gewollt eingecheckt sind nur die Scans in `scan/` – mit entfernten

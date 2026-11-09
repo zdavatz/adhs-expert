@@ -198,6 +198,22 @@ cargo run --release --bin scanliste
 ```
 
 Fehlt zu einem PDF in `scan/` die Zusammenfassung, bricht das Programm ab.
+
+### Scans per Mail verschicken
+
+`src/mail.rs` schickt eine Mail mit Anhängen über die Gmail-API:
+
+```bash
+cargo run --release --bin mail -- --an adresse@example.com \
+    --betreff "Betreff" --nachricht "Text" --anhang scan/x.pdf \
+    --token token.json        # oder: ADHS_MAIL_TOKEN=token.json
+```
+
+Der Token ist eine Google-OAuth-Datei («authorized user», Bereich
+`gmail.send`) mit Refresh-Token; das Programm holt damit bei jedem Aufruf ein
+frisches Zugriffstoken. `--text datei.txt` liest den Text aus einer Datei,
+`--trocken` prüft Zugang und Nachricht, ohne zu senden. Empfänger und
+Token-Pfad gehören nicht ins Repository.
 Die Jahre im Dateinamen sind das erste und das letzte Vortragsjahr; ändern
 sie sich, ersetzt die neue Datei die alte.
 
@@ -479,6 +495,7 @@ sie sich, ersetzt die neue Datei die alte.
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
+| `src/mail.rs` | Mail mit Anhängen über die Gmail-API (OAuth-Refresh, MIME, `--trocken`) |
 | `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und GitHub-Link (`Vorträge_Dr.med._Ursula_Davatz_von_…_bis_….pdf`) |
 | `src/zusammenfassungen.rs` | je Scan drei bis fünf Sätze Zusammenfassung |
 | `src/pdflinks.rs` | Link-Overlay, gemeinsam für beide Übersichten |
