@@ -219,12 +219,13 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-267 PDFs, 1025 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+268 PDFs, 1040 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
 | `Bürokratisierung_und_Entbürokratisierung_der_Sozialhilfe_25.08.1986.pdf` | 12 («… demokratische Alternativen zum bürokratischen Wohlfahrtsstaat», Vortrag an der GDI-Konferenz 25.–29.8.1986; spätere Reinschrift mit www.ganglion.ch; Datum erster Konferenztag) |
+| `Bureaucratization_and_De-Bureaucratization_of_Social_Welfare_25.08.1986.pdf` | 15 (englisches Original des GDI-Vortrags, «… Democratic Alternatives to the Bureaucratized Welfare State», mit Summary und Literatur; mit `--sprache eng` gelesen) |
 | `Psychiatrie_im_täglichen_Leben_15.09.1986.pdf` | 16 (Abschrift der Tonbandaufnahme eines Vortrags in der EPK-Reihe, Schwerpunkt Rolle der Frau; Datum auf Seite 1 markiert) |
 | `Psychiatrie_im_täglichen_Leben_15.09.1986_2.pdf` | 19 (überarbeitete Reinschrift desselben Vortrags, Seitenzahlen unten) |
 | `Genuss_ohne_Sucht_Motivation_zum_Leben_als_Prävention_13.11.1986.pdf` | 6 (Vortrag an der GDI-Tagung «Suchtverhalten in der Wohlstandsgesellschaft», mit der SGGP; Titelblatt und Inhaltsverzeichnis des Tagungsbands vorn, auf Wunsch nicht anonymisiert) |
