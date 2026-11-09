@@ -199,7 +199,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-181 PDFs, 690 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+182 PDFs, 692 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -367,6 +367,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Das_Konzept_des_Cut-off-Verhaltens_in_einer_Beziehung_oder_15.03.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2018; «… oder die gewaltsame Abtrennung einer Fusions-Beziehung») |
 | `Die_Dreieckbeziehung_oder_Triangle_nach_Murray_Bowen_23.04.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1987 für den Familientherapie-Kurs I 2018) |
 | `Angst,_Panikattacken_und_Zwangsverhalten_03.09.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
+| `Ambivalenz_und_Pattsituation_15.10.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
 | `Anpassungsmechanismen_innerhalb_der_Kernfamilie_in_09.11.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1991 für den Familientherapie-Kurs I 2018, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Differenzierung_von_der_Ursprungsfamilie_09.11.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1998 für den Familientherapie-Kurs I 2018, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Prevention_in_the_field_of_law_and_mental_health_28.10.2026.pdf` | 4 (englisch, «Therapeutic Jurisprudence», 28. Congress of Law and Mental Health in den Niederlanden; ohne Datum im Text, Scantag) |
