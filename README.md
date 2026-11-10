@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-338 PDFs, 1312 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+339 PDFs, 1314 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -429,6 +429,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Strukturerkennung_innerhalb_der_Familie_Opferrolle_25.06.2001.pdf` | 2 (Skript von U. Davatz, Familientherapiekurs I/2001) |
 | `Empowerment_von_Schmerzpatienten_27.08.2001.pdf` | 3 (Vortrag von U. Davatz, Familienkurs I) |
 | `Schizophrenie_die_Familiendynamik_der_inneren_Scheidung_26.11.2001.pdf` | 3 (Skript von U. Davatz, Familienkurs I/2001) |
+| `Jahreszeiten_Fotografie_und_Haiku_16.12.2001.pdf` | 2 (Rede zur Vernissage der Ausstellung von Bjarne Geiges im Hans-Thoma-Museum, Bernau im Schwarzwald) |
 | `Vorwort_zu_dieser_Arbeit_von_Stephan_Meyer_08.02.2002.pdf` | 1 (Vorwort zur Arbeit eines Betroffenen über POS/ADD) |
 | `Ausstiegshilfen_unter_Berücksichtigung_der_Kultwellen_und_11.03.2002.pdf` | 3 (Suchtpräventionsveranstaltung im Gfellergut, 11./12.3.2002; «… geschlechtsspezifischen Aspekte»; Seite 1 mit Handnotizen) |
 | `Begleitung_von_Menschen_mit_depressiven_Symptomen_im_14.03.2002.pdf` | 4 (Fortbildungsseminar am KSB; frühere Fassung des Seminars vom 13.2.2003) |
