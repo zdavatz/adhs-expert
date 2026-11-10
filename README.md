@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-320 PDFs, 1225 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+321 PDFs, 1234 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -547,6 +547,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Früherfassung_von_Psychosen-Schizophrenie_in_der_09.11.2026.pdf` | 6 (Skript von U. Davatz für Hausärzte, ohne Datum, Scantag; «… in der hausärztlichen Praxis») |
 | `Emotionelle_Hintergründe_zum_Lernprozess_10.11.2026.pdf` | 8 (ausgeschriebener Text mit Fussnoten, ohne Datum, darum Scantag; vermutlich um 1986, vgl. die Stichworte vom 5.3.1986; Strasse in einer Quellenangabe entfernt) |
 | `Seminar_über_Einflussnahme_der_Schule_auf_neue_psychosoziale_10.11.2026.pdf` | 2 (Seminarunterlage ohne Datum, darum Scantag; nach Satz und Thema aus der Seminarreihe um 1995) |
+| `Stufenspezifische_Aspekte_der_Gesundheitserziehung_10.11.2026.pdf` | 9 (Aufsatz ohne Datum, darum Scantag; als leitende Ärztin des SPD Königsfelden gezeichnet, also nach 1981) |
 
 ### Wenn etwas fehlt oder doppelt ist
 
