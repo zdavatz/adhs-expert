@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-325 PDFs, 1255 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+326 PDFs, 1258 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -551,6 +551,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Gesundheitserziehung_Lektionen_I_bis_IV_10.11.2026.pdf` | 9 (vier Lektionen ohne Datum und Namen, darum Scantag; gehört nach Thema zu «Stufenspezifische Aspekte der Gesundheitserziehung»; Überlauf eines Doppeleinzugs auf Seite 7 übermalt) |
 | `Alkoholprobleme_innerhalb_der_Familie_10.11.2026.pdf` | 2 (Stichworte ohne Datum, darum Scantag; Schreibmaschine) |
 | `Prevention_is_better_than_cure_10.11.2026.pdf` | 1 (englische Stichworte für einen Vortrag im English-Club, ohne Datum, darum Scantag; mit «--sprache eng» gelesen) |
+| `Drogenvortrag_Sucht_und_Abhängigkeit_10.11.2026.pdf` | 3 (Stichworte zu einem gemeinsamen Vortrag mit Herrn Jans von der Beratungsstelle Kontakt; ohne Datum, darum Scantag) |
 | `Gesundheitserziehung_Lektionen_I_bis_IV_10.11.2026_2.pdf` | 9 (zweites Exemplar, gleicher Satz; auf Seite 4 ein Absatz von Hand gestrichen und mit Leuchtstift markiert) |
 
 ### Wenn etwas fehlt oder doppelt ist
