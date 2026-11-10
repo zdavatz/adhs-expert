@@ -223,11 +223,11 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-302 PDFs, 1162 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+302 PDFs, 1161 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
-| `Die_psychische_Komponente_des_Asthmas_10.11.1983.pdf` | 4 (Diskussionsbeitrag an der Weiterbildungstagung der Aargauischen Frauenliga auf der Barmelweid; gedruckt auf einem gefalteten A4-Blatt, in vier A5-Seiten zerlegt, Seite 4 leere Rückseite) |
+| `Die_psychische_Komponente_des_Asthmas_10.11.1983.pdf` | 3 (Diskussionsbeitrag an der Weiterbildungstagung der Aargauischen Frauenliga auf der Barmelweid; gedruckt auf einem gefalteten A4-Blatt, in A5-Einzelseiten zerlegt, leere Rückseite weggelassen) |
 | `Vortrag_über_Drogen_für_den_Frauenbund_Leuggern_02.04.1984.pdf` | 1 (Gliederung in fünf Punkten, Vortrag in Leuggern) |
 | `Der_Patient_in_seinem_Umfeld_07.05.1984.pdf` | 2 (Thesen für den Schweizerischen Fachverband Sozialdienst in Spitälern, Aarau; zwei Blätter mit eigenem Titel) |
 | `Drogenvortrag_06.06.1984.pdf` | 1 (Stichworte zum Aufbau einer Suchtpräventionsberatungsstelle) |
