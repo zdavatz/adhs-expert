@@ -223,10 +223,11 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-295 PDFs, 1143 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+296 PDFs, 1145 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
+| `Psychische_Gesundheit_und_Krankheit_im_Alltag_08.11.1984.pdf` | 2 (Vortrag an einer Zusammenkunft der SVP-Frauen; Stichworte; Namen in drei Beispielen durch erfundene ersetzt) |
 | `Erziehungsfragen_Suchtberatung_13.11.1984.pdf` | 2 (Elternabend Murgenthal; Stichworte, Datum von Hand) |
 | `Gibt_es_Schulstress_Wie_steht_es_um_das_Drogenproblem_06.02.1985.pdf` | 1 (Vortrag, CVP; Stichworte) |
 | `Drogen_Suchtverhalten_15.03.1985.pdf` | 1 (Vortrag, Lehramtschule Gränichen; Stichworte) |
