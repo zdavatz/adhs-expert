@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-322 PDFs, 1243 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+323 PDFs, 1252 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -549,6 +549,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Seminar_über_Einflussnahme_der_Schule_auf_neue_psychosoziale_10.11.2026.pdf` | 2 (Seminarunterlage ohne Datum, darum Scantag; nach Satz und Thema aus der Seminarreihe um 1995) |
 | `Stufenspezifische_Aspekte_der_Gesundheitserziehung_10.11.2026.pdf` | 9 (Aufsatz ohne Datum, darum Scantag; als leitende Ärztin des SPD Königsfelden gezeichnet, also nach 1981) |
 | `Gesundheitserziehung_Lektionen_I_bis_IV_10.11.2026.pdf` | 9 (vier Lektionen ohne Datum und Namen, darum Scantag; gehört nach Thema zu «Stufenspezifische Aspekte der Gesundheitserziehung»; Überlauf eines Doppeleinzugs auf Seite 7 übermalt) |
+| `Gesundheitserziehung_Lektionen_I_bis_IV_10.11.2026_2.pdf` | 9 (zweites Exemplar, gleicher Satz; auf Seite 4 ein Absatz von Hand gestrichen und mit Leuchtstift markiert) |
 
 ### Wenn etwas fehlt oder doppelt ist
 
