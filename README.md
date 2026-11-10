@@ -223,11 +223,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-279 PDFs, 1068 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+280 PDFs, 1095 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Interview_am_Radio_DRS_anlässlich_der_Pro_Mente_Sana-Tagung_10.11.1985.pdf` | 5 (Abschrift einer Sendung von Radio DRS über die Jahrestagung der Stiftung Pro Mente Sana 1985; nur das Jahr, Tag und Monat vom Scan; Überlauf eines Doppeleinzugs auf Seite 1 übermalt) |
+| `Neue_psychosoziale_Erkrankungen_bei_Kindern_und_Jugendlichen_10.11.1985.pdf` | 27 (Abschrift eines Vortrags in Heidelberg 1985 mit Fragen aus dem Publikum; nur das Jahr, Tag und Monat vom Scan; Seitenzahlen oben) |
 | `Drogenprophylaxe_und_Drogentherapie_25.11.1985.pdf` | 3 («Drogen im Aargau», Informationsveranstaltung des Gemeindeverbandes Sozialdienste Bezirk Rheinfelden, Arbeitsgruppe Suchtprobleme; Datum wie im Kopf, die Vortragsliste 1986–1988 nennt den 25.11.1986) |
 | `Jugend_und_Drogen_16.01.1986.pdf` | 1 (Vortrag am Elterngesprächsabend, Aula des Oberstufenschulhauses Ebnet, Frick; Stichworte) |
 | `Selbsthilfe_Eigenverantwortung_oder_Laientherapie_04.03.1986.pdf` | 5 (Streitgespräch mit Jakob Bösch im Tages-Anzeiger, abgetippt; Erscheinungsdatum, die Vortragsliste 1986–1988 nennt das Gespräch am 15.1.1986; Kontaktadressen und Telefonnummern entfernt, zum Teil von Hand; ein Abschnitt auf Seite 3 im Original doppelt getippt) |
