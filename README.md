@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-335 PDFs, 1296 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+336 PDFs, 1300 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -235,6 +235,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Gedanken_zur_Präventivpsychiatrie_15.12.1980.pdf` | 7 (Bericht über ein Gespräch mit U. Davatz, Sozialpsychiatrischer Dienst Königsfelden; Datum am Schluss) |
 | `Drogengefährdung_der_Jugendlichen_Fragen_der_CVP-Fraktion_17.12.1980.pdf` | 5 (Sozialpsychiatrischer Dienst Königsfelden, Antworten auf 13 Fragen zur Veranstaltung der CVP-Fraktion Baden/Obersiggenthal; Handnotiz auf Seite 5) |
 | `Angst_und_ihre_Auswirkung_auf_Krisensituationen_20.02.1981.pdf` | 6 (Vortrag an der Generalversammlung der Familienhilfe Koblenz; blasse Schreibmaschinenschrift, Bild abgedunkelt; Text datiert 19.2.1981) |
+| `Ablösungskonflikt_zwischen_erwachsenen_Kindern_und_ihren_16.03.1981.pdf` | 4 (Vortrag vor dem Hauspflegeverein Villnachern; Abschrift datiert 9.3.1981; Bild aufgehellt, unterstrichener Titel für die Texterkennung ohne Unterstreichung gelesen) |
 | `Das_Drogenproblem_aus_der_Sicht_der_Familiensystemtheorie_27.04.1981.pdf` | 4 (Vortrag für den Haus- und Krankenpflegeverein Hausen; blasse Schreibmaschinenschrift, Bild abgedunkelt) |
 | `Prophylaxe_in_der_Psychiatrie_08.05.1981.pdf` | 5 (Vortrag in der Reihe «Gesundheit und Medizin» der Christlich-sozialen Krankenkasse, Sektion Wettingen; Abschrift datiert 6.9.1982) |
 | `Fortbildung_für_Heimleiter_und_Erzieher_22.10.1981.pdf` | 3 (Sozialpsychiatrischer Dienst Königsfelden, Fortbildung über verhaltensgestörte Jugendliche; Datum am Schluss) |
