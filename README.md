@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-328 PDFs, 1267 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+329 PDFs, 1269 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -244,6 +244,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Drogenvortrag_06.06.1984.pdf` | 1 (Stichworte zum Aufbau einer Suchtpräventionsberatungsstelle) |
 | `Mein_Verständnis_der_Schizophrenie_heute_15.08.1984.pdf` | 1 (Vortrag vor freiwilligen Helfern; Stichworte) |
 | `Krankheitsbild_der_Schizophrenie_28.09.1984.pdf` | 3 (Text mit Abschnitten zu Symptomen, Ätiologie, Familientherapie und Helferproblemen; datiert 28.9.84 am Schluss) |
+| `Depression_28.09.1984.pdf` | 2 (Text, gleiche Reihe wie «Krankheitsbild der Schizophrenie», datiert 28.9.84 am Schluss) |
 | `Psychische_Gesundheit_und_Krankheit_im_Alltag_08.11.1984.pdf` | 2 (Vortrag an einer Zusammenkunft der SVP-Frauen; Stichworte; Namen in drei Beispielen durch erfundene ersetzt) |
 | `Erziehungsfragen_Suchtberatung_13.11.1984.pdf` | 2 (Elternabend Murgenthal; Stichworte, Datum von Hand) |
 | `Gibt_es_Schulstress_Wie_steht_es_um_das_Drogenproblem_06.02.1985.pdf` | 1 (Vortrag, CVP; Stichworte) |
