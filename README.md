@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-318 PDFs, 1219 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+319 PDFs, 1222 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -368,6 +368,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf` | 15 (zu einer Studie über Schizophreniefamilien und Erziehungsstil) |
 | `Soziale_Vererbung_09.11.1994.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 1994, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Kommunikation_unter_Spannungssituationen_09.11.1994.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1994, nur das Jahr im Text, Tag und Monat vom Scan; Teil III fehlt in der Nummerierung) |
+| `Stichworte_zum_Vortrag_für_Lehrertagung_07.1995.pdf` | 3 (drei Stichwortblätter «Stichworte zu Vortrag», «Vortrag für Lehrertagung», «Vortragsthemen», je datiert Juli 1995; ein beiliegender Abzug der «Fragen für Seminar an Lehrer» als Dublette verworfen) |
 | `Seminar_Einflussnahme_des_Schulsystems_auf_neue_Formen_der_10.11.1995.pdf` | 2 (Seminarausschreibung und Fragen an Lehrer; nur das Jahr, Tag und Monat vom Scan) |
 | `Braucht_eine_neue_Generation_eine_neue_Pädagogik_10.11.1995.pdf` | 3 (Tagung ELPOS, im Kopf «1995 (?)»; Untertitel «Einflussnahme des Schulsystems auf psychosoziale Erkrankungen der Jugend»; nur das Jahr, Tag und Monat vom Scan) |
 | `Lehrerfortbildung_Der_glückliche_Lehrer_10.11.1995.pdf` | 4 (Übersicht zur Lehrerfortbildung im Ausland und Stichworte zum Tagungsbeitrag; im Kopf «1995 (?)», Tag und Monat vom Scan) |
