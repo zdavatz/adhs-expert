@@ -186,7 +186,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Übersicht der Scans
 
-[`Vorträge_Dr.med._Ursula_Davatz_von_1985_bis_2018.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1985_bis_2018.pdf)
+[`Vorträge_Dr.med._Ursula_Davatz_von_1984_bis_2018.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1984_bis_2018.pdf)
 führt alle Scans nach
 Vortragsdatum auf, je Datei mit Seitenzahl, einer Zusammenfassung in drei bis
 fünf Sätzen und einem Link auf das PDF hier auf GitHub. Die Zusammenfassungen
@@ -223,10 +223,11 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-294 PDFs, 1141 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+295 PDFs, 1143 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
+| `Erziehungsfragen_Suchtberatung_13.11.1984.pdf` | 2 (Elternabend Murgenthal; Stichworte, Datum von Hand) |
 | `Gibt_es_Schulstress_Wie_steht_es_um_das_Drogenproblem_06.02.1985.pdf` | 1 (Vortrag, CVP; Stichworte) |
 | `Drogen_Suchtverhalten_15.03.1985.pdf` | 1 (Vortrag, Lehramtschule Gränichen; Stichworte) |
 | `Familiendynamik_Theorie_und_Praxis_15.03.1985.pdf` | 1 (Stichworte für Haushaltanleiterinnen, drei Punkte) |
