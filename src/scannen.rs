@@ -1287,12 +1287,8 @@ fn fusszeile(w: f64) -> (Vec<u8>, [f64; 4]) {
 fn fuss_nachruesten(pfad: &Path) -> anyhow::Result<usize> {
     use lopdf::{dictionary, Document, Object, Stream};
     let mut doc = Document::load(pfad).with_context(|| format!("{}", pfad.display()))?;
-    let schrift_id = doc.add_object(dictionary! {
-        "Type" => "Font",
-        "Subtype" => "Type1",
-        "BaseFont" => "Helvetica",
-        "Encoding" => "WinAnsiEncoding",
-    });
+    // Erst anlegen, wenn eine Seite die Fusszeile braucht.
+    let mut schrift = None;
     let mut ergaenzt = 0;
     for (_, seite_id) in doc.get_pages() {
         let seite = doc.get_dictionary(seite_id)?.clone();
@@ -1318,6 +1314,14 @@ fn fuss_nachruesten(pfad: &Path) -> anyhow::Result<usize> {
             Ok(b) if b.len() == 4 => b[2].as_float().or_else(|_| b[2].as_i64().map(|i| i as f32))? as f64,
             _ => 595.2,
         };
+        let schrift_id = *schrift.get_or_insert_with(|| {
+            doc.add_object(dictionary! {
+                "Type" => "Font",
+                "Subtype" => "Type1",
+                "BaseFont" => "Helvetica",
+                "Encoding" => "WinAnsiEncoding",
+            })
+        });
         let (text, [x1, y1, x2, y2]) = fusszeile(breite);
         let strom_id = doc.add_object(Stream::new(dictionary! {}, text));
         let link_id = doc.add_object(dictionary! {
@@ -1357,6 +1361,10 @@ fn fuss_nachruesten(pfad: &Path) -> anyhow::Result<usize> {
         neu.set("Resources", res);
         doc.objects.insert(seite_id, Object::Dictionary(neu));
         ergaenzt += 1;
+    }
+    // Nichts ergänzt: Datei nicht neu schreiben.
+    if ergaenzt == 0 {
+        return Ok(0);
     }
     doc.reference_table.cross_reference_type = lopdf::xref::XrefType::CrossReferenceTable;
     doc.save(pfad).with_context(|| format!("{}", pfad.display()))?;
