@@ -559,7 +559,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Prevention_is_better_than_cure_10.11.2026.pdf` | 1 (englische Stichworte für einen Vortrag im English-Club, ohne Datum, darum Scantag; mit «--sprache eng» gelesen) |
 | `Drogenvortrag_Sucht_und_Abhängigkeit_10.11.2026.pdf` | 3 (Stichworte zu einem gemeinsamen Vortrag mit Herrn Jans von der Beratungsstelle Kontakt; ohne Datum, darum Scantag) |
 | `Aufzeichnung_einer_neuen_psychopathologischen_10.11.2026.pdf` | 7 (Entwurf, von Hand so bezeichnet; ohne Datum, darum Scantag; Seitenzahlen oben rechts) |
-| `Krisensituation_10.11.2026.pdf` | 4 (ohne Datum, Scantag; Schreibmaschine, Bild abgedunkelt; unterstrichene Überschriften für die Texterkennung ohne Unterstreichung gelesen) |
+| `Krisensituation_10.11.2026.pdf` | 4 (ohne Datum, Scantag; Schreibmaschine, Bild abgedunkelt; unterstrichene Überschriften für die Texterkennung ohne Unterstreichung gelesen; Tippfehler «Bower» im Bild zu «Bowen» korrigiert) |
 | `Gesundheitserziehung_Lektionen_I_bis_IV_10.11.2026_2.pdf` | 9 (zweites Exemplar, gleicher Satz; auf Seite 4 ein Absatz von Hand gestrichen und mit Leuchtstift markiert) |
 
 ### Wenn etwas fehlt oder doppelt ist
