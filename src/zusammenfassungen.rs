@@ -1347,6 +1347,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Vortrag von U. Davatz bei der Elternvereinigung ELPOS (1988). Die beste Vorbereitung auf die Ablösung ist das intensive Erleben der früheren Lebensmomente: Geburt, Stillen und genügend Zeit für das Kind in seinen Übergangsphasen; Verpasstes führt oft zu Schuld- und Insuffizienzgefühlen, die das Loslassen erschweren. Zusätzlich erschwert wird die Ablösung, wenn das Kind eine gestörte Ehe zusammenhält, krank, behindert oder besonders begabt ist, unerfüllte Wünsche der Eltern tragen soll, die Eltern in der Erziehung uneins sind oder es als Partnerersatz bei einem Alleinerziehenden lebt. Für jeden Fall nennt sie Gegenmittel, etwa Verluste offen besprechen, Überbehütung vermeiden, Ehekonflikte selbst angehen, klare Kompetenzbereiche festlegen und nichts nachholen wollen.",
     },
     Zusammenfassung {
+        datei: "Vortrag_über_Drogen_für_den_Frauenbund_Leuggern_02.04.1984.pdf",
+        titel: "",
+        text: "Kurze Gliederung von U. Davatz für einen Vortrag über Drogen vor dem Frauenbund Leuggern (1984). Sie nennt fünf Punkte: Die Grundursachen seien vielschichtig statt monokausal und lägen in Familie und Gesellschaft; die Therapie umfasse ambulanten Entzug und stationäre Entwöhnung; bei der Früherfassung gehe es darum, Symptome zu erkennen und richtig zu handeln. Dazu kommen die Fragen, wie man sich als Aussenstehender verhält und wo man sich meldet, und was eine Region tun kann. Den Vortrag selbst hielt sie frei.",
+    },
+    Zusammenfassung {
         datei: "Vorträge_und_Veröffentlichungen_09.11.1988.pdf",
         titel: "Vorträge und Veröffentlichungen U. Davatz 1988",
         text: "Verzeichnis der Vorträge und Veröffentlichungen von U. Davatz aus dem ersten Halbjahr 1988, 20 nummerierte Einträge mit Titel, Anlass und Datum. Mehrfach erscheint die Reihe «Psychiatrie im täglichen Leben» der EPK in verschiedenen Aargauer Gemeinden. Daneben stehen Vorträge zu Sucht und Suchtberatung, zur Ablösung der Jugendlichen, zu Autorität und Toleranz in der Erziehung, zur Familientherapie, zu Depressionen und zum Hospitalismus, eine Podiumsdiskussion zur Prävention sowie ein Beitrag zur Tablettensucht in der Zeitschrift «Sozialarbeit & Suchtprobleme». Die Liste zeigt die breite Vortragstätigkeit vor Laien, Pflegenden, Behörden und Fachleuten.",

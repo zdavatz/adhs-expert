@@ -223,10 +223,11 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-299 PDFs, 1149 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+300 PDFs, 1150 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
+| `Vortrag_über_Drogen_für_den_Frauenbund_Leuggern_02.04.1984.pdf` | 1 (Gliederung in fünf Punkten, Vortrag in Leuggern) |
 | `Der_Patient_in_seinem_Umfeld_07.05.1984.pdf` | 2 (Thesen für den Schweizerischen Fachverband Sozialdienst in Spitälern, Aarau; zwei Blätter mit eigenem Titel) |
 | `Drogenvortrag_06.06.1984.pdf` | 1 (Stichworte zum Aufbau einer Suchtpräventionsberatungsstelle) |
 | `Mein_Verständnis_der_Schizophrenie_heute_15.08.1984.pdf` | 1 (Vortrag vor freiwilligen Helfern; Stichworte) |
