@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-334 PDFs, 1289 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+335 PDFs, 1296 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -232,6 +232,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Krisensituationen_in_der_Familie_03.08.1980_2.pdf` | 3 (zweite Fassung, anders gesetzt, Kopf von Hand, mit Abschnitt «Selbst verursachte Krisen») |
 | `Vortrag_betreffend_Drogen_in_Magden_23.10.1980.pdf` | 3 (Stichworte mit vielen Handnotizen; Text datiert Okt. 80) |
 | `Familientherapie_Familiensystemtheorie_13.11.1980.pdf` | 7 (Vortrag an der 57. Supervisionssitzung im SPD Königsfelden, nach Tonband aufgezeichnet von Benedikt Stalder; erster Teil; auf Wunsch nicht anonymisiert) |
+| `Gedanken_zur_Präventivpsychiatrie_15.12.1980.pdf` | 7 (Bericht über ein Gespräch mit U. Davatz, Sozialpsychiatrischer Dienst Königsfelden; Datum am Schluss) |
 | `Drogengefährdung_der_Jugendlichen_Fragen_der_CVP-Fraktion_17.12.1980.pdf` | 5 (Sozialpsychiatrischer Dienst Königsfelden, Antworten auf 13 Fragen zur Veranstaltung der CVP-Fraktion Baden/Obersiggenthal; Handnotiz auf Seite 5) |
 | `Angst_und_ihre_Auswirkung_auf_Krisensituationen_20.02.1981.pdf` | 6 (Vortrag an der Generalversammlung der Familienhilfe Koblenz; blasse Schreibmaschinenschrift, Bild abgedunkelt; Text datiert 19.2.1981) |
 | `Das_Drogenproblem_aus_der_Sicht_der_Familiensystemtheorie_27.04.1981.pdf` | 4 (Vortrag für den Haus- und Krankenpflegeverein Hausen; blasse Schreibmaschinenschrift, Bild abgedunkelt) |
