@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-352 PDFs, 1354 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+353 PDFs, 1358 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -428,6 +428,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Chronische_Krankheit_in_der_Familie,_Gewalt_und_Alkohol_in_18.12.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000; «… in der Familie»; Datum am Textende) |
 | `Strukturerkennung_innerhalb_der_Familie_Opferrolle_25.06.2001.pdf` | 2 (Skript von U. Davatz, Familientherapiekurs I/2001) |
 | `Empowerment_von_Schmerzpatienten_27.08.2001.pdf` | 3 (Vortrag von U. Davatz, Familienkurs I) |
+| `Erwachsene_mit_POS_ADS_ADHD_27.09.2001.pdf` | 4 (Workshop CP-Zentrum Solothurn; Blätter 3 und 4 einzeln nachgescannt) |
 | `Was_können_Eltern_zur_Suchtprävention_beitragen_18.10.2001.pdf` | 3 (Elternforum Schöftland) |
 | `Literaturliste_Suchtprävention_18.10.2001.pdf` | 1 (fremdes Material: Literaturliste der Mediothek von Sucht-Info Aargau, Beilage zum Elternforum Schöftland; Datum vom Vortrag übernommen; Strasse, Telefon, Fax und Mail übermalt) |
 | `Depressionen,_der_medizinische_Aspekt_22.10.2001.pdf` | 4 (Weiterbildung für Pharmaassistentinnen, Gruppe Aargau, Eli Lilly AG; Blatt 4 einzeln nachgescannt) |
