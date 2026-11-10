@@ -223,11 +223,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-286 PDFs, 1132 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+287 PDFs, 1133 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Beratung_und_Betreuung_von_Langzeitpatienten_und_ihren_20.06.1985.pdf` | 11 (Referat an der Generalversammlung der Aargauischen Frauenliga gegen Tuberkulose und langdauernde Krankheiten, Lenzburg) |
+| `Brief_der_Gesundheits-Beratungsstelle_Baden_zum_Referat_in_27.06.1985.pdf` | 1 (Begleitbrief von Gerda Haber zur Abschrift des Referats vom 20.6.1985, auf Wunsch nicht anonymisiert; Strasse und Telefon im Briefkopf entfernt; Handnotizen) |
 | `Gassenarbeit_Stubenarbeit_24.10.1985.pdf` | 2 (Vortrag in Gebenstorf; Stichworte, Seite 2 mit Gegenüberstellung Stube/Gasse) |
 | `Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985.pdf` | 2 (Stichworte für Pflegepersonal, Seite 2 nur der Schluss und «Fallvorstellung:») |
 | `Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985_2.pdf` | 19 (Abschrift des Vortrags zu den Stichworten, SBK, für Gemeindeschwestern, mit Fragen aus dem Publikum; Überläufe aus Doppeleinzügen auf fünf Seiten übermalt) |
