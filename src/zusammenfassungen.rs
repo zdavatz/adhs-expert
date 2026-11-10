@@ -497,6 +497,16 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Kurze Ansprache zur Buchvernissage in Zürich, in der U. Davatz als Therapeutin über die Aufarbeitung einer Lebensgeschichte spricht. Sie unterscheidet verschiedene Wirkungen des Geschichtenerzählens (Unterhaltung, hypnotische Wirkung, Geschichtsschreibung) und betont die heilende Wirkung des Aufschreibens der eigenen, schmerzlichen Lebensgeschichte im Sinne eines «narrativen Rekonstruktivismus». Die Autorin sei ursprünglich wegen eines Ausbildungsnachweises in ganzheitlicher Psychologie gekommen; die Gespräche hätten sich zur Aufarbeitung traumatischer Erlebnisse aus Kindheit und Jugend entwickelt. Die Rednerin gratuliert zu Kraft und Mut und nennt diese Form eine «philosophische Therapieform» mit wachsender Bedeutung.",
     },
     Zusammenfassung {
+        datei: "Einladung_zur_Generalversammlung_der_Aargauischen_Frauenliga_20.06.1985.pdf",
+        titel: "Einladung zur ordentlichen Generalversammlung der Aargauischen Frauenliga 1985",
+        text: "Gedruckte Einladung zur ordentlichen Generalversammlung der Aargauischen Frauenliga gegen Tuberkulose und langdauernde Krankheiten, gemeinsam mit der Aargauischen Krebsliga, am 20. Juni 1985 im Alten Gemeindesaal Lenzburg. Nach den Vereinsgeschäften, darunter Berichte über Schirmbild, Impfaktion und Asthma-Apparate-Verleihdienst, folgt das Referat von U. Davatz, Leitende Ärztin des Sozialpsychiatrischen Dienstes Königsfelden, über Beratung und Betreuung von Langzeitpatienten und ihren Angehörigen. Die Abschrift dieses Referats und der Begleitbrief dazu liegen ebenfalls im Bestand.",
+    },
+    Zusammenfassung {
+        datei: "Einladung_zur_Sitzung_des_Kantonalvorstandes_der_19.03.1985.pdf",
+        titel: "Einladung zur Sitzung des Kantonalvorstandes der Aargauischen Frauenliga",
+        text: "Einladung der Präsidentin der Aargauischen Frauenliga gegen Tuberkulose und langdauernde Krankheiten an den Kantonalvorstand zur Sitzung vom 19. März 1985 im Aarhof Wildegg. Neben Protokoll, Fürsorgetätigkeit, Finanzen, Jahresbericht und der Vorbereitung der Generalversammlung steht eine Aussprache mit U. Davatz auf dem Programm: über Möglichkeiten und Grenzen der Betreuung von Menschen mit psychischen Schwierigkeiten durch die Fürsorgerinnen der Frauenliga. Daraus ging ihr Referat an der Generalversammlung im Juni 1985 hervor.",
+    },
+    Zusammenfassung {
         datei: "Einleitung_zur_Dissertation_von_Dieter_Hasler_04.05.1994.pdf",
         titel: "",
         text: "Einleitung von U. Davatz zur Dissertation von Dieter Hasler (4.5.1994), einer Pilotstudie zu Erziehungsstil und Stressbewältigung von Eltern und der Entwicklung einer Schizophrenie bei einem Kind. Sie zeichnet die Forschungsgeschichte nach (analytische Theorie, Zwillings- und Adoptivstudien, Familientherapie von Bowen, Bateson und anderen, Expressed Emotions, Vulnerabilitätsmodell) und beschreibt den Fragebogen. Verglichen wurden 75 Familien mit einem schizophrenen Kind und 100 Kontrollfamilien. Die Familien mit schizophrenem Kind gaben häufiger bedrohlich-bestrafende Erziehung, weniger Übereinstimmung im Erziehungs- und Problemlösungsstil, mehr ausweichendes Verhalten der Väter und überengagiertes Stressverhalten der Mütter an. Daraus wird ein präventiver, psychoedukativer Ansatz abgeleitet.",

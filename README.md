@@ -223,11 +223,13 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-287 PDFs, 1133 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+289 PDFs, 1135 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
+| `Einladung_zur_Sitzung_des_Kantonalvorstandes_der_19.03.1985.pdf` | 1 (Einladung vom 5.3.1985 zur Sitzung im Aarhof Wildegg mit Aussprache mit U. Davatz; auf Wunsch nicht anonymisiert, Privatadresse und Telefon im Kopf entfernt) |
 | `Beratung_und_Betreuung_von_Langzeitpatienten_und_ihren_20.06.1985.pdf` | 11 (Referat an der Generalversammlung der Aargauischen Frauenliga gegen Tuberkulose und langdauernde Krankheiten, Lenzburg) |
+| `Einladung_zur_Generalversammlung_der_Aargauischen_Frauenliga_20.06.1985.pdf` | 1 (gedruckte Einladung zur Generalversammlung mit der Aargauischen Krebsliga, Lenzburg, mit ihrem Referat; Kontrast angehoben, graues Papier) |
 | `Brief_der_Gesundheits-Beratungsstelle_Baden_zum_Referat_in_27.06.1985.pdf` | 1 (Begleitbrief von Gerda Haber zur Abschrift des Referats vom 20.6.1985, auf Wunsch nicht anonymisiert; Strasse und Telefon im Briefkopf entfernt; Handnotizen) |
 | `Gassenarbeit_Stubenarbeit_24.10.1985.pdf` | 2 (Vortrag in Gebenstorf; Stichworte, Seite 2 mit Gegenüberstellung Stube/Gasse) |
 | `Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985.pdf` | 2 (Stichworte für Pflegepersonal, Seite 2 nur der Schluss und «Fallvorstellung:») |
