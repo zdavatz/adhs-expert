@@ -36,6 +36,7 @@ cargo run --release --bin scannen -- --sprache eng                # englische Vo
 cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
 cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
 cargo run --release --bin scanliste   # Übersicht der Scans mit Zusammenfassungen
+cargo run --release --bin eintragen -- --datei … --text … --bestand …   # neuen Scan nachtragen
 cargo run --release --bin mail -- --an … --betreff … --nachricht … --anhang scan/x.pdf --token …
 ```
 
@@ -335,10 +336,15 @@ Datum aus dem Dateinamen, Seitenzahl, Zusammenfassung aus
 Gleiche Link-Mechanik wie `uebersicht`, gemeinsam in `src/pdflinks.rs`; die
 Link-Zeile zeigt den Pfad und wird über 88 Zeichen in der Mitte gekürzt.
 
-- **Nach jedem neuen Scan** einen Eintrag (3–5 Sätze, ss, keine Namen oder
-  Daten aus Fallbeispielen, keine Kontaktdaten) in `src/zusammenfassungen.rs`
-  ergänzen, `cargo run --release --bin scanliste` laufen lassen und das PDF
-  mitcommitten. Ohne Eintrag bricht das Programm ab – gewollt.
+- **Nach jedem neuen Scan** `cargo run --release --bin eintragen -- --datei
+  … --text … --bestand … [--titel …]` aufrufen (3–5 Sätze, ss, keine Namen
+  oder Daten aus Fallbeispielen, keine Kontaktdaten), dann
+  `cargo run --release --bin scanliste` und das PDF mitcommitten. Ohne
+  Eintrag bricht `scanliste` ab – gewollt. `eintragen` setzt die README-Zeile
+  nach Datum (nicht von Hand einfügen: so stand einmal ein Eintrag falsch) und
+  zählt PDFs und Seiten mit `lopdf` neu, statt hochzuzählen; es schreibt erst,
+  wenn beide Dateien geändert werden konnten. `--zaehlen` führt nur die
+  Zählzeile nach.
 - **genpdf setzt jede Zeile mindestens in der Zeilenhöhe der Grundschrift**
   (10 pt), auch 9-, 8- und 7-pt-Zeilen. Wer die Höhe mit der kleineren
   Schrift misst, unterschätzt die Einträge, und genpdf bricht sie selbst

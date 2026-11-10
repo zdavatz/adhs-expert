@@ -13,6 +13,7 @@
 //
 // Lizenz: GPL-3.0
 
+mod dateiname;
 mod pdflinks;
 mod zusammenfassungen;
 
@@ -26,6 +27,7 @@ use genpdf::elements::{Break, PageBreak, Paragraph};
 use genpdf::style::{Color, Style};
 use genpdf::{Alignment, Element};
 
+use dateiname::zerlegen;
 use pdflinks::{add_links, Link, LINK_FONT_SIZE};
 use zusammenfassungen::ZUSAMMENFASSUNGEN;
 
@@ -73,32 +75,6 @@ struct Scan {
     text: &'static str,
 }
 
-/// Zerlegt `Titel_TT.MM.JJJJ[_N].pdf` oder `Titel_MM.JJJJ[_N].pdf`.
-fn zerlegen(datei: &str) -> Option<(String, String, (u32, u32, u32), Option<u32>)> {
-    let stamm = datei.strip_suffix(".pdf")?;
-    let mut teile: Vec<&str> = stamm.split('_').collect();
-    let mut fassung = None;
-    if teile.len() > 2 {
-        if let Ok(n) = teile[teile.len() - 1].parse::<u32>() {
-            if n < 100 {
-                fassung = Some(n);
-                teile.pop();
-            }
-        }
-    }
-    let datum = teile.pop()?.to_string();
-    let zahlen: Vec<u32> = datum.split('.').map(|z| z.parse().ok()).collect::<Option<_>>()?;
-    let schluessel = match zahlen[..] {
-        [t, m, j] => (j, m, t),
-        [m, j] => (j, m, 0),
-        _ => return None,
-    };
-    let titel = teile.join(" ");
-    if titel.is_empty() {
-        return None;
-    }
-    Some((titel, datum, schluessel, fassung))
-}
 
 fn bestand() -> Result<Vec<Scan>> {
     let mut dateien = BTreeSet::new();

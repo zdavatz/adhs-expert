@@ -16,6 +16,10 @@ name = "scanliste"
 path = "src/scanliste.rs"
 
 [[bin]]
+name = "eintragen"
+path = "src/eintragen.rs"
+
+[[bin]]
 name = "mail"
 path = "src/mail.rs"
 

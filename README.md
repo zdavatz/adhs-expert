@@ -190,10 +190,14 @@ GT-2500 im Backend `epson2` als «ES-H300».
 führt alle Scans nach
 Vortragsdatum auf, je Datei mit Seitenzahl, einer Zusammenfassung in drei bis
 fünf Sätzen und einem Link auf das PDF hier auf GitHub. Die Zusammenfassungen
-stehen in `src/zusammenfassungen.rs`; nach jedem neuen Scan dort einen Eintrag
-nachtragen und neu erzeugen:
+stehen in `src/zusammenfassungen.rs`. Nach jedem neuen Scan trägt `eintragen`
+die Zusammenfassung alphabetisch ein, setzt die Zeile im Bestand unten nach
+Datum und zählt «N PDFs, M Seiten» aus `scan/` neu; danach die Übersicht
+neu erzeugen:
 
 ```bash
+cargo run --release --bin eintragen -- --datei Titel_TT.MM.JJJJ.pdf \
+    --text "Drei bis fünf Sätze." --bestand "2 (Vortrag …)" [--titel "Voller Titel"]
 cargo run --release --bin scanliste
 ```
 
@@ -522,6 +526,8 @@ sie sich, ersetzt die neue Datei die alte.
 | Datei | Zweck |
 |---|---|
 | `src/uebersicht.rs` | Satz des PDFs und Link-Overlay |
+| `src/eintragen.rs` | Neuen Scan nachtragen: Zusammenfassung, Bestandszeile nach Datum, Zählzeile (`--zaehlen`) |
+| `src/dateiname.rs` | Zerlegt `Titel_TT.MM.JJJJ[_N].pdf` (gemeinsam für `scanliste` und `eintragen`) |
 | `src/mail.rs` | Mail mit Anhängen über die Gmail-API (OAuth-Refresh, MIME, `--trocken`) |
 | `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und GitHub-Link (`Vorträge_Dr.med._Ursula_Davatz_von_…_bis_….pdf`) |
 | `src/zusammenfassungen.rs` | je Scan drei bis fünf Sätze Zusammenfassung |
