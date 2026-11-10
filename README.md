@@ -223,11 +223,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-337 PDFs, 1307 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+338 PDFs, 1312 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Vortrag_über_Drogenprobleme_06.06.1980.pdf` | 2 (Text datiert 6.6.1980 am Schluss) |
+| `Einige_Richtlinien_für_die_familiensystemorientierte_07.1980.pdf` | 5 (Sozialpsychiatrischer Dienst Königsfelden; datiert «Juli 1980»; Bild abgedunkelt, unterstrichener Titel für die Texterkennung ohne Unterstreichung gelesen) |
 | `Krisensituationen_in_der_Familie_03.08.1980.pdf` | 3 (Vortrag an der Vermittlerinnentagung des Haus- und Krankenpflegevereins; Stichworte) |
 | `Krisensituationen_in_der_Familie_03.08.1980_2.pdf` | 3 (zweite Fassung, anders gesetzt, Kopf von Hand, mit Abschnitt «Selbst verursachte Krisen») |
 | `Vortrag_betreffend_Drogen_in_Magden_23.10.1980.pdf` | 3 (Stichworte mit vielen Handnotizen; Text datiert Okt. 80) |
