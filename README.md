@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-359 PDFs, 1382 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+360 PDFs, 1385 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -427,6 +427,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Patchworkfamilie_09.11.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I/2000; nur das Jahr im Text, Tag und Monat vom Scan; Teil II fehlt schon in der Vorlage) |
 | `Chronische_Krankheit_in_der_Familie,_Gewalt_und_Alkohol_in_18.12.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000; «… in der Familie»; Datum am Textende) |
 | `Gedanken_zum_monumentalen_Denkmal_und_Städtebau_anhand_von_05.2001.pdf` | 1 (nur Monat und Jahr) |
+| `Früherkennung_der_chronischen_Krankheit_Sucht,_wie_nimmt_der_03.05.2001.pdf` | 3 (Mitgliederversammlung AVS Brugg) |
 | `Warum_so_viele_Ess-Störungen_in_der_heutigen_21.05.2001.pdf` | 5 (Kath. Frauenverein und Gemeinnütziger Frauenverein; frühere Fassung desselben Texts wie am 8.3.2003; Überlauf von Blatt 4 unten auf Seite 3 übermalt, Blatt 4 einzeln nachgescannt) |
 | `Wie_erkennen_wir_die_Vorzeichen_einer_beginnenden_21.06.2001.pdf` | 5 (Hausärzte-Seminar «Früherfassung und Frühbehandlung der Schizophrenie», Stadtcasino Baden; mit Programmblatt; Blatt 5 einzeln nachgescannt) |
 | `Strukturerkennung_innerhalb_der_Familie_Opferrolle_25.06.2001.pdf` | 2 (Skript von U. Davatz, Familientherapiekurs I/2001) |
