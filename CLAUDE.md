@@ -38,6 +38,8 @@ cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-
 cargo run --release --bin scanliste   # Übersicht der Scans mit Zusammenfassungen
 cargo run --release --bin eintragen -- --datei … --text … --bestand …   # neuen Scan nachtragen
 cargo run --release --bin mail -- --an … --betreff … --nachricht … --anhang scan/x.pdf --token …
+cargo run --release --bin etiketten -- --jahre 1983-1988 --jahre 2013-2018@25 --out e.pdf   # Ordnerrücken
+cargo run --release --bin pcldruck -- e.pdf --an DRUCKER:9100   # eine Seite als PCL
 ```
 
 Schriftverzeichnis über `$FONT_DIR` überschreibbar (Vorgabe: `./fonts`).
@@ -322,6 +324,30 @@ Was dabei Zeit gekostet hat:
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
   '@|strasse [0-9]|tel\.'` muss leer bleiben, und Seite 1 rendern
   (`pdftoppm -png -r 55 -f 1 -l 1`), um Datum und Titel anzusehen.
+
+### Ordnerrücken und Drucken (`src/etiketten.rs`, `src/pcldruck.rs`)
+
+- **Nie ein PDF an eine Raw-Queue schicken.** Der Drucker, den der Benutzer
+  «lp-ywesee» nennt, ist ein HP LaserJet 2100; die CUPS-Queue auf dem Mac ist
+  ein «Local Raw Printer» (`socket://…`, ohne PPD). `lp` reicht das PDF
+  unverändert durch, der Drucker druckt den PDF-Quelltext als Text – im
+  November 2026 kamen so aus einem Blatt mit eingebetteter Schrift (1,2 MB)
+  Dutzende Seiten Zeichensalat, die erst am Gerät abzubrechen waren.
+  `lpoptions -p <queue>` zeigt `printer-make-and-model='Local Raw Printer'`.
+  Stattdessen `pcldruck`: rendert nur Seite 1 (`pdftoppm -mono -r 300`) und
+  schickt PCL 5 mit genau einem Seitenvorschub. Ghostscript ist hier nicht
+  installiert; der AirPrint-Druckserver im Netz war nur über IPv6 sichtbar und
+  nicht erreichbar.
+- **Masse der Ordnertaschen** (vom Benutzer gemessen): graue Ordner 50 ×
+  145 mm, der orange schmale 25 × 145 mm. Erst geschätzte 56 × 190 mm waren zu
+  gross.
+- **Breiten messen in Geviert-Einheiten.** rusttype 0.8 skaliert
+  `Scale::uniform(pt)` auf die Pixelhöhe (Ober- bis Unterlänge), nicht aufs
+  Geviert; damit gemessen waren die Zeilen zu schmal und sassen rechts von der
+  Mitte. `breite_mm()` rechnet darum mit `(ascent − descent) / units_per_em`
+  um.
+- printpdf 0.3: `CurTransMat::Rotate(90.0)` dreht gegen den Uhrzeigersinn
+  (Text von unten nach oben), obwohl der Kommentar dort «clockwise» sagt.
 
 ### Übersicht der Scans (`src/scanliste.rs`)
 

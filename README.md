@@ -218,6 +218,26 @@ Der Token ist eine Google-OAuth-Datei («authorized user», Bereich
 frisches Zugriffstoken. `--text datei.txt` liest den Text aus einer Datei,
 `--trocken` prüft Zugang und Nachricht, ohne zu senden. Empfänger und
 Token-Pfad gehören nicht ins Repository.
+
+### Ordnerrücken drucken
+
+`src/etiketten.rs` setzt Rückenschilder «Vorträge Dr. med. Ursula Davatz
+JJJJ – JJJJ» nebeneinander auf ein A4-Blatt im Querformat, mit gestrichelter
+Schnittlinie. Vorgabe 50 × 145 mm (Einstecktasche der grauen Ordner);
+`@MM` hinter den Jahren setzt die Breite eines einzelnen Schilds. Schilder
+unter 40 mm Breite bekommen den Text längs, von unten nach oben lesbar.
+
+```bash
+cargo run --release --bin etiketten -- --jahre 1983-1988 --jahre 1987-1994 \
+    --jahre 1991-1999 --jahre 2013-2018@25 --out etiketten.pdf
+cargo run --release --bin pcldruck -- etiketten.pdf --an DRUCKER:9100
+```
+
+`src/pcldruck.rs` druckt die **erste Seite** eines PDFs als PCL-Rasterbild
+(300 dpi, schwarzweiss, `pdftoppm -mono`) auf einen Drucker, der kein PDF
+versteht – etwa einen HP LaserJet 2100 am Port 9100. Querformat wird gedreht,
+der unbedruckbare linke Rand (1/4 Zoll) links abgeschnitten, damit das Bild
+an derselben Stelle steht wie im PDF. `--datei seite.pcl` schreibt nur.
 Die Jahre im Dateinamen sind das erste und das letzte Vortragsjahr; ändern
 sie sich, ersetzt die neue Datei die alte.
 
@@ -588,6 +608,8 @@ sie sich, ersetzt die neue Datei die alte.
 | `src/eintragen.rs` | Neuen Scan nachtragen: Zusammenfassung, Bestandszeile nach Datum, Zählzeile (`--zaehlen`) |
 | `src/dateiname.rs` | Zerlegt `Titel_TT.MM.JJJJ[_N].pdf` (gemeinsam für `scanliste` und `eintragen`) |
 | `src/mail.rs` | Mail mit Anhängen über die Gmail-API (OAuth-Refresh, MIME, `--trocken`) |
+| `src/etiketten.rs` | Ordnerrücken «Vorträge … JJJJ – JJJJ» auf ein A4-Blatt, Breite je Schild |
+| `src/pcldruck.rs` | Erste PDF-Seite als PCL-Raster an einen Drucker ohne PDF (Port 9100) |
 | `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und GitHub-Link (`Vorträge_Dr.med._Ursula_Davatz_von_…_bis_….pdf`) |
 | `src/zusammenfassungen.rs` | je Scan drei bis fünf Sätze Zusammenfassung |
 | `src/pdflinks.rs` | Link-Overlay, gemeinsam für beide Übersichten |

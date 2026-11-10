@@ -23,11 +23,21 @@ path = "src/eintragen.rs"
 name = "mail"
 path = "src/mail.rs"
 
+[[bin]]
+name = "etiketten"
+path = "src/etiketten.rs"
+
+[[bin]]
+name = "pcldruck"
+path = "src/pcldruck.rs"
+
 [dependencies]
 anyhow = "1"
 genpdf = "0.2"
 image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
 lopdf = "0.34"
+printpdf = "0.3"
+rusttype = "0.8"
 regex = "1"
 base64 = "0.22"
 serde_json = "1"
