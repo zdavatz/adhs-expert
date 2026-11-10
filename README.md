@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-351 PDFs, 1353 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+352 PDFs, 1354 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -429,6 +429,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Strukturerkennung_innerhalb_der_Familie_Opferrolle_25.06.2001.pdf` | 2 (Skript von U. Davatz, Familientherapiekurs I/2001) |
 | `Empowerment_von_Schmerzpatienten_27.08.2001.pdf` | 3 (Vortrag von U. Davatz, Familienkurs I) |
 | `Was_können_Eltern_zur_Suchtprävention_beitragen_18.10.2001.pdf` | 3 (Elternforum Schöftland) |
+| `Literaturliste_Suchtprävention_18.10.2001.pdf` | 1 (fremdes Material: Literaturliste der Mediothek von Sucht-Info Aargau, Beilage zum Elternforum Schöftland; Datum vom Vortrag übernommen; Strasse, Telefon, Fax und Mail übermalt) |
 | `Depressionen,_der_medizinische_Aspekt_22.10.2001.pdf` | 4 (Weiterbildung für Pharmaassistentinnen, Gruppe Aargau, Eli Lilly AG; Blatt 4 einzeln nachgescannt) |
 | `POS_und_Pubertät_24.10.2001.pdf` | 3 (Elpos Nordwestschweiz; Überlauf von Blatt 3 unten auf Seite 2 übermalt, Blatt 3 einzeln nachgescannt) |
 | `Frauenrollen,_Frauen_sollen,_Frauen_wollen_25.10.2001.pdf` | 4 (Frauenverein Egliswil, Frauenzmorge; Blatt 4 einzeln nachgescannt) |

@@ -1022,6 +1022,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Teilnehmerliste der dritten internationalen Konferenz «Visions of Higher Education – Trans-National Dialogues: Praxis and Prospects», die das Gottlieb Duttweiler Institut vom 3. bis 7. August 1987 in Dalian, China, durchführte. Aufgeführt sind Hochschullehrer und Bildungsfachleute aus den USA, Europa und China mit Funktion und Institution, darunter U. Davatz als leitende Ärztin des Sozialpsychiatrischen Dienstes der Klinik Königsfelden. An dieser Tagung hielt sie ihren Beitrag über globales und territoriales Denken.",
     },
     Zusammenfassung {
+        datei: "Literaturliste_Suchtprävention_18.10.2001.pdf",
+        titel: "",
+        text: "Kein Text von Ursula Davatz, sondern eine Literaturliste der Mediothek von Sucht-Info Aargau, wohl als Beilage zum Vortrag am Elternforum Schöftland abgegeben. Sie führt acht Bücher und Broschüren zur Suchtprävention aus den Jahren 1996 bis 2001 mit Signatur, Verfasser und Jahr auf, darunter Ratgeber für Eltern zu Drogen, Süchten und kindlichem Konsum.",
+    },
+    Zusammenfassung {
         datei: "Literaturliste_für_Kurs_in_Familientheorie_25.02.1991.pdf",
         titel: "",
         text: "Literaturverzeichnis zum Kurs in Familientheorie vom 25.2.1991 mit Büchern und Aufsätzen zu Familientherapie, Familiensystemen und biologischen Grundlagen des Sozialverhaltens. Genannt werden unter anderem Murray Bowen («Family Therapy in Clinical Practice»), Genogramm- und Stieffamilien-Literatur, Walter Toman zu Familienkonstellationen sowie Elisabeth Badinter zu Mutterliebe und Paarbeziehung. Daneben stehen Werke zur Soziobiologie (E. O. Wilson), zur Erkenntnistheorie (Maturana und Varela) und zur Verhaltensforschung an Primaten (Kummer, Gubernick und Klopfer). Eine eigene Arbeit von Ursula Davatz von 1978 über Fusion und Differenzierung bei Tier und Mensch ist ebenfalls aufgeführt.",
