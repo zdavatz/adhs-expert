@@ -223,12 +223,13 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-309 PDFs, 1189 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+310 PDFs, 1196 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Krisensituationen_in_der_Familie_03.08.1980.pdf` | 3 (Vortrag an der Vermittlerinnentagung des Haus- und Krankenpflegevereins; Stichworte) |
 | `Krisensituationen_in_der_Familie_03.08.1980_2.pdf` | 3 (zweite Fassung, anders gesetzt, Kopf von Hand, mit Abschnitt «Selbst verursachte Krisen») |
+| `Familientherapie_Familiensystemtheorie_13.11.1980.pdf` | 7 (Vortrag an der 57. Supervisionssitzung im SPD Königsfelden, nach Tonband aufgezeichnet von Benedikt Stalder; erster Teil; auf Wunsch nicht anonymisiert) |
 | `Drogengefährdung_der_Jugendlichen_Fragen_der_CVP-Fraktion_17.12.1980.pdf` | 5 (Sozialpsychiatrischer Dienst Königsfelden, Antworten auf 13 Fragen zur Veranstaltung der CVP-Fraktion Baden/Obersiggenthal; Handnotiz auf Seite 5) |
 | `Das_Drogenproblem_aus_der_Sicht_der_Familiensystemtheorie_27.04.1981.pdf` | 4 (Vortrag für den Haus- und Krankenpflegeverein Hausen; blasse Schreibmaschinenschrift, Bild abgedunkelt) |
 | `Fortbildung_für_Heimleiter_und_Erzieher_22.10.1981.pdf` | 3 (Sozialpsychiatrischer Dienst Königsfelden, Fortbildung über verhaltensgestörte Jugendliche; Datum am Schluss) |
