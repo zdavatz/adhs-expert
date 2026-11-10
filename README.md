@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-300 PDFs, 1150 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+301 PDFs, 1158 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -527,6 +527,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Epigenetisches_Potential_in_der_Psychiatrie_09.11.2026_2.pdf` | 13 (andere, gestraffte Fassung mit dem Untertitel «Herleitung psychischer Krankheiten aus ADS und ADHS», Textähnlichkeit etwa 0,6; ohne Datum, Scantag; in sechs Durchgängen eingezogen; Praxisadresse, Telefon und Mail entfernt) |
 | `Familientherapie_bei_Schizophrenie-Kranken_09.11.2026.pdf` | 3 (Skript von U. Davatz ohne Datum, Scantag; nennt «30-jährige Erfahrung» seit 1980, also um 2010) |
 | `Früherfassung_von_Psychosen-Schizophrenie_in_der_09.11.2026.pdf` | 6 (Skript von U. Davatz für Hausärzte, ohne Datum, Scantag; «… in der hausärztlichen Praxis») |
+| `Emotionelle_Hintergründe_zum_Lernprozess_10.11.2026.pdf` | 8 (ausgeschriebener Text mit Fussnoten, ohne Datum, darum Scantag; vermutlich um 1986, vgl. die Stichworte vom 5.3.1986; Strasse in einer Quellenangabe entfernt) |
 
 ### Wenn etwas fehlt oder doppelt ist
 
