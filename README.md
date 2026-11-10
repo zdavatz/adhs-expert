@@ -223,12 +223,13 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-308 PDFs, 1184 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+309 PDFs, 1189 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Krisensituationen_in_der_Familie_03.08.1980.pdf` | 3 (Vortrag an der Vermittlerinnentagung des Haus- und Krankenpflegevereins; Stichworte) |
 | `Krisensituationen_in_der_Familie_03.08.1980_2.pdf` | 3 (zweite Fassung, anders gesetzt, Kopf von Hand, mit Abschnitt «Selbst verursachte Krisen») |
+| `Drogengefährdung_der_Jugendlichen_Fragen_der_CVP-Fraktion_17.12.1980.pdf` | 5 (Sozialpsychiatrischer Dienst Königsfelden, Antworten auf 13 Fragen zur Veranstaltung der CVP-Fraktion Baden/Obersiggenthal; Handnotiz auf Seite 5) |
 | `Das_Drogenproblem_aus_der_Sicht_der_Familiensystemtheorie_27.04.1981.pdf` | 4 (Vortrag für den Haus- und Krankenpflegeverein Hausen; blasse Schreibmaschinenschrift, Bild abgedunkelt) |
 | `Fortbildung_für_Heimleiter_und_Erzieher_22.10.1981.pdf` | 3 (Sozialpsychiatrischer Dienst Königsfelden, Fortbildung über verhaltensgestörte Jugendliche; Datum am Schluss) |
 | `Einführung_in_das_Denken_von_Jean_Piaget_11.1981.pdf` | 6 (Skript der theoretischen Fachausbildung in Psychiatrie und Psychotherapie, Psychiatrischer Dienst für Erwachsene Kanton Aargau; Monat und Jahr am Schluss; Überlauf eines Doppeleinzugs auf Seite 2 übermalt) |
