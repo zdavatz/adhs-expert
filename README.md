@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-317 PDFs, 1216 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+318 PDFs, 1219 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -371,6 +371,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Seminar_Einflussnahme_des_Schulsystems_auf_neue_Formen_der_10.11.1995.pdf` | 2 (Seminarausschreibung und Fragen an Lehrer; nur das Jahr, Tag und Monat vom Scan) |
 | `Braucht_eine_neue_Generation_eine_neue_Pädagogik_10.11.1995.pdf` | 3 (Tagung ELPOS, im Kopf «1995 (?)»; Untertitel «Einflussnahme des Schulsystems auf psychosoziale Erkrankungen der Jugend»; nur das Jahr, Tag und Monat vom Scan) |
 | `Lehrerfortbildung_Der_glückliche_Lehrer_10.11.1995.pdf` | 4 (Übersicht zur Lehrerfortbildung im Ausland und Stichworte zum Tagungsbeitrag; im Kopf «1995 (?)», Tag und Monat vom Scan) |
+| `Emotionelle_Hintergründe_zum_Lernprozess_10.11.1995.pdf` | 3 (Fassung für Lehrer, Text datiert 1995 am Schluss, Tag und Monat vom Scan) |
 | `Migrationsprobleme_in_der_Psychiatrie_15.05.1996.pdf` | 4 (Vortrag von U. Davatz, Supervision Psychiatrischer Stützpunkt Biel; Seiten in vier Durchgängen eingezogen) |
 | `Elternberatung_von_Schizophrenen_25.11.1996.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I; Datum am Textende) |
 | `Behandlungsansätze_bei_Erwachsenen_mit_ADS_15.11.1997.pdf` | 9 (Vortrag von Dr. med. Johanna Krause für die Elterninitiative zur Förderung hyperaktiver Kinder, Forchheim; Postfach-Adressen und Faxnummer entfernt; Seite 7 einzeln nachgescannt, weil der Einzug sie mit Seite 6 zog) |
