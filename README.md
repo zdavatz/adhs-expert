@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-345 PDFs, 1333 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+346 PDFs, 1335 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -428,6 +428,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Chronische_Krankheit_in_der_Familie,_Gewalt_und_Alkohol_in_18.12.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000; «… in der Familie»; Datum am Textende) |
 | `Strukturerkennung_innerhalb_der_Familie_Opferrolle_25.06.2001.pdf` | 2 (Skript von U. Davatz, Familientherapiekurs I/2001) |
 | `Empowerment_von_Schmerzpatienten_27.08.2001.pdf` | 3 (Vortrag von U. Davatz, Familienkurs I) |
+| `Umgang_mit_aggressiven_Patienten_02.11.2001.pdf` | 2 (Seminar für Patientenadministration, KSB; im Original «Umfang mit aggressiven Patienten») |
 | `Pubertät,_loslassen_heisst_nicht_fallenlassen,_und_wer_15.11.2001.pdf` | 4 (Elternbildung Reinach; eine kleine Handkorrektur auf Seite 1) |
 | `Schizophrenie_die_Familiendynamik_der_inneren_Scheidung_26.11.2001.pdf` | 3 (Skript von U. Davatz, Familienkurs I/2001) |
 | `Was_ist_uns_die_Pflege_des_kranken_Menschen_noch_wert_27.11.2001.pdf` | 2 (einleitende Gedanken zum Podiumsgespräch der SGGP; endet mit der Frage nach Lösungen) |
