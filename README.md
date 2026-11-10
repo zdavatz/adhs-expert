@@ -223,10 +223,11 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-284 PDFs, 1119 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+285 PDFs, 1121 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
+| `Gassenarbeit_Stubenarbeit_24.10.1985.pdf` | 2 (Vortrag in Gebenstorf; Stichworte, Seite 2 mit Gegenüberstellung Stube/Gasse) |
 | `Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985.pdf` | 2 (Stichworte für Pflegepersonal, Seite 2 nur der Schluss und «Fallvorstellung:») |
 | `Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985_2.pdf` | 19 (Abschrift des Vortrags zu den Stichworten, SBK, für Gemeindeschwestern, mit Fragen aus dem Publikum; Überläufe aus Doppeleinzügen auf fünf Seiten übermalt) |
 | `Was_sind_die_Besonderheiten_im_Alter_Was_sind_unsere_07.11.1985.pdf` | 1 (Weiterbildung für Sportleiterinnen der Pro Senectute; Datum von Hand) |
