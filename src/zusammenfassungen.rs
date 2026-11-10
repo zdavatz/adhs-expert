@@ -862,6 +862,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Zweites Exemplar des englischen Beitrags von U. Davatz für die Weiterbildungstagung in Dalian, China (1987), mit anders gesetztem Kopf, handschriftlichem Datum und einer Randnotiz. Sie stellt dem territorialen Denken, das wie das Revierverhalten der Tiere das eigene fachliche, religiöse oder kulturelle Denkrevier verteidigt, das globale Denken gegenüber, das sich laufend aus dem eigenen Revier löst und die verschiedenen Denkmodelle verbindet. Gefördert werde es durch multidisziplinäre Teams mit gemeinsamen Aufgaben und eine dezentrale, kooperative Bildung.",
     },
     Zusammenfassung {
+        datei: "Hypothesen_zur_Suchtkrankheit_09.08.1984.pdf",
+        titel: "",
+        text: "Sechs Thesen von U. Davatz zur Suchtkrankheit (1984). Der potentiell Suchtkranke lebe in dauernder starker Überreizung und chronischem Stress und beruhige sich mit Suchtmitteln, deren Beschaffung und Konsum über Schuldgefühle wegen Illegalität und moralischer Verurteilung wieder Stress erzeugen, sodass sich ein Teufelskreis selbst erhält. Unter dauernder Überreizung sei ein Mensch wie ein Tier lernunfähig, weil Stress körpereigene Endorphine freisetzt, die den Gedächtnisprozess löschen. Strafe erhöhe den Stress zusätzlich und sei darum aus hirnphysiologischer Sicht widersinnig; zur Suchtkrankheit gehörten Rückfälle, und nur wer sie akzeptiere, könne mit Suchtkranken umgehen.",
+    },
+    Zusammenfassung {
         datei: "Innere_Beheimatung_12.2010.pdf",
         titel: "",
         text: "Kurzer persönlicher Erfahrungsbericht eines Kursteilnehmers vom Dezember 2010 (Name pseudonymisiert). Er beschreibt, wie sich mit Motivation und wenigen gezielten Interventionen ein ganzes System zu verändern beginnt, in der Gruppe wie in seiner eigenen Auseinandersetzung mit seiner Entwurzelung und dem daraus entstandenen Leidensdruck. Das Genogramm erlebte er als hilfreiches Werkzeug, um sein Familiensystem zu verstehen und einen psychischen und körperlichen Lähmungszustand zu analysieren. So gelang es ihm, aus einem jahrelangen Teufelskreis auszubrechen und eine neue innere Beheimatung mit Raum für Zukunft und Kreativität zu finden.",

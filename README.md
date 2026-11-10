@@ -223,7 +223,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-331 PDFs, 1279 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+332 PDFs, 1280 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -243,6 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Der_Patient_in_seinem_Umfeld_07.05.1984.pdf` | 2 (Thesen für den Schweizerischen Fachverband Sozialdienst in Spitälern, Aarau; zwei Blätter mit eigenem Titel) |
 | `Drogenvortrag_06.06.1984.pdf` | 1 (Stichworte zum Aufbau einer Suchtpräventionsberatungsstelle) |
 | `Alkoholismus_Eine_Krankheit_03.08.1984.pdf` | 3 (Text, datiert 3.8.1984 am Schluss) |
+| `Hypothesen_zur_Suchtkrankheit_09.08.1984.pdf` | 1 (sechs Thesen, datiert Königsfelden, 9.8.84) |
 | `Mein_Verständnis_der_Schizophrenie_heute_15.08.1984.pdf` | 1 (Vortrag vor freiwilligen Helfern; Stichworte) |
 | `Krankheitsbild_der_Schizophrenie_28.09.1984.pdf` | 3 (Text mit Abschnitten zu Symptomen, Ätiologie, Familientherapie und Helferproblemen; datiert 28.9.84 am Schluss) |
 | `Depression_28.09.1984.pdf` | 2 (Text, gleiche Reihe wie «Krankheitsbild der Schizophrenie», datiert 28.9.84 am Schluss) |
