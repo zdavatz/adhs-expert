@@ -402,6 +402,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Zweites Exemplar des Vortrags «Depression – eine Zeiterscheinung» für den katholischen, den reformierten und den gemeinnützigen Frauenbund (mit Handkorrekturen und einer Randnotiz «Verlustreaktion»). Depression wird als Folge von Dominanzverlust in wichtigen Beziehungen, von zu hohen eigenen Zielen und von Verlusterlebnissen gedeutet. Die Leistungserwartung der Gesellschaft mache Menschen leicht zu vermeintlichen Verlierern; Antidepressiva wirkten bis zu einem gewissen Grad aufputschend. Positiv betrachtet könne Depression eine Ruhe- und Bedenkphase sein, in der man Ziele und Kampfstrategien überdenkt.",
     },
     Zusammenfassung {
+        datei: "Depressionen,_der_medizinische_Aspekt_22.10.2001.pdf",
+        titel: "",
+        text: "Weiterbildung für Pharmaassistentinnen. Davatz beschreibt die Depression aus ethologischer Sicht als Verliererreaktion: ein arretiertes Kampfverhalten nach Niederlagen in Rangkämpfen, mit körperlicher Erschöpfung, Rückzug und Selbstaggression. Chronische Verlierersituationen in Beruf, Partnerschaft oder Familie und Verluste können sie auslösen, Frauen sind durch ihre Sozialisierung zur Anpassung häufiger betroffen. Im Gehirn spielt sie sich zuerst im limbischen System ab; Antidepressiva, Schlafentzug, Licht und Sport wirken stimulierend. In der Psychotherapie soll der Patient lernen, sich besser durchzusetzen oder unerreichbare Ziele anzupassen, und der Therapeut sich von ihm helfen lassen.",
+    },
+    Zusammenfassung {
         datei: "Depressionen_05.05.1988.pdf",
         titel: "",
         text: "Stichworte von U. Davatz zu einem Vortrag vor einem Haus- und Krankenpflegeverein (1988). Depression beschreibt sie als gefühlsmässiges Wellental, verursacht durch lang dauernde Überforderung, Überanpassung, dauerndes Verlieren im Dominanzkampf einer Partnerschaft oder Unterordnung. Der depressive Mensch soll herausfinden, wo er sich überfordert, sich besser abgrenzen, weniger Verantwortung für andere tragen und sich in Auseinandersetzungen behaupten. Angehörige sollen weder oberflächlich aufmuntern noch ihm Funktionen abnehmen, sondern ihn als Menschen mit eigener Lebensgeschichte sehen, die Beziehung halten und sich selbst abgrenzen.",

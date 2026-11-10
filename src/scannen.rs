@@ -1250,14 +1250,12 @@ fn links_finden(zeilen: &[Zeile], w: f64, hh: f64) -> Vec<(String, [f32; 4])> {
 }
 
 /// Setzt die gescannten JPEG-Seiten zu einem PDF zusammen.
-/// Fusszeile für Vorlagen ohne eigenen Hinweis auf ganglion.ch (Kursarbeiten,
-/// Skripte ohne Briefkopf): klein, grau, klickbar.
+/// Fusszeile auf jeder Seite, auch bei Vorlagen mit Hinweis auf ganglion.ch
+/// (Wunsch des Benutzers, November 2026): klein, grau, klickbar.
 const WEBSITE: &str = "https://adhs.expert";
 
 /// Verlesene Adresse von ganglion.ch richtigstellen. Tesseract las unter der
-/// Unterstreichung schon «www.gandglion.ch» – dann fehlten der Link und die
-/// Erkennung durch `hat_ganglion()`, und das PDF bekam fälschlich die
-/// adhs.expert-Fusszeile.
+/// Unterstreichung schon «www.gandglion.ch» – dann fehlte der Link.
 fn ganglion_korrigieren(wort: &str) -> String {
     use std::sync::LazyLock;
     static G: LazyLock<regex::Regex> = LazyLock::new(|| {
@@ -1267,15 +1265,6 @@ fn ganglion_korrigieren(wort: &str) -> String {
         Some(c) => format!("{}www.ganglion.ch{}", &c[1], &c[2]),
         None => wort.to_string(),
     }
-}
-
-/// Zeigt eine Seite des Stapels schon auf ganglion.ch? Tesseract liest das Logo
-/// auch als «qanqlion» oder «gangliön», darum grosszügig.
-fn hat_ganglion(texte: &[Vec<Zeile>]) -> bool {
-    use std::sync::LazyLock;
-    static G: LazyLock<regex::Regex> =
-        LazyLock::new(|| regex::Regex::new(r"(?i)[gq]an[gq]li[oö]n").unwrap());
-    texte.iter().flatten().any(|z| G.is_match(&z.text))
 }
 
 /// Inhalt und Klickfläche der Fusszeile, unten mittig auf einer Seite der Breite `w`.
@@ -1396,7 +1385,6 @@ fn pdf_bauen(
         "Encoding" => "WinAnsiEncoding",
     });
     let mut kids = Vec::new();
-    let mit_fuss = !hat_ganglion(texte);
 
     for (n, pfad) in seiten.iter().enumerate() {
         let daten = std::fs::read(pfad).with_context(|| format!("{}", pfad.display()))?;
@@ -1427,7 +1415,7 @@ fn pdf_bauen(
         let zeilen = texte.get(n).map(Vec::as_slice).unwrap_or(&[]);
         let mut inhalt = format!("q {w:.2} 0 0 {hh:.2} 0 0 cm /Im0 Do Q\n").into_bytes();
         inhalt.extend(textebene(zeilen, w as f64, hh as f64));
-        let fuss = mit_fuss.then(|| fusszeile(w as f64));
+        let fuss = Some(fusszeile(w as f64));
         if let Some((text, _)) = &fuss {
             inhalt.extend(text);
         }

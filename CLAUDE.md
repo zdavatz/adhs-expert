@@ -151,9 +151,8 @@ Was dabei Zeit gekostet hat:
   `tesseract <bild> - -l deu` mit `pdftotext` der fertigen Seite vergleicht.
   Tesseract-Eigenheiten: «www,» statt «www.» (wird beim Verlinken
   korrigiert), «l» statt «I», Logos als Buchstabensalat («Ga ngl ION»).
-  Unter der Unterstreichung las es «www.gandglion.ch»: kein Link, und
-  `hat_ganglion()` sah die Adresse nicht – das PDF bekam fälschlich die
-  adhs.expert-Fusszeile. `ganglion_korrigieren()` stellt solche Wörter vor
+  Unter der Unterstreichung las es «www.gandglion.ch»: kein Link.
+  `ganglion_korrigieren()` stellt solche Wörter vor
   dem Satz richtig.
 - **Tesseract liest das doppelt vergrösserte Bild.** Bei 150 dpi übersah es
   unterstrichenen Text samt der Zeile («www.ganglion.ch» unter der
@@ -312,9 +311,10 @@ Was dabei Zeit gekostet hat:
   Kopf («-2-»), nicht in der Fusszeile – `fusszahl()` sieht sie nicht. Vor dem
   Zusammensetzen die Köpfe aller Blätter als Ausschnitt ansehen. Satzübergänge
   allein täuschen: Einmal passte Seite 3 scheinbar nahtlos an Seite 6.
-- **Fusszeile «https://adhs.expert»:** Wunsch des Benutzers für alle Vorlagen
-  ohne eigenen Hinweis auf ganglion.ch. `hat_ganglion()` prüft den erkannten
-  Text grosszügig (`[gq]an[gq]li[oö]n`), `fusszeile()` setzt den Text (7 pt,
+- **Fusszeile «https://adhs.expert»:** Wunsch des Benutzers für jede Seite
+  jedes Scans, auch mit eigenem Hinweis auf ganglion.ch (bis November 2026
+  bekamen nur Vorlagen ohne ganglion.ch sie; damals wurden alle älteren Scans
+  mit `--fuss` nachgerüstet). `fusszeile()` setzt den Text (7 pt,
   grau) samt Link-Annotation. `--fuss` hängt beides an bestehende PDFs an und
   überspringt Seiten, die den Link schon tragen. Falle: `Tz`, `Tc`, `Tw`
   gelten über `BT/ET` hinaus – ohne `100 Tz` erbt die Fusszeile die Stauchung

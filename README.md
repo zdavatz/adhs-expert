@@ -174,9 +174,9 @@ Schief eingezogene Seiten (ab 0,2°, gemessen mit `magick -deskew 80%`)
 richtet `scannen` vor der Texterkennung selbst gerade; Geraderichten und
 Texterkennung laufen je Seite parallel.
 
-**Hinweis auf adhs.expert:** Vorlagen, die selbst nicht auf ganglion.ch
-verweisen (Kursarbeiten, Skripte ohne Briefkopf), bekommen auf jeder Seite
-unten eine kleine graue Fusszeile «https://adhs.expert», klickbar. Bestehende
+**Hinweis auf adhs.expert:** Jede Seite bekommt unten eine kleine graue
+Fusszeile «https://adhs.expert», klickbar – auch Vorlagen, die selbst auf
+ganglion.ch verweisen. Bestehende
 PDFs rüstet `--fuss PDF…` nach, ohne Bild oder Textebene anzutasten.
 
 **Warum SANE und nicht Epson Scan 2:** Dessen Argument `-SCAN` ist nicht
@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-349 PDFs, 1346 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+350 PDFs, 1350 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -428,6 +428,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Chronische_Krankheit_in_der_Familie,_Gewalt_und_Alkohol_in_18.12.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000; «… in der Familie»; Datum am Textende) |
 | `Strukturerkennung_innerhalb_der_Familie_Opferrolle_25.06.2001.pdf` | 2 (Skript von U. Davatz, Familientherapiekurs I/2001) |
 | `Empowerment_von_Schmerzpatienten_27.08.2001.pdf` | 3 (Vortrag von U. Davatz, Familienkurs I) |
+| `Depressionen,_der_medizinische_Aspekt_22.10.2001.pdf` | 4 (Weiterbildung für Pharmaassistentinnen, Gruppe Aargau, Eli Lilly AG; Blatt 4 einzeln nachgescannt) |
 | `POS_und_Pubertät_24.10.2001.pdf` | 3 (Elpos Nordwestschweiz; Überlauf von Blatt 3 unten auf Seite 2 übermalt, Blatt 3 einzeln nachgescannt) |
 | `Frauenrollen,_Frauen_sollen,_Frauen_wollen_25.10.2001.pdf` | 4 (Frauenverein Egliswil, Frauenzmorge; Blatt 4 einzeln nachgescannt) |
 | `Religion_oder_die_Zugehörigkeit_zu_einem_menschlichen_System_30.10.2001.pdf` | 4 (Fortbildung Psychiatriestützpunkt Biel; Überlauf von Seite 3 auf Seite 2 übermalt) |
