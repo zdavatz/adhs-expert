@@ -223,11 +223,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-283 PDFs, 1100 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+284 PDFs, 1119 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985.pdf` | 2 (Stichworte für Pflegepersonal, Seite 2 nur der Schluss und «Fallvorstellung:») |
+| `Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985_2.pdf` | 19 (Abschrift des Vortrags zu den Stichworten, SBK, für Gemeindeschwestern, mit Fragen aus dem Publikum; Überläufe aus Doppeleinzügen auf fünf Seiten übermalt) |
 | `Was_sind_die_Besonderheiten_im_Alter_Was_sind_unsere_07.11.1985.pdf` | 1 (Weiterbildung für Sportleiterinnen der Pro Senectute; Datum von Hand) |
 | `Interview_am_Radio_DRS_anlässlich_der_Pro_Mente_Sana-Tagung_10.11.1985.pdf` | 5 (Abschrift einer Sendung von Radio DRS über die Jahrestagung der Stiftung Pro Mente Sana 1985; nur das Jahr, Tag und Monat vom Scan; Überlauf eines Doppeleinzugs auf Seite 1 übermalt) |
 | `Neue_psychosoziale_Erkrankungen_bei_Kindern_und_Jugendlichen_10.11.1985.pdf` | 27 (Abschrift eines Vortrags in Heidelberg 1985 mit Fragen aus dem Publikum; nur das Jahr, Tag und Monat vom Scan; Seitenzahlen oben) |

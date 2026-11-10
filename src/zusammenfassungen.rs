@@ -1002,6 +1002,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Stichworte von U. Davatz für Pflegende in der Gerontopsychiatrie (1985). Wichtigster Teil der Psychohygiene sei die persönliche Abgrenzung. Die Gerontopsychiatrie konfrontiere mit Einsamkeit, Todesangst, Krankheit, Kindlichkeit, Sturheit, Verwirrung und Paranoia sowie mit Erbstreit und Familienturbulenzen beim Generationenwechsel. Sie rät, Beziehung anzubieten, das Lebensende als Vollendung zu sehen, sich auf den ganzen Menschen und seine Lebensgeschichte zu beziehen, spielerisch statt überbetreuend und der Sturheit mit Humor zu begegnen, Verwirrtes wie ein Märchen zu verstehen und sich aus Erb- und Familienkonflikten herauszuhalten.",
     },
     Zusammenfassung {
+        datei: "Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985_2.pdf",
+        titel: "Psychohygiene des Pflegepersonals im Umgang mit gerontopsychiatrischen Patienten (Abschrift)",
+        text: "Abschrift des Vortrags von U. Davatz vor Gemeindeschwestern an einer Fortbildung des Pflegeberufsverbands SBK (1985), zu dem die Stichworte gleichen Titels gehören. Psychohygiene heisse vor allem, sich abzugrenzen, gerade für Pflegende, die ihren Beruf oft aus einer Helferrolle heraus wählen. Sie zeigt, wie man mit Einsamkeit, Todesnähe, Sturheit und Wahnsystemen alter Patienten umgehen kann: unterstützen statt überbetreuen, Starrheit mit Humor begegnen, Wahngeschichten wie einem Märchen zuhören, ohne sich in Handlungen einspannen zu lassen, und sich aus Familienkonflikten heraushalten. Die Lebensgeschichten alter Menschen seien so reich, dass sie einen Kinobesuch ersetzen. Am Schluss bespricht sie Fragen aus dem Publikum zu konkreten Pflegesituationen.",
+    },
+    Zusammenfassung {
         datei: "Psychoseerleben_in_der_Literatur_29.10.2026.pdf",
         titel: "",
         text: "Kurze Literaturliste nach Asmus Finzen (1993) zum Psychoseerleben in der Literatur. Genannt werden autobiografische Berichte Betroffener und Angehöriger, etwa von Dorothea Buck, Sylvia Plath und Susan Sheehan, sowie Texte von Büchner, Melville, Schnitzler, Handke und Bernhard, die psychotisches Erleben spiegeln. Aus dem französischen Sprachraum wird Philippe Djian angeführt. Christian Müller habe in einer Sammlung literarische Dokumente schizophrener Psychosen und anderer psychischer Störungen zugänglich gemacht.",
