@@ -467,6 +467,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Zweite Fassung des Skripts von U. Davatz für den Familientherapie-Kurs I 1987, enger gesetzt und anders umbrochen; der Text ist derselbe. Die Differenzierung von der Ursprungsfamilie wird als lebenslanger psychosozialer Lernprozess beschrieben, der in Zweierbeziehungen abläuft und nach Bowen von der Fusionsbeziehung oder vom «cut-off» ausgeht. Kern sind eine eigene, möglichst emotionsfreie Position und die Fähigkeit zuzuhören; heisse und tabuisierte Themen soll man erst nach dem Aufbau eines persönlichen Beziehungsnetzes und ohne Zwang angehen.",
     },
     Zusammenfassung {
+        datei: "Drogen_Suchtverhalten_15.03.1985.pdf",
+        titel: "Drogen – Suchtverhalten",
+        text: "Stichworte von U. Davatz zu einem Vortrag an einer Lehramtsschule (1985). Als Ursachen des Suchtverhaltens nennt sie Vorbilder und Stress in der Familie, gesellschaftlichen Druck und das Angebot der Droge; kennzeichnend seien Flucht und Ausweichen, Überanpassung und Lügen sowie Konfliktunfähigkeit, verstärkt durch Angst und Stress. Prävention heisse, im kritischen Augenblick in Familie, Schule, Arbeitsplatz und Nachbarschaft richtig zu handeln; Sucht sei ein Suchen nach Befriedigung. Sie schlägt Ortskonferenzen und Lehrergruppen vor, in denen Lehrer zwischen den Rollen als Berater und als Beurteiler unterscheiden lernen.",
+    },
+    Zusammenfassung {
         datei: "Drogenprobleme_in_der_Familie_wie_gehe_ich_damit_um_17.03.1986.pdf",
         titel: "Drogenprobleme in der Familie – wie gehe ich damit um?",
         text: "Stichworte von U. Davatz zu einem Vortrag für eine Elternvereinigung drogenabhängiger Jugendlicher (1986). Soziologisch sieht sie Drogenkonsum als Zeiterscheinung, Mode, Protest und Folge des Zeitalters der «chemischen Wunder», individuell als untauglichen Problemlösungsversuch, Flucht, Trotz, Angstbekämpfung und Grenztesten. In der Familie tritt er als Symptom auf, wo Konflikte unterdrückt oder gehäuft werden, Grenzen fehlen oder Selbstmedikation vorgelebt wird. Eltern rät sie, die eigene Angst ohne Medikamente zu senken, ruhig und auch humorvoll das Gespräch zu suchen, das Drogenkind nicht zum einzigen Lebensinhalt zu machen, die Ehe und die Kontakte zur Familie zu pflegen, nichts zu tabuisieren und sich fachlichen Rat zu holen.",
@@ -590,6 +595,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         datei: "Familien_mit_POS-Kindern_24.08.2006.pdf",
         titel: "",
         text: "Stichwortartiges Skript für den Abschlusskurs Neuromotorik über Familien mit POS-Kindern. Früher seien Eltern zu Unrecht für die Symptomatik verantwortlich gemacht worden; heute bleibe der Umgang schwierig. Besprochen werden Lern- und Aufmerksamkeitsstörung, Hypersensibilität (die Kinder nehmen Spannungen auf und agieren sie aus, werden zu Störenfrieden und Sündenböcken), der Ehekonflikt, in den das POS-Kind leicht trianguliert wird, schlechte Impulskontrolle und Zeitverständnis. Zum Erziehungsstil: emotional geladen, bestrafend, drohend, zu rigide oder zu nachgiebig sei jeweils ungünstig; förderlich sei nur ein klarer, ruhiger, flexibler Stil mit erlernbaren Regeln.",
+    },
+    Zusammenfassung {
+        datei: "Familiendynamik_Theorie_und_Praxis_15.03.1985.pdf",
+        titel: "Familiendynamik – Theorie und Praxis",
+        text: "Kurzes Stichwortblatt von U. Davatz für eine Weiterbildung von Haushaltanleiterinnen (1985). Es nennt nur drei Punkte: Familiendynamik zu kennen, damit man sich nicht ungeschickt in Familien einmischt, eine Einführung in die Familientheorie und die Frage, wie sich die Theorie in der Praxis sinnvoll anwenden lässt. Der Vortrag selbst wurde offenbar frei gehalten.",
     },
     Zusammenfassung {
         datei: "Familiendynamik_mit_einem_POS-ADS-Kind_06.08.2003.pdf",
@@ -717,6 +727,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Skript von U. Davatz für den Familientherapie-Kurs I vom 22.7.2013, ausgehend davon, dass die meisten Morde in Beziehungssystemen wie der Familie geschehen. Sie unterscheidet Aggression, eine spontane Stressreaktion auf eine Bedrohung von Partner, Territorium, Existenz oder Würde, von Gewalt, bei der jemand seine Machtstellung berechnend missbraucht, um Aggression auszuleben. In engen Familienbeziehungen kennt man die Schwächen des anderen und nutzt sie im Machtkampf aus, körperlich oder, häufiger bei Frauen, verbal durch Beschämung; Gewalt von Eltern gegen Kinder kann sich später wiederholen, Partnergewalt wurzelt oft in uneingestandener Abhängigkeit und legitimiert sich als «richtende» Gewalt, und Teenager oder Geschwister werden gewalttätig, wenn Eltern sie einengen oder ungerecht behandeln. Gewalt soll nicht vorab moralisch verurteilt, sondern über die dahinterliegenden Verletzungen verstanden werden, bevor eine gewaltfreie Lösung gesucht wird; blosse Unterdrückung erzeugt neue Gewalt, und die natürlichen Hierarchien und Grenzen in der Familie müssen hergestellt werden.",
     },
     Zusammenfassung {
+        datei: "Gibt_es_Schulstress_Wie_steht_es_um_das_Drogenproblem_06.02.1985.pdf",
+        titel: "Gibt es Schulstress? Wie steht es um das Drogenproblem?",
+        text: "Stichworte von U. Davatz zu einem Vortrag vor einer Partei (1985). Ein System unter Angst und Krise gebe den Druck an seine Schwächsten weiter, in der Familie und Schule an das Kind, im Betrieb an den schwachen Arbeiter, in der Gesellschaft an die Randfiguren; die drogensüchtige Jugend sei ein Symptom dieser Hackordnung, die Droge eine Linderung des Drucks. Mehr Wissen über Krankheit schaffe keine Gesundheit, sondern Stress und Leistungsdruck, und aus Angst vor Veränderung werde Verantwortung auf andere abgeschoben. Ohne Veränderung des Systems gebe es keine Lösung; dafür brauche es mutige Menschen, die sich nicht nur anpassen und den Druck weitergeben.",
+    },
+    Zusammenfassung {
         datei: "Gibt_es_das_auch_Depressionen_bei_geistig_behinderten_28.10.2026.pdf",
         titel: "Gibt es das auch? Depressionen bei geistig behinderten Jugendlichen und Erwachsenen",
         text: "Vortragstext von Ursula Davatz «Gibt es das auch? Depressionen bei geistig behinderten Jugendlichen und Erwachsenen» (Thema des Insieme-Vortrags vom 10.3.2003). Depression wird als «Verliererkrankheit» verstanden; geistig Behinderte erlebten sich nicht von sich aus als Verlierer, würden es aber durch Über- oder Unterforderung ihres Umfelds. Anhand des dreiteiligen Gehirns (Reptilien-, limbisches und kognitives Hirn) wird erklärt, dass ihr emotionales Gehirn fein wahrnimmt, sie nicht intellektualisieren können und ehrlich reagieren. Aufgezählt werden Umfeldfaktoren wie unverarbeitete Akzeptanz der Behinderung, Ehrgeiz, Bevormundung, Ungeduld, gereizte Stimmung und abruptes Unterbinden des Sexualverhaltens; geraten wird zu mehr Einfühlung und Aufmerksamkeit.",
@@ -770,6 +785,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         datei: "Jugend_und_Drogen_16.01.1986.pdf",
         titel: "",
         text: "Stichworte von U. Davatz zu einem Elternabend an einer Oberstufenschule (1986). Für Jugendliche bedeutet die Droge Ausbruch aus der engen Wirklichkeit, Flucht vor Problemen, Abenteuer, Zugehörigkeit, Nervenkitzel und Macht über ahnungslose Erwachsene; für Erwachsene ist sie der Grund allen Übels, die grösste Gefahr und Anlass zu Angst und Panik. In Wirklichkeit sei sie weder Paradies noch Hölle, sondern eine Nahtstelle und ein Symptom des Konflikts zwischen den Generationen. Gefährlich werde Drogenkonsum, wenn Jugendliche ihn als Problemlösung einsetzen oder Erwachsene in der Droge die Ursache aller Probleme sehen, denn beides verhindere echte Problemlösung und Wachstum.",
+    },
+    Zusammenfassung {
+        datei: "Jugend_und_Suchtprobleme_21.03.1985.pdf",
+        titel: "",
+        text: "Stichworte von U. Davatz zu einem Vortrag beim Aargauischen Frauenbund (1985). Die Familie sei kleiner geworden, die Mutter lebe oft allein mit wenigen Kindern auf engem Raum, und der emotionale Druck führe zu einer Überfokussierung auf die Kinder. Die Gesellschaft lasse Kindern kaum Freiraum, sichere alle Risiken ab und dulde weder Fehler noch Konflikte. Die Droge werde so zum «chemischen Freiraum», zum Schutz gegen die Überfokussierung, zur Abwehr von Stress und zum Abenteuer. Zur Vorbeugung fordert sie weniger Überbetreuung und Verwaltung der Jugend, mehr Freiraum zum Lernen, weniger rigide Erziehung und weniger Angst, die an die Jugend weitergegeben wird.",
     },
     Zusammenfassung {
         datei: "Jugendliche_und_Sucht_Freiheit_oder_Sackgasse_auf_dem_Weg_02.12.2003.pdf",
