@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-341 PDFs, 1320 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+342 PDFs, 1323 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -429,6 +429,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Strukturerkennung_innerhalb_der_Familie_Opferrolle_25.06.2001.pdf` | 2 (Skript von U. Davatz, Familientherapiekurs I/2001) |
 | `Empowerment_von_Schmerzpatienten_27.08.2001.pdf` | 3 (Vortrag von U. Davatz, Familienkurs I) |
 | `Schizophrenie_die_Familiendynamik_der_inneren_Scheidung_26.11.2001.pdf` | 3 (Skript von U. Davatz, Familienkurs I/2001) |
+| `Mütter-_und_Väterberatung_Consulting_in_menschlicher_30.11.2001.pdf` | 3 (Rede zur Diplomfeier der Mütter- und Väterberatung am JSB) |
 | `Jahreszeiten_Fotografie_und_Haiku_16.12.2001.pdf` | 2 (Rede zur Vernissage der Ausstellung von Bjarne Geiges im Hans-Thoma-Museum, Bernau im Schwarzwald) |
 | `Familientherapie,_wo_kann_sie_beitragen_zur_Verhinderung_18.12.2001.pdf` | 4 (Seminar Klinik Münsterlingen) |
 | `Warum_wir_eine_Angehörigengruppe_machen_18.12.2001.pdf` | 2 (Material der Angehörigengruppe der Psychiatrischen Klinik Münsterlingen, Kürzel «WB», nicht von U. Davatz; gehört zum Seminar vom selben Tag; Folie im Querformat und Handzettel) |
