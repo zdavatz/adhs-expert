@@ -997,6 +997,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Vortrag vor der Vereinigung Schweizer Amtsvormünder (8.11.2007) mit einem Überblick über psychische Krankheiten und ihre Folgen für die Betroffenen. Gegliedert wird nach Gefühlsstörungen (Depression als «Verliererkrankheit», Angst und Panik), Verhaltensstörungen (Zwänge als angstbindendes Verhalten, Persönlichkeitsstörungen, die sich in der Pubertät festsetzen) und Denkstörungen (Schizophrenie als «Systemoverflow» nach langem emotionalem Stress). Wahnhafte Bilder hätten einen metaphorischen Wert; die Denkstörung lasse sich nicht mit Logik, sondern nur über den Abbau des emotionalen Stresses angehen.",
     },
     Zusammenfassung {
+        datei: "Psychohygiene_des_Pflegepersonals_im_Umgang_mit_26.10.1985.pdf",
+        titel: "Psychohygiene des Pflegepersonals im Umgang mit gerontopsychiatrischen Patienten",
+        text: "Stichworte von U. Davatz für Pflegende in der Gerontopsychiatrie (1985). Wichtigster Teil der Psychohygiene sei die persönliche Abgrenzung. Die Gerontopsychiatrie konfrontiere mit Einsamkeit, Todesangst, Krankheit, Kindlichkeit, Sturheit, Verwirrung und Paranoia sowie mit Erbstreit und Familienturbulenzen beim Generationenwechsel. Sie rät, Beziehung anzubieten, das Lebensende als Vollendung zu sehen, sich auf den ganzen Menschen und seine Lebensgeschichte zu beziehen, spielerisch statt überbetreuend und der Sturheit mit Humor zu begegnen, Verwirrtes wie ein Märchen zu verstehen und sich aus Erb- und Familienkonflikten herauszuhalten.",
+    },
+    Zusammenfassung {
         datei: "Psychoseerleben_in_der_Literatur_29.10.2026.pdf",
         titel: "",
         text: "Kurze Literaturliste nach Asmus Finzen (1993) zum Psychoseerleben in der Literatur. Genannt werden autobiografische Berichte Betroffener und Angehöriger, etwa von Dorothea Buck, Sylvia Plath und Susan Sheehan, sowie Texte von Büchner, Melville, Schnitzler, Handke und Bernhard, die psychotisches Erleben spiegeln. Aus dem französischen Sprachraum wird Philippe Djian angeführt. Christian Müller habe in einer Sammlung literarische Dokumente schizophrener Psychosen und anderer psychischer Störungen zugänglich gemacht.",
