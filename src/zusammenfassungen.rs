@@ -1149,7 +1149,7 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
     Zusammenfassung {
         datei: "Sozialmedizinische_Gesichtspunkte_23.05.1985.pdf",
         titel: "",
-        text: "Beitrag von U. Davatz zu einer Pressekonferenz der Aargauischen Fachstelle für Alkoholprobleme (1985). Wie überall zersplittere sich auch die Medizin ins Spezialistentum, das dort hilflos wird, wo es um den ganzen Menschen in Familie und Umwelt geht; die Sozialmedizin erfasse ihn dagegen in seinem sozialen Netz. Auch die Sozialhilfe sei in unzählige Beratungsstellen aufgesplittert, obwohl Sucht meist nur Symptom einer nicht funktionierenden sozialen Einheit sei. Sie spricht sich darum für eine Zusammenlegung von Drogen- und Alkoholberatung für Jugendliche und Erwachsene aus: Jugendliche könnten als Erwachsene bei derselben Stelle bleiben, Eltern fühlten sich besser verstanden, und viele begännen ohnehin mit Alkohol.",
+        text: "Beitrag von U. Davatz zu einer Pressekonferenz der AFGA (1985). Wie überall zersplittere sich auch die Medizin ins Spezialistentum, das dort hilflos wird, wo es um den ganzen Menschen in Familie und Umwelt geht; die Sozialmedizin erfasse ihn dagegen in seinem sozialen Netz. Auch die Sozialhilfe sei in unzählige Beratungsstellen aufgesplittert, obwohl Sucht meist nur Symptom einer nicht funktionierenden sozialen Einheit sei. Sie spricht sich darum für eine Zusammenlegung von Drogen- und Alkoholberatung für Jugendliche und Erwachsene aus: Jugendliche könnten als Erwachsene bei derselben Stelle bleiben, Eltern fühlten sich besser verstanden, und viele begännen ohnehin mit Alkohol.",
     },
     Zusammenfassung {
         datei: "Sozialpsychiatrie_11.12.1986.pdf",
