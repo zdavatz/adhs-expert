@@ -1402,6 +1402,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Kurze Gliederung von U. Davatz für einen Vortrag über Drogen vor dem Frauenbund Leuggern (1984). Sie nennt fünf Punkte: Die Grundursachen seien vielschichtig statt monokausal und lägen in Familie und Gesellschaft; die Therapie umfasse ambulanten Entzug und stationäre Entwöhnung; bei der Früherfassung gehe es darum, Symptome zu erkennen und richtig zu handeln. Dazu kommen die Fragen, wie man sich als Aussenstehender verhält und wo man sich meldet, und was eine Region tun kann. Den Vortrag selbst hielt sie frei.",
     },
     Zusammenfassung {
+        datei: "Vortrag_über_Drogenprobleme_06.06.1980.pdf",
+        titel: "",
+        text: "Vortrag von U. Davatz über Drogenprobleme (1980). Um die emotionale Debatte zu versachlichen, sieht sie das Drogenproblem als Ablösungsproblem: Während bei Säugetieren die Mutter das Junge wegstösst, versucht beim Menschen oft das Kind sich loszumachen und die Mutter hält es fest. Die Droge sei ein gewaltsamer Versuch, sich von der Einflusssphäre der Eltern zu befreien und zur eigenen Generation zu gehören; je mehr die Eltern darauf mit Kontrolle und ängstlicher Sorge reagieren, desto stärker wird der Teufelskreis. Eltern sollen die Bindung lockern, die eigene Angst beherrschen und neutralen Kontakt halten, ohne sich auf die Droge zu fixieren; bei körperlicher Abhängigkeit brauche es zusätzlich ein spezielles Programm, das ohne Mithilfe der Eltern aber scheitern kann.",
+    },
+    Zusammenfassung {
         datei: "Vorträge_und_Veröffentlichungen_09.11.1988.pdf",
         titel: "Vorträge und Veröffentlichungen U. Davatz 1988",
         text: "Verzeichnis der Vorträge und Veröffentlichungen von U. Davatz aus dem ersten Halbjahr 1988, 20 nummerierte Einträge mit Titel, Anlass und Datum. Mehrfach erscheint die Reihe «Psychiatrie im täglichen Leben» der EPK in verschiedenen Aargauer Gemeinden. Daneben stehen Vorträge zu Sucht und Suchtberatung, zur Ablösung der Jugendlichen, zu Autorität und Toleranz in der Erziehung, zur Familientherapie, zu Depressionen und zum Hospitalismus, eine Podiumsdiskussion zur Prävention sowie ein Beitrag zur Tablettensucht in der Zeitschrift «Sozialarbeit & Suchtprobleme». Die Liste zeigt die breite Vortragstätigkeit vor Laien, Pflegenden, Behörden und Fachleuten.",
