@@ -1297,6 +1297,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Abschrift des Vortrags von U. Davatz vor Gemeindeschwestern an einer Fortbildung des Pflegeberufsverbands SBK (1985), zu dem die Stichworte gleichen Titels gehören. Psychohygiene heisse vor allem, sich abzugrenzen, gerade für Pflegende, die ihren Beruf oft aus einer Helferrolle heraus wählen. Sie zeigt, wie man mit Einsamkeit, Todesnähe, Sturheit und Wahnsystemen alter Patienten umgehen kann: unterstützen statt überbetreuen, Starrheit mit Humor begegnen, Wahngeschichten wie einem Märchen zuhören, ohne sich in Handlungen einspannen zu lassen, und sich aus Familienkonflikten heraushalten. Die Lebensgeschichten alter Menschen seien so reich, dass sie einen Kinobesuch ersetzen. Am Schluss bespricht sie Fragen aus dem Publikum zu konkreten Pflegesituationen.",
     },
     Zusammenfassung {
+        datei: "Psychologie_der_16jährigen_27.03.2001.pdf",
+        titel: "",
+        text: "Vortrag im Berufswahlunterricht der BFF Bern. Die Pubertät ist nach Freud die wichtigste Entwicklungsphase, in der viele psychiatrische Krankheiten ihren Anfang nehmen. Jugendliche stehen in einem riesigen seelischen Spannungsfeld, stellen die Erwachsenen in Frage, suchen ihre eigenen Werte und schliessen sich der Peergroup an. Erwachsene reagieren oft verletzt, mit Belehrungen, Drohungen und Kontrolle, oder ziehen sich zurück. Ab 16 soll man nicht mehr erziehen, sondern die Beziehung pflegen, Auseinandersetzungen standhalten, ohne zurückzuschlagen, eigene Werte vertreten und Jugendliche emotional unterstützen, ohne sie zu kontrollieren.",
+    },
+    Zusammenfassung {
         datei: "Psychoseerleben_in_der_Literatur_29.10.2026.pdf",
         titel: "",
         text: "Kurze Literaturliste nach Asmus Finzen (1993) zum Psychoseerleben in der Literatur. Genannt werden autobiografische Berichte Betroffener und Angehöriger, etwa von Dorothea Buck, Sylvia Plath und Susan Sheehan, sowie Texte von Büchner, Melville, Schnitzler, Handke und Bernhard, die psychotisches Erleben spiegeln. Aus dem französischen Sprachraum wird Philippe Djian angeführt. Christian Müller habe in einer Sammlung literarische Dokumente schizophrener Psychosen und anderer psychischer Störungen zugänglich gemacht.",
