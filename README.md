@@ -223,11 +223,12 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-305 PDFs, 1175 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+306 PDFs, 1178 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
 | `Das_Drogenproblem_aus_der_Sicht_der_Familiensystemtheorie_27.04.1981.pdf` | 4 (Vortrag für den Haus- und Krankenpflegeverein Hausen; blasse Schreibmaschinenschrift, Bild abgedunkelt) |
+| `Fortbildung_für_Heimleiter_und_Erzieher_22.10.1981.pdf` | 3 (Sozialpsychiatrischer Dienst Königsfelden, Fortbildung über verhaltensgestörte Jugendliche; Datum am Schluss) |
 | `Einführung_in_das_Denken_von_Jean_Piaget_11.1981.pdf` | 6 (Skript der theoretischen Fachausbildung in Psychiatrie und Psychotherapie, Psychiatrischer Dienst für Erwachsene Kanton Aargau; Monat und Jahr am Schluss; Überlauf eines Doppeleinzugs auf Seite 2 übermalt) |
 | `Jugend_Unser_Problem_oder_unsere_Zukunft_20.06.1983.pdf` | 4 (Beitrag zu einem Podiumsgespräch über Schwierigkeiten, Ansätze und Zuständigkeiten einer Jugendpolitik) |
 | `Die_psychische_Komponente_des_Asthmas_10.11.1983.pdf` | 3 (Diskussionsbeitrag an der Weiterbildungstagung der Aargauischen Frauenliga auf der Barmelweid; gedruckt auf einem gefalteten A4-Blatt, in A5-Einzelseiten zerlegt, leere Rückseite weggelassen) |
