@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-378 PDFs, 1445 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+379 PDFs, 1448 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -424,6 +424,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
 | `Das_frühkindliche_POS_als_Entwicklungsdiagnose_29.09.2000.pdf` | 3 Seiten, Weiterbildung Verein Mütter- und Väterberatung beider Basel, 29.9.2000 |
+| `Intimität,_Sexualität_junger_Eltern_nach_der_Geburt_29.09.2000.pdf` | 3 Seiten, Weiterbildung Verein Mütter- und Väterberatung beider Basel, 29.9.2000 (am selben Tag wie «Das frühkindliche POS als Entwicklungsdiagnose») |
 | `Betreuung_von_schwangeren_Frauen_auf_der_Pränatalenstation_05.10.2000.pdf` | 2 Seiten, Fortbildung Kantonsspital Baden, 5.10.2000; Untertitel «Psychologische Aspekte in der Betreuung von schwangeren Frauen» |
 | `Eigentlich_sollte_ich_glücklich_sein_19.10.2000.pdf` | 3 Seiten, Frauen- und Mütterverein Boswil, 19.10.2000; Seite 2 einzeln nachgescannt |
 | `Geschwisterposition_29.10.2000.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2000; nur das Jahr im Text, Tag und Monat vom Scan) |
