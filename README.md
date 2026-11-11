@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-439 PDFs, 1674 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+440 PDFs, 1677 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -633,6 +633,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Begleitung_von_PatientInnen_mit_AD(H)S._Erfahrungsbericht_05.12.2024.pdf` | 3 Seiten, Beitrag zum Symposium «Trans und Neurodiversität» des Universitätsspitals Basel am 5. Dezember 2024 im Museum Kleines Klingental. Auf den Seiten 1 und 2 handschriftliche Ergänzungen der Autorin (unter anderem «u. Familien» im Titel, Notizen zu Diversität und zur Normierung bei Neurodiversität). |
 | `Eltern_mit_ADHS-ADS,_Handschrift_13.01.2025.pdf` | Handschriftliche Vorlage (drei beidseitig beschriebene Blätter) zur Weiterbildung für HotA vom 13.1.2025, dazu zwei Seiten Reinschrift; 8 Seiten. |
 | `ADHS_Elternweiterbildung_13.03.2025.pdf` | 2 Seiten, Vortrag an der Schule Riedtli, Zürich, am 13. März 2025. |
+| `Autismus_Diagnostik_auf_neurologischer_Ebene_25.03.2025.pdf` | 3 Seiten, Vortrag im Töpferhaus Aarau am 25. März 2025. Mit handschriftlichen Ergänzungen der Autorin (unter anderem «PDA – pathological demand avoidance», «Hyperfokus», «low arousal»). |
 | `Immer_mehr_psychisch_kranke_Jugendliche,_was_läuft_falsch_29.03.2025.pdf` | Weiterbildungsseminar bei LIKA in Stilli bei Brugg vom 29.3.2025, 5 Seiten: Flyer (Vorder- und Rückseite, Rückseite gedreht) und drei Textseiten. Auf dem Flyer sind Telefon und Mail der LIKA entfernt. |
 | `ADHS_bei_Lernenden_15.04.2025.pdf` | Weiterbildung in der Klinik Hirslanden, Zürich, vom 15.4.2025, 3 Seiten (im Kopf als «15.04.20255» vertippt). Seite 2 lief beim ersten Einzug halb mit Seite 1 mit und wurde einzeln nachgescannt. |
 | `ADHS_bei_Lernenden,_Handschrift_15.04.2025.pdf` | Handschriftlicher Entwurf (Bleistift, drei beidseitig beschriebene Blätter) zur Weiterbildung in der Klinik Hirslanden vom 15.4.2025, dazu zwei Seiten Abschrift; 8 Seiten. Die Schreibmaschinenfassung liegt als «ADHS bei Lernenden» unter demselben Datum. |
