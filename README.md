@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-383 PDFs, 1463 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+384 PDFs, 1469 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -422,6 +422,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
+| `Schizophrenie,_Er-_und_Verkennung_der_präpsychotischen_Phase_22.08.2000.pdf` | 6 Seiten, Externe Psychiatrische Dienste Münsterlingen, 22.8.2000; Seite 4 einzeln nachgescannt; weitgehend derselbe Text wie das undatierte Skript «Früherfassung von Psychosen/Schizophrenie in der hausärztlichen Praxis» |
 | `Drogeninformationsabend_in_Klingnau,_Stichworte_zum_Vortrag_24.08.2000.pdf` | 2 Seiten, Klingnau, 24.8.2000; Seite 2 einzeln nachgescannt |
 | `Unterschied_zwischen_Erziehung_und_Beziehung_24.08.2000.pdf` | 4 Seiten, Drei Frauenvereine Baden, Kirchgemeindehaus, 24.8.2000; Seite 4 einzeln nachgescannt |
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
