@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-397 PDFs, 1521 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+398 PDFs, 1522 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -420,6 +420,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Depression_als_Verliererkrankheit_oder_Totstellreflex_27.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I) |
 | `Inzest_25.10.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/1999; Datum am Textende) |
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
+| `Die_Gewalt_hat_unsere_Familie_zerstört_10.02.2000.pdf` | 1 Seite, Stichworte zu einer Fernsehsendung vom 10.2.2000 |
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Das_Burn_out-Syndrom_02.03.2000.pdf` | 5 Seiten, Seengen, 2.3.2000; vorangestellt der Ankündigungstext mit handschriftlicher Notiz zu Datum und Ort; Seite 2 einzeln nachgescannt; frühere Fassung von «Das Burn-out-Syndrom» (27.9.2007) |
 | `Stressbewältigung_mit_Alkohol_und_Drogen_04.04.2000.pdf` | 5 Seiten, Schweizerischer Marketing Club, 4.4.2000; Seite 3 einzeln nachgescannt |
