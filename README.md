@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-367 PDFs, 1412 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+368 PDFs, 1415 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -426,6 +426,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Geschwisterposition_29.10.2000.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2000; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Patchworkfamilie_09.11.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I/2000; nur das Jahr im Text, Tag und Monat vom Scan; Teil II fehlt schon in der Vorlage) |
 | `Chronische_Krankheit_in_der_Familie,_Gewalt_und_Alkohol_in_18.12.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000; «… in der Familie»; Datum am Textende) |
+| `Depression,_eine_Frauenkrankheit_und_wie_sieht_es_bei_den_18.01.2001.pdf` | 3 (Kath. Frauenbund Aarau; frühere Fassung des Vortrags vom 21.10.2003) |
 | `Was_bedeutet_Lebensqualität,_was_ist_sie_mir_wert_23.01.2001.pdf` | 3 (Frauenzmorge des ökumenischen Arbeitskreises Wettingen; anderer Text als der Vortrag vom 4.6.2002) |
 | `Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_06.03.2001.pdf` | 3 (Fortbildung Spitex Oberstrass ZH; am Schluss «Übergang zu Fallbeispielen», die nicht beiliegen) |
 | `Psychiatrische_Krankheit_und_sozialer_Abstieg_07.03.2001.pdf` | 5 (BDK; Blätter 2 bis 4 einzeln nachgescannt) |
