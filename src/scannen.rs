@@ -61,6 +61,8 @@ struct Optionen {
     aus: Vec<PathBuf>,
     /// Bestehende PDFs um die adhs.expert-Fusszeile ergänzen.
     fuss: Vec<PathBuf>,
+    /// Von Hand gelesene Zeilen, siehe `nachtrag_lesen`.
+    nachtrag: Option<PathBuf>,
 }
 
 fn optionen() -> anyhow::Result<Optionen> {
@@ -76,6 +78,7 @@ fn optionen() -> anyhow::Result<Optionen> {
         lesen: Vec::new(),
         aus: Vec::new(),
         fuss: Vec::new(),
+        nachtrag: None,
     };
     let mut args = std::env::args().skip(1).peekable();
     while let Some(a) = args.next() {
@@ -99,6 +102,8 @@ fn optionen() -> anyhow::Result<Optionen> {
             "--sprache" => {
                 let _ = SPRACHE.set(wert()?);
             }
+            "--grafik" => GRAFIK.store(true, std::sync::atomic::Ordering::Relaxed),
+            "--nachtrag" => o.nachtrag = Some(PathBuf::from(wert()?)),
             "--lesen" | "--aus" | "--fuss" => {
                 let liste = match a.as_str() {
                     "--lesen" => &mut o.lesen,
@@ -112,7 +117,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             "-h" | "--help" => {
                 println!(
                     "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--duplex] [--ein] [--adresse-behalten] \
-                     [--sprache deu+eng] [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…] [--fuss PDF…]"
+                     [--sprache deu+eng] [--grafik] [--nachtrag DATEI] [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…] [--fuss PDF…]"
                 );
                 std::process::exit(0);
             }
@@ -248,13 +253,21 @@ fn lauf() -> anyhow::Result<()> {
     // Die Texterkennung läuft immer: sie liefert nicht nur Datum und Titel,
     // sondern auch die unsichtbare Textebene und die Links im PDF.
     eprintln!("Texterkennung über {} Seiten …", seiten.len());
-    let (texte, nummern) = match erkennen(&seiten, opt.dpi) {
+    let (mut texte, nummern) = match erkennen(&seiten, opt.dpi) {
         Ok(t) => t,
         Err(e) => {
             eprintln!("Hinweis: Texterkennung fehlgeschlagen, PDF ohne Textebene: {e:#}");
             (vec![Vec::new(); seiten.len()], vec![None; seiten.len()])
         }
     };
+    if let Some(pfad) = &opt.nachtrag {
+        // Von Hand Gelesenes gilt vor der Erkennung: was es überdeckt, fällt weg
+        // (Tesseract las in der Preistabelle «Stunden» ohne die «7»).
+        for (zeilen, neu) in texte.iter_mut().zip(nachtrag_lesen(pfad, &seiten)?) {
+            zeilen.retain(|alt| !neu.iter().any(|n| ocr::deckt(alt, n)));
+            ocr::zusatz_einfuegen(zeilen, neu);
+        }
+    }
     // Eine Seite ohne jeden Text ist fast immer eine Rückseite: das Blatt lag
     // verkehrt herum im Einzug.
     for (i, zeilen) in texte.iter().enumerate() {
@@ -491,6 +504,46 @@ static ADRESSE_BEHALTEN: std::sync::atomic::AtomicBool = std::sync::atomic::Atom
 /// schlechter (Umlaute in englischen Wörtern, falsche Trennungen).
 static SPRACHE: std::sync::OnceLock<String> = std::sync::OnceLock::new();
 
+/// `--grafik`: zusätzlicher Lesedurchgang für Schrift auf Druckraster oder
+/// Foto (Flyer), siehe `ocr::seite`.
+static GRAFIK: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
+
+/// `--nachtrag DATEI`: von Hand gelesene Zeilen für Schrift, die Tesseract
+/// auch mit `--grafik` nicht liest (weiss auf dunklem Balken, kleine Schrift
+/// im Foto). Je Zeile: `Seite<TAB>links<TAB>oben<TAB>breite<TAB>höhe<TAB>Text`,
+/// Seite ab 1 in der Reihenfolge von `--aus`, Lage in Pixeln des Rohbilds.
+/// Die Lage im Bild selbst ausmessen; überdeckt eine Zeile schon gelesenen
+/// Text, fällt sie weg. Kontaktangaben darin werden wie sonst entfernt.
+fn nachtrag_lesen(pfad: &Path, seiten: &[PathBuf]) -> anyhow::Result<Vec<Vec<Zeile>>> {
+    let mut je_seite = vec![Vec::new(); seiten.len()];
+    let inhalt = std::fs::read_to_string(pfad).with_context(|| format!("{}", pfad.display()))?;
+    for (nr, z) in inhalt.lines().enumerate().filter(|(_, z)| !z.trim().is_empty() && !z.starts_with('#')) {
+        let f: Vec<&str> = z.splitn(6, '\t').collect();
+        anyhow::ensure!(f.len() == 6, "{}:{}: erwartet 6 Felder mit Tab getrennt", pfad.display(), nr + 1);
+        let zahl = |i: usize| -> anyhow::Result<f64> {
+            f[i].trim().parse().with_context(|| format!("{}:{}: Feld {}", pfad.display(), nr + 1, i + 1))
+        };
+        let seite = zahl(0)? as usize;
+        anyhow::ensure!((1..=seiten.len()).contains(&seite), "{}:{}: Seite {seite}?", pfad.display(), nr + 1);
+        let (bb, bh) = image::image_dimensions(&seiten[seite - 1])?;
+        let (bb, bh) = (bb as f64, bh as f64);
+        let text = f[5].trim();
+        if !heikle_stellen(text).is_empty() {
+            bail!("{}:{}: Kontaktangabe im Nachtrag: {text:?}", pfad.display(), nr + 1);
+        }
+        je_seite[seite - 1].push(Zeile {
+            text: text.to_string(),
+            links: zahl(1)? / bb,
+            oben: zahl(2)? / bh,
+            breite: zahl(3)? / bb,
+            hoehe: zahl(4)? / bh,
+            schwaerzen: Vec::new(),
+            woerter: Vec::new(),
+        });
+    }
+    Ok(je_seite)
+}
+
 fn heikle_stellen(text: &str) -> Vec<std::ops::Range<usize>> {
     use std::sync::LazyLock;
     static HEIKEL: LazyLock<regex::Regex> = LazyLock::new(|| {
@@ -722,10 +775,76 @@ mod ocr {
         if std::env::var_os("SCAN_FUSS").is_some() {
             eprintln!("Fuss {}: {:?} / Ziffern {:?}", bild.display(), fusstext, ziffern);
         }
+        // `--grafik`: Flyer setzen Titel gern auf ein Druckraster oder ein
+        // Foto. Dort liest Tesseract auf dem Graustufenbild nichts (Titel des
+        // LIKA-Flyers 2025). Weichgezeichnet und auf Schwarzweiss gebracht
+        // liest es ihn fehlerfrei. Übernommen werden nur sicher gelesene
+        // Wörter, die nicht schon im ersten Durchgang stehen.
+        let mut ergebnis = ergebnis;
+        // Die passende Schwelle hängt vom Grau des Grundes ab: der Titel des
+        // Flyers 2025 kam nur bei 35 %, «ERZIEHUNGSSCHÄDEN» (Flyer 2026) nur
+        // bei 65 %. Darum drei Durchgänge; jeder füllt nur, was noch fehlt.
+        if super::GRAFIK.load(Ordering::Relaxed) {
+            if let Ok(zeilen) = ergebnis.as_mut() {
+                let glatt_pfad = tmp.join(format!("adhs-ocr-{}-{n}-glatt.png", std::process::id()));
+                for schwelle in ["35%", "50%", "65%"] {
+                    let ok = std::process::Command::new("magick")
+                        .arg(&gross_pfad)
+                        .args(["-blur", "0x2", "-threshold", schwelle])
+                        .arg(&glatt_pfad)
+                        .status()
+                        .is_ok_and(|s| s.success());
+                    if ok {
+                        if let Ok(tsv) = tesseract(&glatt_pfad, &["--dpi", &dpi2, "--psm", "3", "tsv"]) {
+                            zusatz_einfuegen(zeilen, tsv_lesen(&sicher(&tsv)));
+                        }
+                    }
+                }
+                std::fs::remove_file(&glatt_pfad).ok();
+            }
+        }
         std::fs::remove_file(&gross_pfad).ok();
         std::fs::remove_file(&fuss_pfad).ok();
         let zahl = super::fusszahl(&fusstext).or_else(|| super::ziffernzahl(&ziffern));
         Ok((ergebnis?, zahl))
+    }
+
+    /// Nur Wörter mit Konfidenz ab 80 und mindestens zwei Buchstaben oder
+    /// Ziffern: Fotos liefern sonst Buchstabensalat («GG», «7%», «EEE»).
+    fn sicher(tsv: &str) -> String {
+        tsv.lines()
+            .enumerate()
+            .filter(|(i, z)| {
+                let f: Vec<&str> = z.split('\t').collect();
+                *i == 0
+                    || f.len() < 12
+                    || f[0] != "5"
+                    || (f[10].parse::<f64>().unwrap_or(0.0) >= 80.0
+                        && f[11].chars().filter(|c| c.is_alphanumeric()).count() >= 2)
+            })
+            .map(|(_, z)| z)
+            .collect::<Vec<_>>()
+            .join("\n")
+    }
+
+    /// Zeilen aus einem Zusatzdurchgang, die keine schon gelesene Zeile
+    /// überdecken - sonst stünde derselbe Text doppelt in der Textebene.
+    /// Überdecken heisst: waagrecht überlappend und senkrecht mehr als die
+    /// halbe Höhe der kleineren Zeile. Ein blosses Berühren reicht nicht -
+    /// auf dem LIKA-Flyer ragte der zu hoch erkannte Kasten von «PSYCHISCH»
+    /// in die Datumszeile darüber und verdrängte sie.
+    pub fn zusatz_einfuegen(zeilen: &mut Vec<super::Zeile>, neu: Vec<super::Zeile>) {
+        for z in neu {
+            if !z.text.is_empty() && !zeilen.iter().any(|alt| !alt.text.is_empty() && deckt(alt, &z)) {
+                zeilen.push(z);
+            }
+        }
+        zeilen.sort_by(|a, b| a.oben.total_cmp(&b.oben));
+    }
+
+    pub fn deckt(a: &super::Zeile, b: &super::Zeile) -> bool {
+        let senkrecht = (a.oben + a.hoehe).min(b.oben + b.hoehe) - a.oben.max(b.oben);
+        a.links < b.links + b.breite && b.links < a.links + a.breite && senkrecht > 0.5 * a.hoehe.min(b.hoehe)
     }
 
     fn tesseract(bild: &std::path::Path, args: &[&str]) -> anyhow::Result<String> {
@@ -763,6 +882,31 @@ mod ocr {
                 "5" => {
                     let text = f[11].trim();
                     if text.is_empty() {
+                        continue;
+                    }
+                    // `--grafik`: Rasterbalken und Fotos liest Tesseract als
+                    // «EEE», «TREE», «N» mit Konfidenz unter 50; echte Wörter
+                    // auf dem LIKA-Flyer lagen bis auf eines über 84.
+                    let konf = zahl(10);
+                    let zeichen = text.chars().filter(|c| c.is_alphanumeric()).count();
+                    // Aufzählungsstriche («-», Konfidenz oft unter 45) bleiben,
+                    // ebenso unsichere, aber echte Wörter («Übergriff» unter einer
+                    // Handnotiz lag unter 45): weg fällt nur, was auch nach
+                    // Salat aussieht - nur Grossbuchstaben, höchstens zwei
+                    // Zeichen oder Klammerzeichen.
+                    let salat = text.chars().filter(|c| c.is_alphabetic()).all(|c| c.is_uppercase())
+                        || zeichen <= 2
+                        || text.chars().any(|c| "{}[]|\\<>".contains(c));
+                    let strich = text.chars().all(|c| "-–—•·*".contains(c));
+                    // Wörter ganz ohne Buchstaben und Ziffern («®», «|») sind auf
+                    // Flyern Linien und Logos, mit Konfidenz bis 90 - sie
+                    // verdrängten den Titel «ERZIEHUNGSSCHÄDEN».
+                    if super::GRAFIK.load(Ordering::Relaxed)
+                        && !strich
+                        && ((zeichen == 0 && text.chars().all(|c| "®©|_~^°¦".contains(c)))
+                            || (konf < 45.0 && salat)
+                            || (konf < 60.0 && zeichen < 2))
+                    {
                         continue;
                     }
                     let schluessel = (zahl(2) as u32, zahl(3) as u32, zahl(4) as u32);

@@ -34,6 +34,8 @@ cargo run --release --bin scannen -- --ein --aus kurz.jpg v1.jpg  # nicht trenne
 cargo run --release --bin scannen -- --adresse-behalten           # Strasse im Kopf lassen
 cargo run --release --bin scannen -- --sprache eng                # englische Vorlage (Vorgabe deu)
 cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
+cargo run --release --bin scannen -- --ein --grafik --aus flyer.jpg …       # Schrift auf Raster/Foto mitlesen
+cargo run --release --bin scannen -- --ein --nachtrag zeilen.tsv --aus …    # von Hand gelesene Zeilen
 cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
 cargo run --release --bin scanliste   # Übersicht der Scans mit Zusammenfassungen
 cargo run --release --bin eintragen -- --datei … --text … --bestand …   # neuen Scan nachtragen
@@ -321,6 +323,29 @@ Was dabei Zeit gekostet hat:
   des letzten Worts der unsichtbaren Textebene.
 - **Fehlalarm bei der Kontaktprüfung:** «TQ@M» (Tesseract für «TQM») trifft
   das `@`. Jeden Treffer ansehen statt blind zu entfernen.
+- **Flyer: Schrift auf Druckraster oder Foto.** Der Benutzer bemerkte, dass
+  der Text der Flyer-Seiten nicht in der Textebene stand. Tesseract liest
+  Titel auf gerastertem Grau nicht, weisse Schrift auf dunklem Balken gar
+  nicht, und Fotos ergeben Salat («EEE», «TREE», «®|»). Bei jedem Blatt mit
+  Flyer `--grafik` setzen: drei zusätzliche Durchgänge auf weichgezeichnetem
+  Schwarzweiss (Schwelle 35/50/65 % - jeder Flyer brauchte eine andere),
+  übernommen werden nur sichere Wörter, die nichts schon Gelesenes
+  überdecken; dazu fällt im ersten Durchgang Salat weg (unsicher und nur
+  Grossbuchstaben, ≤ 2 Zeichen oder Klammern; reine Grafikzeichen wie «®|»).
+  Aufzählungsstriche und unsichere echte Wörter («Übergriff» unter einer
+  Handnotiz) bleiben. Was dann noch fehlt (Datum im Foto, LIKA-Balken,
+  Preistabelle weiss auf grau), im Bild lesen und mit `--nachtrag` setzen:
+  je Zeile `Seite⇥links⇥oben⇥breite⇥höhe⇥Text` in Pixeln des Rohbilds; der
+  Nachtrag verdrängt überlappend Erkanntes. Kontaktangaben im Nachtrag
+  bricht `scannen` ab. Danach `pdftotext` Seite für Seite gegen das Bild
+  prüfen und die Textseiten mit der Fassung ohne `--grafik` vergleichen.
+- **Neubau ändert die Textebene leicht.** Dieselben Bilder liest Tesseract
+  beim zweiten Bau nicht ganz gleich (bei «Erziehungsschäden» fehlten 21
+  Aufzählungsstriche). Soll nur eine Seite neu, die übrigen aus der
+  eingecheckten Datei nehmen: mit pypdf (`uv run --with pypdf --with pillow`)
+  Seiten neu in einen leeren `PdfWriter` legen und das Info-Verzeichnis
+  übernehmen - `pdfunite` verliert den Titel, `PdfWriter(clone_from=…)`
+  behält das ersetzte Bild als toten Ballast.
 - **Vor dem Push** die Texte prüfen: `pdftotext scan/<datei>.pdf - | grep -iE
   '@|strasse [0-9]|tel\.'` muss leer bleiben, und Seite 1 rendern
   (`pdftoppm -png -r 55 -f 1 -l 1`), um Datum und Titel anzusehen.
