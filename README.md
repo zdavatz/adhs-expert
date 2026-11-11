@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-389 PDFs, 1493 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+390 PDFs, 1495 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -422,6 +422,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
+| `Leben_lernen,_lernen_leben_zu_lassen_02.06.2000.pdf` | 2 Seiten, Nachbearbeitung der Tagung vom 2.6.2000 |
 | `Früherfassung_und_Frühbehandlung_der_Psychotischen_27.06.2000.pdf` | 4 Seiten, Weiterbildung und Supervision Psychiatrie-Stützpunkt Biel, 27.6.2000 |
 | `Adoleszenten-Medizin,_einige_Tips_aus_der_Erfahrung_einer_01.07.2000.pdf` | 3 Seiten, Workshop am CP-Zentrum Solothurn mit Dr. Baumann, 1.7.2000 |
 | `Psychology_of_Violence,_a_developmental_perspective_14.07.2000.pdf` | 9 Seiten, englisch, 25th Anniversary Congress on Law and Mental Health, Siena, 14.7.2000 (Session: Mental Illness and Dangerousness); Seite 8 sind Stichworte zum Vortrag; deutsche Stichworte zum Thema in «Psychologie der Gewalt» |
