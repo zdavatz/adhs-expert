@@ -147,6 +147,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Das Skript von U. Davatz für den Familientherapie-Kurs I (1991) beschreibt drei Anpassungsmechanismen der Kernfamilie in Überforderungssituationen, in Anlehnung an Bowen. Der Ehekonflikt wird als Dominanzkampf und zugleich als Ventil verstanden. Reicht dies nicht aus, wird einer der Partner zum Symptomträger (psychisch, physisch oder sozial), oder die elterlichen Spannungen werden auf das schwächste Glied, das Kind, projiziert. Jeder dieser Mechanismen entlastet kurzfristig und führt bei ausschliesslicher, langer Anwendung in einen Teufelskreis mit Krankheitscharakter.",
     },
     Zusammenfassung {
+        datei: "Arbeit_an_der_eigenen_Ursprungsfamilie_03.07.2000.pdf",
+        titel: "",
+        text: "Kurzbeschreibung eines Workshops an den Basler Psychotherapietagen. Die Ursprungsfamilie ist das soziale Umfeld, in dem wir unsere Verhaltens- und Denkmuster erlernen; manche ihrer Werte sind hilfreich, andere führen je nach Situation in eine Sackgasse. Anhand eines Familiendiagramms über drei Generationen sollen die Teilnehmenden ihre Prägungen betrachten, die eigene Sackgasse analysieren und neue Verhaltens- und Denkmuster finden, um besser leben lassen zu lernen.",
+    },
+    Zusammenfassung {
         datei: "Arbeiten_mit_ganzen_Familien_als_Mehrpersonensystem_12.11.2018.pdf",
         titel: "",
         text: "Skript von U. Davatz für den Familienkurs I 2018 vom 12.11.2018, das das medizinische Modell der Einzelbehandlung der Familiensystemtherapie gegenüberstellt. Das medizinische Modell sieht den Patienten als Einzelwesen und wirkt mit Medikamenten auf sein Gehirn, obwohl das Gehirn das soziale Organ des Menschen ist. Die Systemtherapie betrachtet die Familie als Organismus und hat nach Boszormenyi-Nagy eine «vielgerichtete Parteilichkeit» für das Wohl des ganzen Systems, denn das Kindswohl hängt von Mutter, Vater und ihrer Beziehung ab. Therapeuten sind keine Advokaten eines Einzelnen und erziehen nicht zur Gesundheit, sondern stärken die Resilienz des Systems, indem sie an den «Lötstellen» der Beziehungen arbeiten, und entscheiden, welche Beziehung gerade an der Reihe ist. Das verlangt ganzheitliche Aufmerksamkeit, Flexibilität statt vorgefasster Muster und einen neugierigen, wissenschaftlichen Geist.",

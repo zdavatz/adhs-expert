@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-390 PDFs, 1495 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+391 PDFs, 1496 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -425,6 +425,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Leben_lernen,_lernen_leben_zu_lassen_02.06.2000.pdf` | 2 Seiten, Nachbearbeitung der Tagung vom 2.6.2000 |
 | `Früherfassung_und_Frühbehandlung_der_Psychotischen_27.06.2000.pdf` | 4 Seiten, Weiterbildung und Supervision Psychiatrie-Stützpunkt Biel, 27.6.2000 |
 | `Adoleszenten-Medizin,_einige_Tips_aus_der_Erfahrung_einer_01.07.2000.pdf` | 3 Seiten, Workshop am CP-Zentrum Solothurn mit Dr. Baumann, 1.7.2000 |
+| `Arbeit_an_der_eigenen_Ursprungsfamilie_03.07.2000.pdf` | 1 Seite, Workshop-Ausschreibung, Basler Psychotherapietage, 3.7.2000 |
 | `Psychology_of_Violence,_a_developmental_perspective_14.07.2000.pdf` | 9 Seiten, englisch, 25th Anniversary Congress on Law and Mental Health, Siena, 14.7.2000 (Session: Mental Illness and Dangerousness); Seite 8 sind Stichworte zum Vortrag; deutsche Stichworte zum Thema in «Psychologie der Gewalt» |
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
 | `Schizophrenie,_Er-_und_Verkennung_der_präpsychotischen_Phase_22.08.2000.pdf` | 6 Seiten, Externe Psychiatrische Dienste Münsterlingen, 22.8.2000; Seite 4 einzeln nachgescannt; weitgehend derselbe Text wie das undatierte Skript «Früherfassung von Psychosen/Schizophrenie in der hausärztlichen Praxis» |
