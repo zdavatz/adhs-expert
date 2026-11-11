@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-402 PDFs, 1542 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+403 PDFs, 1543 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -419,6 +419,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Ablösungskonflikt_von_betagten_Eltern_mit_Starrköpfigkeit_06.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1999, 2. Hälfte; «… oder Loyalitätskonflikt zwischen den Generationen»; Seite 3 einzeln nachgescannt, weil der Einzug sie mit Seite 2 zog) |
 | `Depression_als_Verliererkrankheit_oder_Totstellreflex_27.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I) |
 | `Inzest_25.10.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/1999; Datum am Textende) |
+| `Einleitung_zur_Vorlesung_Die_narzistische_Verletzung_des_06.01.2000.pdf` | Einleitung zu einer Vorlesung vom 6.1.2000, 1 Seite. |
 | `Junge_Frauen_im_Spannungsfeld_zwischen_Familie,_Beruf_und_11.01.2000.pdf` | Vortrag beim Frauenverein Bubikon/Wolfhausen vom 11.1.2000, 6 Seiten. Seite 5 lief beim ersten Einzug halb mit Seite 4 mit und wurde einzeln nachgescannt. |
 | `Glück_Wie_gelingt_Leben_13.01.2000.pdf` | Vortrag am Frauenzmorge in Untersiggenthal (Ref. Frauenverein, Kath. Frauenbund, Gruppen junger Mütter) vom 13.1.2000, 4 Seiten. Seite 3 blieb beim ersten Einzug liegen und wurde einzeln nachgescannt. |
 | `Arbeit_und_Arbeitslosigkeit_als_Ursache_von_Stress_17.01.2000.pdf` | Vortrag vom 17.1.2000, 4 Seiten. |
