@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-415 PDFs, 1591 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+416 PDFs, 1594 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -622,6 +622,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `ADHS_bei_Lernenden,_Handschrift_15.04.2025.pdf` | Handschriftlicher Entwurf (Bleistift, drei beidseitig beschriebene Blätter) zur Weiterbildung in der Klinik Hirslanden vom 15.4.2025, dazu zwei Seiten Abschrift; 8 Seiten. Die Schreibmaschinenfassung liegt als «ADHS bei Lernenden» unter demselben Datum. |
 | `Generationen_und_ADHS_28.05.2025.pdf` | Podium über Frauen zum Thema ADHS an der Primar- und Sekundarschule Mariazell-Sursee in Ettiswil vom 28.5.2025, 4 Seiten. Die Seiten 3 und 4 wurden einzeln nachgescannt. |
 | `Wie_geht_man_als_Erziehungsperson_mit_AD(H)S-Kindern_um_03.07.2025.pdf` | Elternbildungsanlass des Elternrats Tössfeld, Schule Tössfeld in Winterthur, vom 3.7.2025, 3 Seiten. |
+| `Buchvernissage_in_der_Rigiapotheke_Zürich_02.10.2025.pdf` | Ansprache zur Buchvernissage vom 2.10.2025 in der Rigiapotheke Zürich, 3 Seiten. Seite 2 wurde einzeln nachgescannt. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `Erziehungsschäden,_wie_lassen_sich_diese_therapeutisch_21.03.2026.pdf` | Weiterbildungsseminar bei LIKA in Stilli bei Brugg vom 21.3.2026, 6 Seiten: Flyer «Erziehungsschäden – die Erziehung unseres Nachwuchses der nächsten Generation» und fünf Textseiten. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `Erziehungsschäden_21.03.2026.pdf` | Ausschreibung des Weiterbildungsseminars bei LIKA vom 21.3.2026, 1 Seite. Das Seminarskript liegt als «Erziehungsschäden, wie lassen sich diese therapeutisch reparieren» unter demselben Datum. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `ADHS_und_ASS_04.06.2026.pdf` | Weiterbildung an der Schule Dintikon vom 4.6.2026, 4 Seiten. Seite 4 trägt nur den Titel «Beispiele von Konflikten mit ADHS-Kindern» für den mündlichen Teil. Seite 4 lief beim ersten Einzug halb mit Seite 3 mit und wurde einzeln nachgescannt. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
