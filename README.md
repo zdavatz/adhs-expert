@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-406 PDFs, 1555 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+407 PDFs, 1557 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -618,6 +618,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Arbeiten_mit_ganzen_Familien_als_Mehrpersonensystem_12.11.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
 | `Behandlung_des_Familiensystems_als_Ganzes_10.12.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
 | `ADHS_und_ASS_04.06.2026.pdf` | Weiterbildung an der Schule Dintikon vom 4.6.2026, 4 Seiten. Seite 4 trägt nur den Titel «Beispiele von Konflikten mit ADHS-Kindern» für den mündlichen Teil. Seite 4 lief beim ersten Einzug halb mit Seite 3 mit und wurde einzeln nachgescannt. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
+| `Neurotypgerechte_Unterstützung_von_Jugendlichen_mit_ADHS_und_15.06.2026.pdf` | Referat am Forum der AG Jugendhilfe Stadt Uster vom 15.6.2026, 2 Seiten. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `Prevention_in_the_field_of_law_and_mental_health_28.10.2026.pdf` | 4 (englisch, «Therapeutic Jurisprudence», 28. Congress of Law and Mental Health in den Niederlanden; ohne Datum im Text, Scantag) |
 | `Sind_Mütter_die_besseren_Beraterinnen_28.10.2026.pdf` | 7 (Artikel für «Clic», ohne Datum im Text, Scantag) |
 | `Text_für_Werbung_Familientherapie_28.10.2026.pdf` | 2 (ohne Datum im Text, Scantag) |
