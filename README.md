@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-436 PDFs, 1664 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+437 PDFs, 1669 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -629,6 +629,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Wie_geht_man_als_Erziehungsperson_mit_AD(H)S-Kindern_um_19.09.2024.pdf` | 4 Seiten, Vortrag vom 19. September 2024 an der Schule Untermoos, Zürich. Gleicher Titel wie der Elternbildungsanlass vom 3. Juli 2025 in Winterthur, aber ein anderer Text für Lehrpersonen. |
 | `Umgang_mit_ADHS-ADS_im_Erwachsenenalter_von_hilfesuchenden_02.10.2024.pdf` | 2 Seiten, Weiterbildung beim HEKS (Hilfswerk der Evangelisch-reformierten Kirche Schweiz) in Zürich am 2. Oktober 2024. Die Adresse des Kursorts im Kopf bleibt stehen. |
 | `Autismusspektrumkrankheit_(ASS),_Handschrift_19.11.2024.pdf` | Handschriftliche Vorlage (ein beidseitig beschriebenes Blatt) zur Weiterbildung Wendepunkt vom 19.11.2024, dazu eine Seite Reinschrift; 3 Seiten. |
+| `AD(H)S_und_Schizophrenie_29.11.2024.pdf` | 5 Seiten: Referat (2 Seiten) für adhs20+ im Zentrum Karl der Grosse, Zürich, am 29. November 2024, dazu die Ausschreibung (1 Seite), ihr handschriftlicher Entwurf und dessen Abschrift. Auf Seite 1 eine Randnotiz mit Datum 27.3.24. Der spätere Text «Gedanken zu ADHS, ADS, ASS und Schizophrenie» baut auf diesem Referat auf. |
 | `Eltern_mit_ADHS-ADS,_Handschrift_13.01.2025.pdf` | Handschriftliche Vorlage (drei beidseitig beschriebene Blätter) zur Weiterbildung für HotA vom 13.1.2025, dazu zwei Seiten Reinschrift; 8 Seiten. |
 | `Immer_mehr_psychisch_kranke_Jugendliche,_was_läuft_falsch_29.03.2025.pdf` | Weiterbildungsseminar bei LIKA in Stilli bei Brugg vom 29.3.2025, 5 Seiten: Flyer (Vorder- und Rückseite, Rückseite gedreht) und drei Textseiten. Auf dem Flyer sind Telefon und Mail der LIKA entfernt. |
 | `ADHS_bei_Lernenden_15.04.2025.pdf` | Weiterbildung in der Klinik Hirslanden, Zürich, vom 15.4.2025, 3 Seiten (im Kopf als «15.04.20255» vertippt). Seite 2 lief beim ersten Einzug halb mit Seite 1 mit und wurde einzeln nachgescannt. |
