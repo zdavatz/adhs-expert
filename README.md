@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-379 PDFs, 1448 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+380 PDFs, 1450 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -422,6 +422,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
+| `Drogeninformationsabend_in_Klingnau,_Stichworte_zum_Vortrag_24.08.2000.pdf` | 2 Seiten, Klingnau, 24.8.2000; Seite 2 einzeln nachgescannt |
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
 | `Das_frühkindliche_POS_als_Entwicklungsdiagnose_29.09.2000.pdf` | 3 Seiten, Weiterbildung Verein Mütter- und Väterberatung beider Basel, 29.9.2000 |
 | `Intimität,_Sexualität_junger_Eltern_nach_der_Geburt_29.09.2000.pdf` | 3 Seiten, Weiterbildung Verein Mütter- und Väterberatung beider Basel, 29.9.2000 (am selben Tag wie «Das frühkindliche POS als Entwicklungsdiagnose») |
