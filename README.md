@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-417 PDFs, 1595 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+418 PDFs, 1599 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -625,6 +625,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Buchvernissage_in_der_Rigiapotheke_Zürich_02.10.2025.pdf` | Ansprache zur Buchvernissage vom 2.10.2025 in der Rigiapotheke Zürich, 3 Seiten. Seite 2 wurde einzeln nachgescannt. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `Erziehungsschäden,_wie_lassen_sich_diese_therapeutisch_21.03.2026.pdf` | Weiterbildungsseminar bei LIKA in Stilli bei Brugg vom 21.3.2026, 6 Seiten: Flyer «Erziehungsschäden – die Erziehung unseres Nachwuchses der nächsten Generation» und fünf Textseiten. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `Erziehungsschäden_21.03.2026.pdf` | Ausschreibung des Weiterbildungsseminars bei LIKA vom 21.3.2026, 1 Seite. Das Seminarskript liegt als «Erziehungsschäden, wie lassen sich diese therapeutisch reparieren» unter demselben Datum. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
+| `ADHS-ADS_als_Neurotyp_verstehen_06.05.2026.pdf` | Vortrag an den Aktionstagen psychische Gesundheit im Zwinglihaus Grenchen/SO vom 6.5.2026, 4 Seiten. Die Seiten 2 bis 4 wurden einzeln nachgescannt. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `ADHS_und_ASS_04.06.2026.pdf` | Weiterbildung an der Schule Dintikon vom 4.6.2026, 4 Seiten. Seite 4 trägt nur den Titel «Beispiele von Konflikten mit ADHS-Kindern» für den mündlichen Teil. Seite 4 lief beim ersten Einzug halb mit Seite 3 mit und wurde einzeln nachgescannt. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `Neurotypgerechte_Unterstützung_von_Jugendlichen_mit_ADHS_und_15.06.2026.pdf` | Referat am Forum der AG Jugendhilfe Stadt Uster vom 15.6.2026, 2 Seiten. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `Prevention_in_the_field_of_law_and_mental_health_28.10.2026.pdf` | 4 (englisch, «Therapeutic Jurisprudence», 28. Congress of Law and Mental Health in den Niederlanden; ohne Datum im Text, Scantag) |
