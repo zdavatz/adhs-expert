@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-407 PDFs, 1557 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+408 PDFs, 1561 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -654,6 +654,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Establishing_a_Therapeutic_Alliance_in_Family_System_Therapy_11.11.2026.pdf` | 4 Seiten, englisch, ohne Datum (Scantag); Ursula Davatz als Fellow in Family Systems Therapy, Georgetown Family Center, Washington D.C. |
 | `Psychologie_der_Gewalt_11.11.2026.pdf` | 3 Seiten, Stichworte ohne Datum (Scantag); Seite 2 einzeln nachgescannt |
 | `Workshop_über_die_Arbeit_an_der_eigenen_Ursprungsfamilie_11.11.2026.pdf` | 2 Seiten, Workshop-Angebot mit Lebenslauf und Foto, ohne Datum (Scantag; nach dem Lebenslauf frühestens Herbst 1999); vgl. «Arbeit an der eigenen Ursprungsfamilie» (3.7.2000) |
+| `2._Treffen_Forum_Psychische_Gesundheit_(Strukturierte_11.11.2026.pdf` | Kein Vortrag von Ursula Davatz, sondern das Vorbereitungspapier des Forums Psychische Gesundheit in Uster zum Referat «Neurotypgerechte Unterstützung von Jugendlichen mit ADHS und ADS» vom 15.6.2026, 4 Seiten, ohne Datum (Scantag). Die Seiten 2 bis 4 wurden einzeln nachgescannt. |
 
 ### Wenn etwas fehlt oder doppelt ist
 

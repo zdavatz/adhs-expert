@@ -12,6 +12,11 @@ pub struct Zusammenfassung {
 
 pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
     Zusammenfassung {
+        datei: "2._Treffen_Forum_Psychische_Gesundheit_(Strukturierte_11.11.2026.pdf",
+        titel: "2. Treffen – Forum Psychische Gesundheit (Strukturierte Zusammenfassung)",
+        text: "Strukturierte Zusammenfassung des zweiten Vorbereitungstreffens des Forums Psychische Gesundheit. Als Leitidee gilt «Begleiten statt bestrafen»: Jugendliche sollen nicht als Fall im System erlebt werden, und es braucht eine klare erwachsene Führung ohne Zwang. Beschrieben werden die Überforderung der vielen beteiligten Stellen, der Perspektivenwechsel vom Problemkind zum System und das Leitthema eines fachgerechten Umgangs mit neurodivergenten Jugendlichen. Das Papier legt die Rollen fest, mit einem theoretischen Einstieg von Ursula Davatz und einer Praxisperspektive mit Fallbeispielen, dazu Diskussionsformat, Leitfragen, Spannungsfelder wie Beziehung gegen Systemlogik und Datenschutz gegen Vernetzung sowie den Zeitplan des Anlasses.",
+    },
+    Zusammenfassung {
         datei: "ADHS_ist_keine_Krankheit_09.11.2026.pdf",
         titel: "",
         text: "Aufsatz von U. Davatz (Kompetenzzentrum für ADHS und Schizophrenie, ohne Datum, nach Juli 2018), ausgehend von Kohortenstudien, nach denen Schizophrenie, Depression, Autismus, bipolare Störung, Essstörungen und ADHS dieselben veränderten Gen-Loci teilen. Sie deutet ADS und ADHS nicht als Krankheit, sondern als genetisch vererbte Neurotypen, einen introvertierten und einen extravertierten Persönlichkeitstyp, der dickköpfig, impulsiv und sehr verletzlich ist und im Beziehungsumfeld schnell Konflikte auslöst. Das formbare Gehirn passt sich über Erfahrung an; scheitern erlernte Muster und die Stressreflexe Kampf, Flucht und Totstellen, entstehen unter dem Anpassungsdruck psychische und körperliche Krankheiten, weshalb 75 bis 80 Prozent der Erwachsenen mit ADS/ADHS psychiatrische Hilfe brauchen. Die Ursache der psychiatrischen Erkrankungen sieht sie im erzieherischen Umfeld; Diagnosen nach Symptomen sagen nichts über ihre Entstehung, darum fordert sie eine sorgfältige Familien- und Lebensgeschichte. Kompetente Beratung von Familien und Schulen mit ADS- und ADHS-Kindern wäre die erste echte Primärprävention der Psychiatrie.",
