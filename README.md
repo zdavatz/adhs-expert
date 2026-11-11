@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-382 PDFs, 1459 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+383 PDFs, 1463 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -423,6 +423,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
 | `Drogeninformationsabend_in_Klingnau,_Stichworte_zum_Vortrag_24.08.2000.pdf` | 2 Seiten, Klingnau, 24.8.2000; Seite 2 einzeln nachgescannt |
+| `Unterschied_zwischen_Erziehung_und_Beziehung_24.08.2000.pdf` | 4 Seiten, Drei Frauenvereine Baden, Kirchgemeindehaus, 24.8.2000; Seite 4 einzeln nachgescannt |
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
 | `Das_frühkindliche_POS_als_Entwicklungsdiagnose_29.09.2000.pdf` | 3 Seiten, Weiterbildung Verein Mütter- und Väterberatung beider Basel, 29.9.2000 |
 | `Intimität,_Sexualität_junger_Eltern_nach_der_Geburt_29.09.2000.pdf` | 3 Seiten, Weiterbildung Verein Mütter- und Väterberatung beider Basel, 29.9.2000 (am selben Tag wie «Das frühkindliche POS als Entwicklungsdiagnose») |
