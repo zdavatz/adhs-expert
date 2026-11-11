@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-369 PDFs, 1418 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+370 PDFs, 1422 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -425,6 +425,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
 | `Geschwisterposition_29.10.2000.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2000; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Patchworkfamilie_09.11.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I/2000; nur das Jahr im Text, Tag und Monat vom Scan; Teil II fehlt schon in der Vorlage) |
+| `Schmerzprobleme_aus_der_psychosomatischen_Perspektive_12.12.2000.pdf` | 4 (Weiterbildung Psychiatriestützpunkt Biel; Überlauf von Blatt 4 unten auf Seite 3 übermalt, Blatt 4 einzeln nachgescannt) |
 | `Chronische_Krankheit_in_der_Familie,_Gewalt_und_Alkohol_in_18.12.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000; «… in der Familie»; Datum am Textende) |
 | `Familientherapie_bei_Schizophrenen_15.01.2001.pdf` | 3 (Weiterbildung Psychiatrische Klinik Münsterlingen) |
 | `Depression,_eine_Frauenkrankheit_und_wie_sieht_es_bei_den_18.01.2001.pdf` | 3 (Kath. Frauenbund Aarau; frühere Fassung des Vortrags vom 21.10.2003) |
