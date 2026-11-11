@@ -374,6 +374,9 @@ Was dabei Zeit gekostet hat:
   schickt PCL 5 mit genau einem Seitenvorschub. Ghostscript ist hier nicht
   installiert; der AirPrint-Druckserver im Netz war nur über IPv6 sichtbar und
   nicht erreichbar.
+  Meldet `pcldruck` «Operation timed out», schläft der Drucker meist nur:
+  der erste Ping geht verloren, danach ist Port 9100 offen
+  (`nc -z -G 3 <drucker> 9100`) – einfach noch einmal schicken.
 - **Masse der Ordnertaschen** (vom Benutzer gemessen): graue Ordner 50 ×
   145 mm, der orange schmale 25 × 145 mm. Erst geschätzte 56 × 190 mm waren zu
   gross.
