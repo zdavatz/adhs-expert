@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-423 PDFs, 1624 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+424 PDFs, 1627 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -617,6 +617,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Differenzierung_von_der_Ursprungsfamilie_09.11.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1998 für den Familientherapie-Kurs I 2018, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Arbeiten_mit_ganzen_Familien_als_Mehrpersonensystem_12.11.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
 | `Behandlung_des_Familiensystems_als_Ganzes_10.12.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
+| `Rolle_der_Grosseltern_in_der_aufsuchenden_Familienarbeit_20.08.2024.pdf` | Weiterbildung für HotA vom 20.8.2024, 3 Seiten. |
 | `Eltern_mit_ADHS-ADS,_Handschrift_13.01.2025.pdf` | Handschriftliche Vorlage (drei beidseitig beschriebene Blätter) zur Weiterbildung für HotA vom 13.1.2025, dazu zwei Seiten Reinschrift; 8 Seiten. |
 | `Immer_mehr_psychisch_kranke_Jugendliche,_was_läuft_falsch_29.03.2025.pdf` | Weiterbildungsseminar bei LIKA in Stilli bei Brugg vom 29.3.2025, 5 Seiten: Flyer (Vorder- und Rückseite, Rückseite gedreht) und drei Textseiten. Auf dem Flyer sind Telefon und Mail der LIKA entfernt. |
 | `ADHS_bei_Lernenden_15.04.2025.pdf` | Weiterbildung in der Klinik Hirslanden, Zürich, vom 15.4.2025, 3 Seiten (im Kopf als «15.04.20255» vertippt). Seite 2 lief beim ersten Einzug halb mit Seite 1 mit und wurde einzeln nachgescannt. |
