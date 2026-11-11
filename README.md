@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-391 PDFs, 1496 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+392 PDFs, 1498 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -638,6 +638,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `On_Religion_11.11.2026.pdf` | 5 Seiten, englisch, ohne Datum (Scantag); vorangestellt das Blatt «History of Religion – Evolution of Religion», dann «On Religion» Seiten 1–4; das doppelt eingelegte erste Blatt verworfen |
 | `Establishing_a_Therapeutic_Alliance_in_Family_System_Therapy_11.11.2026.pdf` | 4 Seiten, englisch, ohne Datum (Scantag); Ursula Davatz als Fellow in Family Systems Therapy, Georgetown Family Center, Washington D.C. |
 | `Psychologie_der_Gewalt_11.11.2026.pdf` | 3 Seiten, Stichworte ohne Datum (Scantag); Seite 2 einzeln nachgescannt |
+| `Workshop_über_die_Arbeit_an_der_eigenen_Ursprungsfamilie_11.11.2026.pdf` | 2 Seiten, Workshop-Angebot mit Lebenslauf und Foto, ohne Datum (Scantag; nach dem Lebenslauf frühestens Herbst 1999); vgl. «Arbeit an der eigenen Ursprungsfamilie» (3.7.2000) |
 
 ### Wenn etwas fehlt oder doppelt ist
 
