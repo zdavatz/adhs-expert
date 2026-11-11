@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-375 PDFs, 1437 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+376 PDFs, 1440 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -423,6 +423,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
+| `Eigentlich_sollte_ich_glücklich_sein_19.10.2000.pdf` | 3 Seiten, Frauen- und Mütterverein Boswil, 19.10.2000; Seite 2 einzeln nachgescannt |
 | `Geschwisterposition_29.10.2000.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2000; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Pubertät,_eine_schwierige_Lebensphase_für_Eltern_und_Kinder_02.11.2000.pdf` | 3 Seiten, Elternbildung Reinach/BL, 2.11.2000 |
 | `Zur_Angst_stehen_ist_mutig,_über_Angst_reden_entlastet_07.11.2000.pdf` | 4 Seiten, La Vida Wohlen, 7.11.2000; Seiten 2 und 3 einzeln nachgescannt |
