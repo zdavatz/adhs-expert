@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-393 PDFs, 1504 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+394 PDFs, 1508 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -422,6 +422,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
+| `Das_POS-Kind,_eine_Herausforderung_für_Eltern_und_23.05.2000.pdf` | 4 Seiten, La Vida Wohlen, 23.5.2000; Seiten 3 und 4 einzeln nachgescannt |
 | `Schizophrenie,_Er-_und_Verkennung_der_präpsychotischen_Phase_24.05.2000.pdf` | 6 Seiten, Fortbildung Hausärzte Zürich (Eli Lilly), Restaurant Ascot, 24.5.2000; Seiten 4 bis 6 einzeln nachgescannt; derselbe Text wie der Vortrag vom 22.8.2000 in Münsterlingen |
 | `Leben_lernen,_lernen_leben_zu_lassen_02.06.2000.pdf` | 2 Seiten, Nachbearbeitung der Tagung vom 2.6.2000 |
 | `Früherfassung_und_Frühbehandlung_der_Psychotischen_27.06.2000.pdf` | 4 Seiten, Weiterbildung und Supervision Psychiatrie-Stützpunkt Biel, 27.6.2000 |
