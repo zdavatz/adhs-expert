@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-381 PDFs, 1455 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+382 PDFs, 1459 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -628,6 +628,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Krisensituation_10.11.2026.pdf` | 4 (ohne Datum, Scantag; Schreibmaschine, Bild abgedunkelt; unterstrichene Überschriften für die Texterkennung ohne Unterstreichung gelesen; Tippfehler «Bower» im Bild zu «Bowen» korrigiert) |
 | `Gesundheitserziehung_Lektionen_I_bis_IV_10.11.2026_2.pdf` | 9 (zweites Exemplar, gleicher Satz; auf Seite 4 ein Absatz von Hand gestrichen und mit Leuchtstift markiert) |
 | `On_Religion_11.11.2026.pdf` | 5 Seiten, englisch, ohne Datum (Scantag); vorangestellt das Blatt «History of Religion – Evolution of Religion», dann «On Religion» Seiten 1–4; das doppelt eingelegte erste Blatt verworfen |
+| `Establishing_a_Therapeutic_Alliance_in_Family_System_Therapy_11.11.2026.pdf` | 4 Seiten, englisch, ohne Datum (Scantag); Ursula Davatz als Fellow in Family Systems Therapy, Georgetown Family Center, Washington D.C. |
 
 ### Wenn etwas fehlt oder doppelt ist
 
