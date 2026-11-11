@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-364 PDFs, 1401 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+365 PDFs, 1406 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -426,6 +426,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Geschwisterposition_29.10.2000.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2000; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Patchworkfamilie_09.11.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I/2000; nur das Jahr im Text, Tag und Monat vom Scan; Teil II fehlt schon in der Vorlage) |
 | `Chronische_Krankheit_in_der_Familie,_Gewalt_und_Alkohol_in_18.12.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000; «… in der Familie»; Datum am Textende) |
+| `Psychiatrische_Krankheit_und_sozialer_Abstieg_07.03.2001.pdf` | 5 (BDK; Blätter 2 bis 4 einzeln nachgescannt) |
 | `Freizeit_und_Alkohol_08.03.2001.pdf` | 3 (Präventionsgruppe Muri; Überlauf von Blatt 3 unten auf Seite 2 übermalt, Blatt 3 einzeln nachgescannt) |
 | `Krisenintervention_bei_Schizophrenieerkrankungen_unter_15.03.2001.pdf` | 5 (Fachtagung Psychiatrische Klinik Wil; Blätter 4 und 5 nachgescannt) |
 | `Psychologie_der_16jährigen_27.03.2001.pdf` | 4 (Berufswahlunterricht BFF Bern; am Schluss Vermerk «Fallbeispiele», die nicht beiliegen) |
