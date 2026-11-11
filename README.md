@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-372 PDFs, 1428 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+373 PDFs, 1430 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -425,6 +425,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
 | `Geschwisterposition_29.10.2000.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2000; nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Patchworkfamilie_09.11.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I/2000; nur das Jahr im Text, Tag und Monat vom Scan; Teil II fehlt schon in der Vorlage) |
+| `Ängste,_Verfolgungsängste,_Wahnvorstellungen_09.11.2000.pdf` | 2 (Spitex Münchenstein; Blatt 2 einzeln nachgescannt) |
 | `Konstruktiver_Umgang_mit_Aggressionen_und_Gewalt_im_14.11.2000.pdf` | 4 (Fortbildung im KSB; anderer Text als die Weiterbildung vom 1.2.2000; Blatt 2 einzeln nachgescannt) |
 | `Stress,_Wandel,_Sucht,_Übertritt_in_einen_neuen_30.11.2000.pdf` | 2 (Jugendkommission Kaiserstuhl-Fisibach) |
 | `Schmerzprobleme_aus_der_psychosomatischen_Perspektive_12.12.2000.pdf` | 4 (Weiterbildung Psychiatriestützpunkt Biel; Überlauf von Blatt 4 unten auf Seite 3 übermalt, Blatt 4 einzeln nachgescannt) |
