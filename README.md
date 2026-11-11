@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-380 PDFs, 1450 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+381 PDFs, 1455 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -627,6 +627,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Aufzeichnung_einer_neuen_psychopathologischen_10.11.2026.pdf` | 7 (Entwurf, von Hand so bezeichnet; ohne Datum, darum Scantag; Seitenzahlen oben rechts) |
 | `Krisensituation_10.11.2026.pdf` | 4 (ohne Datum, Scantag; Schreibmaschine, Bild abgedunkelt; unterstrichene Überschriften für die Texterkennung ohne Unterstreichung gelesen; Tippfehler «Bower» im Bild zu «Bowen» korrigiert) |
 | `Gesundheitserziehung_Lektionen_I_bis_IV_10.11.2026_2.pdf` | 9 (zweites Exemplar, gleicher Satz; auf Seite 4 ein Absatz von Hand gestrichen und mit Leuchtstift markiert) |
+| `On_Religion_11.11.2026.pdf` | 5 Seiten, englisch, ohne Datum (Scantag); vorangestellt das Blatt «History of Religion – Evolution of Religion», dann «On Religion» Seiten 1–4; das doppelt eingelegte erste Blatt verworfen |
 
 ### Wenn etwas fehlt oder doppelt ist
 
