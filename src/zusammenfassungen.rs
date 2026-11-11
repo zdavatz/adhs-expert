@@ -1367,6 +1367,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Vortrag im Berufswahlunterricht der BFF Bern. Die Pubertät ist nach Freud die wichtigste Entwicklungsphase, in der viele psychiatrische Krankheiten ihren Anfang nehmen. Jugendliche stehen in einem riesigen seelischen Spannungsfeld, stellen die Erwachsenen in Frage, suchen ihre eigenen Werte und schliessen sich der Peergroup an. Erwachsene reagieren oft verletzt, mit Belehrungen, Drohungen und Kontrolle, oder ziehen sich zurück. Ab 16 soll man nicht mehr erziehen, sondern die Beziehung pflegen, Auseinandersetzungen standhalten, ohne zurückzuschlagen, eigene Werte vertreten und Jugendliche emotional unterstützen, ohne sie zu kontrollieren.",
     },
     Zusammenfassung {
+        datei: "Psychologie_der_Gewalt_11.11.2026.pdf",
+        titel: "",
+        text: "Stichworte zur Gewalt, die kein Krankheitssymptom ist: vom althochdeutschen «waltan» (stark sein) über Formen der Aggression wie Identifikation mit dem Aggressor, Nachholen von Verletztheit oder Rache als Gerechtigkeitsausgleich. Gewalt ist vor allem ein Phänomen junger, sozial benachteiligter Männer; ihre Hauptmotoren sind die Vermeidung von Langeweile und Angst. Vier Erklärungsmodelle werden genannt: Trieb-, Frustrations-, Lern- und eine neue biologische Theorie. Dazu Zahlen zu Schizophrenie und Gewalt, bei der Alkohol und Drogen als Risikofaktoren gelten. Die Therapie setzt auf Beziehung, Einfühlen in das Opfer mit Rollenspielen, Täter-Opfer-Aussöhnung und darauf, Täter zu Managern ihrer eigenen Gewalt zu machen.",
+    },
+    Zusammenfassung {
         datei: "Psychoseerleben_in_der_Literatur_29.10.2026.pdf",
         titel: "",
         text: "Kurze Literaturliste nach Asmus Finzen (1993) zum Psychoseerleben in der Literatur. Genannt werden autobiografische Berichte Betroffener und Angehöriger, etwa von Dorothea Buck, Sylvia Plath und Susan Sheehan, sowie Texte von Büchner, Melville, Schnitzler, Handke und Bernhard, die psychotisches Erleben spiegeln. Aus dem französischen Sprachraum wird Philippe Djian angeführt. Christian Müller habe in einer Sammlung literarische Dokumente schizophrener Psychosen und anderer psychischer Störungen zugänglich gemacht.",
