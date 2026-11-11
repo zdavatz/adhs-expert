@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-386 PDFs, 1481 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+387 PDFs, 1484 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -421,6 +421,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
+| `Adoleszenten-Medizin,_einige_Tips_aus_der_Erfahrung_einer_01.07.2000.pdf` | 3 Seiten, Workshop am CP-Zentrum Solothurn mit Dr. Baumann, 1.7.2000 |
 | `Psychology_of_Violence,_a_developmental_perspective_14.07.2000.pdf` | 9 Seiten, englisch, 25th Anniversary Congress on Law and Mental Health, Siena, 14.7.2000 (Session: Mental Illness and Dangerousness); Seite 8 sind Stichworte zum Vortrag; deutsche Stichworte zum Thema in «Psychologie der Gewalt» |
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
 | `Schizophrenie,_Er-_und_Verkennung_der_präpsychotischen_Phase_22.08.2000.pdf` | 6 Seiten, Externe Psychiatrische Dienste Münsterlingen, 22.8.2000; Seite 4 einzeln nachgescannt; weitgehend derselbe Text wie das undatierte Skript «Früherfassung von Psychosen/Schizophrenie in der hausärztlichen Praxis» |
