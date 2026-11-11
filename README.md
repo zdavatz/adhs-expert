@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-429 PDFs, 1644 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+430 PDFs, 1647 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -617,6 +617,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Differenzierung_von_der_Ursprungsfamilie_09.11.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1998 für den Familientherapie-Kurs I 2018, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Arbeiten_mit_ganzen_Familien_als_Mehrpersonensystem_12.11.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
 | `Behandlung_des_Familiensystems_als_Ganzes_10.12.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
+| `Selbstwert_und_Selbstvertrauen_im_Kontext_der_Berufsfindung_07.02.2023.pdf` | Handschriftliche Vorlage (ein beidseitig beschriebenes Blatt) zur Weiterbildung Wendepunkt vom 7.2.2023, dazu eine Seite Reinschrift; 3 Seiten. |
 | `Narzismus_und_persönliche_Identität,_Handschrift_13.06.2023.pdf` | Handschriftliche Vorlage (zwei beidseitig beschriebene Blätter) zur Weiterbildung Wendepunkt vom 13.6.2023, dazu eine Seite Reinschrift in der Schreibweise der Vorlage («Narzismus»); 5 Seiten. |
 | `Kritik,_Frust,_Enttäuschung_und_Motivationslosigkeit_bei_06.02.2024.pdf` | Weiterbildung bei der Stiftung Wendepunkt vom 6.2.2024, 2 Seiten. Seite 2 wurde einzeln nachgescannt. |
 | `ADS_und_Autismus,_Hochstrittige_Eltern,_Handschrift_21.02.2024.pdf` | Handschriftliche Vorlage (zwei beidseitig beschriebene Blätter) zur Weiterbildung für HotA vom 21.2.2024, dazu eine Seite Reinschrift; 5 Seiten. |
