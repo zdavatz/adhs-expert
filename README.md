@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-403 PDFs, 1543 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+404 PDFs, 1547 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -418,6 +418,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Erwachsene_POS-Kinder_08.05.1999.pdf` | 5 Seiten, Abschiedssymposium für Dr. Liselott Ruf, Kinderspital Basel, 8.5.1999; Seiten 2 und 4 einzeln nachgescannt |
 | `Ablösungskonflikt_von_betagten_Eltern_mit_Starrköpfigkeit_06.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I 1999, 2. Hälfte; «… oder Loyalitätskonflikt zwischen den Generationen»; Seite 3 einzeln nachgescannt, weil der Einzug sie mit Seite 2 zog) |
 | `Depression_als_Verliererkrankheit_oder_Totstellreflex_27.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I) |
+| `Die_narzisstische_Verletzung_des_Arztes,_wie_gehen_wir_damit_14.10.1999.pdf` | Tagung am Kinderspital Basel vom 14.10.1999, 4 Seiten. Dasselbe Thema wie die Einleitung zur Vorlesung vom 6.1.2000, aber ein eigener Text. |
 | `Inzest_25.10.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/1999; Datum am Textende) |
 | `Einleitung_zur_Vorlesung_Die_narzistische_Verletzung_des_06.01.2000.pdf` | Einleitung zu einer Vorlesung vom 6.1.2000, 1 Seite. |
 | `Junge_Frauen_im_Spannungsfeld_zwischen_Familie,_Beruf_und_11.01.2000.pdf` | Vortrag beim Frauenverein Bubikon/Wolfhausen vom 11.1.2000, 6 Seiten. Seite 5 lief beim ersten Einzug halb mit Seite 4 mit und wurde einzeln nachgescannt. |
