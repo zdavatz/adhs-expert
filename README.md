@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-432 PDFs, 1654 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+433 PDFs, 1656 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -625,6 +625,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Posttraumatische_Belastungsstörung_(PTBS)_28.05.2024.pdf` | Weiterbildung bei der Stiftung Wendepunkt vom 28.5.2024, 2 Seiten (Fusszeile «Zürich, 27.05.24»). |
 | `AD(H)S,_Weiterbildung_Schule_am_Wasser_13.06.2024.pdf` | Weiterbildung an der Schule am Wasser vom 13.6.2024, 2 Seiten (Fusszeile «Zürich, 12.06.24»). Seite 2 wurde einzeln nachgescannt. |
 | `Rolle_der_Grosseltern_in_der_aufsuchenden_Familienarbeit_20.08.2024.pdf` | Weiterbildung für HotA vom 20.8.2024, 3 Seiten. |
+| `Worte_zur_Modeschau_31.08.2024.pdf` | Ansprache zu einer Modeschau vom 31.8.2024, 2 Seiten. Seite 2 mit handschriftlichen Ergänzungen (Ankündigungen am Schluss, Randnotiz); die handschriftlich notierte Ladenadresse ist entfernt. Seite 2 wurde einzeln nachgescannt. |
 | `Autismusspektrumkrankheit_(ASS),_Handschrift_19.11.2024.pdf` | Handschriftliche Vorlage (ein beidseitig beschriebenes Blatt) zur Weiterbildung Wendepunkt vom 19.11.2024, dazu eine Seite Reinschrift; 3 Seiten. |
 | `Eltern_mit_ADHS-ADS,_Handschrift_13.01.2025.pdf` | Handschriftliche Vorlage (drei beidseitig beschriebene Blätter) zur Weiterbildung für HotA vom 13.1.2025, dazu zwei Seiten Reinschrift; 8 Seiten. |
 | `Immer_mehr_psychisch_kranke_Jugendliche,_was_läuft_falsch_29.03.2025.pdf` | Weiterbildungsseminar bei LIKA in Stilli bei Brugg vom 29.3.2025, 5 Seiten: Flyer (Vorder- und Rückseite, Rückseite gedreht) und drei Textseiten. Auf dem Flyer sind Telefon und Mail der LIKA entfernt. |
