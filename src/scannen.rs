@@ -63,6 +63,8 @@ struct Optionen {
     fuss: Vec<PathBuf>,
     /// Von Hand gelesene Zeilen, siehe `nachtrag_lesen`.
     nachtrag: Option<PathBuf>,
+    /// Seiten (ab 1) ohne Textebene, etwa Handschrift mit Abschrift dahinter.
+    ohne_text: Vec<usize>,
 }
 
 fn optionen() -> anyhow::Result<Optionen> {
@@ -79,6 +81,7 @@ fn optionen() -> anyhow::Result<Optionen> {
         aus: Vec::new(),
         fuss: Vec::new(),
         nachtrag: None,
+        ohne_text: Vec::new(),
     };
     let mut args = std::env::args().skip(1).peekable();
     while let Some(a) = args.next() {
@@ -104,6 +107,15 @@ fn optionen() -> anyhow::Result<Optionen> {
             }
             "--grafik" => GRAFIK.store(true, std::sync::atomic::Ordering::Relaxed),
             "--nachtrag" => o.nachtrag = Some(PathBuf::from(wert()?)),
+            "--ohne-text" => {
+                // «1-6» oder «1,3,5»
+                for teil in wert()?.split(',') {
+                    let (von, bis) = teil.split_once('-').unwrap_or((teil, teil));
+                    let (von, bis): (usize, usize) =
+                        (von.trim().parse().context("--ohne-text")?, bis.trim().parse().context("--ohne-text")?);
+                    o.ohne_text.extend(von..=bis);
+                }
+            }
             "--lesen" | "--aus" | "--fuss" => {
                 let liste = match a.as_str() {
                     "--lesen" => &mut o.lesen,
@@ -117,7 +129,7 @@ fn optionen() -> anyhow::Result<Optionen> {
             "-h" | "--help" => {
                 println!(
                     "scannen [--datum JJJJ-MM-TT] [--titel \"Titel\"] [--dpi 150] [--farbe] [--duplex] [--ein] [--adresse-behalten] \
-                     [--sprache deu+eng] [--grafik] [--nachtrag DATEI] [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…] [--fuss PDF…]"
+                     [--sprache deu+eng] [--grafik] [--nachtrag DATEI] [--ohne-text 1-6] [--ordner DIR] [--geraet SANE-Gerät] [--lesen BILD…] [--aus BILD…] [--fuss PDF…]"
                 );
                 std::process::exit(0);
             }
@@ -260,6 +272,12 @@ fn lauf() -> anyhow::Result<()> {
             (vec![Vec::new(); seiten.len()], vec![None; seiten.len()])
         }
     };
+    // `--ohne-text`: Handschrift liest Tesseract nur als Salat; solche Seiten
+    // bekommen keine Textebene, ihr Text steht in einer angehängten Abschrift.
+    for &nr in &opt.ohne_text {
+        anyhow::ensure!((1..=texte.len()).contains(&nr), "--ohne-text: Seite {nr}?");
+        texte[nr - 1].retain(|z| z.text.is_empty());
+    }
     if let Some(pfad) = &opt.nachtrag {
         // Von Hand Gelesenes gilt vor der Erkennung: was es überdeckt, fällt weg
         // (Tesseract las in der Preistabelle «Stunden» ohne die «7»).
@@ -271,7 +289,7 @@ fn lauf() -> anyhow::Result<()> {
     // Eine Seite ohne jeden Text ist fast immer eine Rückseite: das Blatt lag
     // verkehrt herum im Einzug.
     for (i, zeilen) in texte.iter().enumerate() {
-        if zeilen.iter().all(|z| z.text.trim().is_empty()) {
+        if !opt.ohne_text.contains(&(i + 1)) && zeilen.iter().all(|z| z.text.trim().is_empty()) {
             eprintln!("Achtung: Scan-Seite {} ist leer - lag das Blatt verkehrt herum im Einzug?", i + 1);
         }
     }

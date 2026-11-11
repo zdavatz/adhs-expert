@@ -36,6 +36,7 @@ cargo run --release --bin scannen -- --sprache eng                # englische Vo
 cargo run --release --bin scannen -- --duplex                     # beidseitige Blätter
 cargo run --release --bin scannen -- --ein --grafik --aus flyer.jpg …       # Schrift auf Raster/Foto mitlesen
 cargo run --release --bin scannen -- --ein --nachtrag zeilen.tsv --aus …    # von Hand gelesene Zeilen
+cargo run --release --bin scannen -- --ein --ohne-text 1-6 --aus h1.jpg … abschrift.jpg   # Handschrift ohne Textebene
 cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
 cargo run --release --bin scanliste   # Übersicht der Scans mit Zusammenfassungen
 cargo run --release --bin eintragen -- --datei … --text … --bestand …   # neuen Scan nachtragen
@@ -339,6 +340,16 @@ Was dabei Zeit gekostet hat:
   Nachtrag verdrängt überlappend Erkanntes. Kontaktangaben im Nachtrag
   bricht `scannen` ab. Danach `pdftotext` Seite für Seite gegen das Bild
   prüfen und die Textseiten mit der Fassung ohne `--grafik` vergleichen.
+- **Handschrift:** Tesseract liest sie nur als Salat. Auf Wunsch des
+  Benutzers die Handschrift selbst lesen (vergrössert, `-level 0%,80%`
+  hebt Bleistift hervor; eine vorhandene Schreibmaschinenfassung hilft beim
+  Entziffern, abgeschrieben wird aber, was dasteht, mit Abkürzungen) und als
+  Abschrift anhängen: Text je Handschriftseite mit «[Handschrift Seite n]»
+  per `magick caption:` (Arial 24 pt, 1072 px breit, auf 1272×2096 weiss)
+  als JPEG setzen, hinter die Scans legen und mit `--ohne-text 1-6`
+  bauen - die Handschriftseiten bekommen keine Textebene, die Abschrift
+  wird normal erkannt. Danach die Textebene der Abschrift gegen den Quelltext
+  vergleichen. Blätter vorher fragen: einseitig oder beidseitig beschrieben.
 - **Neubau ändert die Textebene leicht.** Dieselben Bilder liest Tesseract
   beim zweiten Bau nicht ganz gleich (bei «Erziehungsschäden» fehlten 21
   Aufzählungsstriche). Soll nur eine Seite neu, die übrigen aus der
