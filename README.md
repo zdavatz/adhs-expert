@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-431 PDFs, 1652 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+432 PDFs, 1654 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -623,6 +623,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Kritik,_Frust,_Enttäuschung_und_Motivationslosigkeit_bei_06.02.2024.pdf` | Weiterbildung bei der Stiftung Wendepunkt vom 6.2.2024, 2 Seiten. Seite 2 wurde einzeln nachgescannt. |
 | `ADS_und_Autismus,_Hochstrittige_Eltern,_Handschrift_21.02.2024.pdf` | Handschriftliche Vorlage (zwei beidseitig beschriebene Blätter) zur Weiterbildung für HotA vom 21.2.2024, dazu eine Seite Reinschrift; 5 Seiten. |
 | `Posttraumatische_Belastungsstörung_(PTBS)_28.05.2024.pdf` | Weiterbildung bei der Stiftung Wendepunkt vom 28.5.2024, 2 Seiten (Fusszeile «Zürich, 27.05.24»). |
+| `AD(H)S,_Weiterbildung_Schule_am_Wasser_13.06.2024.pdf` | Weiterbildung an der Schule am Wasser vom 13.6.2024, 2 Seiten (Fusszeile «Zürich, 12.06.24»). Seite 2 wurde einzeln nachgescannt. |
 | `Rolle_der_Grosseltern_in_der_aufsuchenden_Familienarbeit_20.08.2024.pdf` | Weiterbildung für HotA vom 20.8.2024, 3 Seiten. |
 | `Autismusspektrumkrankheit_(ASS),_Handschrift_19.11.2024.pdf` | Handschriftliche Vorlage (ein beidseitig beschriebenes Blatt) zur Weiterbildung Wendepunkt vom 19.11.2024, dazu eine Seite Reinschrift; 3 Seiten. |
 | `Eltern_mit_ADHS-ADS,_Handschrift_13.01.2025.pdf` | Handschriftliche Vorlage (drei beidseitig beschriebene Blätter) zur Weiterbildung für HotA vom 13.1.2025, dazu zwei Seiten Reinschrift; 8 Seiten. |
