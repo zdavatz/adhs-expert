@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-373 PDFs, 1430 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+374 PDFs, 1434 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -424,6 +424,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Adoptivkinder,_Adoptiveltern_31.07.2000.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/2000) |
 | `Ethnisch_gemischte_Familie_28.08.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I 2000) |
 | `Geschwisterposition_29.10.2000.pdf` | 4 (Skript von U. Davatz, Familientherapie-Kurs I 2000; nur das Jahr im Text, Tag und Monat vom Scan) |
+| `Zur_Angst_stehen_ist_mutig,_über_Angst_reden_entlastet_07.11.2000.pdf` | 4 Seiten, La Vida Wohlen, 7.11.2000; Seiten 2 und 3 einzeln nachgescannt |
 | `Patchworkfamilie_09.11.2000.pdf` | 2 (Skript von U. Davatz, Familientherapie-Kurs I/2000; nur das Jahr im Text, Tag und Monat vom Scan; Teil II fehlt schon in der Vorlage) |
 | `Ängste,_Verfolgungsängste,_Wahnvorstellungen_09.11.2000.pdf` | 2 (Spitex Münchenstein; Blatt 2 einzeln nachgescannt) |
 | `Konstruktiver_Umgang_mit_Aggressionen_und_Gewalt_im_14.11.2000.pdf` | 4 (Fortbildung im KSB; anderer Text als die Weiterbildung vom 1.2.2000; Blatt 2 einzeln nachgescannt) |
