@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-421 PDFs, 1609 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+422 PDFs, 1616 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -668,6 +668,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Workshop_über_die_Arbeit_an_der_eigenen_Ursprungsfamilie_11.11.2026.pdf` | 2 Seiten, Workshop-Angebot mit Lebenslauf und Foto, ohne Datum (Scantag; nach dem Lebenslauf frühestens Herbst 1999); vgl. «Arbeit an der eigenen Ursprungsfamilie» (3.7.2000) |
 | `2._Treffen_Forum_Psychische_Gesundheit_(Strukturierte_11.11.2026.pdf` | Kein Vortrag von Ursula Davatz, sondern das Vorbereitungspapier des Forums Psychische Gesundheit in Uster zum Referat «Neurotypgerechte Unterstützung von Jugendlichen mit ADHS und ADS» vom 15.6.2026, 4 Seiten, ohne Datum (Scantag). Die Seiten 2 bis 4 wurden einzeln nachgescannt. |
 | `Beitrag_zum_Abschied_von_Professor_Guy_Bodenmann_11.11.2026.pdf` | Abschiedsbeitrag für Professor Guy Bodenmann, 1 Seite, ohne Datum (Scantag). In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
+| `Notizen_zum_Buch_AD(H)S-ADS_Folgekrankheiten,_Handschrift_11.11.2026.pdf` | Handschriftliche Notizen (Bleistift, fünf einseitig beschriebene Blätter) zu einer Weiterbildung 2026 über das Buch zu den AD(H)S-Folgekrankheiten, dazu zwei Seiten Reinschrift mit markierten unsicheren Lesungen; 7 Seiten. Tag und Monat im Kopf unleserlich (Scantag). Verwandt mit «ADHS/ADS Folgekrankheiten – Psychiatrie im Offside» vom 28.5.2026. |
 
 ### Wenn etwas fehlt oder doppelt ist
 
