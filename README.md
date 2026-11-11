@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-404 PDFs, 1547 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+405 PDFs, 1551 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -420,6 +420,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Depression_als_Verliererkrankheit_oder_Totstellreflex_27.09.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I) |
 | `Die_narzisstische_Verletzung_des_Arztes,_wie_gehen_wir_damit_14.10.1999.pdf` | Tagung am Kinderspital Basel vom 14.10.1999, 4 Seiten. Dasselbe Thema wie die Einleitung zur Vorlesung vom 6.1.2000, aber ein eigener Text. |
 | `Inzest_25.10.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/1999; Datum am Textende) |
+| `Abhängige_Persönlichkeit,_Sucht,_Co-Süchtiger_und_23.11.1999.pdf` | Fortbildung im Psychiatriestützpunkt Biel vom 23.11.1999, 4 Seiten. Seite 4 lief beim ersten Einzug halb mit Seite 3 mit und wurde einzeln nachgescannt; sie endet mit Stichworten zu sozialen Affekten. |
 | `Einleitung_zur_Vorlesung_Die_narzistische_Verletzung_des_06.01.2000.pdf` | Einleitung zu einer Vorlesung vom 6.1.2000, 1 Seite. |
 | `Junge_Frauen_im_Spannungsfeld_zwischen_Familie,_Beruf_und_11.01.2000.pdf` | Vortrag beim Frauenverein Bubikon/Wolfhausen vom 11.1.2000, 6 Seiten. Seite 5 lief beim ersten Einzug halb mit Seite 4 mit und wurde einzeln nachgescannt. |
 | `Glück_Wie_gelingt_Leben_13.01.2000.pdf` | Vortrag am Frauenzmorge in Untersiggenthal (Ref. Frauenverein, Kath. Frauenbund, Gruppen junger Mütter) vom 13.1.2000, 4 Seiten. Seite 3 blieb beim ersten Einzug liegen und wurde einzeln nachgescannt. |
