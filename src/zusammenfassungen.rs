@@ -1557,6 +1557,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Für Spitex-Fachpersonen, die im Territorium des Patienten pflegen, ist die Beziehung zum Patienten das wichtigste therapeutische Instrument. Der Vortrag behandelt vier Erschwernisse: Non-Compliance des Patienten, Einmischung der Angehörigen, Beziehungskonflikte zwischen Patient und Angehörigen sowie die eigene Überforderung. Statt Machtkampf oder Rückzug wird empfohlen, die Lebensgeschichte zu verstehen, Angehörige als Ressource einzubeziehen, nicht Richter zu spielen und die eigene Hilflosigkeit einzugestehen. Als Pflegende soll man sich nicht ins Familiensystem einbauen lassen, sondern eine gewisse objektive Position bewahren; das wird an Praxisbeispielen geübt.",
     },
     Zusammenfassung {
+        datei: "Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_06.03.2001.pdf",
+        titel: "",
+        text: "Fortbildung für die Spitex Oberstrass in Zürich. Spitex-Schwestern behandeln Patienten in ihrem natürlichen Umfeld, das ist ein Vorteil, aber auch eine Herausforderung. Typische schwierige Situationen sind aufopfernde und rivalisierende Angehörige, Paare in alten Machtkämpfen, Konflikte zwischen den Generationen, Gewalt, Verwahrlosung, sexuelle Übergriffe und Patienten ohne Compliance. Davatz rät, zuerst die Lage zu verstehen und nicht vorschnell zu helfen, nicht Richter zu spielen, Ressourcen statt Symptome zu benennen und emotional Distanz zu halten, wo nötig mit Supervision.",
+    },
+    Zusammenfassung {
         datei: "Umgang_mit_schwierigen_Familiensituationen_in_der_Spitex_28.10.2026.pdf",
         titel: "",
         text: "Artikel für die Spitex Zeitung zur Weiterbildung «Umgang mit schwierigen Familiensituationen in der Spitex» (23.4.2002). Familien seien durch eine schwere Krankheit oft überfordert, sodass Spitex-Fachpersonen in schwierige Beziehungsgeflechte geraten. Als Regeln nennt Davatz, nicht nur den designierten Patienten, sondern die ganze Familie einzubeziehen, emotional neutral zu bleiben und sich die Lebensgeschichten erzählen zu lassen. Die eigene Person sei das wichtigste Instrument, man werde zum «Familienmitglied auf Zeit»; Intervision und Humor helfen dabei. Am Schluss stehen Literaturhinweise zu Bowen, McGoldrick, Tomann und Weiss.",
