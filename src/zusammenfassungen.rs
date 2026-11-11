@@ -987,6 +987,11 @@ pub const ZUSAMMENFASSUNGEN: &[Zusammenfassung] = &[
         text: "Zweites Exemplar des englischen Beitrags von U. Davatz für die Weiterbildungstagung in Dalian, China (1987), mit anders gesetztem Kopf, handschriftlichem Datum und einer Randnotiz. Sie stellt dem territorialen Denken, das wie das Revierverhalten der Tiere das eigene fachliche, religiöse oder kulturelle Denkrevier verteidigt, das globale Denken gegenüber, das sich laufend aus dem eigenen Revier löst und die verschiedenen Denkmodelle verbindet. Gefördert werde es durch multidisziplinäre Teams mit gemeinsamen Aufgaben und eine dezentrale, kooperative Bildung.",
     },
     Zusammenfassung {
+        datei: "Humor,_eine_altbewährte_und_billige_Medizin_12.04.2000.pdf",
+        titel: "",
+        text: "Schon die alten Griechen setzten Komödie und Tragödie im Theater von Epidauros neben dem Asklepios-Heiligtum zur seelischen Gesundheitserziehung ein; heute wird Gesundheit an Fachleute und Medikamente delegiert. Der Vortrag plädiert für den Humor als anspruchsvollere, aber billigere Medizin: Er entsteht aus der menschlichen Fähigkeit, sich selbst aus Distanz zu betrachten, und zeigt sich gerade in Extremsituationen als Galgenhumor. Lachen entspannt den Körper, senkt Stress, wirkt angstlösend und antiaggressiv, lockert festgefahrene Beziehungen und erleichtert das Lernen. Zu viel Humor kann allerdings verunsichern; Kinder können noch nicht gut damit umgehen. Wer Humor in Familie und Beruf pflegt, trägt etwas zur Volksgesundheit bei, ohne einen Rappen auszugeben.",
+    },
+    Zusammenfassung {
         datei: "Hypothesen_zur_Suchtkrankheit_09.08.1984.pdf",
         titel: "",
         text: "Sechs Thesen von U. Davatz zur Suchtkrankheit (1984). Der potentiell Suchtkranke lebe in dauernder starker Überreizung und chronischem Stress und beruhige sich mit Suchtmitteln, deren Beschaffung und Konsum über Schuldgefühle wegen Illegalität und moralischer Verurteilung wieder Stress erzeugen, sodass sich ein Teufelskreis selbst erhält. Unter dauernder Überreizung sei ein Mensch wie ein Tier lernunfähig, weil Stress körpereigene Endorphine freisetzt, die den Gedächtnisprozess löschen. Strafe erhöhe den Stress zusätzlich und sei darum aus hirnphysiologischer Sicht widersinnig; zur Suchtkrankheit gehörten Rückfälle, und nur wer sie akzeptiere, könne mit Suchtkranken umgehen.",

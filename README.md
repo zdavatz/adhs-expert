@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-394 PDFs, 1508 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+395 PDFs, 1511 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -421,6 +421,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Inzest_25.10.1999.pdf` | 3 (Skript von U. Davatz, Familientherapie-Kurs I/1999; Datum am Textende) |
 | `Konstruktiver_Umgang_mit_Aggression_und_Gewalt_im_01.02.2000.pdf` | 4 (Weiterbildung am KSB; «… im Pflegealltag») |
 | `Was_bewirkt_das_Auftreten_einer_lebensbedrohlichen_Krankheit_27.02.2000.pdf` | 9 (Jahresarbeit Kurs II / 1999 einer Ärztin, Exemplar in Originalgrösse, mit Beilage von zehn Fallbeispielen; Namen, Initialen und Geburtsdaten der Patienten und Angehörigen durch erfundene ersetzt) |
+| `Humor,_eine_altbewährte_und_billige_Medizin_12.04.2000.pdf` | 3 Seiten, Volksgesundheitsverein Sektion Obwalden, 12.4.2000; Seite 3 einzeln nachgescannt |
 | `Meine_Themen_im_Familienkurs_II_25.04.2000.pdf` | 4 (persönlicher Bericht eines Kursteilnehmers, Name auf Wunsch geändert in «Bernhard Berger»; Datum handschriftlich) |
 | `Das_POS-Kind,_eine_Herausforderung_für_Eltern_und_23.05.2000.pdf` | 4 Seiten, La Vida Wohlen, 23.5.2000; Seiten 3 und 4 einzeln nachgescannt |
 | `Schizophrenie,_Er-_und_Verkennung_der_präpsychotischen_Phase_24.05.2000.pdf` | 6 Seiten, Fortbildung Hausärzte Zürich (Eli Lilly), Restaurant Ascot, 24.5.2000; Seiten 4 bis 6 einzeln nachgescannt; derselbe Text wie der Vortrag vom 22.8.2000 in Münsterlingen |
