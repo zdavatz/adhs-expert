@@ -186,7 +186,7 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 ### Übersicht der Scans
 
-[`Vorträge_Dr.med._Ursula_Davatz_von_1980_bis_2018.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1980_bis_2018.pdf)
+[`Vorträge_Dr.med._Ursula_Davatz_von_1980_bis_2025.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1980_bis_2025.pdf)
 führt alle Scans nach
 Vortragsdatum auf, je Datei mit Seitenzahl, einer Zusammenfassung in drei bis
 fünf Sätzen und einem Link auf das PDF hier auf GitHub. Die Zusammenfassungen
