@@ -243,7 +243,7 @@ sie sich, ersetzt die neue Datei die alte.
 
 ### Bestand
 
-410 PDFs, 1568 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
+411 PDFs, 1573 Seiten, nach Vortragsdatum (Scantag, wo der Text keines nennt; bei blosser Jahresangabe das Jahr mit Tag und Monat vom Scan).
 
 | Datei | Seiten |
 |---|---|
@@ -617,6 +617,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `Differenzierung_von_der_Ursprungsfamilie_09.11.2018.pdf` | 3 (überarbeitete Fassung des Skripts von 1998 für den Familientherapie-Kurs I 2018, nur das Jahr im Text, Tag und Monat vom Scan) |
 | `Arbeiten_mit_ganzen_Familien_als_Mehrpersonensystem_12.11.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
 | `Behandlung_des_Familiensystems_als_Ganzes_10.12.2018.pdf` | 2 (Skript von U. Davatz, Familienkurs I 2018; Praxisadresse, Telefon und Mail entfernt) |
+| `Immer_mehr_psychisch_kranke_Jugendliche,_was_läuft_falsch_29.03.2025.pdf` | Weiterbildungsseminar bei LIKA in Stilli bei Brugg vom 29.3.2025, 5 Seiten: Flyer (Vorder- und Rückseite, Rückseite gedreht) und drei Textseiten. Auf dem Flyer sind Telefon und Mail der LIKA entfernt. |
 | `Erziehungsschäden,_wie_lassen_sich_diese_therapeutisch_21.03.2026.pdf` | Weiterbildungsseminar bei LIKA in Stilli bei Brugg vom 21.3.2026, 6 Seiten: Flyer «Erziehungsschäden – die Erziehung unseres Nachwuchses der nächsten Generation» und fünf Textseiten. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `Erziehungsschäden_21.03.2026.pdf` | Ausschreibung des Weiterbildungsseminars bei LIKA vom 21.3.2026, 1 Seite. Das Seminarskript liegt als «Erziehungsschäden, wie lassen sich diese therapeutisch reparieren» unter demselben Datum. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
 | `ADHS_und_ASS_04.06.2026.pdf` | Weiterbildung an der Schule Dintikon vom 4.6.2026, 4 Seiten. Seite 4 trägt nur den Titel «Beispiele von Konflikten mit ADHS-Kindern» für den mündlichen Teil. Seite 4 lief beim ersten Einzug halb mit Seite 3 mit und wurde einzeln nachgescannt. In der Fusszeile sind Strasse, Telefon und Mail der Praxis entfernt. |
