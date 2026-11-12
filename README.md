@@ -184,12 +184,24 @@ dokumentiert, und der Image-Capture-Treiber «EPSON Scanner.app» ist nur für
 Intel gebaut und startet auf Apple Silicon ohne Rosetta nicht. SANE führt den
 GT-2500 im Backend `epson2` als «ES-H300».
 
+### Die Scans auf adhs.expert
+
+Seit dem 12. November 2026 liegen alle 440 Scans als PDF in der Mediathek von
+[adhs.expert](https://adhs.expert) und haben dort je einen eigenen Beitrag mit
+Zusammenfassung, Jahres-Kategorie und Link auf das PDF. Ein Beitrag erklärt das
+Verzeichnis:
+[Übersicht aller gescannten Vorträge und Kursunterlagen als PDF](https://adhs.expert/2026/11/12/uebersicht-aller-gescannten-vortraege-und-kursunterlagen-als-pdf/).
+Die 16 Scans, zu denen schon ein Vortragsbeitrag bestand, hängen an diesem.
+
 ### Übersicht der Scans
 
 [`Vorträge_Dr.med._Ursula_Davatz_von_1980_bis_2025.pdf`](Vortr%C3%A4ge_Dr.med._Ursula_Davatz_von_1980_bis_2025.pdf)
 führt alle Scans nach
 Vortragsdatum auf, je Datei mit Seitenzahl, einer Zusammenfassung in drei bis
-fünf Sätzen und einem Link auf das PDF hier auf GitHub. Die Zusammenfassungen
+fünf Sätzen und einem Link auf das PDF **in der Mediathek von adhs.expert**.
+Die Adresse je Datei steht in `src/medien.rs`; sie ist nicht aus dem
+Dateinamen berechenbar, weil WordPress Umlaute auflöst und belegte Namen mit
+`-1` versieht. Die Zusammenfassungen
 stehen in `src/zusammenfassungen.rs`. Nach jedem neuen Scan trägt `eintragen`
 die Zusammenfassung alphabetisch ein, setzt die Zeile im Bestand unten nach
 Datum und zählt «N PDFs, M Seiten» aus `scan/` neu; danach die Übersicht
@@ -712,7 +724,8 @@ sie sich, ersetzt die neue Datei die alte.
 | `src/mail.rs` | Mail mit Anhängen über die Gmail-API (OAuth-Refresh, MIME, `--trocken`) |
 | `src/etiketten.rs` | Ordnerrücken «Vorträge … JJJJ – JJJJ» auf ein A4-Blatt, Breite je Schild |
 | `src/pcldruck.rs` | Erste PDF-Seite als PCL-Raster an einen Drucker ohne PDF (Port 9100) |
-| `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und GitHub-Link (`Vorträge_Dr.med._Ursula_Davatz_von_…_bis_….pdf`) |
+| `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und Link auf adhs.expert (`Vorträge_Dr.med._Ursula_Davatz_von_…_bis_….pdf`) |
+| `src/medien.rs` | Generiert: Scan-Dateiname → Adresse in der Mediathek von adhs.expert |
 | `src/zusammenfassungen.rs` | je Scan drei bis fünf Sätze Zusammenfassung |
 | `src/pdflinks.rs` | Link-Overlay, gemeinsam für beide Übersichten |
 | `src/scannen.rs` | Vorträge über den Einzug des GT-2500 scannen, Datum und Titel erkennen |

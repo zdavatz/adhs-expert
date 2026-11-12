@@ -14,6 +14,7 @@
 // Lizenz: GPL-3.0
 
 mod dateiname;
+mod medien;
 mod pdflinks;
 mod zusammenfassungen;
 
@@ -38,7 +39,10 @@ const DEFAULT_FONT_DIR: &str = "fonts";
 const OUT_PRAEFIX: &str = "Vorträge_Dr.med._Ursula_Davatz_von_";
 const SCAN_DIR: &str = "scan";
 const TITEL: &str = "adhs.expert - Gescannte Vorträge und Kursunterlagen";
-const GITHUB: &str = "https://github.com/zdavatz/adhs-expert/blob/main/scan/";
+// Die Scans liegen in der Mediathek von adhs.expert; die Adresse je Datei
+// steht in `medien.rs` (nicht berechenbar, siehe dort). Verlinkt wird dorthin
+// und nicht mehr auf GitHub - Wunsch des Benutzers.
+const WEB_PRAEFIX: &str = "https://adhs.expert/";
 
 const INK: Color = Color::Rgb(0x1b, 0x1b, 0x1d);
 const ACCENT: Color = Color::Rgb(0x8a, 0x2f, 0x4f);
@@ -124,8 +128,12 @@ fn kodieren(s: &str) -> String {
     out
 }
 
+/// Angezeigter Text der Link-Zeile: die Adresse auf adhs.expert ohne Schema.
 fn link_text(datei: &str) -> String {
-    let s = format!("github.com/zdavatz/adhs-expert/scan/{datei}");
+    let s = match medien::url(datei) {
+        Some(u) => u.strip_prefix("https://").unwrap_or(u).to_string(),
+        None => format!("adhs.expert/scan/{datei}"),
+    };
     let z: Vec<char> = s.chars().collect();
     if z.len() <= MAX_LINK_CHARS {
         return s;
@@ -410,7 +418,13 @@ fn render(out: Option<PathBuf>, font_dir: &str) -> Result<PathBuf> {
 
     let links: Vec<Link> = scans
         .iter()
-        .map(|s| Link { url: format!("{GITHUB}{}", kodieren(&s.datei)), zeichen: link_text(&s.datei).chars().count() })
+        .map(|s| Link {
+            url: match medien::url(&s.datei) {
+                Some(u) => u.to_string(),
+                None => format!("{WEB_PRAEFIX}scan/{}", kodieren(&s.datei)),
+            },
+            zeichen: link_text(&s.datei).chars().count(),
+        })
         .collect();
     let gesetzt = add_links(out, &links, TITEL)?;
     if gesetzt != links.len() {

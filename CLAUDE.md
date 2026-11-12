@@ -396,10 +396,18 @@ ohne das laufende Jahr (Scantag bei Vorlagen ohne Datum); ändern sie sich,
 entfernt das Programm die alte Datei – im Commit mit `git add -A` aufnehmen.
 Je PDF in `scan/` Titel und
 Datum aus dem Dateinamen, Seitenzahl, Zusammenfassung aus
-`src/zusammenfassungen.rs` und ein Link auf
-`github.com/zdavatz/adhs-expert/blob/main/scan/<Datei>` (prozentkodiert).
+`src/zusammenfassungen.rs` und ein Link auf **die Mediathek von adhs.expert**
+(Wunsch des Benutzers; vorher GitHub).
 Gleiche Link-Mechanik wie `uebersicht`, gemeinsam in `src/pdflinks.rs`; die
-Link-Zeile zeigt den Pfad und wird über 88 Zeichen in der Mitte gekürzt.
+Link-Zeile zeigt die Adresse ohne `https://` und wird über 88 Zeichen in der
+Mitte gekürzt.
+
+- **Die Adresse in der Mediathek ist nicht berechenbar** und steht darum je
+  Datei in `src/medien.rs` (generiert). WordPress nimmt nur ASCII-Namen, löst
+  also Umlaute auf und macht aus Klammern und Kommas `_`; wo der Name schon
+  belegt war, hängte es `-1` an. Beim Nachladen weiterer Scans `medien.rs`
+  ergänzen, sonst fällt `link_text()` auf `adhs.expert/scan/<Datei>` zurück –
+  einen Pfad, den es auf der Seite nicht gibt.
 
 - **Nach jedem neuen Scan** `cargo run --release --bin eintragen -- --datei
   … --text … --bestand … [--titel …]` aufrufen (3–5 Sätze, ss, keine Namen
@@ -427,6 +435,52 @@ Link-Zeile zeigt den Pfad und wird über 88 Zeichen in der Mitte gekürzt.
   Seiten halb leer. Nach Änderungen prüfen, dass jede Seite mit einem Titel
   beginnt und keine leere Seite entsteht.
 
+### Die Scans als Beiträge auf adhs.expert
+
+Seit dem 12. November 2026 hat **jeder Scan aus `scan/` einen eigenen Beitrag**
+auf adhs.expert, und alle 440 PDF liegen in der Mediathek der Seite (nicht mehr
+nur auf GitHub – ausdrücklicher Wunsch des Benutzers). Angelegt über die
+REST-API, Autor `udavatz` (Benutzer-ID 15361161, nicht `zdavatz`).
+
+- Beitragsdatum = Datum des Scans, darum ist der Permalink eindeutig; bei
+  gleichem Titel und Datum hängt WordPress `-2` an.
+- Inhalt: Datum, die Zusammenfassung aus `src/zusammenfassungen.rs` und der
+  Link aufs PDF. Die Zeile über dem Link ist **fett, nicht `<h2>`** – eine
+  Überschrift wäre grösser als der Beitragstitel, was der Benutzer nicht will.
+- Kategorien, mindestens drei: `Vortrag`, `Archiv` (neu angelegt, id
+  716265248) und **das Publikationsjahr**. Jahreszahlen kommen aus dem Datum,
+  nie aus dem Text – Zusammenfassungen nennen oft Jahre («ab 1986 in
+  Königsfelden») und würden sonst die falsche Kategorie setzen. Dazu bis zu
+  vier Sachkategorien aus dem Bestand.
+- Tags, mindestens zwei, aus dem Tag-Bestand der Seite; erfunden wird nur,
+  wenn der ganze Bestand nichts hergibt (genau einmal vorgekommen).
+- **Auch die 1166 älteren Beiträge** tragen jetzt ihr Publikationsjahr als
+  Kategorie. Nur angehängt, bestehende Kategorien blieben unberührt. Ausnahme,
+  die kein Fehler ist: drei Beiträge vom 3.10.2017 tragen «2018» als
+  Themenangabe («Gruppe 2018», «Kurs I/2018»), darum zählt 2018 drei mehr als
+  es Beiträge aus 2018 gibt.
+- 16 Scans haben **keinen** eigenen Beitrag, weil der Vortrag schon einen hat;
+  dort hängt nur der PDF-Link dran (15 Beiträge, einer trägt zwei Scans).
+  Zugeordnet wurde nach Titel **und** Datum. Titelgleichheit allein genügt
+  nicht: 704 der Beiträge stammen aus 2024 und sind kurze Themenartikel, die
+  mit alten Vorträgen oft denselben Titel haben – «Depression» von 1984 trifft
+  «Depression als Chance zur Selbstfindung» von 2024.
+
+**Fallen beim Nachbauen über die REST-API:**
+
+- **Mediathek-Upload nie zweimal starten.** Ein Doppelstart legte 429
+  Dubletten an (WordPress hängt `-1` an); sie mussten einzeln über
+  `DELETE /wp-json/wp/v2/media/<id>?force=true` weg – einen Papierkorb gibt es
+  für Medien nicht. Vor dem Neustart prüfen, ob der erste Lauf wirklich tot
+  ist, und zwar **nicht** mit `pgrep -f <skript>`: das Muster trifft die eigene
+  Kommandozeile der Prüfschleife, die dann endlos auf sich selbst wartet.
+  Verkettete Läufe stattdessen sequenziell in einem Prozess starten.
+- WordPress.com drosselt mit **429**; jeder Schreibzugriff braucht Rückstufung
+  (15 s, verdoppelnd) und etwa 1,5 s Abstand. Abfragen mit `context=edit` und
+  Volltext für 50 Beiträge auf einmal lösen die Drosselung besonders schnell aus.
+- `author` lässt sich mit dem Anwendungspasswort von `zdavatz` auf `udavatz`
+  umschreiben; die Berechtigung reicht.
+
 ### Daten (`src/eintraege.rs`)
 
 Generiert, nicht von Hand gepflegt. Ein Eintrag je Beitrag mit `datum`,
@@ -438,6 +492,14 @@ in der Metazeile des Listeneintrags.
 
 Beim Neuerzeugen der Datei die Reihenfolge beibehalten (nach `aufrufe`
 absteigend) und `ocr` korrekt setzen – sonst stimmt die Zählung auf der Titelseite nicht.
+
+**Die 424 Scan-Beiträge gehören hier nicht hinein.** `EINTRAEGE` listet die
+Beiträge, deren **Volltext im Beitrag selbst** steht; bei den Scan-Beiträgen
+steht dort nur eine Zusammenfassung, der Volltext liegt im verlinkten PDF. Die
+Kennzahlen der Titelseite beschreiben diese Teilmenge und bleiben darum
+richtig. Auch die 13 Einträge, an die im November 2026 ein PDF-Link gehängt
+wurde, behalten ihre Wortzahl: der Block sitzt **vor** der Überschrift
+`<h2>Transkript</h2>`, und `woerter()` zählt nur, was danach kommt.
 
 **Wird ein Beitrag auf adhs.expert gelöscht, muss sein Eintrag hier heraus.**
 Sonst führt das PDF einen Link auf eine 404-Seite. Alle Kennzahlen der
