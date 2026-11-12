@@ -188,10 +188,17 @@ GT-2500 im Backend `epson2` als «ES-H300».
 
 Seit dem 12. November 2026 liegen alle 440 Scans als PDF in der Mediathek von
 [adhs.expert](https://adhs.expert) und haben dort je einen eigenen Beitrag mit
-Zusammenfassung, Jahres-Kategorie und Link auf das PDF. Ein Beitrag erklärt das
-Verzeichnis:
+Zusammenfassung und Link auf das PDF. Ein Beitrag erklärt das Verzeichnis:
 [Übersicht aller gescannten Vorträge und Kursunterlagen als PDF](https://adhs.expert/2026/11/12/uebersicht-aller-gescannten-vortraege-und-kursunterlagen-als-pdf/).
 Die 16 Scans, zu denen schon ein Vortragsbeitrag bestand, hängen an diesem.
+
+Jeder Beitrag trägt mindestens drei Kategorien – `Vortrag`, `Archiv` und das
+**Publikationsjahr** – sowie mindestens zwei Tags. Über die Jahreszahl lässt
+sich der Bestand nach Jahrgängen durchgehen, von
+[1980](https://adhs.expert/category/1980/) bis
+[2026](https://adhs.expert/category/2026/); 1982 und 2009 fehlen, dort gibt es
+keine Vorlage. Auch die älteren Beiträge der Seite haben ihr Publikationsjahr
+bekommen, damit die Jahresnavigation über den ganzen Bestand reicht.
 
 ### Übersicht der Scans
 

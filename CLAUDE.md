@@ -455,16 +455,29 @@ REST-API, Autor `udavatz` (Benutzer-ID 15361161, nicht `zdavatz`).
 - Tags, mindestens zwei, aus dem Tag-Bestand der Seite; erfunden wird nur,
   wenn der ganze Bestand nichts hergibt (genau einmal vorgekommen).
 - **Auch die 1166 älteren Beiträge** tragen jetzt ihr Publikationsjahr als
-  Kategorie. Nur angehängt, bestehende Kategorien blieben unberührt. Ausnahme,
-  die kein Fehler ist: drei Beiträge vom 3.10.2017 tragen «2018» als
-  Themenangabe («Gruppe 2018», «Kurs I/2018»), darum zählt 2018 drei mehr als
-  es Beiträge aus 2018 gibt.
+  Kategorie. Nur angehängt, bestehende Kategorien blieben unberührt.
+  **Die Jahres-Kategorie bedeutet ausnahmslos das Publikationsjahr.** Drei
+  Beiträge vom 3.10.2017 trugen «2018» als Themenangabe («Gruppe 2018»,
+  «Angehörigengruppe 2018», «Kurs I/2018») und zählten dort mit; auf Wunsch des
+  Benutzers ist «2018» bei ihnen entfernt worden, ihr 2017 bleibt. Wer so eine
+  Jahreszahl wieder als Thema vergibt, bricht die Bedeutung – dann besser einen
+  Tag nehmen.
+- **Gegenprobe nach jedem Durchgang:** Die Zähler aller Jahres-Kategorien
+  müssen den Beiträgen des Jahres entsprechen (45 Jahre, 1980–2026, ohne 1982
+  und 2009 – dort gibt es weder Scan noch Beitrag). `Vortrag` zählt 434
+  (424 Scan-Beiträge, 9 alte, der Erklärbeitrag), `Archiv` 425.
 - 16 Scans haben **keinen** eigenen Beitrag, weil der Vortrag schon einen hat;
   dort hängt nur der PDF-Link dran (15 Beiträge, einer trägt zwei Scans).
   Zugeordnet wurde nach Titel **und** Datum. Titelgleichheit allein genügt
   nicht: 704 der Beiträge stammen aus 2024 und sind kurze Themenartikel, die
   mit alten Vorträgen oft denselben Titel haben – «Depression» von 1984 trifft
   «Depression als Chance zur Selbstfindung» von 2024.
+
+Ein Beitrag erklärt das Verzeichnis und verlinkt es:
+<https://adhs.expert/2026/11/12/uebersicht-aller-gescannten-vortraege-und-kursunterlagen-als-pdf/>.
+Das Verzeichnis selbst liegt als PDF in der Mediathek (Medien-ID 11266) und
+muss nach jedem `scanliste`-Lauf **neu hochgeladen und der Link im Beitrag
+nachgezogen** werden – sonst zeigt der Beitrag eine veraltete Fassung.
 
 **Fallen beim Nachbauen über die REST-API:**
 
