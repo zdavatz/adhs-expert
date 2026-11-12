@@ -192,6 +192,22 @@ Zusammenfassung und Link auf das PDF. Ein Beitrag erklärt das Verzeichnis:
 [Übersicht aller gescannten Vorträge und Kursunterlagen als PDF](https://adhs.expert/2026/11/12/uebersicht-aller-gescannten-vortraege-und-kursunterlagen-als-pdf/).
 Die 16 Scans, zu denen schon ein Vortragsbeitrag bestand, hängen an diesem.
 
+Das macht `webscan`: PDF in die Mediathek, Beitrag anlegen, Kategorien und
+Tags vergeben, Adresse in `src/medien.rs` nachtragen.
+
+```bash
+cargo run --release --bin webscan -- --alle --trocken   # zeigen, was geschähe
+cargo run --release --bin webscan -- --alle             # hochladen und anlegen
+cargo run --release --bin scanliste                     # Übersicht neu bauen
+cargo run --release --bin webscan -- --verzeichnis      # Übersicht hoch, Link nachziehen
+```
+
+Zugang über `~/.config/adhs-expert/credentials` (`WP_SITE`, `WP_USER`,
+`WP_APP_PASSWORD`); die Datei liegt ausserhalb des Repositorys. Steht eine
+Datei schon in `src/medien.rs`, lädt `webscan` sie nicht erneut hoch – diese
+Sperre gibt es, weil zwei parallele Läufe einmal 429 Dubletten in der
+Mediathek angelegt haben.
+
 Jeder Beitrag trägt mindestens drei Kategorien – `Vortrag`, `Archiv` und das
 **Publikationsjahr** – sowie mindestens zwei Tags. Über die Jahreszahl lässt
 sich der Bestand nach Jahrgängen durchgehen, von
@@ -733,6 +749,7 @@ sie sich, ersetzt die neue Datei die alte.
 | `src/pcldruck.rs` | Erste PDF-Seite als PCL-Raster an einen Drucker ohne PDF (Port 9100) |
 | `src/scanliste.rs` | Übersicht der Scans mit Zusammenfassung und Link auf adhs.expert (`Vorträge_Dr.med._Ursula_Davatz_von_…_bis_….pdf`) |
 | `src/medien.rs` | Generiert: Scan-Dateiname → Adresse in der Mediathek von adhs.expert |
+| `src/webscan.rs` | Bringt einen Scan auf adhs.expert: PDF in die Mediathek, Beitrag, Kategorien, Tags |
 | `src/zusammenfassungen.rs` | je Scan drei bis fünf Sätze Zusammenfassung |
 | `src/pdflinks.rs` | Link-Overlay, gemeinsam für beide Übersichten |
 | `src/scannen.rs` | Vorträge über den Einzug des GT-2500 scannen, Datum und Titel erkennen |

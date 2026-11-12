@@ -31,6 +31,10 @@ path = "src/etiketten.rs"
 name = "pcldruck"
 path = "src/pcldruck.rs"
 
+[[bin]]
+name = "webscan"
+path = "src/webscan.rs"
+
 [dependencies]
 anyhow = "1"
 genpdf = "0.2"

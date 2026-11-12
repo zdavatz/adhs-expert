@@ -40,6 +40,10 @@ cargo run --release --bin scannen -- --ein --ohne-text 1-6 --aus h1.jpg … absc
 cargo run --release --bin scannen -- --fuss scan/x.pdf            # adhs.expert-Fusszeile nachrüsten
 cargo run --release --bin scanliste   # Übersicht der Scans mit Zusammenfassungen
 cargo run --release --bin eintragen -- --datei … --text … --bestand …   # neuen Scan nachtragen
+cargo run --release --bin webscan -- --scan Titel_TT.MM.JJJJ.pdf   # Scan auf adhs.expert bringen
+cargo run --release --bin webscan -- --alle                         # alle, die noch nicht oben sind
+cargo run --release --bin webscan -- --verzeichnis                  # Übersichts-PDF neu hoch
+cargo run --release --bin webscan -- --alle --trocken               # nur zeigen
 cargo run --release --bin mail -- --an … --betreff … --nachricht … --anhang scan/x.pdf --token …
 cargo run --release --bin etiketten -- --jahre 1983-1988 --jahre 2013-2018@25 --out e.pdf   # Ordnerrücken
 cargo run --release --bin pcldruck -- e.pdf --an DRUCKER:9100   # eine Seite als PCL
@@ -475,9 +479,40 @@ REST-API, Autor `udavatz` (Benutzer-ID 15361161, nicht `zdavatz`).
 
 Ein Beitrag erklärt das Verzeichnis und verlinkt es:
 <https://adhs.expert/2026/11/12/uebersicht-aller-gescannten-vortraege-und-kursunterlagen-als-pdf/>.
-Das Verzeichnis selbst liegt als PDF in der Mediathek (Medien-ID 11266) und
-muss nach jedem `scanliste`-Lauf **neu hochgeladen und der Link im Beitrag
-nachgezogen** werden – sonst zeigt der Beitrag eine veraltete Fassung.
+Das Verzeichnis selbst liegt als PDF in der Mediathek und muss nach jedem
+`scanliste`-Lauf **neu hochgeladen und der Link im Beitrag nachgezogen**
+werden – sonst zeigt der Beitrag eine veraltete Fassung. Die Medien-ID wechselt
+dabei jedes Mal; die gültige steht im Beitrag selbst.
+
+**Das Werkzeug dafür ist `src/webscan.rs`.** Es lädt das PDF in die
+Mediathek, legt den Beitrag an (Titel und Datum aus dem Dateinamen, Text aus
+`src/zusammenfassungen.rs`, Autor `udavatz`), vergibt Kategorien und Tags und
+trägt die Adresse in `src/medien.rs` nach. Reihenfolge nach einem neuen Scan:
+
+```bash
+cargo run --release --bin scannen -- …          # PDF nach scan/
+cargo run --release --bin eintragen -- --datei … --text … --bestand …
+cargo run --release --bin webscan -- --alle     # hochladen, Beitrag, medien.rs
+cargo run --release --bin scanliste             # Übersicht neu bauen
+cargo run --release --bin webscan -- --verzeichnis   # Übersicht hoch, Link nachziehen
+```
+
+- **`--trocken` zeigt alles, auch die geplanten Kategorien und Tags**, ohne zu
+  schreiben. Vor jedem Lauf benutzen.
+- **Die Doppel-Upload-Sperre steckt in `medien.rs`:** steht eine Datei dort,
+  wird sie nie wieder hochgeladen. `--alle` arbeitet strikt der Reihe nach in
+  einem Prozess. Beides ist Absicht, siehe unten.
+- Besteht der Beitrag schon (gleicher Titel, gleiches Datum), lässt `webscan`
+  ihn stehen und meldet es.
+- Kommen für einen Scan weniger als zwei Tags zusammen, bricht es ab statt
+  etwas Beliebiges zu vergeben.
+- `--verzeichnis` meldet die vorige Verzeichnis-Adresse. **WordPress
+  überschreibt keine Mediendatei, es legt eine zweite an** – die alte ist
+  danach unverlinkt und sollte in der Mediathek weg, sonst sammeln sich alte
+  Verzeichnisse an. Das macht `webscan` nicht selber: Löschen von Medien ist
+  endgültig.
+- Nach `webscan --alle` ist `src/medien.rs` geändert und muss mitcommittet
+  werden; `cargo test` prüft, dass jede Adresse auf adhs.expert zeigt.
 
 **Fallen beim Nachbauen über die REST-API:**
 
@@ -493,6 +528,11 @@ nachgezogen** werden – sonst zeigt der Beitrag eine veraltete Fassung.
   Volltext für 50 Beiträge auf einmal lösen die Drosselung besonders schnell aus.
 - `author` lässt sich mit dem Anwendungspasswort von `zdavatz` auf `udavatz`
   umschreiben; die Berechtigung reicht.
+- **`cargo test --bin x` baut nicht `target/release/x`.** Es baut die
+  Testdatei unter `target/release/deps/`. Wer danach `./target/release/x`
+  aufruft, führt den Stand von vorher aus – einmal fehlte so eine gerade
+  eingebaute Meldung, und es sah nach einem Fehler im Code aus. Vor dem
+  Ernstlauf `cargo build --release --bin x`.
 
 ### Daten (`src/eintraege.rs`)
 
