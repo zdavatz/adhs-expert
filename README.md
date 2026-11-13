@@ -261,6 +261,8 @@ JJJJ – JJJJ» nebeneinander auf ein A4-Blatt im Querformat, mit gestrichelter
 Schnittlinie. Vorgabe 50 × 145 mm (Einstecktasche der grauen Ordner);
 `@MM` hinter den Jahren setzt die Breite eines einzelnen Schilds. Schilder
 unter 40 mm Breite bekommen den Text längs, von unten nach oben lesbar.
+`--kopf "Rechnungen|Val Müstair"` ersetzt den Kopf (Zeilen mit «|» getrennt),
+etwa für Ordner anderer Projekte.
 
 ```bash
 cargo run --release --bin etiketten -- --jahre 1983-1988 --jahre 1987-1994 \

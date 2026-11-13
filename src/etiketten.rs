@@ -39,10 +39,12 @@ struct Optionen {
     breite: f64,
     hoehe: f64,
     out: String,
+    /// Kopfzeilen des Schilds; Vorgabe «Vorträge Dr. med. Ursula Davatz».
+    kopf: Vec<String>,
 }
 
 fn optionen() -> Result<Optionen> {
-    let mut o = Optionen { jahre: vec![], breite: 50.0, hoehe: 145.0, out: "etiketten.pdf".into() };
+    let mut o = Optionen { jahre: vec![], breite: 50.0, hoehe: 145.0, out: "etiketten.pdf".into(), kopf: vec![] };
     let mut args = std::env::args().skip(1);
     while let Some(a) = args.next() {
         let mut wert = || args.next().with_context(|| format!("{a} braucht einen Wert"));
@@ -59,8 +61,10 @@ fn optionen() -> Result<Optionen> {
             "--breite" => o.breite = wert()?.parse()?,
             "--hoehe" => o.hoehe = wert()?.parse()?,
             "--out" => o.out = wert()?,
+            // Kopf mit «|» zwischen den Zeilen, etwa «Rechnungen|Val Müstair»
+            "--kopf" => o.kopf = wert()?.split('|').map(|z| z.trim().to_string()).collect(),
             "-h" | "--help" => {
-                println!("etiketten --jahre JJJJ-JJJJ [--jahre …] [--breite MM] [--hoehe MM] [--out DATEI]");
+                println!("etiketten --jahre JJJJ-JJJJ [--jahre …] [--breite MM] [--hoehe MM] [--kopf \"Zeile|Zeile\"] [--out DATEI]");
                 std::process::exit(0);
             }
             _ => bail!("unbekanntes Argument {a:?} (--help)"),
@@ -68,6 +72,9 @@ fn optionen() -> Result<Optionen> {
     }
     if o.jahre.is_empty() {
         bail!("--jahre fehlt");
+    }
+    if o.kopf.is_empty() {
+        o.kopf = ["Vorträge", "Dr. med.", "Ursula", "Davatz"].map(String::from).to_vec();
     }
     if gesamtbreite(&o) > A4_BREIT - 10.0 || o.hoehe > A4_HOCH - 10.0 {
         bail!("{} Schilder zu {} × {} mm passen nicht auf ein A4-Blatt", o.jahre.len(), o.breite, o.hoehe);
@@ -117,13 +124,14 @@ fn laengs(
     schrift: &IndirectFontRef,
     font: &Font,
     schild: &Schild,
+    kopf: &[String],
     x: f64,
     y0: f64,
     breite: f64,
     hoehe: f64,
 ) {
     let zeilen = [
-        "Vorträge Dr. med. Ursula Davatz".to_string(),
+        kopf.join(" "),
         format!("{} – {}", schild.von, schild.bis),
     ];
     let refs: Vec<&str> = zeilen.iter().map(String::as_str).collect();
@@ -157,7 +165,7 @@ fn main() -> Result<()> {
 
     let mut x = (A4_BREIT - gesamtbreite(&o)) / 2.0;
     let y0 = (A4_HOCH - o.hoehe) / 2.0;
-    let kopf = ["Vorträge", "Dr. med.", "Ursula", "Davatz"];
+    let kopf: Vec<&str> = o.kopf.iter().map(String::as_str).collect();
 
     for schild in &o.jahre {
         let breite = schild.breite.unwrap_or(o.breite);
@@ -169,7 +177,7 @@ fn main() -> Result<()> {
         ebene.set_line_dash_pattern(LineDashPattern::new(0, None, None, None, None, None, None));
 
         if breite < 40.0 {
-            laengs(&ebene, &schrift, &font, schild, x, y0, breite, o.hoehe);
+            laengs(&ebene, &schrift, &font, schild, &o.kopf, x, y0, breite, o.hoehe);
             x += breite + ABSTAND;
             continue;
         }
@@ -183,7 +191,7 @@ fn main() -> Result<()> {
         let kopf_pt = passende_groesse(&font, &kopf, platz, 26.0);
         let zeile = kopf_pt / PT_JE_MM * 1.35;
         let mut y = y0 + o.hoehe - 25.0;
-        for z in kopf {
+        for z in &kopf {
             mittig(z, kopf_pt, y);
             y -= zeile;
         }

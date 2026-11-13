@@ -46,6 +46,7 @@ cargo run --release --bin webscan -- --verzeichnis                  # Übersicht
 cargo run --release --bin webscan -- --alle --trocken               # nur zeigen
 cargo run --release --bin mail -- --an … --betreff … --nachricht … --anhang scan/x.pdf --token …
 cargo run --release --bin etiketten -- --jahre 1983-1988 --jahre 2013-2018@25 --out e.pdf   # Ordnerrücken
+cargo run --release --bin etiketten -- --jahre 2023-2026 --kopf "Rechnungen|Val Müstair" --out e.pdf   # anderer Kopf
 cargo run --release --bin pcldruck -- e.pdf --an DRUCKER:9100   # eine Seite als PCL
 ```
 
